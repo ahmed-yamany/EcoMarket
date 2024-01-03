@@ -1,0 +1,9 @@
+input_dir: Resources/
+output_dir: Resources/Generated/
+
+strings:
+   inputs:
+     - Localization/en.lproj
+   outputs:
+     - templateName: structured-swift5
+       output: Strings+Generated.swift

@@ -10,12 +10,17 @@
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
-		EE32E2932B45B1D100675EAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2912B45B1D100675EAE /* Main.storyboard */; };
 		EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2942B45B1D200675EAE /* Assets.xcassets */; };
 		EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */; };
 		EE32E2A32B45B1D300675EAE /* EcoMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2A22B45B1D300675EAE /* EcoMarketTests.swift */; };
 		EE32E2AD2B45B1D300675EAE /* EcoMarketUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2AC2B45B1D300675EAE /* EcoMarketUITests.swift */; };
 		EE32E2AF2B45B1D300675EAE /* EcoMarketUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2AE2B45B1D300675EAE /* EcoMarketUITestsLaunchTests.swift */; };
+		EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C62B45B3D700675EAE /* Localizable.strings */; };
+		EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C82B45B41600675EAE /* swiftgen.yml */; };
+		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
+		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
+		EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2D12B45B6B400675EAE /* Colors.xcassets */; };
+		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,7 +45,6 @@
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE32E28F2B45B1D100675EAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EE32E2922B45B1D100675EAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE32E2972B45B1D200675EAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE32E2992B45B1D200675EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +53,14 @@
 		EE32E2A82B45B1D300675EAE /* EcoMarketUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EcoMarketUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E2AC2B45B1D300675EAE /* EcoMarketUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketUITests.swift; sourceTree = "<group>"; };
 		EE32E2AE2B45B1D300675EAE /* EcoMarketUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		EE32E2BB2B45B26400675EAE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		EE32E2C52B45B3D700675EAE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE32E2C72B45B3D900675EAE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EE32E2C82B45B41600675EAE /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
+		EE32E2C92B45B41600675EAE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		EE32E2D12B45B6B400675EAE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +91,11 @@
 		EE32E27F2B45B1D100675EAE = {
 			isa = PBXGroup;
 			children = (
+				EE32E2C92B45B41600675EAE /* .swiftlint.yml */,
+				EE32E2C82B45B41600675EAE /* swiftgen.yml */,
 				EE32E28A2B45B1D100675EAE /* EcoMarket */,
+				EE32E2D32B45B6C800675EAE /* Utilities */,
+				EE32E2BC2B45B2ED00675EAE /* Resources */,
 				EE32E2A12B45B1D300675EAE /* EcoMarketTests */,
 				EE32E2AB2B45B1D300675EAE /* EcoMarketUITests */,
 				EE32E2892B45B1D100675EAE /* Products */,
@@ -99,12 +115,9 @@
 		EE32E28A2B45B1D100675EAE /* EcoMarket */ = {
 			isa = PBXGroup;
 			children = (
+				EE32E2D62B45B76A00675EAE /* Scenes */,
 				EE32E28B2B45B1D100675EAE /* AppDelegate.swift */,
 				EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */,
-				EE32E28F2B45B1D100675EAE /* ViewController.swift */,
-				EE32E2912B45B1D100675EAE /* Main.storyboard */,
-				EE32E2942B45B1D200675EAE /* Assets.xcassets */,
-				EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */,
 				EE32E2992B45B1D200675EAE /* Info.plist */,
 			);
 			path = EcoMarket;
@@ -127,6 +140,162 @@
 			path = EcoMarketUITests;
 			sourceTree = "<group>";
 		};
+		EE32E2BC2B45B2ED00675EAE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2D72B45B77E00675EAE /* LaunchScreen */,
+				EE32E2C02B45B32B00675EAE /* Fonts */,
+				EE32E2BF2B45B31700675EAE /* Assets */,
+				EE32E2BE2B45B30A00675EAE /* Generated */,
+				EE32E2BD2B45B30000675EAE /* Localization */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		EE32E2BD2B45B30000675EAE /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2C62B45B3D700675EAE /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		EE32E2BE2B45B30A00675EAE /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
+		EE32E2BF2B45B31700675EAE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2942B45B1D200675EAE /* Assets.xcassets */,
+				EE32E2D12B45B6B400675EAE /* Colors.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		EE32E2C02B45B32B00675EAE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2CE2B45B56700675EAE /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		EE32E2D32B45B6C800675EAE /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2D52B45B6E100675EAE /* Custom Views */,
+				EE32E2D42B45B6D200675EAE /* Extensions */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		EE32E2D42B45B6D200675EAE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		EE32E2D62B45B76A00675EAE /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2DA2B45B81E00675EAE /* Onboarding */,
+				EE32E2DB2B45B82400675EAE /* TabBar */,
+				EE32E28F2B45B1D100675EAE /* ViewController.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		EE32E2D72B45B77E00675EAE /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		EE32E2DA2B45B81E00675EAE /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2DC2B45B88800675EAE /* Splash */,
+				EE32E2DD2B45B89100675EAE /* Login */,
+				EE32E2DE2B45B89400675EAE /* Signup */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		EE32E2DB2B45B82400675EAE /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2DF2B45B8D000675EAE /* Home */,
+				EE32E2E02B45B8D400675EAE /* Cart */,
+				EE32E2E12B45B8D800675EAE /* Notifications */,
+				EE32E2E22B45B8E100675EAE /* Profile */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		EE32E2DC2B45B88800675EAE /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		EE32E2DD2B45B89100675EAE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		EE32E2DE2B45B89400675EAE /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		EE32E2DF2B45B8D000675EAE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		EE32E2E02B45B8D400675EAE /* Cart */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cart;
+			sourceTree = "<group>";
+		};
+		EE32E2E12B45B8D800675EAE /* Notifications */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Notifications;
+			sourceTree = "<group>";
+		};
+		EE32E2E22B45B8E100675EAE /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -134,6 +303,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE32E2B22B45B1D300675EAE /* Build configuration list for PBXNativeTarget "EcoMarket" */;
 			buildPhases = (
+				EE32E2CC2B45B45600675EAE /* swiftgen */,
+				EE32E2CD2B45B47200675EAE /* swiftlint */,
 				EE32E2842B45B1D100675EAE /* Sources */,
 				EE32E2852B45B1D100675EAE /* Frameworks */,
 				EE32E2862B45B1D100675EAE /* Resources */,
@@ -213,6 +384,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			productRefGroup = EE32E2892B45B1D100675EAE /* Products */;
@@ -231,9 +403,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */,
+				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
+				EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
-				EE32E2932B45B1D100675EAE /* Main.storyboard in Resources */,
+				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -253,11 +428,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		EE32E2CC2B45B45600675EAE /* swiftgen */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftgen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftgen >/dev/null; then\n  swiftgen\nelse\n  echo \"warning: get not installed, download from https://github.com/realm/SwiftLint\"\nfi \n";
+		};
+		EE32E2CD2B45B47200675EAE /* swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = swiftlint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi \n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		EE32E2842B45B1D100675EAE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
+				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
@@ -297,20 +515,22 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		EE32E2912B45B1D100675EAE /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				EE32E2922B45B1D100675EAE /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				EE32E2972B45B1D200675EAE /* Base */,
+				EE32E2BB2B45B26400675EAE /* ar */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		EE32E2C62B45B3D700675EAE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EE32E2C52B45B3D700675EAE /* en */,
+				EE32E2C72B45B3D900675EAE /* ar */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -321,6 +541,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -353,7 +574,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -368,7 +589,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -384,6 +605,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -416,7 +638,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -425,7 +647,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -445,9 +667,10 @@
 				DEVELOPMENT_TEAM = 4U8DMJ33ZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EcoMarket/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eco Market";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -473,9 +696,10 @@
 				DEVELOPMENT_TEAM = 4U8DMJ33ZN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = EcoMarket/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Eco Market";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.shopping";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
