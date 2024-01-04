@@ -48,11 +48,11 @@
     
     | Name | Role | Github | Linkedin |
     | --- | --- | --- | --- |
-    | Ahmed Yamany | iOS Developer | http://www.github.com/ahmed-yamany | https://www.linkedin.com/in/ahmed-yamany/ |
-    | Ahmed Abo Elsood | iOS Developer |  |  |
-    | Mohamed Khaled | iOS Developer | https://github.com/Mo7amedkHAlED | https://www.linkedin.com/in/mo7amedk7aled/ |
-    | Ibrahim Nasser | iOS Developer | https://github.com/thenasserr | https://www.linkedin.com/in/ibrahim-nasser-8868a7154/ |
-    | Youssef Eldeeb | iOS Developer | https://github.com/Youssef0Eldeeb | https://www.linkedin.com/in/youssef-eldeeb/ |
-    | Osama Elshora | iOS Developer | https://github.com/OsamaElshora | https://www.linkedin.com/in/osama-elshora-065138231/ |
+    | Ahmed Yamany | iOS Developer | [ahmed-yamany](http://www.github.com/ahmed-yamany) | [ahmed-yamany](https://www.linkedin.com/in/ahmed-yamany/) |
+    | Ahmed Abo Elsood | iOS Developer | [ahmedmohamedaboelsood](https://github.com/ahmedmohamedaboelsood) | [ahmedaboelsood](https://www.linkedin.com/in/ahmedaboelsood/)  |
+    | Mohamed Khaled | iOS Developer | [Mo7amedkHAlED](https://github.com/Mo7amedkHAlED) | [mo7amedk7aled](https://www.linkedin.com/in/mo7amedk7aled/) |
+    | Ibrahim Nasser | iOS Developer | [thenasserr](https://github.com/thenasserr) | [ibrahim-nasser](https://www.linkedin.com/in/ibrahim-nasser-8868a7154/) |
+    | Youssef Eldeeb | iOS Developer | [Youssef0Eldeeb](https://github.com/Youssef0Eldeeb) | [youssef-eldeeb](https://www.linkedin.com/in/youssef-eldeeb/) |
+    | Osama Elshora | iOS Developer | [OsamaElshora](https://github.com/OsamaElshora) | [osama-elshora](https://www.linkedin.com/in/osama-elshora-065138231/) |
     |  |  |  |  |
     |  |  |  |  |
