@@ -319,6 +319,7 @@
 		EE32E2DB2B45B82400675EAE /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				EE95CED12B4EA17300BC5524 /* TabBarController */,
 				EE32E2DF2B45B8D000675EAE /* Home */,
 				EE32E2E02B45B8D400675EAE /* Cart */,
 				EE32E2E12B45B8D800675EAE /* Notifications */,
@@ -422,6 +423,13 @@
 				EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */,
 			);
 			path = UIViewController;
+			sourceTree = "<group>";
+		};
+		EE95CED12B4EA17300BC5524 /* TabBarController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBarController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
