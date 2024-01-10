@@ -88,6 +88,65 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		214AC06B2B4E973F0094297D /* HomeTheme1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeTheme1;
+			sourceTree = "<group>";
+		};
+		214AC06C2B4E974D0094297D /* HomeTheme2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeTheme2;
+			sourceTree = "<group>";
+		};
+		214AC06D2B4E97560094297D /* HomeTheme3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeTheme3;
+			sourceTree = "<group>";
+		};
+		214AC06E2B4E975F0094297D /* HomeTheme4 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeTheme4;
+			sourceTree = "<group>";
+		};
+		214AC06F2B4E97810094297D /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				214AC0722B4E97B50094297D /* CategoriesTheme3 */,
+				214AC0712B4E97AF0094297D /* CategoriesTheme2 */,
+				214AC0702B4E978B0094297D /* CategoriesTheme1 */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		214AC0702B4E978B0094297D /* CategoriesTheme1 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoriesTheme1;
+			sourceTree = "<group>";
+		};
+		214AC0712B4E97AF0094297D /* CategoriesTheme2 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoriesTheme2;
+			sourceTree = "<group>";
+		};
+		214AC0722B4E97B50094297D /* CategoriesTheme3 */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CategoriesTheme3;
+			sourceTree = "<group>";
+		};
 		EE32E27F2B45B1D100675EAE = {
 			isa = PBXGroup;
 			children = (
@@ -271,6 +330,11 @@
 		EE32E2DF2B45B8D000675EAE /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				214AC06E2B4E975F0094297D /* HomeTheme4 */,
+				214AC06D2B4E97560094297D /* HomeTheme3 */,
+				214AC06C2B4E974D0094297D /* HomeTheme2 */,
+				214AC06B2B4E973F0094297D /* HomeTheme1 */,
+				214AC06F2B4E97810094297D /* Categories */,
 			);
 			path = Home;
 			sourceTree = "<group>";
