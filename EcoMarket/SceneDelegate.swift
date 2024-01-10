@@ -10,14 +10,13 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
-
-    func scene(_ scene: UIScene,
-               willConnectTo session: UISceneSession,
-               options connectionOptions: UIScene.ConnectionOptions) {
-        guard let windowScene = (scene as? UIWindowScene) else { return }
-        let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = ViewController()
-        window.makeKeyAndVisible()
-        self.window = window
+    // swiftlint: disable all
+    func scene(_ scene: UIScene,willConnectTo session: UISceneSession,options connectionOptions: UIScene.ConnectionOptions) {
+        // swiftlint: enable all
+        guard let windowScene = (scene as? UIWindowScene) else {
+            Logger.log("Fialed to get windowScene", category: \.default, level: .fault)
+            return
+        }
+        AppRouter.shared.makeWindow(from: windowScene)
     }
 }
