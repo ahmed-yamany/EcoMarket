@@ -17,12 +17,13 @@ class LoginViewController: UIViewController {
     super.viewDidLoad()
     configureViews()
   }
-}
-
-// MARK: - Configurations
-extension LoginViewController {
+  
+  // MARK: - Setup UI
   private func configureViews() {
     emailTextField.setupRightImageView(image: .verify)
     passwordTextField.setupRightImageView(image: .verify)
   }
 }
+
+
+
