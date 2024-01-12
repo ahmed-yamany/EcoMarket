@@ -5,4 +5,11 @@
 //  Created by Ibrahim Nasser Ibrahim on 10/01/2024.
 //
 
-import Foundation
+import UIKit
+
+class AppleButton: SocialMediaButton {
+  override func setupButton() {
+    super.setupButton()
+    setImage(.iconApple, for: .normal)
+  }
+}

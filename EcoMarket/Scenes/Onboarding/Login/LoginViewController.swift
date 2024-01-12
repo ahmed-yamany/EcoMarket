@@ -9,21 +9,20 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  // MARK: - Outlets
+  @IBOutlet weak var emailTextField: CustomTextField!
+  @IBOutlet weak var passwordTextField: CustomTextField!
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    configureViews()
+  }
+}
 
-        // Do any additional setup after loading the view.
-    }
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// MARK: - Configurations
+extension LoginViewController {
+  private func configureViews() {
+    emailTextField.setupRightImageView(image: .verify)
+    passwordTextField.setupRightImageView(image: .verify)
+  }
 }

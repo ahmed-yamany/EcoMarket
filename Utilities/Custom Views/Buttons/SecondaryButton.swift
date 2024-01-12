@@ -6,10 +6,11 @@
 //
 import UIKit
 
-
 class SecondaryButton: EcoMarketButton {
   override func setupButton() {
     super.setupButton()
     backgroundColor = .emSecondaryButton
+    setImage(.iconFacebook, for: .normal)
+    tintColor = .emMainTheme
   }
 }

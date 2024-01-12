@@ -9,21 +9,18 @@ import UIKit
 
 class SignupViewController: UIViewController {
 
-    override func viewDidLoad() {
+  // MARK: - Outlets
+  @IBOutlet weak var userNameTextField: CustomTextField!
+
+  override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+    configureViews()
     }
+}
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+// MARK: - Configurations
+extension SignupViewController {
+  private func configureViews() {
+    userNameTextField.setupRightImageView(image: .verify)
+  }
 }

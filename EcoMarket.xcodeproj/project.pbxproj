@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */; };
+		D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */; };
+		D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */; };
+		D6C6C6DA2B4F17D600836A05 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D82B4F17D600836A05 /* LoginViewController.swift */; };
+		D6C6C6DB2B4F17D600836A05 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6D92B4F17D600836A05 /* LoginViewController.xib */; };
+		D6C6C6DD2B4F2A0500836A05 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */; };
+		D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */; };
+		D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */; };
+		D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */; };
+		D6C6C6E62B4F30D400836A05 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */; };
+		D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */; };
+		D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E92B4F374100836A05 /* AppleButton.swift */; };
+		D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */; };
+		D6C6C6EF2B4F486A00836A05 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6ED2B4F486A00836A05 /* SuccessViewController.xib */; };
+		D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6F32B51736000836A05 /* SecuiredTextField.swift */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
@@ -19,7 +34,6 @@
 		EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C82B45B41600675EAE /* swiftgen.yml */; };
 		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
-		EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2D12B45B6B400675EAE /* Colors.xcassets */; };
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +55,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
+		D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		D6C6C6D82B4F17D600836A05 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D6C6C6D92B4F17D600836A05 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketButton.swift; sourceTree = "<group>"; };
+		D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialMediaButton.swift; path = ../../../../../Documents/SocialMediaButton.swift; sourceTree = "<group>"; };
+		D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
+		D6C6C6E92B4F374100836A05 /* AppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButton.swift; sourceTree = "<group>"; };
+		D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		D6C6C6ED2B4F486A00836A05 /* SuccessViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SuccessViewController.xib; sourceTree = "<group>"; };
+		D6C6C6F32B51736000836A05 /* SecuiredTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecuiredTextField.swift; sourceTree = "<group>"; };
 		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +88,6 @@
 		EE32E2C82B45B41600675EAE /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		EE32E2C92B45B41600675EAE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		EE32E2D12B45B6B400675EAE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -147,6 +175,37 @@
 			path = CategoriesTheme3;
 			sourceTree = "<group>";
 		};
+		D6C6C6DE2B4F2EFA00836A05 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */,
+				D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */,
+				D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */,
+				D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */,
+				D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */,
+				D6C6C6E92B4F374100836A05 /* AppleButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */,
+				D6C6C6ED2B4F486A00836A05 /* SuccessViewController.xib */,
+			);
+			path = SuccessScreen;
+			sourceTree = "<group>";
+		};
+		D6C6C6F22B516F2F00836A05 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */,
+				D6C6C6F32B51736000836A05 /* SecuiredTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
 		EE32E27F2B45B1D100675EAE = {
 			isa = PBXGroup;
 			children = (
@@ -231,7 +290,7 @@
 			isa = PBXGroup;
 			children = (
 				EE32E2942B45B1D200675EAE /* Assets.xcassets */,
-				EE32E2D12B45B6B400675EAE /* Colors.xcassets */,
+				D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -263,6 +322,8 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6C6C6DE2B4F2EFA00836A05 /* Buttons */,
+				D6C6C6F22B516F2F00836A05 /* TextField */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -291,6 +352,7 @@
 				EE32E2DC2B45B88800675EAE /* Splash */,
 				EE32E2DD2B45B89100675EAE /* Login */,
 				EE32E2DE2B45B89400675EAE /* Signup */,
+				D6C6C6EB2B4F484500836A05 /* SuccessScreen */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -316,6 +378,8 @@
 		EE32E2DD2B45B89100675EAE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D6C6C6D82B4F17D600836A05 /* LoginViewController.swift */,
+				D6C6C6D92B4F17D600836A05 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -323,6 +387,8 @@
 		EE32E2DE2B45B89400675EAE /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */,
+				D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -467,12 +533,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C6C6DB2B4F17D600836A05 /* LoginViewController.xib in Resources */,
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */,
 				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
-				EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
+				D6C6C6DD2B4F2A0500836A05 /* Colors.xcassets in Resources */,
+				D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
+				D6C6C6EF2B4F486A00836A05 /* SuccessViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,11 +607,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C6C6DA2B4F17D600836A05 /* LoginViewController.swift in Sources */,
+				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
+				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
+				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
+				D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */,
+				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
+				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */,
+				D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
+				D6C6C6E62B4F30D400836A05 /* SocialMediaButton.swift in Sources */,
+				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
+				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
