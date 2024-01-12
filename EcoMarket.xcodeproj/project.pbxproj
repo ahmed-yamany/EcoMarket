@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */; };
 		D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */; };
 		D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */; };
 		D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */; };
@@ -16,7 +17,6 @@
 		D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */; };
 		D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */; };
 		D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */; };
-		D6C6C6E62B4F30D400836A05 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */; };
 		D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */; };
 		D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E92B4F374100836A05 /* AppleButton.swift */; };
 		D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */; };
@@ -55,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -64,7 +65,6 @@
 		D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketButton.swift; sourceTree = "<group>"; };
 		D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
-		D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SocialMediaButton.swift; path = ../../../../../Documents/SocialMediaButton.swift; sourceTree = "<group>"; };
 		D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
 		D6C6C6E92B4F374100836A05 /* AppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButton.swift; sourceTree = "<group>"; };
 		D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
@@ -181,7 +181,7 @@
 				D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */,
 				D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */,
 				D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */,
-				D6C6C6E52B4F30D400836A05 /* SocialMediaButton.swift */,
+				D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */,
 				D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */,
 				D6C6C6E92B4F374100836A05 /* AppleButton.swift */,
 			);
@@ -613,6 +613,7 @@
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
 				D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */,
 				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
+				D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */,
 				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
@@ -620,7 +621,6 @@
 				D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
-				D6C6C6E62B4F30D400836A05 /* SocialMediaButton.swift in Sources */,
 				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
 				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
 			);

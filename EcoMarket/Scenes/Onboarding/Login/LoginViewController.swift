@@ -24,6 +24,3 @@ class LoginViewController: UIViewController {
     passwordTextField.setupRightImageView(image: .verify)
   }
 }
-
-
-
