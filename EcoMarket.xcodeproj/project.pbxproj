@@ -13,6 +13,9 @@
 		A1CB8C742B5282F300316DD4 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C722B5282F300316DD4 /* OnboardingCollectionViewCell.xib */; };
 		A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */; };
 		A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C782B528A4C00316DD4 /* OnboardingData.json */; };
+		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
+		A1CB8C7E2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */; };
+		A1CB8C802B53100100316DD4 /* OnboardingCustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
@@ -61,6 +64,9 @@
 		A1CB8C722B5282F300316DD4 /* OnboardingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingCollectionViewCell.xib; sourceTree = "<group>"; };
 		A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		A1CB8C782B528A4C00316DD4 /* OnboardingData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData.json; sourceTree = "<group>"; };
+		A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionVeiw+Extension.swift"; sourceTree = "<group>"; };
+		A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingVC+CollectionView.swift"; sourceTree = "<group>"; };
+		A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCustomPageControl.swift; sourceTree = "<group>"; };
 		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -193,8 +199,9 @@
 		A1CB8C6C2B52783200316DD4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */,
 				A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */,
+				A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */,
+				A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -206,6 +213,22 @@
 				A1CB8C722B5282F300316DD4 /* OnboardingCollectionViewCell.xib */,
 			);
 			path = OnboardingCollectionViewCell;
+			sourceTree = "<group>";
+		};
+		A1CB8C7A2B52946D00316DD4 /* UICollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */,
+			);
+			path = UICollectionView;
+			sourceTree = "<group>";
+		};
+		A1CB8C812B53100B00316DD4 /* OnboardingCustomPageControl */ = {
+			isa = PBXGroup;
+			children = (
+				A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */,
+			);
+			path = OnboardingCustomPageControl;
 			sourceTree = "<group>";
 		};
 		EE32E27F2B45B1D100675EAE = {
@@ -320,6 +343,7 @@
 		EE32E2D42B45B6D200675EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB8C7A2B52946D00316DD4 /* UICollectionView */,
 				EE95CEC82B4E9EDC00BC5524 /* UIApplicatoin */,
 				EE95CECB2B4E9EEE00BC5524 /* UIView */,
 				EE95CECE2B4E9EFC00BC5524 /* UIViewController */,
@@ -330,6 +354,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB8C812B53100B00316DD4 /* OnboardingCustomPageControl */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -663,8 +688,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1CB8C7E2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */,
+				A1CB8C802B53100100316DD4 /* OnboardingCustomPageControl.swift in Sources */,
 				A1CB8C732B5282F300316DD4 /* OnboardingCollectionViewCell.swift in Sources */,
 				A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
@@ -678,6 +705,7 @@
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,
 				EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */,
+				A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -16,13 +16,21 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        initUI()
+    }
+    private func initUI(){
+        title.font = .systemFont(ofSize: 32, weight: .heavy)
+        title.numberOfLines = 2
+        subTitle.font = .systemFont(ofSize: 16, weight: .regular)
+        subTitle.textColor = .darkGray
+        subTitle.numberOfLines = 2
+        
     }
     
-    func setup(image: UIImage, title: String, subTittle: String){
-        self.image.image = image
-        self.title.text = title
-        self.subTitle.text = subTittle
+    func setup(_ obj: Onboarding){
+        self.image.image = UIImage(named: obj.image)
+        self.title.text = obj.title
+        self.subTitle.text = obj.subtitle
     }
 
 }

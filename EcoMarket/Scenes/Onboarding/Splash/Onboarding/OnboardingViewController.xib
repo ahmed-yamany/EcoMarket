@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="OnboardingViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="nextBtn" destination="qJU-g4-QGM" id="Wkr-m5-l3d"/>
+                <outlet property="onboardingCollectionView" destination="oMx-5O-pKM" id="IOr-M7-iRh"/>
+                <outlet property="pageControl" destination="u5k-jx-kqH" id="QyK-RZ-gxc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,12 +26,12 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E5v-ec-Fji">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="619"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="629"/>
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-5O-pKM">
-                                    <rect key="frame" x="0.0" y="0.0" width="393" height="619"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="629"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DG8-sp-HLw">
+                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DG8-sp-HLw">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -45,10 +48,52 @@
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngH-le-vYE">
-                            <rect key="frame" x="0.0" y="679" width="393" height="80"/>
+                            <rect key="frame" x="0.0" y="689" width="393" height="70"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-oW-QLF">
+                                    <rect key="frame" x="20" y="0.0" width="353" height="70"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFp-nW-VnS">
+                                            <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
+                                            <subviews>
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-jx-kqH">
+                                                    <rect key="frame" x="-23" y="30" width="116" height="10"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="10" id="eV5-UJ-rFn"/>
+                                                    </constraints>
+                                                    <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
+                                                    <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </pageControl>
+                                            </subviews>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                            <constraints>
+                                                <constraint firstItem="u5k-jx-kqH" firstAttribute="centerX" secondItem="pFp-nW-VnS" secondAttribute="centerX" id="JV3-xk-z86"/>
+                                                <constraint firstAttribute="width" constant="70" id="U1M-Xz-nk4"/>
+                                                <constraint firstItem="u5k-jx-kqH" firstAttribute="centerY" secondItem="pFp-nW-VnS" secondAttribute="centerY" id="l1m-Ca-aDu"/>
+                                            </constraints>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnW-7V-UnB">
+                                            <rect key="frame" x="70" y="0.0" width="213" height="70"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJU-g4-QGM">
+                                            <rect key="frame" x="283" y="0.0" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="ze1-hr-cOt"/>
+                                            </constraints>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain"/>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="80" id="AaH-85-8rq"/>
+                                <constraint firstAttribute="height" constant="70" id="AaH-85-8rq"/>
+                                <constraint firstAttribute="trailing" secondItem="WZw-oW-QLF" secondAttribute="trailing" constant="20" id="Jhf-AO-CDr"/>
+                                <constraint firstItem="WZw-oW-QLF" firstAttribute="leading" secondItem="ngH-le-vYE" secondAttribute="leading" constant="20" id="Pgk-qt-YRV"/>
+                                <constraint firstItem="WZw-oW-QLF" firstAttribute="top" secondItem="ngH-le-vYE" secondAttribute="top" id="okj-ph-KXU"/>
+                                <constraint firstAttribute="bottom" secondItem="WZw-oW-QLF" secondAttribute="bottom" id="wGz-5X-Xxc"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -68,6 +113,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

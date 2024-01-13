@@ -43,16 +43,16 @@
                                         <rect key="frame" x="0.0" y="400.33333333333331" width="319" height="138.66666666666669"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="pZP-tc-BvI">
-                                                <rect key="frame" x="0.0" y="0.0" width="319" height="138.66666666666666"/>
+                                                <rect key="frame" x="20" y="0.0" width="279" height="138.66666666666666"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lQj-05-WRh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="319" height="83.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="279" height="83.333333333333329"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Psg-eG-U2r">
-                                                        <rect key="frame" x="0.0" y="83.333333333333371" width="319" height="55.333333333333343"/>
+                                                        <rect key="frame" x="0.0" y="83.333333333333371" width="279" height="55.333333333333343"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -66,9 +66,9 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
                                             <constraint firstItem="pZP-tc-BvI" firstAttribute="top" secondItem="RcP-fw-x84" secondAttribute="top" id="Wtb-LZ-us9"/>
-                                            <constraint firstAttribute="trailing" secondItem="pZP-tc-BvI" secondAttribute="trailing" id="js8-lm-dxs"/>
+                                            <constraint firstAttribute="trailing" secondItem="pZP-tc-BvI" secondAttribute="trailing" constant="20" id="js8-lm-dxs"/>
                                             <constraint firstAttribute="bottom" secondItem="pZP-tc-BvI" secondAttribute="bottom" id="uGp-Ef-IPs"/>
-                                            <constraint firstItem="pZP-tc-BvI" firstAttribute="leading" secondItem="RcP-fw-x84" secondAttribute="leading" id="uNM-gk-owW"/>
+                                            <constraint firstItem="pZP-tc-BvI" firstAttribute="leading" secondItem="RcP-fw-x84" secondAttribute="leading" constant="20" id="uNM-gk-owW"/>
                                         </constraints>
                                     </view>
                                 </subviews>

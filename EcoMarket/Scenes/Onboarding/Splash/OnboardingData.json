@@ -1,0 +1,23 @@
+[
+    {
+        "id" : 1,
+        "image" : "onboarding01",
+        "title": "20% Discount New Arrival Product",
+        "subtitle": "Publish up your selfies to make yourself more beautiful with this app."
+        
+    },
+    {
+        "id" : 2,
+        "image" : "onboarding02",
+        "title": "Take Advantage Of The Offer Shopping",
+        "subtitle": "Publish up your selfies to make yourself more beautiful with this app."
+        
+    },
+    {
+        "id" : 3,
+        "image" : "onboarding03",
+        "title": "All Types Offers Within Your Reach",
+        "subtitle": "Publish up your selfies to make yourself more beautiful with this app."
+        
+    }
+]
