@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -29,6 +29,8 @@
 		EE95CECA2B4E9EE800BC5524 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */; };
 		EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */; };
 		EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */; };
+		EEA439112B50548F00FE631A /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA439102B50548E00FE631A /* TabBarViewController.swift */; };
+		EEA439142B505F1000FE631A /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EEA439132B505F1000FE631A /* MakeConstraints */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,7 @@
 		EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
 		EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
 		EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
+		EEA439102B50548E00FE631A /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EEA439142B505F1000FE631A /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,6 +432,7 @@
 		EE95CED12B4EA17300BC5524 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
+				EEA439102B50548E00FE631A /* TabBarViewController.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -450,6 +455,9 @@
 			dependencies = (
 			);
 			name = EcoMarket;
+			packageProductDependencies = (
+				EEA439132B505F1000FE631A /* MakeConstraints */,
+			);
 			productName = EcoMarket;
 			productReference = EE32E2882B45B1D100675EAE /* EcoMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -523,6 +531,9 @@
 				ar,
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
+			packageReferences = (
+				EEA439122B505F1000FE631A /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+			);
 			productRefGroup = EE32E2892B45B1D100675EAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -614,6 +625,7 @@
 				EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
+				EEA439112B50548F00FE631A /* TabBarViewController.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
@@ -975,6 +987,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		EEA439122B505F1000FE631A /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/MakeConstraints;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EEA439132B505F1000FE631A /* MakeConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MakeConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE32E2802B45B1D100675EAE /* Project object */;
 }
