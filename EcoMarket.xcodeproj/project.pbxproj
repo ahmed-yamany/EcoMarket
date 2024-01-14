@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */; };
+		D65A13062B533FC100CE2D71 /* UIColor+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13052B533FC100CE2D71 /* UIColor+Ext.swift */; };
+		D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13072B53648D00CE2D71 /* AppColor.swift */; };
 		D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */; };
 		D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */; };
 		D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */; };
@@ -56,6 +58,8 @@
 
 /* Begin PBXFileReference section */
 		D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
+		D65A13052B533FC100CE2D71 /* UIColor+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ext.swift"; sourceTree = "<group>"; };
+		D65A13072B53648D00CE2D71 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
 		D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SignupViewController.xib; sourceTree = "<group>"; };
 		D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
@@ -315,6 +319,8 @@
 		EE32E2D42B45B6D200675EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D65A13052B533FC100CE2D71 /* UIColor+Ext.swift */,
+				D65A13072B53648D00CE2D71 /* AppColor.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
 				D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */,
 				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
+				D65A13062B533FC100CE2D71 /* UIColor+Ext.swift in Sources */,
 				D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */,
 				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
@@ -623,6 +630,7 @@
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
 				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
 				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
+				D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
