@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="nextBtn" destination="qJU-g4-QGM" id="Wkr-m5-l3d"/>
                 <outlet property="onboardingCollectionView" destination="oMx-5O-pKM" id="IOr-M7-iRh"/>
-                <outlet property="pageControl" destination="u5k-jx-kqH" id="QyK-RZ-gxc"/>
+                <outlet property="pageControlView" destination="pFp-nW-VnS" id="GaO-k4-yG7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -53,23 +53,11 @@
                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WZw-oW-QLF">
                                     <rect key="frame" x="20" y="0.0" width="353" height="70"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFp-nW-VnS">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFp-nW-VnS" customClass="FlexiblePageControl" customModule="EcoMarket" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
-                                            <subviews>
-                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-jx-kqH" customClass="ExtendedDotsPageControl" customModule="EcoMarket" customModuleProvider="target">
-                                                    <rect key="frame" x="-23" y="30" width="116" height="10"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="10" id="eV5-UJ-rFn"/>
-                                                    </constraints>
-                                                    <color key="pageIndicatorTintColor" systemColor="systemGray2Color"/>
-                                                    <color key="currentPageIndicatorTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                </pageControl>
-                                            </subviews>
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <constraints>
-                                                <constraint firstItem="u5k-jx-kqH" firstAttribute="centerX" secondItem="pFp-nW-VnS" secondAttribute="centerX" id="JV3-xk-z86"/>
                                                 <constraint firstAttribute="width" constant="70" id="U1M-Xz-nk4"/>
-                                                <constraint firstItem="u5k-jx-kqH" firstAttribute="centerY" secondItem="pFp-nW-VnS" secondAttribute="centerY" id="l1m-Ca-aDu"/>
                                             </constraints>
                                         </view>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gnW-7V-UnB">
@@ -113,9 +101,6 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
