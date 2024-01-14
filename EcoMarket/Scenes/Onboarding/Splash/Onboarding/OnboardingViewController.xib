@@ -56,7 +56,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pFp-nW-VnS">
                                             <rect key="frame" x="0.0" y="0.0" width="70" height="70"/>
                                             <subviews>
-                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-jx-kqH">
+                                                <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="u5k-jx-kqH" customClass="ExtendedDotsPageControl" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="-23" y="30" width="116" height="10"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="10" id="eV5-UJ-rFn"/>
