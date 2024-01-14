@@ -17,6 +17,33 @@ internal enum L10n {
     ///   Created by Ahmed Yamany on 03/01/2024.
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
+  internal enum Login {
+    /// Email
+    internal static let email = L10n.tr("Localizable", "login.email", fallback: "Email")
+    /// please login or sign up to continue our app
+    internal static let message = L10n.tr("Localizable", "login.message", fallback: "please login or sign up to continue our app")
+    /// Password
+    internal static let password = L10n.tr("Localizable", "login.password", fallback: "Password")
+    /// Wellcome!
+    internal static let wellcome = L10n.tr("Localizable", "login.wellcome", fallback: "Wellcome!")
+  }
+  internal enum Signup {
+    /// Confirm Password
+    internal static let comfirmPassword = L10n.tr("Localizable", "signup.comfirmPassword", fallback: "Confirm Password")
+    /// Email
+    internal static let email = L10n.tr("Localizable", "signup.email", fallback: "Email")
+    /// Password
+    internal static let password = L10n.tr("Localizable", "signup.password", fallback: "Password")
+    /// Create an new account
+    internal static let subtitle = L10n.tr("Localizable", "signup.subtitle", fallback: "Create an new account")
+    /// By creating an account you have to agree
+    /// with our them & condication.
+    internal static let terms = L10n.tr("Localizable", "signup.terms", fallback: "By creating an account you have to agree\nwith our them & condication.")
+    /// Sign Up
+    internal static let title = L10n.tr("Localizable", "signup.title", fallback: "Sign Up")
+    /// User Name
+    internal static let username = L10n.tr("Localizable", "signup.username", fallback: "User Name")
+  }
   internal enum Success {
     /// You have successfully registered in
     /// our app and start working in it.

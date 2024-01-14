@@ -31,4 +31,8 @@ struct AppImage {
   static var eyeSlash: UIImage? {
       return UIImage(named: "eye")
   }
+
+  static var appLogo: UIImage? {
+      return UIImage(named: "app-logo")
+  }
 }

@@ -9,3 +9,15 @@
 "success.title" = "Successful!";
 "success.message" = "You have successfully registered in
 our app and start working in it.";
+"login.wellcome" = "Wellcome!";
+"login.message" = "please login or sign up to continue our app";
+"login.email" = "Email";
+"login.password" = "Password";
+"signup.title" = "Sign Up";
+"signup.subtitle" = "Create an new account";
+"signup.username" = "User Name";
+"signup.email" = "Email";
+"signup.password" = "Password";
+"signup.comfirmPassword" = "Confirm Password";
+"signup.terms" = "By creating an account you have to agree
+with our them & condication.";

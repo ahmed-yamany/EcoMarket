@@ -6,29 +6,35 @@
 //
 
 import UIKit
-
+// swiftlint: disable all
 enum AppColor {
     static var backgroundColor: UIColor {
-        return UIColor(hexString: "EEEEEE")
+      return UIColor(named: "em-backgroundColor")!
     }
 
     static var mainTheme: UIColor {
-        return UIColor(hexString: "FEFFFF")
+        return UIColor(named: "em-mainTheme")!
     }
 
     static var primaryButton: UIColor {
-        return UIColor(hexString: "000000")
+        return UIColor(named: "em-primaryButton")!
     }
 
     static var primaryText: UIColor {
-        return UIColor(hexString: "000000")
+        return UIColor(named: "em-primaryText")!
     }
 
     static var secondaryButton: UIColor {
-        return UIColor(hexString: "3A5897")
+        return UIColor(named: "em-secondaryButton")!
     }
 
     static var socialButton: UIColor {
-        return UIColor(hexString: "8E8E93")
+        return UIColor(named: "em-socialButton")!
     }
+
+  static var textFieldUnderLine: UIColor {
+    return UIColor(named: "em-textFieldUnderLine")!
+  }
 }
+
+// swiftlint: enable all

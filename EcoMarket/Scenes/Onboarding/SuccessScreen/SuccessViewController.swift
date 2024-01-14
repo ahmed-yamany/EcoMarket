@@ -22,8 +22,11 @@ class SuccessViewController: UIViewController {
 
   // MARK: - Setup UI
   private func setupUI() {
+    /// Labels UI
     successLabel.text = L10n.Success.title
     successMesage.text = L10n.Success.message
+
+    /// Images UI
     imageView.image = AppImage.successImage
   }
 }

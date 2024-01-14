@@ -17,7 +17,7 @@ class CustomTextField: UITextField {
   func setupUnderLinedTextField() {
     let bottomLayer = CALayer()
     bottomLayer.frame = CGRect(x: 0, y: self.frame.height, width: self.frame.width - 24, height: 1)
-    bottomLayer.backgroundColor = UIColor.color.cgColor
+    bottomLayer.backgroundColor = AppColor.textFieldUnderLine.cgColor
     self.layer.addSublayer(bottomLayer)
   }
 
