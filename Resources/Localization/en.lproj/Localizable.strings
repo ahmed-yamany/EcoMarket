@@ -6,3 +6,8 @@
   
 */
 "app.name" = "EcoMarket";
+
+//
+"splash.button.login" = "Login";
+"splash.button.signup" = "Sign Up";
+//

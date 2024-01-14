@@ -19,13 +19,14 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        CGSize(width: onboardingCollectionView.frame.width, height: onboardingCollectionView.frame.height)
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: onboardingCollectionView.frame.width, height: onboardingCollectionView.frame.height)
     }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         //
     }
-    
-    
+     
 }

@@ -28,13 +28,13 @@ class SplashViewController: UIViewController {
         loginBtn.tintColor = .black
         loginBtn.layer.cornerRadius = loginBtn.frame.height / 2
         loginBtn.clipsToBounds = true
-        loginBtn.setTitle("Login", for: .normal)
+        loginBtn.setTitle(L10n.Splash.Button.login, for: .normal)
         signupBtn.tintColor = .white
         signupBtn.layer.cornerRadius = signupBtn.frame.height / 2
         signupBtn.clipsToBounds = true
         signupBtn.layer.borderWidth = 2
         signupBtn.layer.borderColor = UIColor.white.cgColor
-        signupBtn.setTitle("Sign Up", for: .normal)
+        signupBtn.setTitle(L10n.Splash.Button.login, for: .normal)
         logoImage.image = UIImage.logoVector
         logoImage.contentMode = .scaleAspectFill
         

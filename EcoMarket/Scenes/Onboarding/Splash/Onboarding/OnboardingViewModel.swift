@@ -8,18 +8,16 @@
 import Foundation
 import Combine
 
-class OnboardingViewModel{
+class OnboardingViewModel {
     
     var onboardingArray: [Onboarding] = decode(file: "OnboardingData")
-    
 }
-
 
 func decode<T: Codable>(file: String) -> T {
     guard let url = Bundle.main.url(forResource: file, withExtension: "json") else {
         fatalError("Fail to locate the file")
     }
-    guard let data = try? Data(contentsOf: url) else{
+    guard let data = try? Data(contentsOf: url) else {
         fatalError("Fail to load the data")
     }
     let decoder = JSONDecoder()
@@ -29,8 +27,7 @@ func decode<T: Codable>(file: String) -> T {
     return decodedData
 }
 
-
-struct Onboarding: Codable{
+struct Onboarding: Codable {
     let id: Int
     let image: String
     let title: String
