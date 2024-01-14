@@ -42,10 +42,10 @@ class SplashViewController: UIViewController {
         signupBtn.addTarget(self, action: #selector(goToSignup), for: .touchUpInside)
     }
     
-    @objc private func goToLogin(){
-        
+    @objc private func goToLogin() {
+        // Navigate to Login Page
     }
-    @objc private func goToSignup(){
-        
+    @objc private func goToSignup() {
+        // Navigate to Signup Page
     }
 }

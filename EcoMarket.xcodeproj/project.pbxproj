@@ -209,6 +209,7 @@
 		A1CB8C6C2B52783200316DD4 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */,
 				A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */,
 				A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */,
 				A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */,
@@ -424,7 +425,6 @@
 				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
 				A1CB8C6C2B52783200316DD4 /* Onboarding */,
 				A1CB8C6B2B5277C600316DD4 /* Splash */,
-				A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */,
 				A1CB8C782B528A4C00316DD4 /* OnboardingData.json */,
 			);
 			path = Splash;

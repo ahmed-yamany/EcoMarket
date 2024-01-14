@@ -51,8 +51,8 @@ class OnboardingViewController: UIViewController {
             scrollToPage(page: currentPage)
             pageControlView.currentPage = currentPage
         } else {
-            let vc = SplashViewController()
-            
+            let viewController = SplashViewController()
+            AppRouter.shared.present(viewController)
         }
     }
     
