@@ -51,7 +51,8 @@ class OnboardingViewController: UIViewController {
             scrollToPage(page: currentPage)
             pageControlView.currentPage = currentPage
         } else {
-            // go to register page
+            let vc = SplashViewController()
+            
         }
     }
     

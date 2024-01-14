@@ -11,6 +11,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="backgroundImage" destination="Ddg-Ai-SeR" id="gpF-Nl-Qit"/>
+                <outlet property="loginBtn" destination="n9b-fm-NYy" id="gSj-YG-lSX"/>
+                <outlet property="logoImage" destination="XDu-sf-TzI" id="lFv-QH-H5K"/>
+                <outlet property="signupBtn" destination="Z3r-r3-Wo7" id="doY-D7-5I0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -40,14 +44,23 @@
                         <constraint firstAttribute="height" constant="115" id="0ND-H8-aHb"/>
                     </constraints>
                 </stackView>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDu-sf-TzI">
+                    <rect key="frame" x="128.66666666666666" y="384.66666666666669" width="135.99999999999997" height="83"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="136" id="CdN-AZ-J4U"/>
+                        <constraint firstAttribute="height" constant="83" id="P1i-7F-jVy"/>
+                    </constraints>
+                </imageView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="XDu-sf-TzI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="26I-x1-YCX"/>
                 <constraint firstItem="Ddg-Ai-SeR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Hz-WY-8W9"/>
                 <constraint firstAttribute="bottom" secondItem="Ddg-Ai-SeR" secondAttribute="bottom" id="7p6-Tt-oTh"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="eD6-om-qLE" secondAttribute="bottom" constant="35" id="Bej-ye-xl5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="eD6-om-qLE" secondAttribute="trailing" constant="25" id="XeI-bo-YEa"/>
+                <constraint firstItem="XDu-sf-TzI" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="hy4-mi-x2W"/>
                 <constraint firstItem="Ddg-Ai-SeR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="n1u-zS-otU"/>
                 <constraint firstItem="eD6-om-qLE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="pcP-xM-oXY"/>
                 <constraint firstItem="Ddg-Ai-SeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y3G-Ar-Nqt"/>
