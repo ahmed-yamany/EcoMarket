@@ -10,6 +10,6 @@ import UIKit
 class GoogleButton: SocialMediaButton {
   override func setupButton() {
     super.setupButton()
-    setImage(.iconGoogle, for: .normal)
+    setImage(AppImage.googleIcon, for: .normal)
   }
 }

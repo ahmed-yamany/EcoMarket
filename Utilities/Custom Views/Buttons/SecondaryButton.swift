@@ -10,7 +10,7 @@ class SecondaryButton: EcoMarketButton {
   override func setupButton() {
     super.setupButton()
     backgroundColor = AppColor.secondaryButton
-    setImage(.iconFacebook, for: .normal)
+    setImage(AppImage.facebookIcon, for: .normal)
     tintColor = AppColor.mainTheme
   }
 }

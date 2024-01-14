@@ -6,3 +6,6 @@
   
 */
 "app.name" = "EcoMarket";
+"success.title" = "Successful!";
+"success.message" = "You have successfully registered in
+our app and start working in it.";

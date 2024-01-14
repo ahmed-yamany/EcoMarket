@@ -17,6 +17,13 @@ internal enum L10n {
     ///   Created by Ahmed Yamany on 03/01/2024.
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
+  internal enum Success {
+    /// You have successfully registered in
+    /// our app and start working in it.
+    internal static let message = L10n.tr("Localizable", "success.message", fallback: "You have successfully registered in\nour app and start working in it.")
+    /// Successful!
+    internal static let title = L10n.tr("Localizable", "success.title", fallback: "Successful!")
+  }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:enable nesting type_body_length type_name vertical_whitespace_opening_braces

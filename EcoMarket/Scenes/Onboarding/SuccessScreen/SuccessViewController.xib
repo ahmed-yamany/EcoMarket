@@ -12,6 +12,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuccessViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="imageView" destination="7kv-FS-NVw" id="h4r-su-boY"/>
+                <outlet property="successLabel" destination="Bfj-iY-fAE" id="kpV-Fb-dBP"/>
+                <outlet property="successMesage" destination="DTZ-PT-2uR" id="5bg-sF-076"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,7 +26,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="M4o-u0-7C5">
                     <rect key="frame" x="171.66666666666666" y="307" width="50" height="50"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon-success" translatesAutoresizingMaskIntoConstraints="NO" id="7kv-FS-NVw">
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7kv-FS-NVw">
                             <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                         </imageView>
                     </subviews>
@@ -33,18 +36,16 @@
                     </constraints>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="I2g-T5-z1F">
-                    <rect key="frame" x="69.666666666666671" y="400.33333333333331" width="253.66666666666663" height="76.333333333333314"/>
+                    <rect key="frame" x="164.66666666666666" y="410" width="63.666666666666657" height="57.333333333333314"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Successful!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfj-iY-fAE">
-                            <rect key="frame" x="58" y="0.0" width="137.66666666666666" height="30"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bfj-iY-fAE">
+                            <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="30"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTZ-PT-2uR">
-                            <rect key="frame" x="0.0" y="38" width="253.66666666666666" height="38.333333333333343"/>
-                            <string key="text">You have successfully registered in
-our app and start working in it.</string>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DTZ-PT-2uR">
+                            <rect key="frame" x="12" y="38" width="39.666666666666664" height="19.333333333333329"/>
                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                             <color key="textColor" name="em-socialButton"/>
                             <nil key="highlightedColor"/>
@@ -52,7 +53,7 @@ our app and start working in it.</string>
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Eof-Pq-tkf">
-                    <rect key="frame" x="24" y="626.66666666666663" width="345" height="38.333333333333371"/>
+                    <rect key="frame" x="24" y="617.33333333333337" width="345" height="38.333333333333371"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJ8-7o-MzF" customClass="PrimaryButton" customModule="EcoMarket" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="345" height="38.333333333333336"/>
@@ -78,7 +79,6 @@ our app and start working in it.</string>
         </view>
     </objects>
     <resources>
-        <image name="icon-success" width="50" height="50"/>
         <namedColor name="em-socialButton">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>

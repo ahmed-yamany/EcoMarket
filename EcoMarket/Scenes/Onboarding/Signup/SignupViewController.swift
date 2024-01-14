@@ -21,6 +21,6 @@ class SignupViewController: UIViewController {
 // MARK: - Configurations
 extension SignupViewController {
   private func configureViews() {
-    userNameTextField.setupRightImageView(image: .verify)
+    userNameTextField.setupRightImageView(image: AppImage.verifyImage ?? UIImage())
   }
 }

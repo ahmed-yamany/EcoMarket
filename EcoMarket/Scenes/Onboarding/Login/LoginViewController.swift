@@ -20,7 +20,7 @@ class LoginViewController: UIViewController {
   
   // MARK: - Setup UI
   private func configureViews() {
-    emailTextField.setupRightImageView(image: .verify)
-    passwordTextField.setupRightImageView(image: .verify)
+    emailTextField.setupRightImageView(image: AppImage.verifyImage ?? UIImage())
+    passwordTextField.setupRightImageView(image: AppImage.verifyImage ?? UIImage())
   }
 }

@@ -19,7 +19,7 @@ class SecuiredTextField: CustomTextField {
     self.rightViewMode = .always
     let rightView = UIImageView(frame: CGRect(x: self.frame.width - 36, y: self.frame.height / 2 - 10, width: 13, height: 13))
     rightView.tintColor = .black
-    rightView.image = .eye
+    rightView.image = AppImage.eyeSlash
     let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped(tapGestureRecognizer:)))
         rightView.isUserInteractionEnabled = true
         rightView.addGestureRecognizer(tapGestureRecognizer)
