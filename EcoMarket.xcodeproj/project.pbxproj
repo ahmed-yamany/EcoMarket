@@ -18,6 +18,8 @@
 		A1CB8C802B53100100316DD4 /* OnboardingCustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */; };
 		A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
+		A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */; };
+		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
@@ -71,6 +73,8 @@
 		A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCustomPageControl.swift; sourceTree = "<group>"; };
 		A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
+		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
 		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -235,6 +239,15 @@
 				A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */,
 			);
 			path = OnboardingCustomPageControl;
+			sourceTree = "<group>";
+		};
+		A1CB8C862B540F7900316DD4 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */,
+				A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 		EE32E27F2B45B1D100675EAE = {
@@ -408,6 +421,7 @@
 		EE32E2DC2B45B88800675EAE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
 				A1CB8C6C2B52783200316DD4 /* Onboarding */,
 				A1CB8C6B2B5277C600316DD4 /* Splash */,
 				A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */,
@@ -627,6 +641,7 @@
 				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
 				A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */,
 				EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */,
+				A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
 				A1CB8C742B5282F300316DD4 /* OnboardingCollectionViewCell.xib in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
@@ -714,6 +729,7 @@
 				EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */,
 				A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
+				A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */,
 				A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
