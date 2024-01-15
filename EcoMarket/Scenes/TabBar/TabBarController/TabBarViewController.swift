@@ -7,6 +7,7 @@
 
 import UIKit
 import MakeConstraints
+import Combine
 
 enum TabBarType: String, CaseIterable, Hashable {
     case home, cart, notification, profile
@@ -14,14 +15,35 @@ enum TabBarType: String, CaseIterable, Hashable {
     var viewController: UIViewController {
        UIViewController()
     }
+    
+    var icon: UIImage? {
+        switch self {
+            case .home: UIImage(named: "tabbar-home")?.withRenderingMode(.alwaysOriginal)
+            case .cart: UIImage(named: "tabbar-cart")?.withRenderingMode(.alwaysOriginal)
+            default: nil
+        }
+    }
+    
+    var selectedIcon: UIImage? {
+        switch self {
+            case .home: UIImage(named: "tabbar-home-selected")?.withRenderingMode(.alwaysOriginal)
+            case .cart: UIImage(named: "tabbar-cart-selected")?.withRenderingMode(.alwaysOriginal)
+            default: nil
+        }
+    }
 }
 
 class TabBarViewModel: ObservableObject {
+    static let shared = TabBarViewModel()
     @Published var selectedTab: TabBarType = .home
 }
 
 class TabBarViewController: UITabBarController {
     let customTabBar = CustomTabBar()
+    
+    let viewModel = TabBarViewModel.shared
+    
+    var cancellableSet = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +52,18 @@ class TabBarViewController: UITabBarController {
         view.addSubview(customTabBar)
         customTabBar.fillXSuperView()
         customTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
+        
+        viewModel.$selectedTab.sink { type in
+            for item in self.customTabBar.items {
+                if item.type == type {
+                    item.select()
+                } else {
+                    item.unSelect()
+                }
+            }
+        }
+        .store(in: &cancellableSet)
+        
     }
 }
 
@@ -41,6 +75,8 @@ class CustomTabBar: UIView {
         stackView.distribution = .equalSpacing
         return stackView
     }()
+    var items: [CustomTabBarItem] = []
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
@@ -66,13 +102,7 @@ class CustomTabBar: UIView {
         for type in TabBarType.allCases {
             let tab = CustomTabBarItem(type: type)
             stackView.addArrangedSubview(tab)
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                tab.unSelect()
-            }
-//            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
-                tab.select()
-            }
+            items.append(tab)
         }
 
     }
@@ -88,7 +118,8 @@ class CustomTabBarItem: UIView {
         return stackView
     }()
     let label = UILabel()
-    let iconView = UIImageView()
+    let iconView = UIView()
+    let iconImage = UIImageView()
     
     private var widthConstraint: NSLayoutConstraint?
     private let _height: CGFloat = 30
@@ -108,7 +139,8 @@ class CustomTabBarItem: UIView {
     private func setup() {
         heightConstraints(_height)
         widthConstraint = widthConstraints(_width)
-        backgroundColor = .red
+        iconImage.contentMode = .scaleToFill
+        backgroundColor = .white
         layer.cornerRadius = _height / 2
         //
         addSubview(stackView)
@@ -122,6 +154,9 @@ class CustomTabBarItem: UIView {
         stackView.addArrangedSubview(iconView)
         iconView.equalSizeConstraints(_height)
         iconView.layer.cornerRadius = _width - (_height * 2)
+        iconView.addSubview(iconImage)
+        iconImage.centerInSuperview(size: .init(width: 14, height: 14))
+        
     }
     
     private func addLabel() {
@@ -134,6 +169,9 @@ class CustomTabBarItem: UIView {
     
     public func select() {
         widthConstraint?.constant = _width
+        iconView.tintColor = .white
+        iconView.backgroundColor = .black
+        iconImage.image = type.selectedIcon
         UIView.animate(withDuration: 0.5) {
             self.superview?.layoutIfNeeded()
         }
@@ -141,6 +179,9 @@ class CustomTabBarItem: UIView {
     
     public func unSelect() {
         widthConstraint?.constant = _height
+        iconView.tintColor = .black
+        iconView.backgroundColor = .white
+        iconImage.image = type.icon
         UIView.animate(withDuration: 0.5) {
             self.superview?.layoutIfNeeded()
         }
