@@ -8,8 +8,8 @@
 import UIKit
 
 class AppleButton: SocialMediaButton {
-  override func setupButton() {
-    super.setupButton()
-    setImage(AppImage.appleIcon, for: .normal)
-  }
+    override func setupButton() {
+        super.setupButton()
+        setImage(AppImage.appleIcon, for: .normal)
+    }
 }

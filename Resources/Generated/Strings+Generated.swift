@@ -10,6 +10,12 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// Email
+  internal static let email = L10n.tr("Localizable", "email", fallback: "Email")
+  /// Login
+  internal static let login = L10n.tr("Localizable", "login", fallback: "Login")
+  /// Password
+  internal static let password = L10n.tr("Localizable", "password", fallback: "Password")
   internal enum App {
     /// Localizable.strings
     ///   EcoMarket
@@ -18,14 +24,18 @@ internal enum L10n {
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
   internal enum Login {
-    /// Email
-    internal static let email = L10n.tr("Localizable", "login.email", fallback: "Email")
     /// please login or sign up to continue our app
-    internal static let message = L10n.tr("Localizable", "login.message", fallback: "please login or sign up to continue our app")
-    /// Password
-    internal static let password = L10n.tr("Localizable", "login.password", fallback: "Password")
+    internal static let subtitle = L10n.tr("Localizable", "login.subtitle", fallback: "please login or sign up to continue our app")
     /// Wellcome!
-    internal static let wellcome = L10n.tr("Localizable", "login.wellcome", fallback: "Wellcome!")
+    internal static let title = L10n.tr("Localizable", "login.title", fallback: "Wellcome!")
+    internal enum Email {
+      /// fscreation441@gmail.com
+      internal static let placeholder = L10n.tr("Localizable", "login.email.placeholder", fallback: "fscreation441@gmail.com")
+    }
+    internal enum Password {
+      /// *******
+      internal static let placholder = L10n.tr("Localizable", "login.password.placholder", fallback: "*******")
+    }
   }
   internal enum Signup {
     /// Confirm Password
