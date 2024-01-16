@@ -24,6 +24,12 @@ internal enum L10n {
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
   internal enum Login {
+    /// Continue with Apple
+    internal static let apple = L10n.tr("Localizable", "login.apple", fallback: "Continue with Apple")
+    /// Continue with Facebook
+    internal static let facebook = L10n.tr("Localizable", "login.facebook", fallback: "Continue with Facebook")
+    /// Continue with Google
+    internal static let google = L10n.tr("Localizable", "login.google", fallback: "Continue with Google")
     /// please login or sign up to continue our app
     internal static let subtitle = L10n.tr("Localizable", "login.subtitle", fallback: "please login or sign up to continue our app")
     /// Wellcome!
@@ -53,6 +59,10 @@ internal enum L10n {
     internal static let title = L10n.tr("Localizable", "signup.title", fallback: "Sign Up")
     /// User Name
     internal static let username = L10n.tr("Localizable", "signup.username", fallback: "User Name")
+    internal enum Username {
+      /// Ferrin
+      internal static let placeholder = L10n.tr("Localizable", "signup.username.placeholder", fallback: "Ferrin")
+    }
   }
   internal enum Success {
     /// You have successfully registered in
@@ -60,6 +70,10 @@ internal enum L10n {
     internal static let message = L10n.tr("Localizable", "success.message", fallback: "You have successfully registered in\nour app and start working in it.")
     /// Successful!
     internal static let title = L10n.tr("Localizable", "success.title", fallback: "Successful!")
+    internal enum Button {
+      /// Start Shopping
+      internal static let title = L10n.tr("Localizable", "success.button.title", fallback: "Start Shopping")
+    }
   }
 }
 // swiftlint:enable explicit_type_interface function_parameter_count identifier_name line_length

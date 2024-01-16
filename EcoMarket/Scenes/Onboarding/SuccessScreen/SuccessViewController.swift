@@ -14,6 +14,7 @@ class SuccessViewController: UIViewController {
   @IBOutlet private(set) weak var successMesage: UILabel!
   @IBOutlet private(set) weak var imageView: UIImageView!
 
+  @IBOutlet weak var startButton: PrimaryButton!
   // MARK: - View Lifecycle
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -28,5 +29,8 @@ class SuccessViewController: UIViewController {
 
     /// Images UI
     imageView.image = AppImage.successImage
+
+    /// Buttons UI
+    startButton.title = L10n.Success.Button.title
   }
 }

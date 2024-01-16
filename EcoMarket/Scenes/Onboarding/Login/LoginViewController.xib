@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,7 +12,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="appleButton" destination="zbr-kT-ZOl" id="cwj-nP-0cu"/>
                 <outlet property="emailTextField" destination="AYv-2o-D7p" id="weC-kx-eZi"/>
+                <outlet property="facebookButton" destination="4e6-GS-nEk" id="ZYs-bx-hq3"/>
+                <outlet property="googleButton" destination="ZfK-uw-nAV" id="fyZ-k7-VNg"/>
                 <outlet property="loginButton" destination="CpJ-qk-dtj" id="9Ub-1V-GRA"/>
                 <outlet property="logoImage" destination="g6X-Yu-wya" id="Xj1-Fw-4H9"/>
                 <outlet property="passwordTextField" destination="3G2-ze-fVP" id="scf-4b-kYk"/>
@@ -30,25 +33,25 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PCU-Gy-SfY">
-                            <rect key="frame" x="0.0" y="0.0" width="393" height="731.66666666666663"/>
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="767.66666666666663"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="ELz-Fp-ygc">
-                                    <rect key="frame" x="24" y="0.0" width="345" height="731.66666666666663"/>
+                                    <rect key="frame" x="24" y="0.0" width="345" height="767.66666666666663"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hjD-c4-D9G">
-                                            <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="345" height="136"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g6X-Yu-wya">
-                                                    <rect key="frame" x="122.66666666666666" y="0.0" width="100" height="100"/>
+                                                    <rect key="frame" x="131" y="0.0" width="83" height="136"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="100" id="9to-hT-1mR"/>
-                                                        <constraint firstAttribute="width" constant="100" id="URV-9S-UrU"/>
+                                                        <constraint firstAttribute="height" constant="136" id="9to-hT-1mR"/>
+                                                        <constraint firstAttribute="width" constant="83" id="URV-9S-UrU"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-vT-Bag">
-                                            <rect key="frame" x="0.0" y="140" width="345" height="44.666666666666657"/>
+                                            <rect key="frame" x="0.0" y="176" width="345" height="44.666666666666657"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vme-z8-Fsl">
                                                     <rect key="frame" x="0.0" y="0.0" width="45.666666666666664" height="21.666666666666668"/>
@@ -57,7 +60,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-ud-lwf">
-                                                    <rect key="frame" x="0.0" y="26.666666666666657" width="37.333333333333336" height="18"/>
+                                                    <rect key="frame" x="0.0" y="26.666666666666686" width="37.333333333333336" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -65,7 +68,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="ysz-FM-4ps">
-                                            <rect key="frame" x="0.0" y="224.66666666666669" width="345" height="221"/>
+                                            <rect key="frame" x="0.0" y="260.66666666666669" width="345" height="221"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AYv-2o-D7p" customClass="EMTextField" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="128"/>
@@ -78,41 +81,41 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Gol-ne-cT5">
-                                            <rect key="frame" x="0.0" y="485.66666666666663" width="345" height="38.333333333333371"/>
+                                            <rect key="frame" x="0.0" y="521.66666666666663" width="345" height="38.333333333333371"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CpJ-qk-dtj" customClass="PrimaryButton" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="38.333333333333336"/>
                                                     <state key="normal" title="Button"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Login"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ckF-Ml-rdo">
-                                            <rect key="frame" x="0.0" y="564" width="345" height="1"/>
+                                            <rect key="frame" x="0.0" y="600" width="345" height="1"/>
                                             <color key="backgroundColor" name="Color"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="1" id="dcx-ZL-0E6"/>
                                             </constraints>
                                         </view>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-ec-cWw">
-                                            <rect key="frame" x="0.0" y="605" width="345" height="126.66666666666663"/>
+                                            <rect key="frame" x="0.0" y="641" width="345" height="126.66666666666663"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e6-GS-nEk" customClass="SecondaryButton" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                    <state key="normal" title="Continue with Facebook"/>
+                                                    <state key="normal" title="Button"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZfK-uw-nAV" customClass="GoogleButton" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="40" width="345" height="38.333333333333343"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Continue with Google"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Continue with Google"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zbr-kT-ZOl" customClass="AppleButton" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="88.333333333333371" width="345" height="38.333333333333343"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Continue with Apple"/>
-                                                    <buttonConfiguration key="configuration" style="plain" title="Continue with Apple"/>
+                                                    <buttonConfiguration key="configuration" style="plain" title="Button"/>
                                                 </button>
                                             </subviews>
                                         </stackView>
@@ -138,7 +141,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="t06-Ks-nTE"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-Jh-17F">
-                    <rect key="frame" x="188.66666666666666" y="613.33333333333337" width="15.666666666666657" height="20.333333333333371"/>
+                    <rect key="frame" x="188.66666666666666" y="649.33333333333337" width="15.666666666666657" height="20.333333333333371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
