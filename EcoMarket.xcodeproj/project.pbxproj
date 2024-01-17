@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -31,16 +31,15 @@
 		EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C82B45B41600675EAE /* swiftgen.yml */; };
 		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
-		EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2D12B45B6B400675EAE /* Colors.xcassets */; };
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
+		EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD672B57CBA400E674C2 /* mainWindow.swift */; };
+		EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */; };
+		EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */; };
 		EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */; };
 		EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBE2B4E9D9200BC5524 /* Router.swift */; };
 		EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */; };
 		EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
-		EE95CECA2B4E9EE800BC5524 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */; };
-		EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */; };
-		EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,16 +90,15 @@
 		EE32E2C82B45B41600675EAE /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = "<group>"; };
 		EE32E2C92B45B41600675EAE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
-		EE32E2D12B45B6B400675EAE /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
+		EE55FD672B57CBA400E674C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
+		EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
+		EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
 		EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		EE95CEBE2B4E9D9200BC5524 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
 		EE95CEC62B4E9E1600BC5524 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
-		EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
-		EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE11B1FB2B570EAF0077F5AA /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,12 +186,40 @@
 			path = CategoriesTheme3;
 			sourceTree = "<group>";
 		};
-		7FF629E02B51F6FB009C48B0 /* Custom Cells */ = {
+		D6C6C6DE2B4F2EFA00836A05 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
 				A1CB8C752B52852700316DD4 /* OnboardingCollectionViewCell */,
 			);
-			path = "Custom Cells";
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */,
+				D6C6C6ED2B4F486A00836A05 /* SuccessViewController.xib */,
+			);
+			path = SuccessScreen;
+			sourceTree = "<group>";
+		};
+		D6C6C6F22B516F2F00836A05 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				EE11B1FC2B5711600077F5AA /* EmTextField */,
+				D6C6C6D42B4EF74100836A05 /* CustomTextField.swift */,
+				D6C6C6F32B51736000836A05 /* SecuiredTextField.swift */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		EE11B1FC2B5711600077F5AA /* EmTextField */ = {
+			isa = PBXGroup;
+			children = (
+				EE11B2012B5711AF0077F5AA /* EMTextField.swift */,
+				EE11B2022B5711AF0077F5AA /* EMTextField.xib */,
+			);
+			path = EmTextField;
 			sourceTree = "<group>";
 		};
 		A1CB8C6B2B5277C600316DD4 /* Splash */ = {
@@ -324,6 +351,8 @@
 		EE32E2BE2B45B30A00675EAE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				D65A13072B53648D00CE2D71 /* AppColor.swift */,
+				D65A13092B536AA300CE2D71 /* AppImage.swift */,
 				EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */,
 			);
 			path = Generated;
@@ -333,7 +362,7 @@
 			isa = PBXGroup;
 			children = (
 				EE32E2942B45B1D200675EAE /* Assets.xcassets */,
-				EE32E2D12B45B6B400675EAE /* Colors.xcassets */,
+				D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -341,6 +370,10 @@
 		EE32E2C02B45B32B00675EAE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				EE11B1F52B570A6D0077F5AA /* Poppins-Medium.ttf */,
+				EE11B1F32B570A620077F5AA /* Poppins-Bold.ttf */,
+				EE11B1F12B570A5A0077F5AA /* Poppins-SemiBold.ttf */,
+				EE11B1EF2B570A3D0077F5AA /* Poppins-Regular.ttf */,
 				EE32E2CE2B45B56700675EAE /* Fonts.swift */,
 			);
 			path = Fonts;
@@ -349,7 +382,6 @@
 		EE32E2D32B45B6C800675EAE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7FF629E02B51F6FB009C48B0 /* Custom Cells */,
 				EE95CEC52B4E9E0E00BC5524 /* Logger */,
 				EE95CEBC2B4E9D3B00BC5524 /* Router */,
 				EE32E2D52B45B6E100675EAE /* Custom Views */,
@@ -400,6 +432,7 @@
 				EE32E2DC2B45B88800675EAE /* Splash */,
 				EE32E2DD2B45B89100675EAE /* Login */,
 				EE32E2DE2B45B89400675EAE /* Signup */,
+				D6C6C6EB2B4F484500836A05 /* SuccessScreen */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -430,6 +463,8 @@
 		EE32E2DD2B45B89100675EAE /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D6C6C6D82B4F17D600836A05 /* LoginViewController.swift */,
+				D6C6C6D92B4F17D600836A05 /* LoginViewController.xib */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -437,6 +472,8 @@
 		EE32E2DE2B45B89400675EAE /* Signup */ = {
 			isa = PBXGroup;
 			children = (
+				D6C6C6D02B4EEAE600836A05 /* SignupViewController.swift */,
+				D6C6C6D12B4EEAE600836A05 /* SignupViewController.xib */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -474,6 +511,30 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		EE55FD662B57CB9E00E674C2 /* UIApplicatoin */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD672B57CBA400E674C2 /* mainWindow.swift */,
+			);
+			path = UIApplicatoin;
+			sourceTree = "<group>";
+		};
+		EE55FD692B57CBB200E674C2 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		EE55FD6C2B57CBC200E674C2 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		EE95CEBC2B4E9D3B00BC5524 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,30 +552,6 @@
 				EE95CEC62B4E9E1600BC5524 /* Logger.swift */,
 			);
 			path = Logger;
-			sourceTree = "<group>";
-		};
-		EE95CEC82B4E9EDC00BC5524 /* UIApplicatoin */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */,
-			);
-			path = UIApplicatoin;
-			sourceTree = "<group>";
-		};
-		EE95CECB2B4E9EEE00BC5524 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		EE95CECE2B4E9EFC00BC5524 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */,
-			);
-			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		EE95CED12B4EA17300BC5524 /* TabBarController */ = {
@@ -542,6 +579,9 @@
 			dependencies = (
 			);
 			name = EcoMarket;
+			packageProductDependencies = (
+				EE11B1FA2B570EAF0077F5AA /* MakeConstraints */,
+			);
 			productName = EcoMarket;
 			productReference = EE32E2882B45B1D100675EAE /* EcoMarket.app */;
 			productType = "com.apple.product-type.application";
@@ -615,6 +655,9 @@
 				ar,
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
+			packageReferences = (
+				EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+			);
 			productRefGroup = EE32E2892B45B1D100675EAE /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -631,7 +674,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C6C6DB2B4F17D600836A05 /* LoginViewController.xib in Resources */,
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
+				EE11B1F22B570A5A0077F5AA /* Poppins-SemiBold.ttf in Resources */,
+				EE11B1F62B570A6D0077F5AA /* Poppins-Medium.ttf in Resources */,
 				EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
 				A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */,
@@ -642,6 +688,8 @@
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
 				A1CB8C742B5282F300316DD4 /* OnboardingCollectionViewCell.xib in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
+				D6C6C6EF2B4F486A00836A05 /* SuccessViewController.xib in Resources */,
+				EE11B1F02B570A3D0077F5AA /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -714,8 +762,11 @@
 				A1CB8C732B5282F300316DD4 /* OnboardingCollectionViewCell.swift in Sources */,
 				A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
+				EE11B2032B5711AF0077F5AA /* EMTextField.swift in Sources */,
+				D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
+				EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
@@ -1079,6 +1130,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/MakeConstraints;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EE11B1FA2B570EAF0077F5AA /* MakeConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MakeConstraints;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EE32E2802B45B1D100675EAE /* Project object */;
 }
