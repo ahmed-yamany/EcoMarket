@@ -10,57 +10,62 @@ import UIKit
 class OnboardingViewController: UIViewController {
     
     @IBOutlet weak var onboardingCollectionView: UICollectionView!
-    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var nextButton: UIButton!
     @IBOutlet weak var pageControlView: FlexiblePageControl!
     
     let viewModel = OnboardingViewModel()
-    var currentPage: Int = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
-        
-        initUI()
+        setupUI()
     }
     
-    private func initUI() {
+    // MARK: - Setup UI
+    private func setupUI() {
         onboardingCollectionView.registerNib(cell: OnboardingCollectionViewCell.self)
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
         onboardingCollectionView.isScrollEnabled = false
         
-        nextBtn.setTitle("", for: .normal)
-        nextBtn.backgroundColor = .black
-        nextBtn.layer.cornerRadius = nextBtn.frame.width / 2
-        nextBtn.clipsToBounds = true
-        nextBtn.setImage(.onboardingNextButtonVector, for: .normal)
-        nextBtn.imageView?.contentMode = .scaleAspectFit
-        nextBtn.addTarget(self, action: #selector(nextBtnTap), for: .touchUpInside)
-        initPageControl()
+        setupPageControl()
     }
-    private func initPageControl() {
+    
+    private func setupPageControl() {
         pageControlView.currentPageWidth = 30
         pageControlView.numberOfPages = viewModel.onboardingArray.count
         pageControlView.spacing = 8
     }
-    @objc private func nextBtnTap() {
-        if currentPage < viewModel.onboardingArray.count - 1 {
-            currentPage += 1
-            scrollToPage(page: currentPage)
-            pageControlView.currentPage = currentPage
+    
+    private func setupNextButton() {
+        nextButton.setTitle("", for: .normal)
+        nextButton.backgroundColor = .black
+        nextButton.layer.cornerRadius = nextButton.frame.width / 2
+        nextButton.clipsToBounds = true
+        nextButton.setImage(.onboardingNextButtonVector, for: .normal)
+        nextButton.imageView?.contentMode = .scaleAspectFit
+        nextButton.addAction(.init(handler: {[weak self] _ in self?.nextBtnTap()}), for: .touchUpInside)
+    }
+    
+    
+    // MARK: - IBActions
+    private func nextBtnTap() {
+        if pageControlView.currentPage < viewModel.onboardingArray.count - 1 {
+            pageControlView.currentPage += 1
+            scrollToPage(page: pageControlView.currentPage)
         } else {
             let viewController = SplashViewController()
             AppRouter.shared.present(viewController)
         }
     }
     
+    // MARK: - Private Functions
     private func scrollToPage(page: Int) {
         let indexPath = IndexPath(item: page, section: 0)
         onboardingCollectionView.isPagingEnabled = false
         onboardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         onboardingCollectionView.isPagingEnabled = true
     }
-    
 }

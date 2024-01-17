@@ -9,13 +9,15 @@ import Foundation
 import Combine
 
 class OnboardingViewModel {
-    
-    var onboardingArray: [Onboarding] = decode(file: "OnboardingData")
+    // swiftlint: disable all
+    var onboardingArray: [Onboarding] = decode(file: "OnboardingData")!
+    // swiftlint: enable all
 }
 
-func decode<T: Codable>(file: String) -> T {
+func decode<T: Codable>(file: String) -> T? {
     guard let url = Bundle.main.url(forResource: file, withExtension: "json") else {
-        fatalError("Fail to locate the file")
+        Logger.log("Fail to locate the file", category: \.default, level: .fault)
+        return nil
     }
     guard let data = try? Data(contentsOf: url) else {
         fatalError("Fail to load the data")

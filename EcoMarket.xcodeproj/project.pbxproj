@@ -15,14 +15,13 @@
 		A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C782B528A4C00316DD4 /* OnboardingData.json */; };
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C7E2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */; };
-		A1CB8C802B53100100316DD4 /* OnboardingCustomPageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */; };
+		A1CB8C802B53100100316DD4 /* FlexiblePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */; };
 		A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
-		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
 		EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2942B45B1D200675EAE /* Assets.xcassets */; };
 		EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */; };
 		EE32E2A32B45B1D300675EAE /* EcoMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2A22B45B1D300675EAE /* EcoMarketTests.swift */; };
@@ -70,7 +69,7 @@
 		A1CB8C782B528A4C00316DD4 /* OnboardingData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = OnboardingData.json; sourceTree = "<group>"; };
 		A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionVeiw+Extension.swift"; sourceTree = "<group>"; };
 		A1CB8C7D2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OnboardingVC+CollectionView.swift"; sourceTree = "<group>"; };
-		A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCustomPageControl.swift; sourceTree = "<group>"; };
+		A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlexiblePageControl.swift; sourceTree = "<group>"; };
 		A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
@@ -78,7 +77,6 @@
 		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE32E28F2B45B1D100675EAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE32E2972B45B1D200675EAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE32E2992B45B1D200675EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -234,12 +232,12 @@
 			path = UICollectionView;
 			sourceTree = "<group>";
 		};
-		A1CB8C812B53100B00316DD4 /* OnboardingCustomPageControl */ = {
+		A1CB8C812B53100B00316DD4 /* PageControl */ = {
 			isa = PBXGroup;
 			children = (
-				A1CB8C7F2B53100100316DD4 /* OnboardingCustomPageControl.swift */,
+				A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */,
 			);
-			path = OnboardingCustomPageControl;
+			path = PageControl;
 			sourceTree = "<group>";
 		};
 		A1CB8C862B540F7900316DD4 /* LaunchScreen */ = {
@@ -374,7 +372,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
-				A1CB8C812B53100B00316DD4 /* OnboardingCustomPageControl */,
+				A1CB8C812B53100B00316DD4 /* PageControl */,
 			);
 			path = "Custom Views";
 			sourceTree = "<group>";
@@ -384,7 +382,6 @@
 			children = (
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
-				EE32E28F2B45B1D100675EAE /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -422,8 +419,8 @@
 		EE32E2DC2B45B88800675EAE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
 				A1CB8C6C2B52783200316DD4 /* Onboarding */,
+				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
 				A1CB8C6B2B5277C600316DD4 /* Splash */,
 				A1CB8C782B528A4C00316DD4 /* OnboardingData.json */,
 			);
@@ -713,7 +710,7 @@
 				A1CB8C7E2B5295AC00316DD4 /* OnboardingVC+CollectionView.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */,
-				A1CB8C802B53100100316DD4 /* OnboardingCustomPageControl.swift in Sources */,
+				A1CB8C802B53100100316DD4 /* FlexiblePageControl.swift in Sources */,
 				A1CB8C732B5282F300316DD4 /* OnboardingCollectionViewCell.swift in Sources */,
 				A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
@@ -722,7 +719,6 @@
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
-				EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */,
 				EE95CECA2B4E9EE800BC5524 /* mainWindow.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,
