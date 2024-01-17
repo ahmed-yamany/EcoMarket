@@ -10,6 +10,7 @@ import UIKit
 class AppleButton: SocialMediaButton {
     override func setupButton() {
         super.setupButton()
+        title = L10n.Login.apple
         setImage(AppImage.appleIcon, for: .normal)
     }
 }

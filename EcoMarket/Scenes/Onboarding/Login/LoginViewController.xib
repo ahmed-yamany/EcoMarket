@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -12,10 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
-                <outlet property="appleButton" destination="zbr-kT-ZOl" id="cwj-nP-0cu"/>
                 <outlet property="emailTextField" destination="AYv-2o-D7p" id="weC-kx-eZi"/>
-                <outlet property="facebookButton" destination="4e6-GS-nEk" id="ZYs-bx-hq3"/>
-                <outlet property="googleButton" destination="ZfK-uw-nAV" id="fyZ-k7-VNg"/>
                 <outlet property="loginButton" destination="CpJ-qk-dtj" id="9Ub-1V-GRA"/>
                 <outlet property="logoImage" destination="g6X-Yu-wya" id="Xj1-Fw-4H9"/>
                 <outlet property="passwordTextField" destination="3G2-ze-fVP" id="scf-4b-kYk"/>
@@ -100,7 +97,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fmz-ec-cWw">
                                             <rect key="frame" x="0.0" y="641" width="345" height="126.66666666666663"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e6-GS-nEk" customClass="SecondaryButton" customModule="EcoMarket" customModuleProvider="target">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4e6-GS-nEk" customClass="FacebookButton" customModule="EcoMarket" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="30"/>
                                                     <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                     <state key="normal" title="Button"/>
@@ -141,7 +138,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="t06-Ks-nTE"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-Jh-17F">
-                    <rect key="frame" x="188.66666666666666" y="649.33333333333337" width="15.666666666666657" height="20.333333333333371"/>
+                    <rect key="frame" x="188.66666666666666" y="640.66666666666663" width="15.666666666666657" height="20.333333333333371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>

@@ -18,7 +18,7 @@
 		D6C6C6DD2B4F2A0500836A05 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */; };
 		D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */; };
 		D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */; };
-		D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */; };
+		D6C6C6E42B4F2F7100836A05 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E32B4F2F7100836A05 /* FacebookButton.swift */; };
 		D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */; };
 		D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6E92B4F374100836A05 /* AppleButton.swift */; };
 		D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */; };
@@ -33,7 +33,6 @@
 		EE11B2042B5711AF0077F5AA /* EMTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE11B2022B5711AF0077F5AA /* EMTextField.xib */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
-		EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28F2B45B1D100675EAE /* ViewController.swift */; };
 		EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2942B45B1D200675EAE /* Assets.xcassets */; };
 		EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2962B45B1D200675EAE /* LaunchScreen.storyboard */; };
 		EE32E2A32B45B1D300675EAE /* EcoMarketTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2A22B45B1D300675EAE /* EcoMarketTests.swift */; };
@@ -44,14 +43,14 @@
 		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
+		EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD672B57CBA400E674C2 /* mainWindow.swift */; };
+		EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */; };
+		EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */; };
 		EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */; };
 		EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBE2B4E9D9200BC5524 /* Router.swift */; };
 		EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */; };
 		EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
-		EE95CECA2B4E9EE800BC5524 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */; };
-		EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */; };
-		EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,7 +82,7 @@
 		D6C6C6DC2B4F2A0500836A05 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EcoMarketButton.swift; sourceTree = "<group>"; };
 		D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
-		D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondaryButton.swift; sourceTree = "<group>"; };
+		D6C6C6E32B4F2F7100836A05 /* FacebookButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacebookButton.swift; sourceTree = "<group>"; };
 		D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleButton.swift; sourceTree = "<group>"; };
 		D6C6C6E92B4F374100836A05 /* AppleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleButton.swift; sourceTree = "<group>"; };
 		D6C6C6EC2B4F486A00836A05 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
@@ -98,7 +97,6 @@
 		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		EE32E28F2B45B1D100675EAE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EE32E2972B45B1D200675EAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		EE32E2992B45B1D200675EAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -114,14 +112,14 @@
 		EE32E2C92B45B41600675EAE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
+		EE55FD672B57CBA400E674C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
+		EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
+		EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
 		EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		EE95CEBE2B4E9D9200BC5524 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
 		EE95CEC62B4E9E1600BC5524 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
-		EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
-		EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
-		EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,8 +212,8 @@
 			children = (
 				D6C6C6DF2B4F2F0A00836A05 /* EcoMarketButton.swift */,
 				D6C6C6E12B4F2F3600836A05 /* PrimaryButton.swift */,
-				D6C6C6E32B4F2F7100836A05 /* SecondaryButton.swift */,
 				D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */,
+				D6C6C6E32B4F2F7100836A05 /* FacebookButton.swift */,
 				D6C6C6E72B4F371F00836A05 /* GoogleButton.swift */,
 				D6C6C6E92B4F374100836A05 /* AppleButton.swift */,
 			);
@@ -325,6 +323,8 @@
 		EE32E2BE2B45B30A00675EAE /* Generated */ = {
 			isa = PBXGroup;
 			children = (
+				D65A13072B53648D00CE2D71 /* AppColor.swift */,
+				D65A13092B536AA300CE2D71 /* AppImage.swift */,
 				EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */,
 			);
 			path = Generated;
@@ -354,7 +354,6 @@
 		EE32E2D32B45B6C800675EAE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7FF629E02B51F6FB009C48B0 /* Custom Cells */,
 				EE95CEC52B4E9E0E00BC5524 /* Logger */,
 				EE95CEBC2B4E9D3B00BC5524 /* Router */,
 				EE32E2D52B45B6E100675EAE /* Custom Views */,
@@ -366,9 +365,9 @@
 		EE32E2D42B45B6D200675EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D65A13072B53648D00CE2D71 /* AppColor.swift */,
-				D65A13092B536AA300CE2D71 /* AppImage.swift */,
-
+				EE55FD6C2B57CBC200E674C2 /* UIViewController */,
+				EE55FD692B57CBB200E674C2 /* UIView */,
+				EE55FD662B57CB9E00E674C2 /* UIApplicatoin */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,7 +386,6 @@
 			children = (
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
-				EE32E28F2B45B1D100675EAE /* ViewController.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -481,6 +479,30 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		EE55FD662B57CB9E00E674C2 /* UIApplicatoin */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD672B57CBA400E674C2 /* mainWindow.swift */,
+			);
+			path = UIApplicatoin;
+			sourceTree = "<group>";
+		};
+		EE55FD692B57CBB200E674C2 /* UIView */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */,
+			);
+			path = UIView;
+			sourceTree = "<group>";
+		};
+		EE55FD6C2B57CBC200E674C2 /* UIViewController */ = {
+			isa = PBXGroup;
+			children = (
+				EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */,
+			);
+			path = UIViewController;
+			sourceTree = "<group>";
+		};
 		EE95CEBC2B4E9D3B00BC5524 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -498,30 +520,6 @@
 				EE95CEC62B4E9E1600BC5524 /* Logger.swift */,
 			);
 			path = Logger;
-			sourceTree = "<group>";
-		};
-		EE95CEC82B4E9EDC00BC5524 /* UIApplicatoin */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CEC92B4E9EE800BC5524 /* mainWindow.swift */,
-			);
-			path = UIApplicatoin;
-			sourceTree = "<group>";
-		};
-		EE95CECB2B4E9EEE00BC5524 /* UIView */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CECC2B4E9EF800BC5524 /* parentViewController.swift */,
-			);
-			path = UIView;
-			sourceTree = "<group>";
-		};
-		EE95CECE2B4E9EFC00BC5524 /* UIViewController */ = {
-			isa = PBXGroup;
-			children = (
-				EE95CECF2B4E9F0800BC5524 /* +topMostViewController.swift */,
-			);
-			path = UIViewController;
 			sourceTree = "<group>";
 		};
 		EE95CED12B4EA17300BC5524 /* TabBarController */ = {
@@ -727,28 +725,25 @@
 				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
 				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
-				D6C6C6E42B4F2F7100836A05 /* SecondaryButton.swift in Sources */,
+				D6C6C6E42B4F2F7100836A05 /* FacebookButton.swift in Sources */,
 				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
 				D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */,
 				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
-				EE95CED02B4E9F0800BC5524 /* +topMostViewController.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE11B2032B5711AF0077F5AA /* EMTextField.swift in Sources */,
-				EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */,
 				D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */,
-
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
+				EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
-				EE32E2902B45B1D100675EAE /* ViewController.swift in Sources */,
-				EE95CECA2B4E9EE800BC5524 /* mainWindow.swift in Sources */,
+				EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
-				EE95CECD2B4E9EF800BC5524 /* parentViewController.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
 				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
+				EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */,
 				D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */,
 				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
 				D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */,
