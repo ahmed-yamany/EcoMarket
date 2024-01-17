@@ -64,6 +64,14 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "signup.username.placeholder", fallback: "Ferrin")
     }
   }
+  internal enum Splash {
+    internal enum Button {
+      /// Login
+      internal static let login = L10n.tr("Localizable", "splash.button.login", fallback: "Login")
+      /// Sign Up
+      internal static let signup = L10n.tr("Localizable", "splash.button.signup", fallback: "Sign Up")
+    }
+  }
   internal enum Success {
     /// You have successfully registered in
     /// our app and start working in it.
