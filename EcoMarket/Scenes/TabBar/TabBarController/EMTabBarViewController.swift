@@ -10,32 +10,30 @@ import MakeConstraints
 import Combine
 
 class EMTabBarViewController: UITabBarController {
-    let customTabBar = EMTabBar()
+    let emTabBar = EMTabBar()
     
-    let viewModel = EMTabBarViewModel.shared
+//    let viewModel = EMTabBarViewModel.shared
     
     var cancellableSet = Set<AnyCancellable>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = EMTabBarType.allCases.map { $0.viewController }
         tabBar.isHidden = true
-        view.addSubview(customTabBar)
-        customTabBar.fillXSuperView()
-        customTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
-        
-        viewModel.$selectedTab.sink { type in
-//            self.selectedIndex = type.rawValue
-            for item in self.customTabBar.items {
-//                print(item.tag, type.rawValue)
-                if item.tag == type.rawValue {
-                    item.select()
-                } else {
-                    item.unSelect()
-                }
-            }
-        }
-        .store(in: &cancellableSet)
-        
+        viewControllers = EMTabBarType.allCases.map { $0.viewController }
+        setupEMTapBar()
+    }
+    
+    private func setupEMTapBar() {
+        emTabBar.delegate = self
+        view.addSubview(emTabBar)
+        emTabBar.fillXSuperView()
+        emTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
+        emTabBar.setItems(EMTabBarType.allCases.map { $0.tabBarItem })
+    }
+}
+
+extension EMTabBarViewController: EMTamBarDelegate {
+    func emTabBar(_ emTabBar: EMTabBar, didSelect emItem: EMTabBarItem) {
+        selectedIndex = emItem.tag
     }
 }

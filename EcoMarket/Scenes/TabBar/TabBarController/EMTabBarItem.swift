@@ -20,7 +20,8 @@ class EMTabBarItem: UIView {
     //
     private var widthConstraint: NSLayoutConstraint?
     private let _height: CGFloat = 30
-    private let _width: CGFloat = 76
+    private let _width: CGFloat = 75
+    private var _cornerRadius: CGFloat { _height / 2 }
     
     let item: UITabBarItem
     init(item: UITabBarItem) {
@@ -36,24 +37,25 @@ class EMTabBarItem: UIView {
     // MARK: - setup subviews
     //
     private func setup() {
-        layer.cornerRadius = _height / 2
+        tag = item.tag
+        layer.cornerRadius = _cornerRadius
         setupStackView()
         setupIconView()
         setupIconImageView()
         setupTitleLabel()
         addSubViews()
+        select()
     }
     
     private func setupStackView() {
         stackView.axis = .horizontal
         stackView.distribution = .fill
         stackView.alignment = .center
-        stackView.spacing = 2
     }
     
     private func setupIconView() {
         iconView.equalSizeConstraints(_height)
-        iconView.layer.cornerRadius = _width - (_height * 2)
+        iconView.layer.cornerRadius = _cornerRadius
     }
     
     private func setupIconImageView() {
@@ -75,7 +77,7 @@ class EMTabBarItem: UIView {
         
         // add stackView
         addSubview(stackView)
-        stackView.fillSuperview(padding: .init(top: 0, left: 0, bottom: 0, right: 2))
+        stackView.fillSuperview()
         
         // add icon, ImageView
         stackView.addArrangedSubview(iconView)
@@ -102,7 +104,7 @@ class EMTabBarItem: UIView {
         widthConstraint?.constant = _height
         backgroundColor = .clear
         iconView.backgroundColor = .clear
-
+        
         UIView.animate(withDuration: 0.5) { [weak self] in
             self?.iconImageView.image = self?.item.image
             self?.superview?.layoutIfNeeded()

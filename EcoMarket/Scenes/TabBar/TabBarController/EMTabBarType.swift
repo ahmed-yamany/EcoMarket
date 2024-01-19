@@ -22,7 +22,20 @@ enum EMTabBarType: Int, CaseIterable, Hashable {
         }
     }
     var viewController: UIViewController {
-       UIViewController()
+        let vcc = UIViewController()
+
+        switch self {
+            case .home:
+                vcc.view.backgroundColor = .blue
+            case .cart:
+                vcc.view.backgroundColor = .green
+            case .notification:
+                vcc.view.backgroundColor = .yellow
+            case .profile:
+                vcc.view.backgroundColor = .red
+        }
+        return vcc
+
     }
     
     private var icon: UIImage? {
