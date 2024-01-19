@@ -42,18 +42,20 @@
 		EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C82B45B41600675EAE /* swiftgen.yml */; };
 		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
-		EE32E2D22B45B6B400675EAE /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2D12B45B6B400675EAE /* Colors.xcassets */; };
-
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
 		EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD672B57CBA400E674C2 /* mainWindow.swift */; };
 		EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */; };
 		EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */; };
+		EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */; };
+		EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */; };
+		EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */; };
+		EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */; };
+		EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */; };
 		EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */; };
 		EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBE2B4E9D9200BC5524 /* Router.swift */; };
 		EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */; };
 		EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
-
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +120,11 @@
 		EE55FD672B57CBA400E674C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
 		EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
 		EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
+		EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMTabBarViewController.swift; sourceTree = "<group>"; };
+		EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarItem.swift; sourceTree = "<group>"; };
+		EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBar.swift; sourceTree = "<group>"; };
+		EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarType.swift; sourceTree = "<group>"; };
+		EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarViewModel.swift; sourceTree = "<group>"; };
 		EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		EE95CEBE2B4E9D9200BC5524 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
@@ -528,7 +535,11 @@
 		EE95CED12B4EA17300BC5524 /* TabBarController */ = {
 			isa = PBXGroup;
 			children = (
-				EEA439102B50548E00FE631A /* TabBarViewController.swift */,
+				EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */,
+				EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */,
+				EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */,
+				EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */,
+				EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */,
 			);
 			path = TabBarController;
 			sourceTree = "<group>";
@@ -729,16 +740,19 @@
 				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
 				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
+				EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */,
 				D6C6C6E42B4F2F7100836A05 /* FacebookButton.swift in Sources */,
 				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
 				D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */,
 				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
+				EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */,
+				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
+				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE11B2032B5711AF0077F5AA /* EMTextField.swift in Sources */,
 				D6C6C6F42B51736000836A05 /* SecuiredTextField.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
-				EEA439112B50548F00FE631A /* TabBarViewController.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
 				EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
@@ -752,6 +766,7 @@
 				D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */,
 				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
 				D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */,
+				EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
