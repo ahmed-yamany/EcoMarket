@@ -8,16 +8,19 @@
 import Foundation
 import Combine
 
-struct Onboarding: Codable {
-    let id: Int
-    let image: String
-    let title: String
-    let subtitle: String
-}
-
 class OnboardingViewModel {
-    // swiftlint: disable all
-    var onboardingArray: [Onboarding] { JSONDecoder().decode(forResource: "OnboardingData") ?? [] }
-    // swiftlint: enable all
+    var onboardingArray: [Onboarding] {
+        JSONDecoder().decode(forResource: "OnboardingData") ?? []
+    }
     
+    var currentIndex = 0
+    
+    func move(didMoved: (Int) -> Void, reachedEnd: () -> Void) {
+        if currentIndex < onboardingArray.count - 1 {
+            currentIndex += 1
+            didMoved(currentIndex)
+        } else {
+            reachedEnd()
+        }
+    }
 }

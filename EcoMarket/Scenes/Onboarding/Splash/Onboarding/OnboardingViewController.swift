@@ -9,15 +9,14 @@ import UIKit
 
 class OnboardingViewController: UIViewController {
     
-    @IBOutlet weak var onboardingCollectionView: UICollectionView!
-    @IBOutlet weak var nextButton: UIButton!
-    @IBOutlet weak var pageControlView: FlexiblePageControl!
+    @IBOutlet weak private(set) var onboardingCollectionView: UICollectionView!
+    @IBOutlet weak private(set) var nextButton: UIButton!
+    @IBOutlet weak private(set) var pageControlView: FlexiblePageControl!
     
     let viewModel = OnboardingViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         onboardingCollectionView.delegate = self
         onboardingCollectionView.dataSource = self
         setupUI()
@@ -25,6 +24,8 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - Setup UI
     private func setupUI() {
+        view.backgroundColor = AppColor.backgroundColor
+        
         onboardingCollectionView.registerNib(cell: OnboardingCollectionViewCell.self)
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
@@ -52,20 +53,45 @@ class OnboardingViewController: UIViewController {
     
     // MARK: - IBActions
     private func nextButtonTap() {
-        if pageControlView.currentPage < viewModel.onboardingArray.count - 1 {
-            pageControlView.currentPage += 1
-            scrollToPage(page: pageControlView.currentPage)
-        } else {
+        viewModel.move(didMoved: {currentIndex in
+            pageControlView.currentPage = currentIndex
+            scroll(to: currentIndex)
+        }, reachedEnd: {
             let viewController = SplashViewController()
             AppRouter.shared.present(viewController)
-        }
+        })
     }
     
     // MARK: - Private Functions
-    private func scrollToPage(page: Int) {
+    private func scroll(to page: Int) {
         let indexPath = IndexPath(item: page, section: 0)
         onboardingCollectionView.isPagingEnabled = false
         onboardingCollectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: true)
         onboardingCollectionView.isPagingEnabled = true
+    }
+}
+
+// MARK: - CollectionView Layout
+//
+extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        viewModel.onboardingArray.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: OnboardingCollectionViewCell = onboardingCollectionView.dequeue(indexPath: indexPath) else {
+            Logger.log("failed to cast cell", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        
+        cell.setup(viewModel.onboardingArray[indexPath.row])
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // let cell's size equal collection view
+        return CGSize(width: onboardingCollectionView.frame.width, height: onboardingCollectionView.frame.height)
     }
 }

@@ -30,7 +30,6 @@
                             <subviews>
                                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="oMx-5O-pKM">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="629"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DG8-sp-HLw">
                                         <size key="itemSize" width="128" height="128"/>
                                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -39,7 +38,6 @@
                                     </collectionViewFlowLayout>
                                 </collectionView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="oMx-5O-pKM" secondAttribute="trailing" id="1ct-1n-FfH"/>
                                 <constraint firstItem="oMx-5O-pKM" firstAttribute="leading" secondItem="E5v-ec-Fji" secondAttribute="leading" id="BGF-Ht-Enu"/>
@@ -71,7 +69,6 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="70" id="AaH-85-8rq"/>
                                 <constraint firstAttribute="trailing" secondItem="WZw-oW-QLF" secondAttribute="trailing" constant="20" id="Jhf-AO-CDr"/>

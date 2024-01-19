@@ -10,25 +10,31 @@ import UIKit
 class OnboardingCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var subTitle: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var subTitleLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        initUI()
+        setupUI()
     }
-    private func initUI() {
-        title.font = .systemFont(ofSize: 32, weight: .heavy)
-        title.numberOfLines = 2
-        subTitle.font = .systemFont(ofSize: 16, weight: .regular)
-        subTitle.textColor = .darkGray
-        subTitle.numberOfLines = 2
+    
+    private func setupUI() {
+        backgroundColor = AppColor.backgroundColor
+        
+        // title setup
+        titleLabel.font = .custom(size: 32, weight: .bold)
+        titleLabel.numberOfLines = 2
+        titleLabel.textColor = AppColor.primaryText
+        
+        // subTitle setup
+        subTitleLabel.font = .custom(size: 16, weight: .regular)
+        subTitleLabel.numberOfLines = 2
+        subTitleLabel.textColor = AppColor.secondaryText
     }
     
     func setup(_ obj: Onboarding) {
         self.image.image = UIImage(named: obj.image)
-        self.title.text = obj.title
-        self.subTitle.text = obj.subtitle
+        self.titleLabel.text = obj.title
+        self.subTitleLabel.text = obj.subtitle
     }
-
 }
