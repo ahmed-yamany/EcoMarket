@@ -31,6 +31,7 @@ class OnboardingViewController: UIViewController {
         onboardingCollectionView.isScrollEnabled = false
         
         setupPageControl()
+        setupNextButton()
     }
     
     private func setupPageControl() {
@@ -41,17 +42,16 @@ class OnboardingViewController: UIViewController {
     
     private func setupNextButton() {
         nextButton.setTitle("", for: .normal)
-        nextButton.backgroundColor = .black
+        nextButton.backgroundColor = AppColor.primaryButton
         nextButton.layer.cornerRadius = nextButton.frame.width / 2
         nextButton.clipsToBounds = true
-        nextButton.setImage(.onboardingNextButtonVector, for: .normal)
+        nextButton.setImage(AppImage.Onboarding.nextButton, for: .normal)
         nextButton.imageView?.contentMode = .scaleAspectFit
-        nextButton.addAction(.init(handler: {[weak self] _ in self?.nextBtnTap()}), for: .touchUpInside)
+        nextButton.addAction(.init(handler: {[weak self] _ in self?.nextButtonTap()}), for: .touchUpInside)
     }
     
-    
     // MARK: - IBActions
-    private func nextBtnTap() {
+    private func nextButtonTap() {
         if pageControlView.currentPage < viewModel.onboardingArray.count - 1 {
             pageControlView.currentPage += 1
             scrollToPage(page: pageControlView.currentPage)

@@ -21,7 +21,7 @@ class SplashViewController: UIViewController {
     }
     
     private func initUI() {
-        backgroundImage.image = UIImage.splash02
+//        backgroundImage.image = UIImage.splash02
         backgroundImage.contentMode = .scaleAspectFill
         
         loginBtn.backgroundColor = .white
@@ -35,7 +35,7 @@ class SplashViewController: UIViewController {
         signupBtn.layer.borderWidth = 2
         signupBtn.layer.borderColor = UIColor.white.cgColor
         signupBtn.setTitle(L10n.Splash.Button.login, for: .normal)
-        logoImage.image = UIImage.logoVector
+//        logoImage.image = UIImage.logoVector
         logoImage.contentMode = .scaleAspectFill
         
         loginBtn.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)

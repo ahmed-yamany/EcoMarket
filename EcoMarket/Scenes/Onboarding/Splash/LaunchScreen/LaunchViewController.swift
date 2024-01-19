@@ -18,8 +18,8 @@ class LaunchViewController: UIViewController {
         
     }
     private func initUI() {
-        backgroundImage.image = UIImage.splash01
-        logoImage.image = UIImage.logoVector
+//        backgroundImage.image = UIImage.splash01
+//        logoImage.image = UIImage.logoVector
         backgroundImage.contentMode = .scaleAspectFill
         logoImage.contentMode = .scaleAspectFill
     }

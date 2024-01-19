@@ -14,8 +14,8 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = onboardingCollectionView.dequeue(indexPath: indexPath) as OnboardingCollectionViewCell
-        cell.setup(viewModel.onboardingArray[indexPath.row])
+        let cell = onboardingCollectionView.dequeue(indexPath: indexPath) as TestCell
+//        cell.setup(viewModel.onboardingArray[indexPath.row])
         return cell
     }
     
@@ -29,4 +29,8 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
         //
     }
      
+}
+
+class TestCell: UICollectionViewCell {
+    
 }

@@ -7,32 +7,39 @@
 
 import UIKit
 
-struct AppImage {
+enum AppImage {
+    static var appLogo: UIImage? {
+        return UIImage(named: "app-logo")
+    }
+    static var eyeSlash: UIImage? {
+        return UIImage(named: "eye")
+    }
+    
     static var successImage: UIImage? {
         return UIImage(named: "icon-success")
     }
-
-  static var facebookIcon: UIImage? {
-      return UIImage(named: "icon-facebook")
-  }
-
-  static var googleIcon: UIImage? {
-      return UIImage(named: "icon-google")
-  }
-
-  static var appleIcon: UIImage? {
-      return UIImage(named: "icon-apple")
-  }
-
-  static var verifyImage: UIImage? {
-      return UIImage(named: "verify")
-  }
-
-  static var eyeSlash: UIImage? {
-      return UIImage(named: "eye")
-  }
-
-  static var appLogo: UIImage? {
-      return UIImage(named: "app-logo")
-  }
+    
+    static var facebookIcon: UIImage? {
+        return UIImage(named: "icon-facebook")
+    }
+    
+    static var googleIcon: UIImage? {
+        return UIImage(named: "icon-google")
+    }
+    
+    static var appleIcon: UIImage? {
+        return UIImage(named: "icon-apple")
+    }
+    
+    static var verifyImage: UIImage? {
+        return UIImage(named: "verify")
+    }
+    
+    enum Onboarding {
+        private static var folderName: String {"Onboarding"}
+        
+        static var nextButton: UIImage? {
+            return UIImage(named: "\(folderName)/next-button")
+        }
+    }
 }

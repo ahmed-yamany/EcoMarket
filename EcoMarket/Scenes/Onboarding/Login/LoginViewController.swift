@@ -34,7 +34,7 @@ class LoginViewController: UIViewController {
         
         /// Password TextField UI
         passwordTextField.title = L10n.password
-        passwordTextField.placeholder = L10n.Login.Password.placholder
+        passwordTextField.placeholder = L10n.Login.Password.placeholder
         
         /// Images UI
         logoImage.image = AppImage.appLogo

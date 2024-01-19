@@ -20,7 +20,7 @@
 "login.title" = "Wellcome!";
 "login.subtitle" = "please login or sign up to continue our app";
 "login.email.placeholder" = "fscreation441@gmail.com";
-"login.password.placholder" = "*******";
+"login.password.placeholder" = "*******";
 //
 "success.title" = "Successful!";
 "success.message" = "You have successfully registered in
@@ -34,6 +34,6 @@ our app and start working in it.";
 "signup.username.placeholder" = "Ferrin";
 "signup.email" = "Email";
 "signup.password" = "Password";
-"signup.comfirmPassword" = "Confirm Password";
+"signup.confirmPassword" = "Confirm Password";
 "signup.terms" = "By creating an account you have to agree
-with our them & condication.";
+with our them & conduction.";

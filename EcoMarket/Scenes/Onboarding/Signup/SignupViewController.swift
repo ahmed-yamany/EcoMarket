@@ -10,14 +10,14 @@ import UIKit
 class SignupViewController: UIViewController {
     
     // MARK: - Outlets
-    /// TextFields IBOulets
+    /// TextFields IBOutlets
     @IBOutlet weak var usernameTextField: EMTextField!
     @IBOutlet weak var emailTextField: EMTextField!
     @IBOutlet weak var passwordTextField: EMTextField!
     @IBOutlet weak var confirmPasswordTextField: EMTextField!
-    /// Images IBOulets
+    /// Images IBOutlets
     @IBOutlet weak var logoImage: UIImageView!
-    /// Lables IBOutlet
+    /// Labels IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var termsLabel: UILabel!
@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
     
     // MARK: - Setup UI
     private func configureViews() {
-        /// Username TextFeild UI
+        /// username textfield
         usernameTextField.title = L10n.Signup.username
         usernameTextField.placeholder = L10n.Signup.Username.placeholder
         
@@ -40,11 +40,11 @@ class SignupViewController: UIViewController {
         
         /// Password TextField UI
         passwordTextField.title = L10n.password
-        passwordTextField.placeholder = L10n.Login.Password.placholder
+        passwordTextField.placeholder = L10n.Login.Password.placeholder
         
         /// Confirm Password TextField UI
-        confirmPasswordTextField.title = L10n.Signup.comfirmPassword
-        confirmPasswordTextField.placeholder = L10n.Login.Password.placholder
+        confirmPasswordTextField.title = L10n.Signup.confirmPassword
+        confirmPasswordTextField.placeholder = L10n.Login.Password.placeholder
         
         /// Images UI
         logoImage.image = AppImage.appLogo

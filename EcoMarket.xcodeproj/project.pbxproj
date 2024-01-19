@@ -58,6 +58,7 @@
 		EEA6F9D62B58683F00A9E0C2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9D52B58683F00A9E0C2 /* Colors.xcassets */; };
 		EEA6F9D92B58685100A9E0C2 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D72B58685100A9E0C2 /* AppImage.swift */; };
 		EEA6F9DA2B58685100A9E0C2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D82B58685100A9E0C2 /* AppColor.swift */; };
+		EEA6F9DD2B58750A00A9E0C2 /* +JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		EEA6F9D52B58683F00A9E0C2 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		EEA6F9D72B58685100A9E0C2 /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		EEA6F9D82B58685100A9E0C2 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+JSONDecoder.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA6F9B92B58679700A9E0C2 /* CollectionView Cell */,
+				A1CB8C782B528A4C00316DD4 /* OnboardingData.json */,
 				A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */,
 				A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */,
 				A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */,
@@ -393,6 +396,7 @@
 				EEA6F9A42B58666E00A9E0C2 /* UIView */,
 				EEA6F9A12B58665500A9E0C2 /* UIApplicatoin */,
 				A1CB8C7A2B52946D00316DD4 /* UICollectionView */,
+				EEA6F9DB2B5874FB00A9E0C2 /* Foundation */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -453,7 +457,6 @@
 				A1CB8C6C2B52783200316DD4 /* Onboarding */,
 				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
 				A1CB8C6B2B5277C600316DD4 /* Splash */,
-				A1CB8C782B528A4C00316DD4 /* OnboardingData.json */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -596,6 +599,14 @@
 				EEA6F9D12B58680D00A9E0C2 /* EMTextField.xib */,
 			);
 			path = EmTextField;
+			sourceTree = "<group>";
+		};
+		EEA6F9DB2B5874FB00A9E0C2 /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */,
+			);
+			path = Foundation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -820,6 +831,7 @@
 				EEA6F9CE2B5867E100A9E0C2 /* PrimaryButton.swift in Sources */,
 				EEA6F9CC2B5867E100A9E0C2 /* GoogleButton.swift in Sources */,
 				A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */,
+				EEA6F9DD2B58750A00A9E0C2 /* +JSONDecoder.swift in Sources */,
 				EEA6F9B02B58670500A9E0C2 /* SignupViewController.swift in Sources */,
 				EEA6F9B52B58671200A9E0C2 /* SuccessViewController.swift in Sources */,
 				A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */,
