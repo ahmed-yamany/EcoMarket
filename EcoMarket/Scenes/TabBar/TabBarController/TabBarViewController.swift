@@ -9,26 +9,39 @@ import UIKit
 import MakeConstraints
 import Combine
 
-enum TabBarType: String, CaseIterable, Hashable {
-    case home, cart, notification, profile
+enum TabBarType: Int, CaseIterable, Hashable {
+    case home = 0
+    case cart
+    case notification
+    case profile
     
+    var title: String {
+        switch self {
+            case .home: "Home"
+            case .cart: "Cart"
+            case .notification: "Notifi"
+            case .profile: "Profile"
+        }
+    }
     var viewController: UIViewController {
        UIViewController()
     }
     
     var icon: UIImage? {
         switch self {
-            case .home: UIImage(named: "tabbar-home")?.withRenderingMode(.alwaysOriginal)
-            case .cart: UIImage(named: "tabbar-cart")?.withRenderingMode(.alwaysOriginal)
-            default: nil
+            case .home: UIImage(named: "tabbar/home")?.withRenderingMode(.alwaysOriginal)
+            case .cart: UIImage(named: "tabbar/cart")?.withRenderingMode(.alwaysOriginal)
+            case .notification: UIImage(named: "tabbar/notification")?.withRenderingMode(.alwaysOriginal)
+            case .profile: UIImage(named: "tabbar/profile")?.withRenderingMode(.alwaysOriginal)
         }
     }
     
     var selectedIcon: UIImage? {
         switch self {
-            case .home: UIImage(named: "tabbar-home-selected")?.withRenderingMode(.alwaysOriginal)
-            case .cart: UIImage(named: "tabbar-cart-selected")?.withRenderingMode(.alwaysOriginal)
-            default: nil
+            case .home: UIImage(named: "tabbar/home-selected")?.withRenderingMode(.alwaysOriginal)
+            case .cart: UIImage(named: "tabbar/cart-selected")?.withRenderingMode(.alwaysOriginal)
+            case .notification: UIImage(named: "tabbar/notification-selected")?.withRenderingMode(.alwaysOriginal)
+            case .profile: UIImage(named: "tabbar/profile-selected")?.withRenderingMode(.alwaysOriginal)
         }
     }
 }
@@ -54,6 +67,7 @@ class TabBarViewController: UITabBarController {
         customTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
         
         viewModel.$selectedTab.sink { type in
+            self.selectedIndex = type.rawValue
             for item in self.customTabBar.items {
                 if item.type == type {
                     item.select()
@@ -96,9 +110,9 @@ class CustomTabBar: UIView {
     private func addTabsToStackView() {
         addSubview(stackView)
         stackView.fillSuperview(padding: UIEdgeInsets(top: 0,
-                                                      left: 24,
+                                                      left: 32,
                                                       bottom: (UIApplication.shared.mainWindow?.safeAreaInsets.bottom ?? 0) / 2,
-                                                      right: 24))
+                                                      right: 32))
         for type in TabBarType.allCases {
             let tab = CustomTabBarItem(type: type)
             stackView.addArrangedSubview(tab)
@@ -131,9 +145,15 @@ class CustomTabBarItem: UIView {
         super.init(frame: .zero)
         setup()
         
+        let tabGesture = UITapGestureRecognizer(target: self, action: #selector(tapped))
+        addGestureRecognizer(tabGesture)
     }
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    @objc func tapped() {
+        TabBarViewModel.shared.selectedTab = type
     }
     
     private func setup() {
@@ -155,6 +175,7 @@ class CustomTabBarItem: UIView {
         iconView.equalSizeConstraints(_height)
         iconView.layer.cornerRadius = _width - (_height * 2)
         iconView.addSubview(iconImage)
+        iconImage.contentMode = .scaleAspectFit
         iconImage.centerInSuperview(size: .init(width: 14, height: 14))
         
     }
@@ -162,13 +183,14 @@ class CustomTabBarItem: UIView {
     private func addLabel() {
         label.font = .systemFont(ofSize: 12, weight: .regular)
         label.textColor = .black
-        label.text = type.rawValue
+        label.text = type.title
         stackView.addArrangedSubview(label)
         label.textAlignment = .center
     }
     
     public func select() {
         widthConstraint?.constant = _width
+        backgroundColor = .gray.withAlphaComponent(0.5)
         iconView.tintColor = .white
         iconView.backgroundColor = .black
         iconImage.image = type.selectedIcon
