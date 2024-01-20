@@ -10,12 +10,12 @@ import UIKit
 class LoginViewController: UIViewController {
     
     // MARK: - Outlets
-    /// TextFields IBOulets
+    /// TextFields IBOutlets
     @IBOutlet weak var emailTextField: EMTextField!
     @IBOutlet weak var passwordTextField: EMTextField!
     /// Images IBOulets
     @IBOutlet weak var logoImage: UIImageView!
-    /// Lables IBOutlet
+    /// Labels IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     /// Buttons IBOutlet

@@ -17,7 +17,7 @@ class SignupViewController: UIViewController {
     @IBOutlet weak var confirmPasswordTextField: EMTextField!
     /// Images IBOulets
     @IBOutlet weak var logoImage: UIImageView!
-    /// Lables IBOutlet
+    /// Labels IBOutlet
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var termsLabel: UILabel!
@@ -30,7 +30,7 @@ class SignupViewController: UIViewController {
     
     // MARK: - Setup UI
     private func configureViews() {
-        /// Username TextFeild UI
+        /// Username TextField UI
         usernameTextField.title = L10n.Signup.username
         usernameTextField.placeholder = L10n.Signup.Username.placeholder
         
