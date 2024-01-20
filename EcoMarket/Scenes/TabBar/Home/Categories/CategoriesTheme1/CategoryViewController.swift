@@ -10,9 +10,11 @@ import Combine
 
 class CategoryViewController: UITableViewController {
     
+    // MARK: - Properties
     private(set) var viewModel: CategoryViewModel
     private var cancellable: Set<AnyCancellable> = []
     
+    // MARK: - Initializers
     init (viewModel: CategoryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -22,19 +24,25 @@ class CategoryViewController: UITableViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configTableView()
-        binding()
+        subscribedCategories()
     }
     
+    // MARK: - Private Function
+    /// Configures the appearance of the table view.
     private func configTableView() {
         tableView.backgroundColor = AppColor.backgroundColor
         tableView.separatorStyle = .none
-        tableView.register(CategoryTableViewCell.self, forCellReuseIdentifier: CategoryTableViewCell.identifier)
+        tableView.register(UINib(nibName: CategoryTableViewCell.identifier,
+                                 bundle: nil),
+                           forCellReuseIdentifier: CategoryTableViewCell.identifier)
     }
     
-    private func binding() {
+    // MARK: - Sets up Combine subscriptions to update the table view when the `viewModel.categories` change.
+    private func subscribedCategories() {
         viewModel.$categories
             .receive(on: DispatchQueue.main)
             .sink { [weak self] _ in
@@ -45,6 +53,7 @@ class CategoryViewController: UITableViewController {
         viewModel.getData()
     }
     
+    // MARK: - UITableViewDataSource & UITableViewDelegate Methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.categories.count
     }
@@ -52,27 +61,23 @@ class CategoryViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: CategoryTableViewCell.identifier,
                                                        for: indexPath) as? CategoryTableViewCell else {
-            print("Error")
+            print("Error: Unable to dequeue CategoryTableViewCell.")
             return UITableViewCell()
         }
         cell.setup(category: viewModel.categories[indexPath.row])
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        cell.backgroundColor = AppColor.primaryButton
-        cell.contentView.layer.cornerRadius = 20
-        cell.contentView.layer.masksToBounds = true
-    }
-    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 70
+        return 78 /// Height of Cell
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
         let headerView = UIView()
         headerView.backgroundColor = AppColor.backgroundColor
         
+        // Create a UILabel to display the header text
         let label = UILabel()
         label.text = "Categories"
         label.textColor = AppColor.primaryText
@@ -80,6 +85,7 @@ class CategoryViewController: UITableViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         headerView.addSubview(label)
         
+        // Set up constraints for the label within the header view
         NSLayoutConstraint.activate([
             label.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: 16),
             label.centerYAnchor.constraint(equalTo: headerView.centerYAnchor)
@@ -87,7 +93,6 @@ class CategoryViewController: UITableViewController {
         
         return headerView
     }
-    
 }
 
 protocol Identifiable {}

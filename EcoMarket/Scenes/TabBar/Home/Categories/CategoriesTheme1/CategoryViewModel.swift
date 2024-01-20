@@ -9,6 +9,8 @@ import Foundation
 import Combine
 
 class CategoryViewModel {
+    
+    // MARK: - Published Properties
     @Published var categories: [CategoryModel] = []
     
     func getData() {

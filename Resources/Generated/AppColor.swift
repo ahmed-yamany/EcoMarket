@@ -24,6 +24,10 @@ enum AppColor {
         return UIColor(named: "em-primaryText")!
     }
     
+    static var secondaryText: UIColor {
+        return UIColor(named: "em-secondaryText")!
+    }
+    
     static var secondaryButton: UIColor {
         return UIColor(named: "em-secondaryButton")!
     }
