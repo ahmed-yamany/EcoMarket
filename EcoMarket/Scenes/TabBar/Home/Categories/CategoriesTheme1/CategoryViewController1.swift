@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class CategoryViewController: UITableViewController {
+class CategoryViewController1: UITableViewController {
     
     // MARK: - Properties
     private(set) var viewModel: CategoryViewModel

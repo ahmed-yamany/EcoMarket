@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 // `CategoryModel` represents a data model for a product category.
 struct CategoryModel {
     let image: String

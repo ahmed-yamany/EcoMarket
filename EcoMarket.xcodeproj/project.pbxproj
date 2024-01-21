@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D64E71392B5C225700FD3181 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71372B5C225700FD3181 /* CategoryViewController.swift */; };
+		D64E71392B5C225700FD3181 /* CategoryViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71372B5C225700FD3181 /* CategoryViewController1.swift */; };
 		D64E713D2B5C24B600FD3181 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E713B2B5C24B600FD3181 /* CategoryTableViewCell.swift */; };
 		D64E713E2B5C24B600FD3181 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E713C2B5C24B600FD3181 /* CategoryTableViewCell.xib */; };
 		D64E71402B5C26A900FD3181 /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E713F2B5C26A900FD3181 /* CategoryModel.swift */; };
 		D64E71422B5C28C800FD3181 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71412B5C28C800FD3181 /* CategoryViewModel.swift */; };
+		D64E716A2B5DB96C00FD3181 /* CategoryViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71682B5DB96C00FD3181 /* CategoryViewController2.swift */; };
+		D64E716B2B5DB96C00FD3181 /* CategoryViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E71692B5DB96C00FD3181 /* CategoryViewController2.xib */; };
+		D64E716E2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E716C2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift */; };
+		D64E716F2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E716D2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib */; };
+		D64E71712B5DBCB500FD3181 /* Category2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71702B5DBCB500FD3181 /* Category2ViewModel.swift */; };
 		D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */; };
 		D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13072B53648D00CE2D71 /* AppColor.swift */; };
 		D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13092B536AA300CE2D71 /* AppImage.swift */; };
@@ -76,11 +81,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		D64E71372B5C225700FD3181 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		D64E71372B5C225700FD3181 /* CategoryViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController1.swift; sourceTree = "<group>"; };
 		D64E713B2B5C24B600FD3181 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
 		D64E713C2B5C24B600FD3181 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		D64E713F2B5C26A900FD3181 /* CategoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		D64E71412B5C28C800FD3181 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		D64E71682B5DB96C00FD3181 /* CategoryViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController2.swift; sourceTree = "<group>"; };
+		D64E71692B5DB96C00FD3181 /* CategoryViewController2.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController2.xib; sourceTree = "<group>"; };
+		D64E716C2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		D64E716D2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
+		D64E71702B5DBCB500FD3181 /* Category2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category2ViewModel.swift; sourceTree = "<group>"; };
 		D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		D65A13072B53648D00CE2D71 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D65A13092B536AA300CE2D71 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
@@ -199,7 +209,7 @@
 		214AC0702B4E978B0094297D /* CategoriesTheme1 */ = {
 			isa = PBXGroup;
 			children = (
-				D64E71372B5C225700FD3181 /* CategoryViewController.swift */,
+				D64E71372B5C225700FD3181 /* CategoryViewController1.swift */,
 				D64E71412B5C28C800FD3181 /* CategoryViewModel.swift */,
 				D64E713F2B5C26A900FD3181 /* CategoryModel.swift */,
 				D64E713B2B5C24B600FD3181 /* CategoryTableViewCell.swift */,
@@ -211,6 +221,11 @@
 		214AC0712B4E97AF0094297D /* CategoriesTheme2 */ = {
 			isa = PBXGroup;
 			children = (
+				D64E71682B5DB96C00FD3181 /* CategoryViewController2.swift */,
+				D64E71692B5DB96C00FD3181 /* CategoryViewController2.xib */,
+				D64E716C2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift */,
+				D64E716D2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib */,
+				D64E71702B5DBCB500FD3181 /* Category2ViewModel.swift */,
 			);
 			path = CategoriesTheme2;
 			sourceTree = "<group>";
@@ -668,8 +683,10 @@
 				EE11B2042B5711AF0077F5AA /* EMTextField.xib in Resources */,
 				D6C6C6DD2B4F2A0500836A05 /* Colors.xcassets in Resources */,
 				EE11B1F42B570A620077F5AA /* Poppins-Bold.ttf in Resources */,
+				D64E716B2B5DB96C00FD3181 /* CategoryViewController2.xib in Resources */,
 				D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
+				D64E716F2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib in Resources */,
 				D6C6C6EF2B4F486A00836A05 /* SuccessViewController.xib in Resources */,
 				EE11B1F02B570A3D0077F5AA /* Poppins-Regular.ttf in Resources */,
 			);
@@ -737,7 +754,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64E716E2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift in Sources */,
 				D6C6C6DA2B4F17D600836A05 /* LoginViewController.swift in Sources */,
+				D64E71712B5DBCB500FD3181 /* Category2ViewModel.swift in Sources */,
 				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
 				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
@@ -755,7 +774,8 @@
 				EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */,
 				D64E71402B5C26A900FD3181 /* CategoryModel.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
-				D64E71392B5C225700FD3181 /* CategoryViewController.swift in Sources */,
+				D64E71392B5C225700FD3181 /* CategoryViewController1.swift in Sources */,
+				D64E716A2B5DB96C00FD3181 /* CategoryViewController2.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
 				EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */,
