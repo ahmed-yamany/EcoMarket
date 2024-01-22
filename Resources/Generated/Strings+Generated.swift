@@ -16,6 +16,8 @@ internal enum L10n {
   internal static let login = L10n.tr("Localizable", "login", fallback: "Login")
   /// Password
   internal static let password = L10n.tr("Localizable", "password", fallback: "Password")
+  /// Sign Up
+  internal static let signup = L10n.tr("Localizable", "signup", fallback: "Sign Up")
   internal enum App {
     /// Localizable.strings
     ///   EcoMarket
@@ -40,12 +42,12 @@ internal enum L10n {
     }
     internal enum Password {
       /// *******
-      internal static let placholder = L10n.tr("Localizable", "login.password.placholder", fallback: "*******")
+      internal static let placeholder = L10n.tr("Localizable", "login.password.placeholder", fallback: "*******")
     }
   }
   internal enum Signup {
     /// Confirm Password
-    internal static let comfirmPassword = L10n.tr("Localizable", "signup.comfirmPassword", fallback: "Confirm Password")
+    internal static let confirmPassword = L10n.tr("Localizable", "signup.confirmPassword", fallback: "Confirm Password")
     /// Email
     internal static let email = L10n.tr("Localizable", "signup.email", fallback: "Email")
     /// Password
@@ -53,8 +55,8 @@ internal enum L10n {
     /// Create an new account
     internal static let subtitle = L10n.tr("Localizable", "signup.subtitle", fallback: "Create an new account")
     /// By creating an account you have to agree
-    /// with our them & condication.
-    internal static let terms = L10n.tr("Localizable", "signup.terms", fallback: "By creating an account you have to agree\nwith our them & condication.")
+    /// with our them & conduction.
+    internal static let terms = L10n.tr("Localizable", "signup.terms", fallback: "By creating an account you have to agree\nwith our them & conduction.")
     /// Sign Up
     internal static let title = L10n.tr("Localizable", "signup.title", fallback: "Sign Up")
     /// User Name
@@ -62,6 +64,14 @@ internal enum L10n {
     internal enum Username {
       /// Ferrin
       internal static let placeholder = L10n.tr("Localizable", "signup.username.placeholder", fallback: "Ferrin")
+    }
+  }
+  internal enum Splash {
+    internal enum Button {
+      /// Login
+      internal static let login = L10n.tr("Localizable", "splash.button.login", fallback: "Login")
+      /// Sign Up
+      internal static let signup = L10n.tr("Localizable", "splash.button.signup", fallback: "Sign Up")
     }
   }
   internal enum Success {
