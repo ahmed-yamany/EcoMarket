@@ -11,10 +11,12 @@ import Combine
 class CategoryViewController3: UIViewController {
     
     // MARK: - Properties
+    //
     private(set) var viewModel: Category3ViewModel
     private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - Initializers
+    //
     init (viewModel: Category3ViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -25,9 +27,16 @@ class CategoryViewController3: UIViewController {
     }
 
     // MARK: - Outlets
+    //
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - View Lifecycle
+    //
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewDidLoad()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
@@ -35,8 +44,8 @@ class CategoryViewController3: UIViewController {
     }
     
     // MARK: - Combine Subscriptions
-        
-        /// Sets up Combine subscriptions to update the collection view when the `viewModel.categories` change.
+    //
+    /// Sets up Combine subscriptions to update the collection view when the `viewModel.categories` change.
     private func subscribedCategories() {
         viewModel.$categories
             .receive(on: DispatchQueue.main)
@@ -44,43 +53,33 @@ class CategoryViewController3: UIViewController {
                 self?.collectionView.reloadData()
             }
             .store(in: &cancellable)
-        
-        viewModel.getData()
     }
     
     // MARK: - Configuration
-       
-       /// Configures the collection view properties.
+    //
+    /// Configures the collection view properties.
     private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.register(UINib(nibName: CategoryCollectionViewCell3.identifier,
-                                      bundle: nil),
-                                forCellWithReuseIdentifier: CategoryCollectionViewCell3.identifier)
+        collectionView.registerNib(CategoryCollectionViewCell3.self)
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
     // MARK: - Compositional Layout
-        
-        /// Creates a compositional layout for the collection view.
-        /// - Returns: A UICollectionViewCompositionalLayout object.
+    //
+    /// Creates a compositional layout for the collection view.
+    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        // Define the size of each item in the collection view.
+        // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-        
-        // Create an item with the specified size.
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        // Apply content insets to the item for spacing.
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 16, trailing: 10)
 
-        // Define the size of the group that contains the items.
+        // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(200))
-        
-        // Create a vertical group with the specified size and containing the defined item.
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20)
 
-        // Create a section with the defined group.
+        // Section
         let section = NSCollectionLayoutSection(group: group)
         
         // Create and return a compositional layout with the defined section.
@@ -89,6 +88,7 @@ class CategoryViewController3: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+//
 extension CategoryViewController3: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -96,9 +96,8 @@ extension CategoryViewController3: UICollectionViewDelegate, UICollectionViewDat
    }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CategoryCollectionViewCell3.identifier,
-                                                            for: indexPath) as? CategoryCollectionViewCell3 else {
-            print("Error: Unable to dequeue CategoryCollectionViewCell3.")
+        guard let cell: CategoryCollectionViewCell3 = collectionView.dequeue(indexPath: indexPath) else {
+            Logger.log("Error: Unable to dequeue CategoryCollectionViewCell3.", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
         

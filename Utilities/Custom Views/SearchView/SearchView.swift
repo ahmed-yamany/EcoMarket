@@ -10,10 +10,12 @@ import UIKit
 class SearchView: UIView {
 
     // MARK: IBOutlet
+    //
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchImage: UIImageView!
     
     // MARK: Init
+    //
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
@@ -27,14 +29,15 @@ class SearchView: UIView {
     }
     
     // MARK: - UI Configurations
+    //
     private func applyStyling() {
         /// TextField UI
-        searchTextField.placeholder = "Search...."
+        searchTextField.placeholder = L10n.Search.placeholder
         searchTextField.borderStyle = .none
         
         ///  SearchImage UI
         searchImage.tintColor = AppColor.primaryText
-        searchImage.image = UIImage(systemName: "magnifyingglass")
+        searchImage.image = AppImage.searchImage
         
         /// View UI
         layer.cornerRadius = frame.height / 2

@@ -38,3 +38,5 @@ our app and start working in it.";
 "signup.confirmPassword" = "Confirm Password";
 "signup.terms" = "By creating an account you have to agree
 with our them & conduction.";
+//
+"search.placeholder" = "Search....";

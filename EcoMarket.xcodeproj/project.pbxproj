@@ -261,9 +261,8 @@
 		214AC0722B4E97B50094297D /* CategoriesTheme3 */ = {
 			isa = PBXGroup;
 			children = (
+				D6A0EB8D2B5F0F8500079FF3 /* Cell */,
 				EE5CA1422B5EF9D500630C5D /* Category3ViewModel.swift */,
-				EE5CA1462B5EF9D500630C5D /* CategoryCollectionViewCell3.swift */,
-				EE5CA1452B5EF9D500630C5D /* CategoryCollectionViewCell3.xib */,
 				EE5CA1442B5EF9D500630C5D /* CategoryViewController3.swift */,
 				EE5CA1432B5EF9D500630C5D /* CategoryViewController3.xib */,
 			);
@@ -315,6 +314,15 @@
 				A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */,
 			);
 			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
+		D6A0EB8D2B5F0F8500079FF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EE5CA1462B5EF9D500630C5D /* CategoryCollectionViewCell3.swift */,
+				EE5CA1452B5EF9D500630C5D /* CategoryCollectionViewCell3.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {

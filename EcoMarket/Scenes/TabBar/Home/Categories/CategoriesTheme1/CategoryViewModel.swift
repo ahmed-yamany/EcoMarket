@@ -13,10 +13,14 @@ public final class CategoryViewModel {
     // MARK: - Published Properties
     @Published var categories: [CategoryModel] = []
     
+    // MARK: - Public Methods
+    //
     func viewDidLoad() {
         getData()
     }
     
+    // MARK: - Private Methods
+    //
     private func getData() {
         DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let self = self else { return }

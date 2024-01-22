@@ -32,4 +32,13 @@ extension CategoryModel {
         CategoryModel(image: "category2/image-5", name: "Electronics", productNumber: "190 Product"),
         CategoryModel(image: "category2/image-1", name: "Jewelry", productNumber: "80 Product")
     ]
+    
+    static let mockData3 = [
+        CategoryModel(image: "category3/image-5", name: "New Arrivals", productNumber: "208 Product"),
+        CategoryModel(image: "category3/image-6", name: "Clothes", productNumber: "200 Product"),
+        CategoryModel(image: "category3/image-10", name: "Bags", productNumber: "130 Product"),
+        CategoryModel(image: "category3/image-9", name: "Shoese", productNumber: "100 Product"),
+        CategoryModel(image: "category3/image-7", name: "Electronics", productNumber: "190 Product"),
+        CategoryModel(image: "category3/image-8", name: "Jewelry", productNumber: "80 Product")
+    ]
 }

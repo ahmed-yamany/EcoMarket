@@ -26,6 +26,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryName.text = category.name
         productCount.text = category.productNumber
         setupUI()
+        setupLabelsStackViewUI(indexPath)
+    }
+    
+    func setupLabelsStackViewUI(_ indexPath: IndexPath) {
         labelsStackView.centerYInSuperview()
         let padding = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
         if indexPath.row % 2 == 0 {
