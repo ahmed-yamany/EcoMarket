@@ -16,6 +16,8 @@ internal enum L10n {
   internal static let login = L10n.tr("Localizable", "login", fallback: "Login")
   /// Password
   internal static let password = L10n.tr("Localizable", "password", fallback: "Password")
+  /// Sign Up
+  internal static let signup = L10n.tr("Localizable", "signup", fallback: "Sign Up")
   internal enum App {
     /// Localizable.strings
     ///   EcoMarket

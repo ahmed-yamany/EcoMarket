@@ -6,9 +6,13 @@
 //
 
 import UIKit
+extension LoggingCategories {
+    var onboarding: String { "Onboarding" }
+}
 
 class OnboardingViewController: UIViewController {
-    
+    // MARK: - IBoutlets
+    //
     @IBOutlet weak private(set) var onboardingCollectionView: UICollectionView!
     @IBOutlet weak private(set) var nextButton: UIButton!
     @IBOutlet weak private(set) var pageControlView: FlexiblePageControl!
@@ -23,16 +27,20 @@ class OnboardingViewController: UIViewController {
     }
     
     // MARK: - Setup UI
+    //
     private func setupUI() {
         view.backgroundColor = AppColor.backgroundColor
         
+        setupCollectionView()
+        setupPageControl()
+        setupNextButton()
+    }
+    
+    private func setupCollectionView() {
         onboardingCollectionView.registerNib(cell: OnboardingCollectionViewCell.self)
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
         onboardingCollectionView.isScrollEnabled = false
-        
-        setupPageControl()
-        setupNextButton()
     }
     
     private func setupPageControl() {
@@ -52,6 +60,7 @@ class OnboardingViewController: UIViewController {
     }
     
     // MARK: - IBActions
+    //
     private func nextButtonTap() {
         viewModel.move(didMoved: {currentIndex in
             pageControlView.currentPage = currentIndex
@@ -80,7 +89,7 @@ extension OnboardingViewController: UICollectionViewDelegate, UICollectionViewDa
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: OnboardingCollectionViewCell = onboardingCollectionView.dequeue(indexPath: indexPath) else {
-            Logger.log("failed to cast cell", category: \.default, level: .fault)
+            Logger.log("failed to cast cell", category: \.onboarding, level: .fault)
             return UICollectionViewCell()
         }
         

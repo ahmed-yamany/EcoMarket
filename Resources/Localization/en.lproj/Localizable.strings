@@ -13,6 +13,7 @@
 "email" = "Email";
 "password" = "Password";
 "login" = "Login";
+"signup" = "Sign Up";
 "login.facebook" = "Continue with Facebook";
 "login.google" = "Continue with Google";
 "login.apple" = "Continue with Apple";

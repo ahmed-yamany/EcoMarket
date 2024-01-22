@@ -8,44 +8,59 @@
 import UIKit
 
 class SplashViewController: UIViewController {
-
+    // MARK: - IBOutlets
+    //
     @IBOutlet weak var backgroundImage: UIImageView!
-    @IBOutlet weak var loginBtn: UIButton!
-    @IBOutlet weak var signupBtn: UIButton!
+    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var logoImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        initUI()
+        setup()
     }
     
-    private func initUI() {
-//        backgroundImage.image = UIImage.splash02
+    // MARK: - Setup UI
+    //
+    private func setup() {
+        setupBackgroundImage()
+        setupLogoImage()
+        setupLoginButton()
+        setupSignupButton()
+    }
+    
+    private func setupBackgroundImage() {
+        backgroundImage.image = AppImage.Onboarding.splash1
         backgroundImage.contentMode = .scaleAspectFill
-        
-        loginBtn.backgroundColor = .white
-        loginBtn.tintColor = .black
-        loginBtn.layer.cornerRadius = loginBtn.frame.height / 2
-        loginBtn.clipsToBounds = true
-        loginBtn.setTitle(L10n.Splash.Button.login, for: .normal)
-        signupBtn.tintColor = .white
-        signupBtn.layer.cornerRadius = signupBtn.frame.height / 2
-        signupBtn.clipsToBounds = true
-        signupBtn.layer.borderWidth = 2
-        signupBtn.layer.borderColor = UIColor.white.cgColor
-        signupBtn.setTitle(L10n.Splash.Button.login, for: .normal)
-//        logoImage.image = UIImage.logoVector
-        logoImage.contentMode = .scaleAspectFill
-        
-        loginBtn.addTarget(self, action: #selector(goToLogin), for: .touchUpInside)
-        signupBtn.addTarget(self, action: #selector(goToSignup), for: .touchUpInside)
     }
     
-    @objc private func goToLogin() {
-        // Navigate to Login Page
+    private func setupLogoImage() {
+        logoImage.image = AppImage.Onboarding.logo
+        logoImage.contentMode = .scaleAspectFill
     }
-    @objc private func goToSignup() {
-        // Navigate to Signup Page
+    
+    private func setupLoginButton() {
+        loginButton.backgroundColor = .white
+        loginButton.tintColor = .black
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.clipsToBounds = true
+        loginButton.setTitle(L10n.login, for: .normal)
+        loginButton.addAction(.init(handler: { [weak self] _ in self?.loginButtonTapped() }), for: .touchUpInside)
+    }
+    
+    private func setupSignupButton() {
+        signupButton.tintColor = .white
+        signupButton.layer.cornerRadius = signupButton.frame.height / 2
+        signupButton.clipsToBounds = true
+        signupButton.layer.borderWidth = 2
+        signupButton.layer.borderColor = UIColor.white.cgColor
+        signupButton.setTitle(L10n.signup, for: .normal)
+        signupButton.addAction(.init(handler: { [weak self] _ in self?.signupButtonTapped() }), for: .touchUpInside)
+    }
+    
+    private func loginButtonTapped() {
+    }
+    
+    private func signupButtonTapped() {
     }
 }

@@ -41,5 +41,14 @@ enum AppImage {
         static var nextButton: UIImage? {
             return UIImage(named: "\(folderName)/next-button")
         }
+        
+        static var splash1: UIImage? {
+            return UIImage(named: "\(folderName)/splash-2")
+        }
+        
+        static var logo: UIImage? {
+            return UIImage(named: "\(folderName)/logo")
+        }
+
     }
 }
