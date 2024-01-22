@@ -8,17 +8,11 @@
 import UIKit
 import Combine
 
-extension UICollectionView {
-    func registerFromNib(_ cell: UICollectionViewCell.Type) {
-        register(UINib(nibName: cell.identifier, bundle: nil), forCellWithReuseIdentifier: cell.identifier)
-    }
-    
-    func dequeue<Cell: UICollectionViewCell>(indexPath: IndexPath) -> Cell? {
-        dequeueReusableCell(withReuseIdentifier: Cell.identifier, for: indexPath) as? Cell
-    }
-}
-
 class CategoryViewController2: UIViewController {
+    // MARK: - Outlets
+    //
+    @IBOutlet weak var collectionView: UICollectionView!
+    
     // MARK: - Properties
     //
     private(set) var viewModel: Category2ViewModel
@@ -35,15 +29,11 @@ class CategoryViewController2: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Outlets
-    //
-    @IBOutlet weak var collectionView: UICollectionView!
-    
     // MARK: - View Lifecycle
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getData()
+        viewModel.viewDidLoad()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +64,12 @@ class CategoryViewController2: UIViewController {
     private func configCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerFromNib(CategoryCollectionViewCell.self)
+        collectionView.registerNib(CategoryCollectionViewCell.self)
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
     // MARK: - Compositional Layout
-    
+    //
     /// Creates a compositional layout for the collection view.
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
@@ -94,6 +84,7 @@ class CategoryViewController2: UIViewController {
         
         // section
         let section = NSCollectionLayoutSection(group: group)
+        section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
         
         // Create and return a compositional layout with the defined section.
         return UICollectionViewCompositionalLayout(section: section)
@@ -101,6 +92,7 @@ class CategoryViewController2: UIViewController {
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
+//
 extension CategoryViewController2: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -109,16 +101,12 @@ extension CategoryViewController2: UICollectionViewDelegate, UICollectionViewDat
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: CategoryCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
-            
+            Logger.log("Failed to dequeue collection view cell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
         
-        cell.setup(category: viewModel.categories[indexPath.row])
+        cell.setup(category: viewModel.categories[indexPath.row], indexPath: indexPath)
         
         return cell
     }
-}
-
-extension UICollectionViewCell: Identifiable {
-    
 }

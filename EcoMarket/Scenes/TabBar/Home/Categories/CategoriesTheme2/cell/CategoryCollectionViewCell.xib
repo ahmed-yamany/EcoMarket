@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,8 +25,8 @@
                             </imageView>
                         </subviews>
                     </stackView>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lkV-Ty-es9">
-                        <rect key="frame" x="24.000000000000004" y="20.666666666666668" width="41.333333333333343" height="45.666666666666657"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="lkV-Ty-es9">
+                        <rect key="frame" x="24" y="20.666666666666671" width="41.333333333333343" height="45.666666666666671"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6u-hw-qRT">
                                 <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
@@ -48,8 +48,6 @@
             <constraints>
                 <constraint firstItem="K44-Ye-Im2" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5fG-6B-VOV"/>
                 <constraint firstAttribute="trailing" secondItem="K44-Ye-Im2" secondAttribute="trailing" id="KaO-j0-I1M"/>
-                <constraint firstItem="lkV-Ty-es9" firstAttribute="centerY" secondItem="K44-Ye-Im2" secondAttribute="centerY" id="Qbv-yd-l7H"/>
-                <constraint firstItem="lkV-Ty-es9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="24" id="UIC-Du-Aw2"/>
                 <constraint firstItem="K44-Ye-Im2" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="fjk-gC-a19"/>
                 <constraint firstAttribute="bottom" secondItem="K44-Ye-Im2" secondAttribute="bottom" id="qvP-aQ-1I9"/>
             </constraints>
@@ -57,6 +55,7 @@
             <connections>
                 <outlet property="categoryImage" destination="umB-5r-Z1P" id="7j0-5L-ctu"/>
                 <outlet property="categoryName" destination="R6u-hw-qRT" id="YZe-wd-bsC"/>
+                <outlet property="labelsStackView" destination="lkV-Ty-es9" id="hrG-vq-kE0"/>
                 <outlet property="productCount" destination="glE-u5-HNs" id="NO3-ww-5D5"/>
             </connections>
             <point key="canvasLocation" x="308.39694656488547" y="32.74647887323944"/>

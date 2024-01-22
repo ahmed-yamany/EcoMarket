@@ -27,10 +27,7 @@ enum AppColor {
     static var secondaryText: UIColor {
         return UIColor(named: "em-secondaryText")!
     }
-    
-    static var secondaryText: UIColor {
-        return UIColor(named: "em-secondaryText")!
-    }
+
     
     static var secondaryButton: UIColor {
         return UIColor(named: "em-secondaryButton")!
@@ -44,11 +41,7 @@ enum AppColor {
         return UIColor(named: "em-textFieldUnderLine")!
     }
     
- 	
 	static var searchbarBackground: UIColor {
-        return UIColor(named: "em-searchBackground")!
-    }
-    static var searchbarBackground: UIColor {
         return UIColor(named: "em-searchBackground")!
     }
 

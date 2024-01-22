@@ -12,7 +12,6 @@ class SearchView: UIView {
     // MARK: IBOutlet
     @IBOutlet weak var searchTextField: UITextField!
     @IBOutlet weak var searchImage: UIImageView!
-    @IBOutlet weak var mainView: UIView!
     
     // MARK: Init
     override init(frame: CGRect) {
@@ -38,8 +37,8 @@ class SearchView: UIView {
         searchImage.image = UIImage(systemName: "magnifyingglass")
         
         /// View UI
-        mainView.layer.cornerRadius = frame.height / 2
-        mainView.backgroundColor = AppColor.searchbarBackground
+        layer.cornerRadius = frame.height / 2
+        backgroundColor = AppColor.searchbarBackground
     }
 }
 

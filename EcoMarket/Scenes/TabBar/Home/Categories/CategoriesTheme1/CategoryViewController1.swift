@@ -9,17 +9,6 @@ import UIKit
 import Combine
 import MakeConstraints
 
-extension UITableView {
-    func registerFromNib(_ cell: UITableViewCell.Type) {
-        register(UINib(nibName: CategoryTableViewCell.identifier, bundle: nil),
-                 forCellReuseIdentifier: CategoryTableViewCell.identifier)
-    }
-    
-    func dequeue<Cell: UITableViewCell>(indexPath: IndexPath) -> Cell? {
-        dequeueReusableCell(withIdentifier: Cell.identifier, for: indexPath) as? Cell
-    }
-}
-
 class CategoryViewController1: UITableViewController {
     
     // MARK: - Properties
@@ -42,7 +31,7 @@ class CategoryViewController1: UITableViewController {
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.getData()
+        viewModel.viewDidLoad()
     }
     
     override func viewDidLoad() {
@@ -92,7 +81,7 @@ class CategoryViewController1: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 78
+        return 85
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -114,15 +103,4 @@ class CategoryViewController1: UITableViewController {
         
         return headerView
     }
-}
-
-protocol Identifiable {}
-extension Identifiable {
-    static var identifier: String {
-        return String(describing: self.self)
-    }
-}
-
-extension UITableViewCell: Identifiable {
-    
 }
