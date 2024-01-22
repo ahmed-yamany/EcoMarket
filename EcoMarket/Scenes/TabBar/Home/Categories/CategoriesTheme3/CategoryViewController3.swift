@@ -43,6 +43,11 @@ class CategoryViewController3: UIViewController {
         subscribedCategories()
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancellable.forEach { $0.cancel() }
+    }
+    
     // MARK: - Combine Subscriptions
     //
     /// Sets up Combine subscriptions to update the collection view when the `viewModel.categories` change.
