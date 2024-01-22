@@ -17,6 +17,13 @@
 		D64E716E2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E716C2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift */; };
 		D64E716F2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E716D2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib */; };
 		D64E71712B5DBCB500FD3181 /* Category2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71702B5DBCB500FD3181 /* Category2ViewModel.swift */; };
+		D64E71742B5EAA7D00FD3181 /* CategoryViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71722B5EAA7D00FD3181 /* CategoryViewController3.swift */; };
+		D64E71752B5EAA7D00FD3181 /* CategoryViewController3.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E71732B5EAA7D00FD3181 /* CategoryViewController3.xib */; };
+		D64E717C2B5EAB4900FD3181 /* CategoryCollectionViewCell3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E717A2B5EAB4900FD3181 /* CategoryCollectionViewCell3.swift */; };
+		D64E717D2B5EAB4900FD3181 /* CategoryCollectionViewCell3.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E717B2B5EAB4900FD3181 /* CategoryCollectionViewCell3.xib */; };
+		D64E717F2B5EACC400FD3181 /* Category3ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E717E2B5EACC400FD3181 /* Category3ViewModel.swift */; };
+		D64E71822B5EB25A00FD3181 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64E71812B5EB25A00FD3181 /* SearchView.swift */; };
+		D64E71842B5EB26700FD3181 /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D64E71832B5EB26700FD3181 /* SearchView.xib */; };
 		D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */; };
 		D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13072B53648D00CE2D71 /* AppColor.swift */; };
 		D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65A13092B536AA300CE2D71 /* AppImage.swift */; };
@@ -91,6 +98,13 @@
 		D64E716C2B5DB9D300FD3181 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D64E716D2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D64E71702B5DBCB500FD3181 /* Category2ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category2ViewModel.swift; sourceTree = "<group>"; };
+		D64E71722B5EAA7D00FD3181 /* CategoryViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController3.swift; sourceTree = "<group>"; };
+		D64E71732B5EAA7D00FD3181 /* CategoryViewController3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryViewController3.xib; sourceTree = "<group>"; };
+		D64E717A2B5EAB4900FD3181 /* CategoryCollectionViewCell3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell3.swift; sourceTree = "<group>"; };
+		D64E717B2B5EAB4900FD3181 /* CategoryCollectionViewCell3.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell3.xib; sourceTree = "<group>"; };
+		D64E717E2B5EACC400FD3181 /* Category3ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category3ViewModel.swift; sourceTree = "<group>"; };
+		D64E71812B5EB25A00FD3181 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		D64E71832B5EB26700FD3181 /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		D65A127B2B51FDF000CE2D71 /* SocialMediaButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialMediaButton.swift; sourceTree = "<group>"; };
 		D65A13072B53648D00CE2D71 /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		D65A13092B536AA300CE2D71 /* AppImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
@@ -233,8 +247,22 @@
 		214AC0722B4E97B50094297D /* CategoriesTheme3 */ = {
 			isa = PBXGroup;
 			children = (
+				D64E71722B5EAA7D00FD3181 /* CategoryViewController3.swift */,
+				D64E71732B5EAA7D00FD3181 /* CategoryViewController3.xib */,
+				D64E717A2B5EAB4900FD3181 /* CategoryCollectionViewCell3.swift */,
+				D64E717B2B5EAB4900FD3181 /* CategoryCollectionViewCell3.xib */,
+				D64E717E2B5EACC400FD3181 /* Category3ViewModel.swift */,
 			);
 			path = CategoriesTheme3;
+			sourceTree = "<group>";
+		};
+		D64E71802B5EB22A00FD3181 /* SearchView */ = {
+			isa = PBXGroup;
+			children = (
+				D64E71812B5EB25A00FD3181 /* SearchView.swift */,
+				D64E71832B5EB26700FD3181 /* SearchView.xib */,
+			);
+			path = SearchView;
 			sourceTree = "<group>";
 		};
 		D6C6C6DE2B4F2EFA00836A05 /* Buttons */ = {
@@ -405,6 +433,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				D64E71802B5EB22A00FD3181 /* SearchView */,
 				D6C6C6DE2B4F2EFA00836A05 /* Buttons */,
 				D6C6C6F22B516F2F00836A05 /* TextField */,
 			);
@@ -672,6 +701,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D64E71752B5EAA7D00FD3181 /* CategoryViewController3.xib in Resources */,
 				D6C6C6DB2B4F17D600836A05 /* LoginViewController.xib in Resources */,
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				EE11B1F22B570A5A0077F5AA /* Poppins-SemiBold.ttf in Resources */,
@@ -685,7 +715,9 @@
 				EE11B1F42B570A620077F5AA /* Poppins-Bold.ttf in Resources */,
 				D64E716B2B5DB96C00FD3181 /* CategoryViewController2.xib in Resources */,
 				D6C6C6D32B4EEAE700836A05 /* SignupViewController.xib in Resources */,
+				D64E717D2B5EAB4900FD3181 /* CategoryCollectionViewCell3.xib in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
+				D64E71842B5EB26700FD3181 /* SearchView.xib in Resources */,
 				D64E716F2B5DB9D300FD3181 /* CategoryCollectionViewCell.xib in Resources */,
 				D6C6C6EF2B4F486A00836A05 /* SuccessViewController.xib in Resources */,
 				EE11B1F02B570A3D0077F5AA /* Poppins-Regular.ttf in Resources */,
@@ -758,6 +790,7 @@
 				D6C6C6DA2B4F17D600836A05 /* LoginViewController.swift in Sources */,
 				D64E71712B5DBCB500FD3181 /* Category2ViewModel.swift in Sources */,
 				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
+				D64E717F2B5EACC400FD3181 /* Category3ViewModel.swift in Sources */,
 				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
 				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
 				D6C6C6E42B4F2F7100836A05 /* FacebookButton.swift in Sources */,
@@ -774,7 +807,9 @@
 				EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */,
 				D64E71402B5C26A900FD3181 /* CategoryModel.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
+				D64E717C2B5EAB4900FD3181 /* CategoryCollectionViewCell3.swift in Sources */,
 				D64E71392B5C225700FD3181 /* CategoryViewController1.swift in Sources */,
+				D64E71822B5EB25A00FD3181 /* SearchView.swift in Sources */,
 				D64E716A2B5DB96C00FD3181 /* CategoryViewController2.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
@@ -782,6 +817,7 @@
 				D64E71422B5C28C800FD3181 /* CategoryViewModel.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
+				D64E71742B5EAA7D00FD3181 /* CategoryViewController3.swift in Sources */,
 				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
 				EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */,
 				D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */,

@@ -39,5 +39,9 @@ enum AppColor {
     static var textFieldUnderLine: UIColor {
         return UIColor(named: "em-textFieldUnderLine")!
     }
+    
+    static var searchbarBackground: UIColor {
+        return UIColor(named: "em-searchBackground")!
+    }
 }
 // swiftlint: enable all

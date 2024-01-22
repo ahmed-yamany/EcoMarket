@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchView" customModule="EcoMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="mainView" destination="ara-0L-7bq" id="4X9-jL-VLJ"/>
+                <outlet property="searchImage" destination="sZu-xf-iF6" id="l4z-wc-oN9"/>
+                <outlet property="searchTextField" destination="jl6-C2-ZaY" id="O2Y-2s-yzw"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="456" height="96"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ara-0L-7bq">
+                    <rect key="frame" x="0.0" y="0.0" width="456" height="159"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="4Ok-bc-9mC">
+                            <rect key="frame" x="0.0" y="0.0" width="456" height="159"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="sZu-xf-iF6">
+                                    <rect key="frame" x="8" y="67" width="25" height="50"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="25" id="YRz-sD-hGc"/>
+                                        <constraint firstAttribute="height" constant="25" id="wRK-Ve-dJ6"/>
+                                    </constraints>
+                                </imageView>
+                                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jl6-C2-ZaY">
+                                    <rect key="frame" x="41" y="75" width="407" height="34"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <directionalEdgeInsets key="directionalLayoutMargins" top="8" leading="8" bottom="8" trailing="8"/>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="4Ok-bc-9mC" firstAttribute="top" secondItem="ara-0L-7bq" secondAttribute="top" id="EmA-eY-NaF"/>
+                        <constraint firstAttribute="bottom" secondItem="4Ok-bc-9mC" secondAttribute="bottom" id="bcN-ju-2fH"/>
+                        <constraint firstItem="4Ok-bc-9mC" firstAttribute="leading" secondItem="ara-0L-7bq" secondAttribute="leading" id="hMD-Qm-03k"/>
+                        <constraint firstAttribute="trailing" secondItem="4Ok-bc-9mC" secondAttribute="trailing" id="jXR-cD-Iag"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ara-0L-7bq" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="48T-dx-49V"/>
+                <constraint firstItem="ara-0L-7bq" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6Rd-JZ-Z8q"/>
+                <constraint firstAttribute="trailing" secondItem="ara-0L-7bq" secondAttribute="trailing" id="aJk-gA-aj3"/>
+                <constraint firstAttribute="bottom" secondItem="ara-0L-7bq" secondAttribute="bottom" id="zAL-5S-v1x"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="135.87786259541986" y="-246.47887323943664"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

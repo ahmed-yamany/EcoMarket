@@ -9,9 +9,9 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController2" customModule="EcoMarket" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController3" customModule="EcoMarket" customModuleProvider="target">
             <connections>
-                <outlet property="collectionView" destination="ZQ9-Il-RzF" id="f9n-nL-cco"/>
+                <outlet property="collectionView" destination="WR5-O1-PoU" id="1Eg-Mn-9ro"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,16 +20,16 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q2L-cx-kEn" customClass="SearchView" customModule="EcoMarket" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QfS-oB-bay" customClass="SearchView" customModule="EcoMarket" customModuleProvider="target">
                     <rect key="frame" x="15" y="79" width="363" height="50"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="rnP-3E-IiK"/>
+                        <constraint firstAttribute="height" constant="50" id="TpH-fd-M7n"/>
                     </constraints>
                 </view>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="ZQ9-Il-RzF">
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="WR5-O1-PoU">
                     <rect key="frame" x="0.0" y="149" width="393" height="669"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="hQm-7a-d0h">
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="gHe-Aw-86t">
                         <size key="itemSize" width="128" height="128"/>
                         <size key="headerReferenceSize" width="0.0" height="0.0"/>
                         <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -40,16 +40,16 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Q2L-cx-kEn" secondAttribute="trailing" constant="15" id="BXh-tu-e1f"/>
-                <constraint firstItem="ZQ9-Il-RzF" firstAttribute="top" secondItem="Q2L-cx-kEn" secondAttribute="bottom" constant="20" id="OnG-D2-UiO"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ZQ9-Il-RzF" secondAttribute="bottom" id="Pf2-u6-y32"/>
-                <constraint firstItem="Q2L-cx-kEn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="TUS-U7-tsM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ZQ9-Il-RzF" secondAttribute="trailing" id="UaW-Bu-ENe"/>
-                <constraint firstItem="ZQ9-Il-RzF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="iJe-Zh-X4P"/>
-                <constraint firstItem="Q2L-cx-kEn" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="wAw-Vw-E3Y"/>
+                <constraint firstItem="WR5-O1-PoU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="HhK-kg-Bdc"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QfS-oB-bay" secondAttribute="trailing" constant="15" id="hZ9-cr-lV3"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WR5-O1-PoU" secondAttribute="bottom" id="nWy-D9-uRg"/>
+                <constraint firstItem="WR5-O1-PoU" firstAttribute="top" secondItem="QfS-oB-bay" secondAttribute="bottom" constant="20" id="uHM-eU-WFs"/>
+                <constraint firstItem="QfS-oB-bay" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="yDR-qA-h5X"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="WR5-O1-PoU" secondAttribute="trailing" id="yg7-iO-2Ek"/>
+                <constraint firstItem="QfS-oB-bay" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="ypH-gc-NyA"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <point key="canvasLocation" x="-53" y="20"/>
+            <point key="canvasLocation" x="38" y="21"/>
         </view>
     </objects>
     <resources>

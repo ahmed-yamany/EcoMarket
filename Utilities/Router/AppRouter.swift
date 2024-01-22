@@ -21,7 +21,7 @@ final class AppRouter: Router {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         self.window = window
-        self.present(CategoryViewController2(viewModel: Category2ViewModel()))
+        self.present(CategoryViewController3(viewModel: Category3ViewModel()))
     }
     
     func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
