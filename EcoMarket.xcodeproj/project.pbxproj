@@ -9,23 +9,9 @@
 /* Begin PBXBuildFile section */
 		A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */; };
 		A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */; };
-		A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */; };
 		A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C782B528A4C00316DD4 /* OnboardingData.json */; };
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
-		A1CB8C802B53100100316DD4 /* FlexiblePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */; };
-		A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
-		A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */; };
-		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
-		A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */; };
-		A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */; };
-		A1CB8C772B5289FD00316DD4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */; };
-		A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C782B528A4C00316DD4 /* OnboardingData.json */; };
-		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
-		A1CB8C802B53100100316DD4 /* FlexiblePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */; };
-		A1CB8C842B53DA6000316DD4 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */; };
-		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
-		A1CB8C892B540FCF00316DD4 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
@@ -36,9 +22,25 @@
 		EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C92B45B41600675EAE /* .swiftlint.yml */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
-		EE55FD682B57CBA400E674C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD672B57CBA400E674C2 /* mainWindow.swift */; };
-		EE55FD6B2B57CBB800E674C2 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */; };
-		EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */; };
+		EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */; };
+		EE58F5D72B5ECF7F0068B93F /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */; };
+		EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */; };
+		EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D22B58680D00A9E0C2 /* EMTextField.swift */; };
+		EE58F5DA2B5ECF9D0068B93F /* EcoMarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C42B5867E100A9E0C2 /* EcoMarketButton.swift */; };
+		EE58F5DB2B5ECFA30068B93F /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C62B5867E100A9E0C2 /* GoogleButton.swift */; };
+		EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C82B5867E100A9E0C2 /* PrimaryButton.swift */; };
+		EE58F5DD2B5ECFAB0068B93F /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C32B5867E000A9E0C2 /* SocialMediaButton.swift */; };
+		EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D82B58685100A9E0C2 /* AppColor.swift */; };
+		EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D72B58685100A9E0C2 /* AppImage.swift */; };
+		EE58F5E12B5ED0100068B93F /* OnboardingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58F5E02B5ED0100068B93F /* OnboardingTests.swift */; };
+		EE58F5E22B5ED01F0068B93F /* FlexiblePageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7F2B53100100316DD4 /* FlexiblePageControl.swift */; };
+		EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */; };
+		EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9BA2B5867A800A9E0C2 /* OnboardingCollectionViewCell.swift */; };
+		EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C822B53DA6000316DD4 /* SplashViewController.swift */; };
+		EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */; };
+		EE58F5E72B5ED0800068B93F /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9AE2B58670500A9E0C2 /* SignupViewController.swift */; };
+		EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9B32B58671200A9E0C2 /* SuccessViewController.swift */; };
+		EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE58F5E92B5ED0F20068B93F /* OnboardingModel.swift */; };
 		EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */; };
 		EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */; };
 		EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */; };
@@ -51,28 +53,19 @@
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
 		EEA6F9992B5865BA00A9E0C2 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE11B1FA2B570EAF0077F5AA /* MakeConstraints */; };
 		EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A22B58665B00A9E0C2 /* mainWindow.swift */; };
-		EEA6F9A62B58667500A9E0C2 /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */; };
-		EEA6F9A92B58668500A9E0C2 /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */; };
 		EEA6F9AC2B5866F100A9E0C2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9AA2B5866F100A9E0C2 /* LoginViewController.xib */; };
 		EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9AB2B5866F100A9E0C2 /* LoginViewController.swift */; };
-		EEA6F9B02B58670500A9E0C2 /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9AE2B58670500A9E0C2 /* SignupViewController.swift */; };
 		EEA6F9B12B58670500A9E0C2 /* SignupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9AF2B58670500A9E0C2 /* SignupViewController.xib */; };
 		EEA6F9B42B58671200A9E0C2 /* SuccessViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9B22B58671200A9E0C2 /* SuccessViewController.xib */; };
-		EEA6F9B52B58671200A9E0C2 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9B32B58671200A9E0C2 /* SuccessViewController.swift */; };
-		EEA6F9BC2B5867A800A9E0C2 /* OnboardingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9BA2B5867A800A9E0C2 /* OnboardingCollectionViewCell.swift */; };
 		EEA6F9BD2B5867A800A9E0C2 /* OnboardingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9BB2B5867A800A9E0C2 /* OnboardingCollectionViewCell.xib */; };
-		EEA6F9C92B5867E100A9E0C2 /* SocialMediaButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C32B5867E000A9E0C2 /* SocialMediaButton.swift */; };
-		EEA6F9CA2B5867E100A9E0C2 /* EcoMarketButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C42B5867E100A9E0C2 /* EcoMarketButton.swift */; };
 		EEA6F9CB2B5867E100A9E0C2 /* AppleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C52B5867E100A9E0C2 /* AppleButton.swift */; };
-		EEA6F9CC2B5867E100A9E0C2 /* GoogleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C62B5867E100A9E0C2 /* GoogleButton.swift */; };
 		EEA6F9CD2B5867E100A9E0C2 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C72B5867E100A9E0C2 /* FacebookButton.swift */; };
-		EEA6F9CE2B5867E100A9E0C2 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C82B5867E100A9E0C2 /* PrimaryButton.swift */; };
 		EEA6F9D32B58680D00A9E0C2 /* EMTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9D12B58680D00A9E0C2 /* EMTextField.xib */; };
-		EEA6F9D42B58680D00A9E0C2 /* EMTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D22B58680D00A9E0C2 /* EMTextField.swift */; };
 		EEA6F9D62B58683F00A9E0C2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9D52B58683F00A9E0C2 /* Colors.xcassets */; };
-		EEA6F9D92B58685100A9E0C2 /* AppImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D72B58685100A9E0C2 /* AppImage.swift */; };
-		EEA6F9DA2B58685100A9E0C2 /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9D82B58685100A9E0C2 /* AppColor.swift */; };
-		EEA6F9DD2B58750A00A9E0C2 /* +JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */; };
+		EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069AE2B5ED20D0063EE80 /* Poppins-Regular.ttf */; };
+		EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069AF2B5ED20D0063EE80 /* Poppins-Medium.ttf */; };
+		EEF069B42B5ED20D0063EE80 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069B02B5ED20D0063EE80 /* Poppins-SemiBold.ttf */; };
+		EEF069B52B5ED20D0063EE80 /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069B12B5ED20D0063EE80 /* Poppins-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,7 +89,7 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
-		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = EcoMarket.app; path = "/Users/ahmed-yamany/Desktop/EcoMarket/build/Debug-iphoneos/EcoMarket.app"; sourceTree = "<absolute>"; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -109,9 +102,8 @@
 		EE32E2C92B45B41600675EAE /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
-		EE55FD672B57CBA400E674C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
-		EE55FD6A2B57CBB800E674C2 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
-		EE55FD6D2B57CBCC00E674C2 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
+		EE58F5E02B5ED0100068B93F /* OnboardingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
+		EE58F5E92B5ED0F20068B93F /* OnboardingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMTabBarViewController.swift; sourceTree = "<group>"; };
 		EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarItem.swift; sourceTree = "<group>"; };
 		EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBar.swift; sourceTree = "<group>"; };
@@ -145,6 +137,10 @@
 		EEA6F9D72B58685100A9E0C2 /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		EEA6F9D82B58685100A9E0C2 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+JSONDecoder.swift"; sourceTree = "<group>"; };
+		EEF069AE2B5ED20D0063EE80 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		EEF069AF2B5ED20D0063EE80 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		EEF069B02B5ED20D0063EE80 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		EEF069B12B5ED20D0063EE80 /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -239,10 +235,10 @@
 			children = (
 				EEA6F9B92B58679700A9E0C2 /* CollectionView Cell */,
 				A1CB8C782B528A4C00316DD4 /* OnboardingData.json */,
+				EE58F5E92B5ED0F20068B93F /* OnboardingModel.swift */,
 				A1CB8C762B5289FD00316DD4 /* OnboardingViewModel.swift */,
 				A1CB8C6E2B52788600316DD4 /* OnboardingViewController.xib */,
 				A1CB8C6D2B52788600316DD4 /* OnboardingViewController.swift */,
-				EE64D7A02B5ADC2200C5CBD7 /* OnboardingModel.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -290,17 +286,7 @@
 				EE32E2D32B45B6C800675EAE /* Utilities */,
 				EE32E2BC2B45B2ED00675EAE /* Resources */,
 				EE8925612B5AE1FE0025C166 /* EcoMarketTests */,
-				EE32E2892B45B1D100675EAE /* Products */,
 			);
-			sourceTree = "<group>";
-		};
-		EE32E2892B45B1D100675EAE /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				EE32E2882B45B1D100675EAE /* EcoMarket.app */,
-				EE8925602B5AE1FE0025C166 /* EcoMarketTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		EE32E28A2B45B1D100675EAE /* EcoMarket */ = {
@@ -356,10 +342,10 @@
 		EE32E2C02B45B32B00675EAE /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				EE76B16E2B5AE77D005E59A1 /* Poppins-Bold.ttf */,
-				EE76B16D2B5AE77C005E59A1 /* Poppins-Medium.ttf */,
-				EE76B16B2B5AE77C005E59A1 /* Poppins-Regular.ttf */,
-				EE76B16C2B5AE77C005E59A1 /* Poppins-SemiBold.ttf */,
+				EEF069B12B5ED20D0063EE80 /* Poppins-Bold.ttf */,
+				EEF069AF2B5ED20D0063EE80 /* Poppins-Medium.ttf */,
+				EEF069AE2B5ED20D0063EE80 /* Poppins-Regular.ttf */,
+				EEF069B02B5ED20D0063EE80 /* Poppins-SemiBold.ttf */,
 				EE32E2CE2B45B56700675EAE /* Fonts.swift */,
 			);
 			path = Fonts;
@@ -526,7 +512,7 @@
 		EE64D7A52B5ADE4500C5CBD7 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				EE76B1692B5AE285005E59A1 /* OnboardingTests.swift */,
+				EE58F5E02B5ED0100068B93F /* OnboardingTests.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -681,7 +667,6 @@
 			);
 			name = EcoMarketTests;
 			productName = EcoMarketTests;
-			productReference = EE8925602B5AE1FE0025C166 /* EcoMarketTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -717,7 +702,7 @@
 			packageReferences = (
 				EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
 			);
-			productRefGroup = EE32E2892B45B1D100675EAE /* Products */;
+			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
@@ -736,21 +721,21 @@
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */,
 				EEA6F9AC2B5866F100A9E0C2 /* LoginViewController.xib in Resources */,
+				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
+				EEF069B52B5ED20D0063EE80 /* Poppins-Bold.ttf in Resources */,
 				EEA6F9D32B58680D00A9E0C2 /* EMTextField.xib in Resources */,
-				EE76B1722B5AE77D005E59A1 /* Poppins-Bold.ttf in Resources */,
 				EEA6F9BD2B5867A800A9E0C2 /* OnboardingCollectionViewCell.xib in Resources */,
-				EE76B16F2B5AE77D005E59A1 /* Poppins-Regular.ttf in Resources */,
+				EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */,
 				A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */,
 				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
 				EEA6F9B12B58670500A9E0C2 /* SignupViewController.xib in Resources */,
 				A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */,
 				A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
+				EEF069B42B5ED20D0063EE80 /* Poppins-SemiBold.ttf in Resources */,
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
-				EE76B1712B5AE77D005E59A1 /* Poppins-Medium.ttf in Resources */,
 				EEA6F9B42B58671200A9E0C2 /* SuccessViewController.xib in Resources */,
-				EE76B1702B5AE77D005E59A1 /* Poppins-SemiBold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,40 +794,44 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C6C6DA2B4F17D600836A05 /* LoginViewController.swift in Sources */,
-				D6C6C6E22B4F2F3600836A05 /* PrimaryButton.swift in Sources */,
-				D6C6C6D52B4EF74100836A05 /* CustomTextField.swift in Sources */,
-				D6C6C6D22B4EEAE700836A05 /* SignupViewController.swift in Sources */,
 				EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */,
-				D6C6C6E42B4F2F7100836A05 /* FacebookButton.swift in Sources */,
-				D6C6C6E82B4F371F00836A05 /* GoogleButton.swift in Sources */,
-				D65A127C2B51FDF000CE2D71 /* SocialMediaButton.swift in Sources */,
-				D6C6C6EA2B4F374100836A05 /* AppleButton.swift in Sources */,
+				EE58F5DA2B5ECF9D0068B93F /* EcoMarketButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
+				EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */,
 				EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */,
 				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
 				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
+				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
+				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
+				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
 				EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */,
-				EE64D7A12B5ADC2200C5CBD7 /* OnboardingModel.swift in Sources */,
+				EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
+				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
+				EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EEA6F9CB2B5867E100A9E0C2 /* AppleButton.swift in Sources */,
+				EE58F5DD2B5ECFAB0068B93F /* SocialMediaButton.swift in Sources */,
+				EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */,
 				EEA6F9CD2B5867E100A9E0C2 /* FacebookButton.swift in Sources */,
+				EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
+				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
+				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,
+				EE58F5D72B5ECF7F0068B93F /* parentViewController.swift in Sources */,
 				A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */,
+				EE58F5DB2B5ECFA30068B93F /* GoogleButton.swift in Sources */,
+				EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
-				D6C6C6EE2B4F486A00836A05 /* SuccessViewController.swift in Sources */,
-				EE55FD6E2B57CBCC00E674C2 /* +topMostViewController.swift in Sources */,
-				D65A130A2B536AA300CE2D71 /* AppImage.swift in Sources */,
-				D6C6C6E02B4F2F0A00836A05 /* EcoMarketButton.swift in Sources */,
-				D65A13082B53648D00CE2D71 /* AppColor.swift in Sources */,
+				EE58F5E22B5ED01F0068B93F /* FlexiblePageControl.swift in Sources */,
 				EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */,
+				EE58F5E72B5ED0800068B93F /* SignupViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -850,7 +839,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE76B16A2B5AE285005E59A1 /* OnboardingTests.swift in Sources */,
+				EE58F5E12B5ED0100068B93F /* OnboardingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
