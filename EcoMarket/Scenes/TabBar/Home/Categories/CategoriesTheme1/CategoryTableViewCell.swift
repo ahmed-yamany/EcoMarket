@@ -8,34 +8,38 @@
 import UIKit
 
 class CategoryTableViewCell: UITableViewCell {
-
+    // MARK: - IBOutlets
+    //
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryName: UILabel!
     @IBOutlet weak var productCount: UILabel!
     
-     /// Configures the cell with data from the provided `CategoryModel`.
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setupUI()
+    }
+    
+    /// Configures the cell with data from the provided `CategoryModel`.
     func setup(category: CategoryModel) {
         categoryImage.image = UIImage(named: category.image)
         categoryName.text = category.name
         productCount.text = category.productNumber
-        
-        setupUI()
     }
     
     /// Configures the cell's UI, including background color, corner radius, text colors, and fonts.
     func setupUI() {
-        /// StackView UI
+        // StackView UI
         stackView.backgroundColor = AppColor.primaryText
-        stackView.layer.cornerRadius = stackView.height / 2
+        stackView.layer.cornerRadius = 70 / 2
         
-        /// Labels UI
+        // Labels UI
         categoryName.textColor = AppColor.secondaryText
         categoryName.font = UIFont.h3
         productCount.textColor = AppColor.secondaryText
         productCount.font = UIFont.regular
         
-        /// Cell UI
+        // Cell UI
         backgroundColor = .clear
         selectionStyle = .none
     }
