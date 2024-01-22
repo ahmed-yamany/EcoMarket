@@ -15,7 +15,7 @@
                 <outlet property="imageView" destination="7kv-FS-NVw" id="h4r-su-boY"/>
                 <outlet property="startButton" destination="aJ8-7o-MzF" id="eBS-HX-dbU"/>
                 <outlet property="successLabel" destination="Bfj-iY-fAE" id="kpV-Fb-dBP"/>
-                <outlet property="successMesage" destination="DTZ-PT-2uR" id="5bg-sF-076"/>
+                <outlet property="successMessage" destination="DTZ-PT-2uR" id="5bg-sF-076"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

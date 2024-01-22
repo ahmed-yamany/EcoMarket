@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SplashViewController" customModule="EcoMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="backgroundImage" destination="Ddg-Ai-SeR" id="gpF-Nl-Qit"/>
+                <outlet property="loginButton" destination="n9b-fm-NYy" id="gSj-YG-lSX"/>
+                <outlet property="logoImage" destination="XDu-sf-TzI" id="lFv-QH-H5K"/>
+                <outlet property="signupButton" destination="Z3r-r3-Wo7" id="doY-D7-5I0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ddg-Ai-SeR">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="852" id="Q9K-ZU-6Q3"/>
+                    </constraints>
+                </imageView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="FhU-gO-BTX">
+                    <rect key="frame" x="24" y="59" width="345" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kop-oq-fKH">
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Yrf-Wq-yi3"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="IB8-xR-02o">
+                            <rect key="frame" x="0.0" y="220" width="345" height="84"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XDu-sf-TzI">
+                                    <rect key="frame" x="104.66666666666666" y="0.0" width="136" height="84"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="136" id="CdN-AZ-J4U"/>
+                                        <constraint firstAttribute="height" constant="84" id="ERn-tF-UzG"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                        </stackView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nV5-dx-5gH">
+                            <rect key="frame" x="0.0" y="424" width="345" height="100"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="u50-hM-4ND"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="eD6-om-qLE">
+                            <rect key="frame" x="0.0" y="644" width="345" height="115"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9b-fm-NYy">
+                                    <rect key="frame" x="0.0" y="0.0" width="345" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z3r-r3-Wo7">
+                                    <rect key="frame" x="0.0" y="65" width="345" height="50"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Button"/>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="115" id="0ND-H8-aHb"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ddg-Ai-SeR" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5Hz-WY-8W9"/>
+                <constraint firstAttribute="bottom" secondItem="Ddg-Ai-SeR" secondAttribute="bottom" id="7p6-Tt-oTh"/>
+                <constraint firstItem="FhU-gO-BTX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Bfy-l1-Ti9"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="FhU-gO-BTX" secondAttribute="bottom" id="ift-6L-e58"/>
+                <constraint firstItem="FhU-gO-BTX" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="jdO-Fw-Cmq"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="FhU-gO-BTX" secondAttribute="trailing" constant="24" id="lgb-Pq-Dm7"/>
+                <constraint firstItem="Ddg-Ai-SeR" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="n1u-zS-otU"/>
+                <constraint firstItem="Ddg-Ai-SeR" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="y3G-Ar-Nqt"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="19.718309859154932"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

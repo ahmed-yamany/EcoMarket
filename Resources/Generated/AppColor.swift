@@ -23,6 +23,10 @@ enum AppColor {
     static var primaryText: UIColor {
         return UIColor(named: "em-primaryText")!
     }
+   
+    static var secondaryText: UIColor {
+        return UIColor(named: "em-secondaryText")!
+    }
     
     static var secondaryText: UIColor {
         return UIColor(named: "em-secondaryText")!
@@ -40,8 +44,17 @@ enum AppColor {
         return UIColor(named: "em-textFieldUnderLine")!
     }
     
+ 	
+	static var searchbarBackground: UIColor {
+        return UIColor(named: "em-searchBackground")!
+    }
     static var searchbarBackground: UIColor {
         return UIColor(named: "em-searchBackground")!
     }
+
+    static var secondaryBackground: UIColor {
+        return UIColor(named: "em-secondaryBackground")!
+    }
+
 }
 // swiftlint: enable all
