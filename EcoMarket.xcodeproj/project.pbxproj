@@ -285,15 +285,23 @@
 		D6A0EB9C2B60364F00079FF3 /* Products */ = {
 			isa = PBXGroup;
 			children = (
+				D6A0EBAB2B60495C00079FF3 /* Cell */,
 				D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */,
 				D6A0EB9E2B6036A300079FF3 /* ProductsViewController.xib */,
-				D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */,
-				D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */,
 				D6A0EBA52B60380700079FF3 /* ProductModel.swift */,
 				D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */,
 				D6A0EBA92B603BC400079FF3 /* HeaderView.swift */,
 			);
 			path = Products;
+			sourceTree = "<group>";
+		};
+		D6A0EBAB2B60495C00079FF3 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */,
+				D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */,
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {

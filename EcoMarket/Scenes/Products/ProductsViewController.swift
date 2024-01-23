@@ -81,7 +81,7 @@ class ProductsViewController: UIViewController {
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(250))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 16, trailing: 25)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 25, bottom: 24, trailing: 25)
         group.interItemSpacing = .fixed(interItemSpacing)
         
         // Header
