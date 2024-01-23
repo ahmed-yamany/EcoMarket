@@ -9,6 +9,9 @@ import UIKit
 
 class Header: UICollectionReusableView {
     
+    static let identifier = String(describing: Header.self)
+    static let elementKind = String("Clothes")
+    
     // Create a UILabel for displaying the header text
     let label = UILabel()
     

@@ -60,7 +60,9 @@ class ProductsViewController: UIViewController {
     /// Configures the collection view properties.
     private func configureCollectionView() {
         collectionView.registerNib(cell: ProductsCollectionViewCell.self)
-        collectionView.register(Header.self, forSupplementaryViewOfKind: "Clothes", withReuseIdentifier: "headerID")
+        collectionView.register(Header.self, 
+                                forSupplementaryViewOfKind: Header.elementKind,
+                                withReuseIdentifier: Header.identifier)
         collectionView.collectionViewLayout = createCompositionalLayout()
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -88,7 +90,7 @@ class ProductsViewController: UIViewController {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: "Clothes",
+            elementKind: Header.elementKind,
             alignment: .top
         )
         header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
@@ -103,7 +105,7 @@ class ProductsViewController: UIViewController {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, 
-                                                                     withReuseIdentifier: "headerID",
+                                                                     withReuseIdentifier: Header.identifier,
                                                                      for: indexPath)
         return header
     }
