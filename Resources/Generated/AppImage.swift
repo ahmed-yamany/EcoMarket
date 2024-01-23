@@ -35,6 +35,10 @@ enum AppImage {
         return UIImage(named: "verify")
     }
     
+    static var favouriteImage: UIImage? {
+        return UIImage(systemName: "heart.circle.fill")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         

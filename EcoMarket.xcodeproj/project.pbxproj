@@ -13,6 +13,13 @@
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
+		D6A0EB9F2B6036A300079FF3 /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */; };
+		D6A0EBA02B6036A300079FF3 /* ProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A0EB9E2B6036A300079FF3 /* ProductsViewController.xib */; };
+		D6A0EBA32B6036B700079FF3 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */; };
+		D6A0EBA42B6036B700079FF3 /* ProductsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */; };
+		D6A0EBA62B60380700079FF3 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA52B60380700079FF3 /* ProductModel.swift */; };
+		D6A0EBA82B60386200079FF3 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */; };
+		D6A0EBAA2B603BC400079FF3 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA92B603BC400079FF3 /* HeaderView.swift */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2942B45B1D200675EAE /* Assets.xcassets */; };
@@ -89,7 +96,14 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
-		EE32E2882B45B1D100675EAE /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = EcoMarket.app; path = "/Users/ahmed-yamany/Desktop/EcoMarket/build/Debug-iphoneos/EcoMarket.app"; sourceTree = "<absolute>"; };
+		D6A0EB9B2B6035E600079FF3 /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		D6A0EB9E2B6036A300079FF3 /* ProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsViewController.xib; sourceTree = "<group>"; };
+		D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
+		D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCollectionViewCell.xib; sourceTree = "<group>"; };
+		D6A0EBA52B60380700079FF3 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
+		D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductViewModel.swift; sourceTree = "<group>"; };
+		D6A0EBA92B603BC400079FF3 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -268,6 +282,20 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		D6A0EB9C2B60364F00079FF3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */,
+				D6A0EB9E2B6036A300079FF3 /* ProductsViewController.xib */,
+				D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */,
+				D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */,
+				D6A0EBA52B60380700079FF3 /* ProductModel.swift */,
+				D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */,
+				D6A0EBA92B603BC400079FF3 /* HeaderView.swift */,
+			);
+			path = Products;
+			sourceTree = "<group>";
+		};
 		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,6 +314,7 @@
 				EE32E2D32B45B6C800675EAE /* Utilities */,
 				EE32E2BC2B45B2ED00675EAE /* Resources */,
 				EE8925612B5AE1FE0025C166 /* EcoMarketTests */,
+				D6A0EB9B2B6035E600079FF3 /* EcoMarket.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -387,6 +416,7 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D6A0EB9C2B60364F00079FF3 /* Products */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 			);
@@ -649,7 +679,7 @@
 				EE11B1FA2B570EAF0077F5AA /* MakeConstraints */,
 			);
 			productName = EcoMarket;
-			productReference = EE32E2882B45B1D100675EAE /* EcoMarket.app */;
+			productReference = D6A0EB9B2B6035E600079FF3 /* EcoMarket.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EE89255F2B5AE1FE0025C166 /* EcoMarketTests */ = {
@@ -729,8 +759,10 @@
 				EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */,
 				A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */,
 				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
+				D6A0EBA42B6036B700079FF3 /* ProductsCollectionViewCell.xib in Resources */,
 				EEA6F9B12B58670500A9E0C2 /* SignupViewController.xib in Resources */,
 				A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */,
+				D6A0EBA02B6036A300079FF3 /* ProductsViewController.xib in Resources */,
 				A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
 				EEF069B42B5ED20D0063EE80 /* Poppins-SemiBold.ttf in Resources */,
@@ -797,15 +829,18 @@
 				EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */,
 				EE58F5DA2B5ECF9D0068B93F /* EcoMarketButton.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
+				D6A0EB9F2B6036A300079FF3 /* ProductsViewController.swift in Sources */,
 				EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */,
 				EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */,
 				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
 				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
 				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
+				D6A0EBA62B60380700079FF3 /* ProductModel.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
+				D6A0EBA82B60386200079FF3 /* ProductViewModel.swift in Sources */,
 				EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */,
 				EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
@@ -813,6 +848,7 @@
 				EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
+				D6A0EBAA2B603BC400079FF3 /* HeaderView.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EEA6F9CB2B5867E100A9E0C2 /* AppleButton.swift in Sources */,
 				EE58F5DD2B5ECFAB0068B93F /* SocialMediaButton.swift in Sources */,
@@ -829,6 +865,7 @@
 				EE58F5DB2B5ECFA30068B93F /* GoogleButton.swift in Sources */,
 				EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
+				D6A0EBA32B6036B700079FF3 /* ProductsCollectionViewCell.swift in Sources */,
 				EE58F5E22B5ED01F0068B93F /* FlexiblePageControl.swift in Sources */,
 				EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */,
 				EE58F5E72B5ED0800068B93F /* SignupViewController.swift in Sources */,
