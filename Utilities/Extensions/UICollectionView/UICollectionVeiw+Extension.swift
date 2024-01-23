@@ -7,6 +7,7 @@
 
 import UIKit
 protocol Identifiable { }
+
 extension Identifiable {
     static var identifier: String { String(describing: Self.self) }
 }
@@ -14,7 +15,7 @@ extension Identifiable {
 extension UICollectionViewCell: Identifiable {}
 
 extension UICollectionView {
-    func registerNib<Cell: UICollectionViewCell>(cell: Cell.Type) where Cell: Identifiable {
+    func registerNib<Cell: UICollectionViewCell>(_ cell: Cell.Type) where Cell: Identifiable {
         self.register(UINib(nibName: Cell.identifier, bundle: nil),
                       forCellWithReuseIdentifier: Cell.identifier)
     }

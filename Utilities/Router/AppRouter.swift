@@ -21,7 +21,7 @@ final class AppRouter: Router {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         self.window = window
-        self.present(EMTabBarViewController())
+        self.present(UINavigationController(rootViewController: CategoryViewController2(viewModel: .init())))
     }
     
     func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {

@@ -11,7 +11,6 @@ import MakeConstraints
 protocol EMTextFieldDelegate: AnyObject {
 }
 //
-@IBDesignable
 class EMTextField: UIView {
     // MARK: IBOutlet
     @IBOutlet weak var titleLabel: UILabel!

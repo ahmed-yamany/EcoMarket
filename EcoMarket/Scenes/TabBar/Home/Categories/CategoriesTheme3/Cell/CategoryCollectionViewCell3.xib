@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell3" customModule="EcoMarket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="168" height="203"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="168" height="203"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ga7-Av-n7u">
+                        <rect key="frame" x="0.0" y="0.0" width="168" height="203"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gXR-rC-Kb0">
+                                <rect key="frame" x="0.0" y="0.0" width="168" height="203"/>
+                            </imageView>
+                        </subviews>
+                    </stackView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pkz-cZ-VeN">
+                        <rect key="frame" x="0.0" y="153" width="168" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="PWe-V5-9Li"/>
+                        </constraints>
+                    </view>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="9Qo-N2-CLd">
+                        <rect key="frame" x="63.333333333333329" y="162.33333333333334" width="41.333333333333329" height="40.666666666666657"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGL-Wu-gJl">
+                                <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="20.333333333333332"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1da-pE-EaA">
+                                <rect key="frame" x="0.0" y="20.333333333333314" width="41.333333333333336" height="20.333333333333329"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ga7-Av-n7u" secondAttribute="trailing" id="1dy-h3-uvJ"/>
+                <constraint firstItem="Pkz-cZ-VeN" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Ay1-RN-j70"/>
+                <constraint firstItem="Ga7-Av-n7u" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="H9k-cC-BjZ"/>
+                <constraint firstItem="9Qo-N2-CLd" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="Nf4-OQ-Uct"/>
+                <constraint firstItem="Ga7-Av-n7u" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="VpN-o8-gO9"/>
+                <constraint firstAttribute="bottom" secondItem="Pkz-cZ-VeN" secondAttribute="bottom" id="YEK-0A-fbV"/>
+                <constraint firstAttribute="bottom" secondItem="Ga7-Av-n7u" secondAttribute="bottom" id="gw4-DY-Hro"/>
+                <constraint firstAttribute="bottom" secondItem="9Qo-N2-CLd" secondAttribute="bottom" id="jNt-FV-urI"/>
+                <constraint firstAttribute="trailing" secondItem="Pkz-cZ-VeN" secondAttribute="trailing" id="w8O-e8-2SW"/>
+            </constraints>
+            <size key="customSize" width="168" height="203"/>
+            <connections>
+                <outlet property="bottomView" destination="Pkz-cZ-VeN" id="zPl-l2-L5M"/>
+                <outlet property="categoryImage" destination="gXR-rC-Kb0" id="wal-c1-idH"/>
+                <outlet property="categoryName" destination="WGL-Wu-gJl" id="YSw-3A-zaW"/>
+                <outlet property="productCount" destination="1da-pE-EaA" id="CmU-i8-fHW"/>
+            </connections>
+            <point key="canvasLocation" x="175.57251908396947" y="73.591549295774655"/>
+        </collectionViewCell>
+    </objects>
+</document>

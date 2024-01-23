@@ -45,6 +45,10 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "login.password.placeholder", fallback: "*******")
     }
   }
+  internal enum Search {
+    /// Search....
+    internal static let placeholder = L10n.tr("Localizable", "search.placeholder", fallback: "Search....")
+  }
   internal enum Signup {
     /// Confirm Password
     internal static let confirmPassword = L10n.tr("Localizable", "signup.confirmPassword", fallback: "Confirm Password")

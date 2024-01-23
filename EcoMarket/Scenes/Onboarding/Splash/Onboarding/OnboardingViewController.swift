@@ -37,7 +37,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        onboardingCollectionView.registerNib(cell: OnboardingCollectionViewCell.self)
+        onboardingCollectionView.registerNib(OnboardingCollectionViewCell.self)
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
         onboardingCollectionView.isScrollEnabled = false
