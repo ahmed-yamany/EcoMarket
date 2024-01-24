@@ -8,17 +8,14 @@
 import UIKit
 import Combine
 
-class CustomRoundedButton: UIButton {
-    
-    var tapPublisher = PassthroughSubject<Void, Never>()
-    private var cancellables: Set<AnyCancellable> = []
+open class CustomRoundedButton: UIButton {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         commonInit()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
     }
@@ -29,10 +26,5 @@ class CustomRoundedButton: UIButton {
         backgroundColor = .white
         layer.borderWidth = 1
         layer.borderColor = UIColor.gray.cgColor
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped() {
-        tapPublisher.send()
     }
 }
