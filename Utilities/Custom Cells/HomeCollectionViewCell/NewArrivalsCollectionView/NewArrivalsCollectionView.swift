@@ -10,10 +10,6 @@ import UIKit
 class NewArrivalsCollectionView: UICollectionViewCell {
     
     // MARK: - Variables
-
-    // Cell identifier for dequeuing
-    static let cellID = String(describing: NewArrivalsCollectionView.self)
-
     // Outlets for UI elements
         
     @IBOutlet private(set) weak var favoriteButton: UIButton!
@@ -38,7 +34,7 @@ class NewArrivalsCollectionView: UICollectionViewCell {
     }
 
     // Update the cell UI with data from the model
-    func updateUI(_ model: NewArrivalsModel) {
+    func updateUI(_ model: ProductModel) {
         productImage.image = UIImage(named: model.image)
         productTitle.text = model.name
         productDescription.text = model.description

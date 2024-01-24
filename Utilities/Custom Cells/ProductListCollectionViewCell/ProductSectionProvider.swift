@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductSectionProvider: SectionLayout {
+class ProductSectionProvider: SectionLayout {    
     
     typealias DataType = ProductModel
     
@@ -62,7 +62,7 @@ class ProductSectionProvider: SectionLayout {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                               withReuseIdentifier: SupplementaryViewType.cellID,
+                                                                               withReuseIdentifier: SupplementaryViewType.identifier,
                                                                                for: indexPath) as? SupplementaryViewType
             else { return UICollectionReusableView() }
             header.title = "New Arrivals" // Use indexPath.section instead of indexPath.row

@@ -12,7 +12,7 @@ extension Identifiable {
     static var identifier: String { String(describing: Self.self) }
 }
 
-extension UICollectionViewCell: Identifiable {}
+extension UICollectionReusableView: Identifiable { }
 
 extension UICollectionView {
     func registerNib<Cell: UICollectionViewCell>(_ cell: Cell.Type) where Cell: Identifiable {
@@ -24,3 +24,12 @@ extension UICollectionView {
         return self.dequeueReusableCell(withReuseIdentifier: Cell.identifier, for: indexPath) as? Cell
     }
 }
+
+//
+//extension UICollectionView {
+//    func registerSupplementaryView(_ view: UICollectionReusableView.Type) {
+//        register(UINib(nibName: view.identifier, bundle: nil),
+//                 forSupplementaryViewOfKind: view.identifier,
+//                 withReuseIdentifier: view.identifier)
+//    }
+//}

@@ -7,12 +7,8 @@
 
 import UIKit
 
-import UIKit
-
 class HeaderView: UICollectionReusableView {
-    // Cell identifier for dequeuing
-    static let cellID = String(describing: HeaderView.self)
-    
+    // Cell identifier for dequeuing    
     // MARK: - @IBOutlets
     
     @IBOutlet weak var titleLabel: UILabel!

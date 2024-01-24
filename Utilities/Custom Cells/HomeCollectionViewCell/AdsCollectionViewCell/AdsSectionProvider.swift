@@ -17,10 +17,11 @@ class AdsSectionProvider: SectionLayout {
     // MARK: - Properties
 
     // Initial data for the section
-    var data: [ItemsType] = [
-        .init(title: "", image: "ads-image"),
-        .init(title: "", image: "ads-image")
-    ]
+    var data: [ItemsType] = []
+    
+    init(data: [ItemsType]) {
+        self.data = data
+    }
 
     // MARK: - Section Layout Properties
 

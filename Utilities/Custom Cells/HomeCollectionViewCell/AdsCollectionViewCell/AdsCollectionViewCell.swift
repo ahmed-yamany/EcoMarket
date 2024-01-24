@@ -7,8 +7,6 @@
 
 import UIKit
 
-import UIKit
-
 class AdsCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Variables

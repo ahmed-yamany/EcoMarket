@@ -7,6 +7,41 @@
 
 import UIKit
 
+enum SectionType: Codable {
+    case adds, newArrival
+}
+
+class SectionLayoutFactory {
+    func makeSetion(section: Section) -> any SectionLayout {
+        switch section.type {
+            case .adds: AdsSectionProvider(data: section.adds ?? [])
+            case .newArrival: NewArrivalsSectionProvider(data: section.newArrivarProducts ?? [])
+        }
+    }
+}
+
+struct Section: Codable {
+    let type: SectionType
+    let header: String
+    var newArrivarProducts: [ProductModel]?
+    var adds: [Adds]?
+}
+
+extension Section {
+    static let samples: [Section] = [
+        Section(type: .adds, header: "For You", adds: Adds.samples),
+        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
+//        Section(type: .adds, header: "For You", adds: Adds.samples),
+//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
+//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
+//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
+//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
+//        Section(type: .adds, header: "For You", adds: Adds.samples),
+//        Section(type: .adds, header: "For You", adds: Adds.samples),
+//        Section(type: .adds, header: "For You", adds: Adds.samples)
+    ]
+}
+
 class HomeTheme1VC: UIViewController {
     
     // MARK: - @IBOutlets
@@ -17,6 +52,8 @@ class HomeTheme1VC: UIViewController {
     
     // Array to store section providers conforming to SectionLayout protocol
     var sectionProviders: [any SectionLayout] = []
+    
+    let sectionFactory = SectionLayoutFactory()
      
     // MARK: - LifeCycle
     
@@ -33,27 +70,28 @@ class HomeTheme1VC: UIViewController {
         collectionView.dataSource = self
         
         // Initialize section providers for Ads and New Arrivals
-        sectionProviders = [AdsSectionProvider(), NewArrivalsSectionProvider()]
+//        sectionProviders = [AdsSectionProvider(), NewArrivalsSectionProvider()]
+        let sections = Section.samples
+        sections.forEach { section in
+            var sectionlayout = sectionFactory.makeSetion(section: section)
+            self.sectionProviders.append(sectionlayout)
+        }
         
         // Set up the compositional layout
         collectionView.collectionViewLayout = createLayout()
+        collectionView.reloadData()
     }
     
     // MARK: - Register Cell
     
     private func registerCell() {
         // Register header view
-        collectionView.register(UINib(nibName: HeaderView.cellID, bundle: nil),
+        collectionView.registerNib(AdsCollectionViewCell.self)
+        collectionView.registerNib(NewArrivalsCollectionView.self)
+        collectionView.register(UINib(nibName: HeaderView.identifier, bundle: nil),
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
-                                withReuseIdentifier: HeaderView.cellID)
-        
-        // Register AdsCollectionViewCell
-        collectionView.register(UINib(nibName: AdsCollectionViewCell.cellID, bundle: nil),
-                                forCellWithReuseIdentifier: AdsCollectionViewCell.cellID)
-        
-        // Register NewArrivalsCollectionViewCell
-        collectionView.register(UINib(nibName: NewArrivalsCollectionView.cellID, bundle: nil),
-                                forCellWithReuseIdentifier: NewArrivalsCollectionView.cellID)
+                                withReuseIdentifier: HeaderView.identifier)
+//        collectionView.registerSupplementaryView(HeaderView.self)
     }
     
     // MARK: - Create Layout
