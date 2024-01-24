@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Item {
+struct Adds {
     let title: String
     let image: String
 }

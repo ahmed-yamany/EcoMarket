@@ -7,30 +7,38 @@
 
 import UIKit
 
+import UIKit
+
 class AdsCollectionViewCell: UICollectionViewCell {
     
-    // MARK: - Varables
+    // MARK: - Variables
     
+    // Cell identifier for dequeuing
     static let cellID = String(describing: AdsCollectionViewCell.self)
     
     // MARK: - @IBOutlets
     
     @IBOutlet weak var adsImage: UIImageView!
     
-    // MARK: - LifeCycle
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        // Apply initial styling when the cell is loaded
         applyStyling()
     }
     
-    func setupUI(_ item: Item) {
+    // MARK: - UI Setup Method
+    
+    // Update the cell UI with data from the model
+    func setupUI(_ item: Adds) {
         adsImage.image = UIImage(named: item.image)
     }
+    
     // MARK: - Apply Styling Method
     
+    // Apply styling to the UI elements of the cell
     private func applyStyling() {
         adsImage.layer.cornerRadius = 8
     }
-    
 }

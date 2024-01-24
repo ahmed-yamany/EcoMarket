@@ -7,13 +7,17 @@
 
 import UIKit
 
+import UIKit
+
 class HeaderView: UICollectionReusableView {
+    // Cell identifier for dequeuing
+    static let cellID = String(describing: HeaderView.self)
     
     // MARK: - @IBOutlets
     
     @IBOutlet weak var titleLabel: UILabel!
     
-    // MARK: - LifeCycle
+    // MARK: - Lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -21,10 +25,11 @@ class HeaderView: UICollectionReusableView {
     }
     
     // MARK: - Set Title
+    
+    // Property observer to update the title label when the title is set
     var title: String? {
         didSet {
             titleLabel.text = title
         }
     }
-    
 }
