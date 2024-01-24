@@ -8,7 +8,6 @@
 import UIKit
 import Combine
 
-
 class ColorView: UIStackView {
     
     private var cancellables: Set<AnyCancellable> = []

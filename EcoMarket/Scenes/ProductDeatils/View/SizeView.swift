@@ -8,7 +8,6 @@
 import UIKit
 import Combine
 
-
 class CustomSizeView: UIStackView {
     
     private var cancellables: Set<AnyCancellable> = []
@@ -53,7 +52,7 @@ class CustomSizeView: UIStackView {
     
     private func buttonTapped(_ tappedButton: CustomRoundedButton?) {
         buttons.forEach { $0.backgroundColor = defaultColor }
-        buttons.forEach{$0.setTitleColor(.gray, for: .normal)}
+        buttons.forEach { $0.setTitleColor(.gray, for: .normal) }
         
         tappedButton?.backgroundColor = selectedColor
         tappedButton?.setTitleColor(.white, for: .normal)
