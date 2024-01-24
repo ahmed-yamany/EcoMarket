@@ -54,6 +54,7 @@ open class CustomSizeView: UIStackView {
     
     // MARK: Setup Methods
     //
+    /// Configures the initial setup of the stack view.
     private func setup() {
         axis = .horizontal
         spacing = 15
@@ -63,6 +64,7 @@ open class CustomSizeView: UIStackView {
         setupAnimatedViewLayout()
     }
     
+    /// Sets up the layout for the animated view.
     private func setupAnimatedViewLayout() {
         addSubview(animatedView)
         animatedView.translatesAutoresizingMaskIntoConstraints = false
@@ -70,11 +72,17 @@ open class CustomSizeView: UIStackView {
         animatedView.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
     }
     
+    /// Sets up the appearance for the animated view.
     private func setupAnimatedView() {
         animatedView.backgroundColor = selectedColor
         animatedView.layer.cornerRadius = buttonWidth / 2
     }
     
+    // MARK: - Public Methods
+
+    /// Sets the sizes for the buttons in the view.
+    ///
+    /// - Parameter sizes: An array of size strings to be displayed as buttons.
     public func setSizes(_ sizes: [String]) {
         for size in sizes {
             let button = createRoundedButton(for: size)
@@ -84,24 +92,39 @@ open class CustomSizeView: UIStackView {
         selectButton(buttons.first)
     }
     
+    // MARK: - Private Methods
+
+    /// Creates a rounded button with a specified title.
+    ///
+    /// - Parameter title: The title for the button.
+    /// - Returns: A CustomRoundedButton instance.
     private func createRoundedButton(for title: String) -> CustomRoundedButton {
         let button = CustomRoundedButton()
         button.setTitle(title.description, for: .normal)
+        button.titleLabel?.font = .medium
         button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
         button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
         
         button.addAction(.init(handler: {[weak self] _ in
             self?.buttonTapped(button, title: title.description)
-        }),for: .touchUpInside)
+        }), for: .touchUpInside)
         
         return button
     }
     
+    /// Handles the tap event on a button.
+    ///
+    /// - Parameters:
+    ///   - tappedButton: The button that was tapped.
+    ///   - title: The title associated with the tapped button.
     private func buttonTapped(_ tappedButton: CustomRoundedButton, title: String) {
         selectButton(tappedButton)
         delegate?.sizeView(self, didSelect: title)
     }
     
+    /// Updates the style of the selected and unselected buttons.
+    ///
+    /// - Parameter button: The button to be selected.
     private func selectButton(_ button: CustomRoundedButton?) {
         selectedButton = button
         updateSelectedButtonStyle(button)
@@ -124,6 +147,9 @@ open class CustomSizeView: UIStackView {
         }
     }
     
+    /// Animates the selected button and updates the animated view position.
+    ///
+    /// - Parameter button: The button to be animated.
     private func animateSelectedButton(_ button: CustomRoundedButton?) {
         animatedViewConstraints?.isActive = false
         if let button {

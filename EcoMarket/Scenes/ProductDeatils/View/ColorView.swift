@@ -6,64 +6,126 @@
 //
 
 import UIKit
-import Combine
 
-class ColorView: UIStackView {
-    
-    private var cancellables: Set<AnyCancellable> = []
+public protocol ColorViewDelegate: AnyObject {
+    func colorView(_ sizeView: ColorView, didSelect color: UIColor)
+}
+
+@IBDesignable
+open class ColorView: UIStackView {
+    // MARK: Private Properties
+    //
     private var buttons: [CustomColorButton] = []
-    private let selectedColor = UIColor(named: "selectedColor")
+    private var buttonColors: [UIColor] = []
+    private let selectedColor = AppColor.socialButton
+    private let buttonWidth: CGFloat = 20
+    private let buttonHeight: CGFloat = 20
     
-    private var originalColors: [UIColor?] = []
+    // MARK: Public Properties
+    //
+    public var selectedButton: CustomColorButton?
+    public var delegate: (any ColorViewDelegate)?
     
+    // MARK: Initializer
+    //
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setup()
     }
     
-    required init(coder: NSCoder) {
+    required public init(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        setup()
     }
     
-    private func commonInit() {
-        let buttonWidth: CGFloat = 20
-        let buttonHeight: CGFloat = 20
-        let spacing: CGFloat = 10
-        
+    // MARK: Setup Methods
+    //
+    /// Configures the initial setup of the stack view.
+    private func setup() {
         axis = .vertical
-        self.spacing = spacing
-        
-        for color in [UIColor(named: "Color1"), UIColor(named: "Color2"), UIColor(named: "Color3"), UIColor(named: "Color4")] {
-            let button = CustomColorButton()
-            button.backgroundColor = color
-            originalColors.append(color)
-            button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-            button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-            addArrangedSubview(button)
-            
+        spacing = 10
+        distribution = .equalSpacing
+        alignment = .center
+        layoutMargins = UIEdgeInsets(top: 11, left: 10, bottom: 11, right: 10)
+        isLayoutMarginsRelativeArrangement = true
+        configureStackViewUI()
+    }
+    
+    /// Configures the appearance of the stack view.
+    private func configureStackViewUI() {
+        backgroundColor = AppColor.mainTheme
+        layer.shadowColor = AppColor.primaryButton.cgColor
+        layer.shadowOffset = .zero
+        layer.shadowOpacity = 0.2
+        layer.shadowRadius = 15
+        layer.cornerRadius = 20
+    }
+    
+    // MARK: - Public Methods
+    
+    /// Sets the available colors for the color view.
+    ///
+    /// - Parameter colors: An array of UIColor objects representing the available colors.
+    public func setColors(_ colors: [UIColor]) {
+        for color in colors {
+            let button = createRoundedButton(for: color)
             buttons.append(button)
-            
-            button.tapPublisher
-                .sink { [weak self, weak button] in
-                    self?.buttonTapped(button)
+            buttonColors.append(color)
+            addArrangedSubview(button)
+        }
+        selectButton(buttons.first)
+    }
+    
+    // MARK: - Private Methods
+    
+    /// Creates a rounded button with a specified color.
+    ///
+    /// - Parameter color: The UIColor of the button.
+    /// - Returns: A CustomColorButton instance.
+    private func createRoundedButton(for color: UIColor) -> CustomColorButton {
+        let button = CustomColorButton()
+        button.backgroundColor = color
+        button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
+        button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        
+        button.addAction(.init(handler: {[weak self] _ in
+            self?.buttonTapped(button, color: color)
+        }), for: .touchUpInside)
+        
+        return button
+    }
+    
+    /// Handles the tap on a  button.
+    ///
+    /// - Parameters:
+    ///   - tappedButton: The tapped CustomColorButton.
+    ///   - color: The UIColor of the tapped button.
+    private func buttonTapped(_ tappedButton: CustomColorButton, color: UIColor) {
+        selectButton(tappedButton)
+        delegate?.colorView(self, didSelect: color)
+    }
+    
+    private func selectButton(_ button: CustomColorButton?) {
+        selectedButton = button
+        updateSelectedButtonStyle(button)
+    }
+    
+    /// Updates the visual style of color buttons, providing an animation for the selected button.
+    ///
+    /// - Parameter button: The CustomColorButton to be animated.
+    private func updateSelectedButtonStyle(_ button: CustomColorButton?) {
+        zip(buttonColors, buttons).forEach { color, btn in
+            UIView.animate(withDuration: 0.3) {
+                if button === btn {
+                    btn.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
+                    btn.backgroundColor = self.selectedColor
+                    btn.setImage(AppImage.checkImage, for: .normal)
+                } else {
+                    btn.transform = .identity
+                    btn.backgroundColor = color
+                    btn.setImage(UIImage(), for: .normal)
                 }
-                .store(in: &cancellables)
+            }
         }
-    }
-    
-    private func buttonTapped(_ tappedButton: CustomColorButton?) {
-        for (index, button) in buttons.enumerated() {
-            button.backgroundColor = originalColors[index]
-            button.setImage(UIImage(), for: .normal)
-        }
-        
-        tappedButton?.backgroundColor = selectedColor
-        tappedButton?.setImage(UIImage(named: "Vector 1"), for: .normal)
-        
-    }
-    
-    deinit {
-        cancellables.forEach { $0.cancel() }
     }
 }

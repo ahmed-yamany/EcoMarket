@@ -39,6 +39,10 @@ enum AppImage {
         return UIImage(systemName: "magnifyingglass")
     }
     
+    static var checkImage: UIImage? {
+        return UIImage(named: "checkImage")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         

@@ -8,29 +8,24 @@
 import UIKit
 import Combine
 
-class CustomColorButton: UIButton {
-    
-    var tapPublisher = PassthroughSubject<Void, Never>()
-    private var cancellables: Set<AnyCancellable> = []
-    
+open class CustomColorButton: UIButton {
+    // MARK: - Initializer
+    //
     override init(frame: CGRect) {
         super.init(frame: frame)
-        commonInit()
+        setup()
     }
     
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
-        commonInit()
+        setup()
     }
     
-    private func commonInit() {
+    // MARK: - Setup Method
+    //
+    private func setup() {
+        // Button UI
         layer.cornerRadius = 10
-        setTitleColor(.gray, for: .normal)
         layer.borderColor = UIColor.gray.cgColor
-        addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
-    }
-    
-    @objc private func buttonTapped(_ button: UIButton) {
-        tapPublisher.send()
     }
 }

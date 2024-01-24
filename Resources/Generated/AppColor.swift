@@ -48,6 +48,22 @@ enum AppColor {
     static var secondaryBackground: UIColor {
         return UIColor(named: "em-secondaryBackground")!
     }
+    
+    static var productColor1: UIColor {
+        return UIColor(named: "em-productColor1")!
+    }
+    
+    static var productColor2: UIColor {
+        return UIColor(named: "em-productColor2")!
+    }
+    
+    static var productColor3: UIColor {
+        return UIColor(named: "em-productColor3")!
+    }
+    
+    static var productColor4: UIColor {
+        return UIColor(named: "em-productColor4")!
+    }
 
 }
 // swiftlint: enable all

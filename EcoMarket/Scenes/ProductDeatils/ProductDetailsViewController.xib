@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductDetailsViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="colorView" destination="FIN-F1-MYk" id="4MD-ap-oPr"/>
                 <outlet property="sizeView" destination="d87-pf-gu1" id="tcf-Z0-rqb"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -28,20 +29,11 @@
                         <constraint firstAttribute="height" constant="40" id="u3p-wx-pBl"/>
                     </constraints>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-F1-MYk" customClass="CardView" customModule="EcoMarket" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FIN-F1-MYk" customClass="ColorView" customModule="EcoMarket" customModuleProvider="target">
                     <rect key="frame" x="176.66666666666666" y="209" width="40" height="132"/>
-                    <subviews>
-                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Fs-MHj" customClass="ColorView" customModule="EcoMarket" customModuleProvider="target">
-                            <rect key="frame" x="10" y="11" width="20" height="110"/>
-                        </stackView>
-                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstItem="UQA-Fs-MHj" firstAttribute="leading" secondItem="FIN-F1-MYk" secondAttribute="leading" constant="10" id="FNp-i6-mth"/>
                         <constraint firstAttribute="height" constant="132" id="Rjo-ZG-e6E"/>
-                        <constraint firstItem="UQA-Fs-MHj" firstAttribute="top" secondItem="FIN-F1-MYk" secondAttribute="top" constant="11" id="YKv-s9-gE2"/>
-                        <constraint firstAttribute="bottom" secondItem="UQA-Fs-MHj" secondAttribute="bottom" constant="11" id="YrY-Yi-dVW"/>
-                        <constraint firstAttribute="trailing" secondItem="UQA-Fs-MHj" secondAttribute="trailing" constant="10" id="eu2-kX-rl7"/>
                         <constraint firstAttribute="width" constant="40" id="gsm-sf-1PE"/>
                     </constraints>
                 </view>
