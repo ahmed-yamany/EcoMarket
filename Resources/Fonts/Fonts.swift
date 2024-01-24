@@ -3,6 +3,11 @@ import UIKit.UIFont
 // swiftlint: disable all
 /*
 To get all system and custom fonts supported in the app
+ Poppins
+ -- Poppins-Regular
+ -- Poppins-Medium
+ -- Poppins-SemiBold
+ -- Poppins-Bold
 for familyName in UIFont.familyNames {
     print (familyName )
     for fontName in UIFont.fontNames (forFamilyName: familyName) {
@@ -52,7 +57,9 @@ public extension UIFont {
         }
         return font
     }
-    
+}
+
+extension UIFont {
     /// Returns the appropriate font name based on the specified weight.
     /// Don't fogtet to update this with the custom family name you provided to the app
     ///
@@ -60,13 +67,11 @@ public extension UIFont {
     /// - Returns: The font name associated with the specified weight.
     static private func fontName(forWeight weight: UIFont.Weight) -> String {
         switch weight {
-        case .regular: return "DMSans-9ptRegular"
-        case .light: return "DMSans-9ptRegular_Light"
-        case .medium: return "DMSans-9ptRegular_Medium"
-        case .semibold: return "DMSans-9ptRegular_SemiBold"
-        case .bold: return "DMSans-9ptRegular_Bold"
-        case .black: return "DMSans-9ptRegular_Black"
-        default: return "DMSans-9ptRegular"
+        case .regular: return "Poppins-Regular"
+        case .medium: return "Poppins-Medium"
+        case .semibold: return "Poppins-SemiBold"
+        case .bold: return "Poppins-Bold"
+        default: return "Poppins-Regular"
         }
     }
 }
