@@ -43,6 +43,14 @@ enum AppImage {
         return UIImage(named: "checkImage")
     }
     
+    static var cartIcon: UIImage? {
+        return UIImage(named: "cart")
+    }
+    
+    static var favIcon: UIImage? {
+        return UIImage(named: "favourite")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         

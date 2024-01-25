@@ -79,9 +79,6 @@ open class ColorView: UIStackView {
     // MARK: - Private Methods
     
     /// Creates a rounded button with a specified color.
-    ///
-    /// - Parameter color: The UIColor of the button.
-    /// - Returns: A CustomColorButton instance.
     private func createRoundedButton(for color: UIColor) -> CustomColorButton {
         let button = CustomColorButton()
         button.backgroundColor = color
@@ -96,10 +93,6 @@ open class ColorView: UIStackView {
     }
     
     /// Handles the tap on a  button.
-    ///
-    /// - Parameters:
-    ///   - tappedButton: The tapped CustomColorButton.
-    ///   - color: The UIColor of the tapped button.
     private func buttonTapped(_ tappedButton: CustomColorButton, color: UIColor) {
         selectButton(tappedButton)
         delegate?.colorView(self, didSelect: color)
@@ -111,8 +104,6 @@ open class ColorView: UIStackView {
     }
     
     /// Updates the visual style of color buttons, providing an animation for the selected button.
-    ///
-    /// - Parameter button: The CustomColorButton to be animated.
     private func updateSelectedButtonStyle(_ button: CustomColorButton?) {
         zip(buttonColors, buttons).forEach { color, btn in
             UIView.animate(withDuration: 0.3) {

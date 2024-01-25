@@ -95,9 +95,6 @@ open class CustomSizeView: UIStackView {
     // MARK: - Private Methods
 
     /// Creates a rounded button with a specified title.
-    ///
-    /// - Parameter title: The title for the button.
-    /// - Returns: A CustomRoundedButton instance.
     private func createRoundedButton(for title: String) -> CustomRoundedButton {
         let button = CustomRoundedButton()
         button.setTitle(title.description, for: .normal)
@@ -113,18 +110,12 @@ open class CustomSizeView: UIStackView {
     }
     
     /// Handles the tap event on a button.
-    ///
-    /// - Parameters:
-    ///   - tappedButton: The button that was tapped.
-    ///   - title: The title associated with the tapped button.
     private func buttonTapped(_ tappedButton: CustomRoundedButton, title: String) {
         selectButton(tappedButton)
         delegate?.sizeView(self, didSelect: title)
     }
     
     /// Updates the style of the selected and unselected buttons.
-    ///
-    /// - Parameter button: The button to be selected.
     private func selectButton(_ button: CustomRoundedButton?) {
         selectedButton = button
         updateSelectedButtonStyle(button)
@@ -148,8 +139,6 @@ open class CustomSizeView: UIStackView {
     }
     
     /// Animates the selected button and updates the animated view position.
-    ///
-    /// - Parameter button: The button to be animated.
     private func animateSelectedButton(_ button: CustomRoundedButton?) {
         animatedViewConstraints?.isActive = false
         if let button {
