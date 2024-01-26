@@ -12,6 +12,7 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
+    @IBOutlet weak var containerStackView: UIStackView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,6 +31,9 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
         subTitleLabel.font = .custom(size: 16, weight: .regular)
         subTitleLabel.numberOfLines = 2
         subTitleLabel.textColor = AppColor.secondaryText
+        
+        image.drawOnboardingShape()
+        
     }
     
     func setup(_ obj: Onboarding) {

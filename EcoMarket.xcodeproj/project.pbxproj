@@ -59,6 +59,7 @@
 		EE5CA14E2B5EFB0500630C5D /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA14D2B5EFB0500630C5D /* UITableView+Extension.swift */; };
 		EE5CA1552B5F033100630C5D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1542B5F033100630C5D /* SearchView.swift */; };
 		EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CA1562B5F033300630C5D /* SearchView.xib */; };
+		EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D818E2B641B3E00222466 /* drawOnboardingShape.swift */; };
 		EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */; };
 		EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */; };
 		EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */; };
@@ -140,6 +141,7 @@
 		EE5CA14D2B5EFB0500630C5D /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		EE5CA1542B5F033100630C5D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EE5CA1562B5F033300630C5D /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
+		EE5D818E2B641B3E00222466 /* drawOnboardingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawOnboardingShape.swift; sourceTree = "<group>"; };
 		EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMTabBarViewController.swift; sourceTree = "<group>"; };
 		EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarItem.swift; sourceTree = "<group>"; };
 		EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBar.swift; sourceTree = "<group>"; };
@@ -663,6 +665,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */,
+				EE5D818E2B641B3E00222466 /* drawOnboardingShape.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
 				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
 				EE5CA1362B5EF9BF00630C5D /* CategoryViewModel.swift in Sources */,
+				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
