@@ -10,10 +10,11 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
     // MARK: - Outlets
     //
+    @IBOutlet weak var stapper: CustomStapper!
+    @IBOutlet weak var sizeView: CustomSizeView!
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var colorView: ColorView!
-    @IBOutlet weak var sizeView: CustomSizeView!
     @IBOutlet weak var sizeLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
@@ -36,6 +37,7 @@ class ProductDetailsViewController: UIViewController {
     /// UI Configuration
     private func configureUI() {
         productImage.layer.cornerRadius = 15
+        stapper.stapperDelegate = self
         setupLabelsUI()
         setupButtonsUI()
         setupdata()
@@ -82,9 +84,9 @@ class ProductDetailsViewController: UIViewController {
     //
     private func setupSizeView() {
         sizeView.setSizes(ProductSize.allCases.map { $0.rawValue })
-        sizeView.defaultColor = AppColor.backgroundColor
-        sizeView.selectedColor = AppColor.primaryButton
-        sizeView.delegate = self
+//        sizeView.defaultColor = AppColor.backgroundColor
+//        sizeView.selectedColor = AppColor.primaryButton
+        sizeView.sizeDelegate = self
     }
     
     private func setupColorView() {
@@ -96,6 +98,10 @@ class ProductDetailsViewController: UIViewController {
 // MARK: - SizeViewDelegate
 //
 extension ProductDetailsViewController: SizeViewDelegate {
+    func sizeView(didSelect size: String) {
+        print(size)
+    }
+    
     func sizeView(_ sizeView: CustomSizeView, didSelect size: String) {
         print(size)
     }
@@ -106,5 +112,13 @@ extension ProductDetailsViewController: SizeViewDelegate {
 extension ProductDetailsViewController: ColorViewDelegate {
     func colorView(_ sizeView: ColorView, didSelect color: UIColor) {
         print(color)
+    }
+}
+
+// MARK: - StapperDelegate
+//
+extension ProductDetailsViewController: StapperDelegate {
+    func getCount(_ stapper: CustomStapper, for count: String) {
+        print(count)
     }
 }

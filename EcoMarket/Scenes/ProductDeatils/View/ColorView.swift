@@ -88,7 +88,7 @@ open class ColorView: UIStackView {
         button.addAction(.init(handler: {[weak self] _ in
             self?.buttonTapped(button, color: color)
         }), for: .touchUpInside)
-        
+                
         return button
     }
     

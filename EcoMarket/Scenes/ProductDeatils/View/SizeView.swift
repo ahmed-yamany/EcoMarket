@@ -6,62 +6,62 @@
 //
 
 import UIKit
+import MakeConstraints
 
 public protocol SizeViewDelegate {
     func sizeView(_ sizeView: CustomSizeView, didSelect size: String)
 }
 
 @IBDesignable
-open class CustomSizeView: UIStackView {
+open class CustomSizeView: UIView {
+    
+    // MARK: Properties
+    //
+    let collectionView = SizeCollectionView(frame: .zero, collectionViewLayout: .init())
+    
     // MARK: Private Properties
     //
-    private var buttons: [CustomRoundedButton] = []
+    private var sizeLabels: [String] = []
     private let animatedView = UIView()
     private var animatedViewConstraints: NSLayoutConstraint?
-    private let buttonWidth: CGFloat = 40
-    private let buttonHeight: CGFloat = 40
+    private var buttonWidth: CGFloat {
+        frame.height
+    }
+    private var buttonHeight: CGFloat {
+        frame.height
+    }
     
     // MARK: Public Properties
     //
-    public var selectedButton: CustomRoundedButton?
-    public var delegate: (any SizeViewDelegate)?
-    
-    @IBInspectable public var defaultColor: UIColor = .white {
-        didSet {
-            selectButton(buttons.first)
-            setupAnimatedView()
-        }
-    }
-    
-    @IBInspectable public var selectedColor: UIColor = .systemBlue {
-        didSet {
-            selectButton(buttons.first)
-            setupAnimatedView()
-        }
-    }
+    public var selectedButton: String?
+    public var sizeDelegate: (any SizeViewDelegate)?
     
     // MARK: Initializer
     //
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         setup()
     }
     
-    required public init(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         setup()
     }
     
     // MARK: Setup Methods
     //
-    /// Configures the initial setup of the stack view.
-    private func setup() {
-        axis = .horizontal
-        spacing = 15
-        distribution = .equalSpacing
-        alignment = .center
-        backgroundColor = .clear
+    /// Configures the initial setup of the  view.
+    func setup() {
+        configureCollectionView()
+        setupAnimatedView()
         setupAnimatedViewLayout()
+        addSubview(collectionView)
+        collectionView.fillSuperview()
+    }
+    
+    /// setting up and configuring the UICollectionView
+    private func configureCollectionView() {
+        collectionView.sizeCollectionDelegate = self
     }
     
     /// Sets up the layout for the animated view.
@@ -74,80 +74,42 @@ open class CustomSizeView: UIStackView {
     
     /// Sets up the appearance for the animated view.
     private func setupAnimatedView() {
-        animatedView.backgroundColor = selectedColor
+        animatedView.backgroundColor = collectionView.selectedColor
         animatedView.layer.cornerRadius = buttonWidth / 2
     }
     
+    /// Animates the selected button and updates the animated view position.
+    private func animate(to view: UIView?) {
+        animatedViewConstraints?.isActive = false
+        if let view {
+            animatedViewConstraints = animatedView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            animatedViewConstraints?.isActive = true
+        }
+        
+        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.02) {
+            self.layoutIfNeeded()
+        }
+    }
+    
     // MARK: - Public Methods
-
+    
     /// Sets the sizes for the buttons in the view.
     ///
     /// - Parameter sizes: An array of size strings to be displayed as buttons.
     public func setSizes(_ sizes: [String]) {
-        for size in sizes {
-            let button = createRoundedButton(for: size)
-            buttons.append(button)
-            addArrangedSubview(button)
-        }
-        selectButton(buttons.first)
+        collectionView.setLabels(sizes: sizes)
+        self.sizeLabels = sizes
+        collectionView.reloadData()
     }
-    
-    // MARK: - Private Methods
+}
 
-    /// Creates a rounded button with a specified title.
-    private func createRoundedButton(for title: String) -> CustomRoundedButton {
-        let button = CustomRoundedButton()
-        button.setTitle(title.description, for: .normal)
-        button.titleLabel?.font = .medium
-        button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-        
-        button.addAction(.init(handler: {[weak self] _ in
-            self?.buttonTapped(button, title: title.description)
-        }), for: .touchUpInside)
-        
-        return button
+// MARK: - mnm
+extension CustomSizeView: SizeCollectionViewDelegate {
+    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String) {
+        sizeDelegate?.sizeView(self, didSelect: size)
     }
     
-    /// Handles the tap event on a button.
-    private func buttonTapped(_ tappedButton: CustomRoundedButton, title: String) {
-        selectButton(tappedButton)
-        delegate?.sizeView(self, didSelect: title)
-    }
-    
-    /// Updates the style of the selected and unselected buttons.
-    private func selectButton(_ button: CustomRoundedButton?) {
-        selectedButton = button
-        updateSelectedButtonStyle(button)
-        animateSelectedButton(button)
-    }
-    
-    private func updateSelectedButtonStyle(_ button: CustomRoundedButton?) {
-        buttons.forEach { btn in
-            if button === btn {
-                UIView.animate(withDuration: 0.2) { [weak self] in
-                    btn.backgroundColor = self?.selectedColor
-                    btn.setTitleColor(.white, for: .normal)
-                }
-            } else {
-                UIView.animate(withDuration: 0.2) { [weak self] in
-                    btn.backgroundColor = self?.defaultColor
-                    btn.setTitleColor(.gray, for: .normal)
-                }
-            }
-        }
-    }
-    
-    /// Animates the selected button and updates the animated view position.
-    private func animateSelectedButton(_ button: CustomRoundedButton?) {
-        animatedViewConstraints?.isActive = false
-        if let button {
-            animatedViewConstraints = animatedView.leadingAnchor.constraint(equalTo: button.leadingAnchor)
-            animatedViewConstraints?.isActive = true
-        }
-        
-        UIView.animate(withDuration: 0.3, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.05) {
-            self.layoutIfNeeded()
-        }
+    func didSelect(cell: UICollectionViewCell, indexPath: Int) {
+        animate(to: cell)
     }
 }

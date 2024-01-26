@@ -51,6 +51,10 @@ enum AppImage {
         return UIImage(named: "favourite")
     }
     
+    static var ratingIcon: UIImage? {
+        return UIImage(named: "rating")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         

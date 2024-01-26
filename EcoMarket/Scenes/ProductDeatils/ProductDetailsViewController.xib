@@ -18,8 +18,9 @@
                 <outlet property="productImage" destination="nUX-nc-r9h" id="xqE-8e-5d3"/>
                 <outlet property="productName" destination="mA0-3H-XQf" id="lOb-1p-56y"/>
                 <outlet property="sizeLabel" destination="0r8-j8-Exv" id="4VU-ap-bAl"/>
-                <outlet property="sizeView" destination="l56-gH-DYr" id="SGD-56-ZOC"/>
+                <outlet property="sizeView" destination="Rgv-U8-vsG" id="Q7O-T6-AyK"/>
                 <outlet property="stackView" destination="ZZZ-Hh-NLx" id="yRm-cK-9kg"/>
+                <outlet property="stapper" destination="ghL-rU-arK" id="ui8-KL-48N"/>
                 <outlet property="subtitleLabel" destination="Gca-7V-rn7" id="yUA-bF-DK6"/>
                 <outlet property="titleLabel" destination="whe-aB-y0B" id="yDm-1k-b2B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -57,16 +58,16 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="343" height="40.666666666666664"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7za-Yn-zpu">
-                                                            <rect key="frame" x="0.0" y="0.0" width="249" height="40.666666666666664"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="273" height="40.666666666666664"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mA0-3H-XQf">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="249" height="20.333333333333332"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="273" height="20.333333333333332"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eq2-jT-tMQ">
-                                                                    <rect key="frame" x="0.0" y="20.333333333333314" width="249" height="20.333333333333329"/>
+                                                                    <rect key="frame" x="0.0" y="20.333333333333314" width="273" height="20.333333333333329"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
@@ -74,11 +75,16 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Xb-mD-6Fc">
-                                                            <rect key="frame" x="249" y="4.3333333333333144" width="94" height="32"/>
+                                                            <rect key="frame" x="273" y="5.3333333333333144" width="70" height="30"/>
                                                             <subviews>
-                                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="p0N-rS-feG">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="94" height="32"/>
-                                                                </stepper>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ghL-rU-arK" customClass="CustomStapper" customModule="EcoMarket" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="70" height="30"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="width" constant="70" id="86L-TW-cor"/>
+                                                                        <constraint firstAttribute="height" constant="30" id="CdT-Tb-4U0"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -103,21 +109,20 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="0WO-dS-28J">
                                                     <rect key="frame" x="0.0" y="126.33333333333337" width="343" height="132"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="og8-XF-1Gu">
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="og8-XF-1Gu">
                                                             <rect key="frame" x="0.0" y="52" width="297" height="80"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-j8-Exv">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="41.333333333333336" height="40"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0r8-j8-Exv">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="297" height="40"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l56-gH-DYr" customClass="CustomSizeView" customModule="EcoMarket" customModuleProvider="target">
-                                                                    <rect key="frame" x="0.0" y="40" width="260" height="40"/>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rgv-U8-vsG" customClass="CustomSizeView" customModule="EcoMarket" customModuleProvider="target">
+                                                                    <rect key="frame" x="0.0" y="40" width="297" height="40"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="40" id="jR1-kr-duM"/>
-                                                                        <constraint firstAttribute="width" constant="260" id="v0h-OZ-6bb"/>
+                                                                        <constraint firstAttribute="height" constant="40" id="uq6-c2-shO"/>
                                                                     </constraints>
                                                                 </view>
                                                             </subviews>

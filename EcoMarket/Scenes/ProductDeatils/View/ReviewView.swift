@@ -29,7 +29,7 @@ class ReviewView: UIView {
         mainView.layer.cornerRadius = 10
         mainView.backgroundColor = .black
         
-        imageView.image = UIImage(named: "rating")
+        imageView.image = AppImage.ratingIcon
         
         reviewLabel.text = "4.9"
         reviewLabel.font = .medium
