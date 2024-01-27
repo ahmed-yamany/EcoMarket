@@ -34,6 +34,7 @@ class PrroductCollectionViewCell: UICollectionViewCell {
     /// Configures the initial UI settings for the cell.
     private func configureUI() {
         backgroundColor = .clear
+        productImage.layer.cornerRadius = 8
         configureLabelsUI()
         configureContainerView()
     }
