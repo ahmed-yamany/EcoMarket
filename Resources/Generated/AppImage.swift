@@ -39,6 +39,10 @@ enum AppImage {
         return UIImage(systemName: "magnifyingglass")
     }
     
+    static var arrowImage: UIImage? {
+        return UIImage(named: "arrow")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         
