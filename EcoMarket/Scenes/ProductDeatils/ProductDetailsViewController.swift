@@ -36,7 +36,7 @@ class ProductDetailsViewController: UIViewController {
     //
     /// UI Configuration
     private func configureUI() {
-        productImage.layer.cornerRadius = 15
+        productImage.makeCustomShape()
         stapper.stapperDelegate = self
         setupLabelsUI()
         setupButtonsUI()
@@ -84,8 +84,6 @@ class ProductDetailsViewController: UIViewController {
     //
     private func setupSizeView() {
         sizeView.setSizes(ProductSize.allCases.map { $0.rawValue })
-//        sizeView.defaultColor = AppColor.backgroundColor
-//        sizeView.selectedColor = AppColor.primaryButton
         sizeView.sizeDelegate = self
     }
     
@@ -120,5 +118,75 @@ extension ProductDetailsViewController: ColorViewDelegate {
 extension ProductDetailsViewController: StapperDelegate {
     func getCount(_ stapper: CustomStapper, for count: String) {
         print(count)
+    }
+}
+
+// MARK: - UIView Extension
+//
+extension UIView {
+    /// this function aims to create a custom shape for the product image
+    func makeCustomShape() {
+        // Set the corner radius for the rounded corners
+        let cornerRadius: CGFloat = 20.0
+        let deletedSpace: CGFloat = 60
+        
+        let shapeLayer = CAShapeLayer()
+        let path = UIBezierPath()
+        
+        // Move to the starting point and add a quadratic curve for the top-left corner
+        path.move(to: CGPoint(x: bounds.minX, y: cornerRadius))
+        path.addQuadCurve(to: CGPoint(x: cornerRadius, 
+                                      y: bounds.minY),
+                          controlPoint: CGPoint(x: bounds.minX,
+                                                y: bounds.minY))
+        
+        // Add a line and quadratic curve for the top-right corner
+        path.addLine(to: CGPoint(x: bounds.maxX - cornerRadius, 
+                                 y: bounds.minY))
+        path.addQuadCurve(to: CGPoint(x: bounds.maxX, 
+                                      y: cornerRadius),
+                          controlPoint: CGPoint(x: bounds.maxX,
+                                                y: bounds.minY))
+        
+        // Add a line and quadratic curve for the (bottom-right - space) corner
+        path.addLine(to: CGPoint(x: bounds.maxX, 
+                                 y: bounds.maxY - deletedSpace - cornerRadius))
+        path.addQuadCurve(to: CGPoint(x: bounds.maxX - cornerRadius, 
+                                      y: bounds.maxY - deletedSpace),
+                          controlPoint: CGPoint(x: bounds.maxX,
+                                                y: bounds.maxY - deletedSpace))
+        
+        // Add a line and quadratic curve for the (bottom-right - space) corner
+        path.addLine(to: CGPoint(x: bounds.maxX - deletedSpace, 
+                                 y: bounds.maxY - deletedSpace))
+        path.addQuadCurve(to: CGPoint(x: bounds.maxX - deletedSpace - cornerRadius, 
+                                      y: bounds.maxY - deletedSpace + cornerRadius),
+                          controlPoint: CGPoint(x: bounds.maxX - deletedSpace - cornerRadius,
+                                                y: bounds.maxY - deletedSpace))
+        
+        // Add a line and quadratic curve for the bottom-right corner
+        path.addLine(to: CGPoint(x: bounds.maxX - deletedSpace - cornerRadius, 
+                                 y: bounds.maxY - cornerRadius))
+        path.addQuadCurve(to: CGPoint(x: bounds.maxX - deletedSpace - cornerRadius - cornerRadius, 
+                                      y: bounds.maxY), 
+                          controlPoint: CGPoint(x: bounds.maxX - deletedSpace - cornerRadius,
+                                                y: bounds.maxY))
+        
+        // Add a line and quadratic curve for the bottom-left corner
+        path.addLine(to: CGPoint(x: bounds.minX + cornerRadius, 
+                                 y: bounds.maxY))
+        path.addQuadCurve(to: CGPoint(x: bounds.minX,
+                                      y: bounds.maxY - cornerRadius), 
+                          controlPoint: CGPoint(x: bounds.minX,
+                                                y: bounds.maxY))
+        
+        // Add a line to the top left corner
+        path.addLine(to: CGPoint(x: bounds.minX, y: cornerRadius))
+        
+        path.close()
+        shapeLayer.path = path.cgPath
+        layer.addSublayer(shapeLayer)
+        layer.masksToBounds = true
+        layer.mask = shapeLayer
     }
 }

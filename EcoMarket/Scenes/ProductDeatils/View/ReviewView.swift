@@ -26,7 +26,7 @@ class ReviewView: UIView {
     }
     
     private func configureView() {
-        mainView.layer.cornerRadius = 10
+        mainView.layer.cornerRadius = 15
         mainView.backgroundColor = .black
         
         imageView.image = AppImage.ratingIcon
