@@ -42,10 +42,20 @@ class ReviewView: UIView {
     /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.
     private func loadNib() {
         // Please do not update this code, as it's used to load the view from a nib.
+        // Disable swiftlint rules for this block
         // swiftlint:disable all
-        let view = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)![0] as! UIView
-        addSubview(view)
-        view.frame = bounds
+        
+        // Load the view from the nib using the name of the current class
+        if let loadedViews = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil),
+            let view = loadedViews.first as? UIView {
+            // Add the loaded view as a subview
+            addSubview(view)
+            
+            // Set the frame of the loaded view to match the bounds of the current view
+            view.frame = bounds
+        }
+        
+        // Enable swiftlint rules for the rest of the code
         // swiftlint:enable all
     }
 }

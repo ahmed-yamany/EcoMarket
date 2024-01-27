@@ -103,7 +103,8 @@ open class CustomSizeView: UIView {
     }
 }
 
-// MARK: - mnm
+// MARK: - SizeCollectionViewDelegate
+//
 extension CustomSizeView: SizeCollectionViewDelegate {
     func sizeView(_ sizeView: SizeCollectionView, didSelect size: String) {
         sizeDelegate?.sizeView(self, didSelect: size)
