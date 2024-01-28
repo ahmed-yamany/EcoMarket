@@ -70,6 +70,7 @@ open class CustomSizeView: UIView {
         animatedView.translatesAutoresizingMaskIntoConstraints = false
         animatedView.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
         animatedView.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        animatedView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     /// Sets up the appearance for the animated view.
