@@ -6,37 +6,37 @@
 //
 
 import UIKit
+import MakeConstraints
 
 // MARK: - StapperDelegate
 //
-protocol StapperDelegate: AnyObject {
-    func getCount(_ stapper: CustomStapper, for count: String)
+public protocol StapperViewDelegate: AnyObject {
+    func stapperView(_ stapper: StapperView, didSet value: String)
 }
 
-class CustomStapper: UIView {
+open class StapperView: UIView {
+    // MARK: - Outlets
+    //
+    @IBOutlet weak private(set) var containerView: UIStackView!
+    @IBOutlet weak private(set) var counterLabel: UILabel!
+    @IBOutlet weak private(set) var plusButton: UIButton!
+    @IBOutlet weak private(set) var minusButton: UIButton!
     
     // MARK: - Properties
     //
     private (set) var value: Double = 0
     var maximum: Double = 100
     var minmum: Double = 0
-    weak var stapperDelegate: (any StapperDelegate)?
-    
-    // MARK: - Outlets
-    //
-    @IBOutlet weak var containerView: UIStackView!
-    @IBOutlet weak var counterLabel: UILabel!
-    @IBOutlet weak var plusButton: UIButton!
-    @IBOutlet weak var minusButton: UIButton!
-    
+    weak var stapperDelegate: (any StapperViewDelegate)?
+
     // MARK: - Initialization
     //
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
         setup()
     }
-    required init?(coder: NSCoder) {
+    required public init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNib()
         setup()
@@ -48,6 +48,8 @@ class CustomStapper: UIView {
         configureCounterLabel()
         configureContainerView()
         configureStepperButtons()
+        widthConstraints(70)
+        heightConstraints(30)
     }
     
     private func configureCounterLabel() {
@@ -90,7 +92,7 @@ class CustomStapper: UIView {
         
         if #available(iOS 15.0, *) {
             counterLabel.text = String(value.formatted())
-            stapperDelegate?.getCount(self, for: counterLabel.text ?? "")
+            stapperDelegate?.stapperView(self, didSet: counterLabel.text ?? "")
         } else {
             // Fallback on earlier versions
         }

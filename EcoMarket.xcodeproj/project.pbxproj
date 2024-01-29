@@ -22,7 +22,6 @@
 		D62F1C412B61E80600FBE349 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C402B61E80600FBE349 /* ReviewView.swift */; };
 		D62F1C432B61E81500FBE349 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C422B61E81500FBE349 /* ReviewView.xib */; };
 		D62F1C452B61EFE800FBE349 /* ProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C442B61EFE800FBE349 /* ProductModel.swift */; };
-		D62F1C472B62778B00FBE349 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C462B62778B00FBE349 /* Model.swift */; };
 		D62F1C592B64033E00FBE349 /* CustomStapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C582B64033E00FBE349 /* CustomStapper.swift */; };
 		D62F1C5B2B64034A00FBE349 /* CustomStapper.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C5A2B64034A00FBE349 /* CustomStapper.xib */; };
 		D62F1C612B64292300FBE349 /* SizeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C602B64292300FBE349 /* SizeCollectionView.swift */; };
@@ -82,6 +81,7 @@
 		EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */; };
 		EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
+		EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA62F532B66D99F00771D99 /* maskCustomProductShape.swift */; };
 		EEA6F9992B5865BA00A9E0C2 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE11B1FA2B570EAF0077F5AA /* MakeConstraints */; };
 		EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A22B58665B00A9E0C2 /* mainWindow.swift */; };
 		EEA6F9AC2B5866F100A9E0C2 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9AA2B5866F100A9E0C2 /* LoginViewController.xib */; };
@@ -129,7 +129,6 @@
 		D62F1C402B61E80600FBE349 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
 		D62F1C422B61E81500FBE349 /* ReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
 		D62F1C442B61EFE800FBE349 /* ProductModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductModel.swift; sourceTree = "<group>"; };
-		D62F1C462B62778B00FBE349 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D62F1C582B64033E00FBE349 /* CustomStapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomStapper.swift; sourceTree = "<group>"; };
 		D62F1C5A2B64034A00FBE349 /* CustomStapper.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomStapper.xib; sourceTree = "<group>"; };
 		D62F1C602B64292300FBE349 /* SizeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCollectionView.swift; sourceTree = "<group>"; };
@@ -176,6 +175,7 @@
 		EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
 		EE95CEC62B4E9E1600BC5524 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		EEA62F532B66D99F00771D99 /* maskCustomProductShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maskCustomProductShape.swift; sourceTree = "<group>"; };
 		EEA6F9A22B58665B00A9E0C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
 		EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parentViewController.swift; sourceTree = "<group>"; };
 		EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "+topMostViewController.swift"; sourceTree = "<group>"; };
@@ -356,16 +356,10 @@
 		D62F1C3B2B61853E00FBE349 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D62F1C3D2B61854500FBE349 /* ColorView.swift */,
-				D62F1C3C2B61854500FBE349 /* SizeView.swift */,
-				D62F1C602B64292300FBE349 /* SizeCollectionView.swift */,
 				D62F1C402B61E80600FBE349 /* ReviewView.swift */,
 				D62F1C422B61E81500FBE349 /* ReviewView.xib */,
-				D62F1C462B62778B00FBE349 /* Model.swift */,
 				D62F1C582B64033E00FBE349 /* CustomStapper.swift */,
 				D62F1C5A2B64034A00FBE349 /* CustomStapper.xib */,
-				D62F1C342B61851900FBE349 /* CustomRoundedCell.swift */,
-				D62F1C352B61851900FBE349 /* CustomColorButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -490,6 +484,8 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEA62F552B66DA0500771D99 /* Color View */,
+				EEA62F522B66C55300771D99 /* Size View */,
 				EE5CA1532B5F031300630C5D /* SearchView */,
 				EEA6F9CF2B5867EC00A9E0C2 /* TextField */,
 				EEA6F9C22B5867D900A9E0C2 /* Buttons */,
@@ -706,6 +702,25 @@
 			path = TabBarController;
 			sourceTree = "<group>";
 		};
+		EEA62F522B66C55300771D99 /* Size View */ = {
+			isa = PBXGroup;
+			children = (
+				D62F1C342B61851900FBE349 /* CustomRoundedCell.swift */,
+				D62F1C3C2B61854500FBE349 /* SizeView.swift */,
+				D62F1C602B64292300FBE349 /* SizeCollectionView.swift */,
+			);
+			path = "Size View";
+			sourceTree = "<group>";
+		};
+		EEA62F552B66DA0500771D99 /* Color View */ = {
+			isa = PBXGroup;
+			children = (
+				D62F1C352B61851900FBE349 /* CustomColorButton.swift */,
+				D62F1C3D2B61854500FBE349 /* ColorView.swift */,
+			);
+			path = "Color View";
+			sourceTree = "<group>";
+		};
 		EEA6F9A12B58665500A9E0C2 /* UIApplicatoin */ = {
 			isa = PBXGroup;
 			children = (
@@ -718,6 +733,7 @@
 			isa = PBXGroup;
 			children = (
 				EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */,
+				EEA62F532B66D99F00771D99 /* maskCustomProductShape.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -971,6 +987,7 @@
 				EE5CA1332B5EF9BF00630C5D /* CategoryTableViewCell.swift in Sources */,
 				EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */,
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
+				EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */,
 				EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */,
 				EE5CA1352B5EF9BF00630C5D /* CategoryViewController1.swift in Sources */,
 				EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */,
@@ -978,7 +995,6 @@
 				D62F1C372B61851900FBE349 /* CustomColorButton.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
 				D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */,
-				D62F1C472B62778B00FBE349 /* Model.swift in Sources */,
 				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
 				EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */,
 				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,

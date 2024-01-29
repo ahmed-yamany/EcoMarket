@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-open class CustomColorButton: UIButton {
+open class ColorViewButton: UIButton {
     // MARK: - Initializer
     //
     override init(frame: CGRect) {
@@ -24,7 +24,6 @@ open class CustomColorButton: UIButton {
     // MARK: - Setup Method
     //
     private func setup() {
-        // Button UI
         layer.cornerRadius = 10
         layer.borderColor = UIColor.gray.cgColor
     }

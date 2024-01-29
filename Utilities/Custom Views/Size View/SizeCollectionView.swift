@@ -15,7 +15,6 @@ protocol SizeCollectionViewDelegate: AnyObject {
 }
 
 class SizeCollectionView: UICollectionView {
-
     // MARK: - Properties
     //
     @IBInspectable public var defaultColor: UIColor = .white
@@ -28,7 +27,6 @@ class SizeCollectionView: UICollectionView {
     //
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
-        configureCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -37,15 +35,22 @@ class SizeCollectionView: UICollectionView {
     
     func setLabels(sizes: [String]) {
         self.sizes = sizes
+        configureCollectionView()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+            self.selectedButton = sizes.first
+            self.reloadData()
+        }
     }
     
     /// setting up and configuring the UICollectionView
     private func configureCollectionView() {
         backgroundColor = .clear
-        register(CustomRoundedCell.self, forCellWithReuseIdentifier: CustomRoundedCell.identifier)
+        register(SizeCollectionViewCell.self, forCellWithReuseIdentifier: SizeCollectionViewCell.identifier)
         collectionViewLayout = createCompositionalLayout()
         delegate = self
         dataSource = self
+        isScrollEnabled = false
         reloadData()
     }
     
@@ -54,21 +59,21 @@ class SizeCollectionView: UICollectionView {
     /// Creates a compositional layout for the collection view.
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(40), heightDimension: .absolute(40))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(40), heightDimension: .estimated(40))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 1)
-        
-        // Section
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = .continuous
-        section.interGroupSpacing = 15
-        
-        // Create and return a compositional layout with the defined section.
-        return UICollectionViewCompositionalLayout(section: section)
+        UICollectionViewCompositionalLayout { _, _  in
+            let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(40), heightDimension: .absolute(40))
+            let item = NSCollectionLayoutItem(layoutSize: itemSize)
+            
+            // Group
+            let groupSize = NSCollectionLayoutSize(widthDimension: .estimated(40), heightDimension: .estimated(40))
+            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: item, count: 1)
+            
+            // Section
+            let section = NSCollectionLayoutSection(group: group)
+            section.orthogonalScrollingBehavior = .continuous
+            section.interGroupSpacing = 15
+            
+            return section
+        }
     }
 }
 
@@ -80,10 +85,11 @@ extension SizeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: CustomRoundedCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: SizeCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Failed to load CustomRoundedCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
+        
         if selectedButton == sizes[indexPath.row] {
             cell.updateSelected(color: selectedColor)
             sizeCollectionDelegate?.didSelect(cell: cell, indexPath: indexPath.row)

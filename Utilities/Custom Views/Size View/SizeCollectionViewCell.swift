@@ -9,7 +9,7 @@ import UIKit
 import Combine
 import MakeConstraints
 
-open class CustomRoundedCell: UICollectionViewCell {
+open class SizeCollectionViewCell: UICollectionViewCell {
     
     let label = UILabel()
     // MARK: - Initializer
