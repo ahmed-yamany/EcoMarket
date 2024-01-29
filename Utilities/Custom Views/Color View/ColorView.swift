@@ -15,17 +15,16 @@ public protocol ColorViewDelegate: AnyObject {
 open class ColorView: UIStackView {
     // MARK: Private Properties
     //
-    private var buttons: [CustomColorButton] = []
-    private var buttonColors: [UIColor] = []
-    private let selectedColor = AppColor.socialButton
-    private let buttonWidth: CGFloat = 20
-    private let buttonHeight: CGFloat = 20
+    private var items: [ColorViewButton] = []
+    private let itemWidth: CGFloat = 20
+    private let itemHeight: CGFloat = 20
     
     // MARK: Public Properties
     //
-    public var selectedButton: CustomColorButton?
+    public var selectedItem: ColorViewButton?
     public var delegate: (any ColorViewDelegate)?
-    
+    public var colors: [UIColor] = []
+
     // MARK: Initializer
     //
     override init(frame: CGRect) {
@@ -66,24 +65,26 @@ open class ColorView: UIStackView {
     /// Sets the available colors for the color view.
     ///
     /// - Parameter colors: An array of UIColor objects representing the available colors.
-    public func setColors(_ colors: [UIColor]) {
+    public func setColors(_ colors: [UIColor?]) {
         for color in colors {
-            let button = createRoundedButton(for: color)
-            buttons.append(button)
-            buttonColors.append(color)
-            addArrangedSubview(button)
+            if let color {
+                let button = createRoundedButton(for: color)
+                items.append(button)
+                self.colors.append(color)
+                addArrangedSubview(button)
+            }
         }
-        selectButton(buttons.first)
+        selectButton(items.first)
     }
     
     // MARK: - Private Methods
     
     /// Creates a rounded button with a specified color.
-    private func createRoundedButton(for color: UIColor) -> CustomColorButton {
-        let button = CustomColorButton()
+    private func createRoundedButton(for color: UIColor) -> ColorViewButton {
+        let button = ColorViewButton()
         button.backgroundColor = color
-        button.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-        button.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        button.widthAnchor.constraint(equalToConstant: itemWidth).isActive = true
+        button.heightAnchor.constraint(equalToConstant: itemHeight).isActive = true
         
         button.addAction(.init(handler: {[weak self] _ in
             self?.buttonTapped(button, color: color)
@@ -93,19 +94,19 @@ open class ColorView: UIStackView {
     }
     
     /// Handles the tap on a  button.
-    private func buttonTapped(_ tappedButton: CustomColorButton, color: UIColor) {
+    private func buttonTapped(_ tappedButton: ColorViewButton, color: UIColor) {
         selectButton(tappedButton)
         delegate?.colorView(self, didSelect: color)
     }
     
-    private func selectButton(_ button: CustomColorButton?) {
-        selectedButton = button
+    private func selectButton(_ button: ColorViewButton?) {
+        selectedItem = button
         updateSelectedButtonStyle(button)
     }
     
     /// Updates the visual style of color buttons, providing an animation for the selected button.
-    private func updateSelectedButtonStyle(_ button: CustomColorButton?) {
-        zip(buttonColors, buttons).forEach { color, btn in
+    private func updateSelectedButtonStyle(_ button: ColorViewButton?) {
+        zip(colors, items).forEach { color, btn in
             UIView.animate(withDuration: 0.3) {
                 if button === btn {
                     btn.transform = CGAffineTransform(scaleX: 1.1, y: 1.1)
