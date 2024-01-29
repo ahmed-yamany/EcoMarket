@@ -13,6 +13,10 @@
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
+		D62759FF2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */; };
+		D6275A032B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275A012B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift */; };
+		D6275A042B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6275A022B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib */; };
+		D6275A062B67E5770069CF9C /* Cart2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275A052B67E5770069CF9C /* Cart2Model.swift */; };
 		D62F1C692B653E3000FBE349 /* CartTheme1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C672B653E3000FBE349 /* CartTheme1ViewController.swift */; };
 		D62F1C6A2B653E3000FBE349 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C682B653E3000FBE349 /* CartViewController.xib */; };
 		D62F1C6E2B653E8400FBE349 /* PrroductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C6C2B653E8400FBE349 /* PrroductCollectionViewCell.swift */; };
@@ -117,6 +121,10 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme2CollectionViewController.swift; sourceTree = "<group>"; };
+		D6275A012B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme2CollectionViewCell.swift; sourceTree = "<group>"; };
+		D6275A022B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTheme2CollectionViewCell.xib; sourceTree = "<group>"; };
+		D6275A052B67E5770069CF9C /* Cart2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart2Model.swift; sourceTree = "<group>"; };
 		D62F1C672B653E3000FBE349 /* CartTheme1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme1ViewController.swift; sourceTree = "<group>"; };
 		D62F1C682B653E3000FBE349 /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		D62F1C6C2B653E8400FBE349 /* PrroductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrroductCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -336,9 +344,29 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		D62759FB2B67DA750069CF9C /* CartTheme2 */ = {
+			isa = PBXGroup;
+			children = (
+				D6275A002B67DC800069CF9C /* Cell */,
+				D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */,
+				D6275A052B67E5770069CF9C /* Cart2Model.swift */,
+			);
+			path = CartTheme2;
+			sourceTree = "<group>";
+		};
+		D6275A002B67DC800069CF9C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				D6275A012B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift */,
+				D6275A022B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
 		D62F1C662B653E1E00FBE349 /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				D62759FB2B67DA750069CF9C /* CartTheme2 */,
 				D62F1C7A2B6591EF00FBE349 /* CartTheme1 */,
 			);
 			path = Cart;
@@ -866,6 +894,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6275A042B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib in Resources */,
 				EEA6F9D62B58683F00A9E0C2 /* Colors.xcassets in Resources */,
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				D62F1C6F2B653E8400FBE349 /* PrroductCollectionViewCell.xib in Resources */,
@@ -953,6 +982,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6275A062B67E5770069CF9C /* Cart2Model.swift in Sources */,
 				EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */,
 				EE58F5DA2B5ECF9D0068B93F /* EcoMarketButton.swift in Sources */,
 				EE5CA1472B5EF9D500630C5D /* Category3ViewModel.swift in Sources */,
@@ -966,6 +996,7 @@
 				D62F1C712B65411100FBE349 /* CartModel.swift in Sources */,
 				EE5CA1362B5EF9BF00630C5D /* CategoryViewModel.swift in Sources */,
 				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
+				D6275A032B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
@@ -1001,6 +1032,7 @@
 				EE58F5DB2B5ECFA30068B93F /* GoogleButton.swift in Sources */,
 				EE5CA1552B5F033100630C5D /* SearchView.swift in Sources */,
 				EE5CA1402B5EF9CC00630C5D /* CategoryViewController2.swift in Sources */,
+				D62759FF2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift in Sources */,
 				EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */,
 				EE5CA1492B5EF9D500630C5D /* CategoryViewController3.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,

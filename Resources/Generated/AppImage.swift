@@ -43,6 +43,10 @@ enum AppImage {
         return UIImage(named: "arrow")
     }
     
+    static var delete: UIImage? {
+        return UIImage(named: "delete")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         
