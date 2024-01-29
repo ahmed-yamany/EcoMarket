@@ -8,7 +8,9 @@
 import UIKit
 
 class CartTheme2CollectionViewController: UICollectionViewController {
-
+    
+    // MARK: - View Lifecycle
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         configureCollectionView()
@@ -18,16 +20,13 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
-        collectionView.registerNib(PrroductCollectionViewCell.self)
-        collectionView.registerNib(PromoCodeCollectionViewCell.self)
+        collectionView.registerNib(CartTheme2CollectionViewCell.self)
         collectionView.registerNib(FooterCollectionViewCell.self)
         
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
         collectionView.collectionViewLayout = createCompositionalLayout()
-//        collectionView.delegate = self
-//        collectionView.dataSource = self
     }
     
     // MARK: - Compositional Layout
@@ -36,7 +35,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let interItemSpacing: CGFloat = 5
-        let padding: CGFloat = 15.0
+        let padding: CGFloat = 25.0
         let height: CGFloat = 144
         return UICollectionViewCompositionalLayout { [weak self] (sectionIndex, layoutEnvironment) in
             guard let self = self else {
@@ -62,6 +61,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
                     let section = NSCollectionLayoutSection(group: group)
                     section.boundarySupplementaryItems = [header]
                     section.contentInsets.bottom = 40
+                    section.interGroupSpacing = 22
                     return section
                     
                 case 1:
@@ -87,27 +87,27 @@ class CartTheme2CollectionViewController: UICollectionViewController {
             }
         }
     }
-            
-            private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
-                let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                        heightDimension: .estimated(50))
-                let header = NSCollectionLayoutBoundarySupplementaryItem(
-                    layoutSize: headerSize,
-                    elementKind: Header.elementKind,
-                    alignment: .top
-                )
-                
-                header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-                return header
-            }
-
+    
+    private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .estimated(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: Header.elementKind,
+            alignment: .top
+        )
+        
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        return header
+    }
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
         if section == 0 {
@@ -116,7 +116,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
             return 1
         }
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         switch indexPath.section {
             case 0:
@@ -140,14 +140,14 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView {
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
                                                                            withReuseIdentifier: Header.identifier,
                                                                            for: indexPath) as? Header else {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Cart")
+        header.setTitle("My Cart")
         return header
     }
 }

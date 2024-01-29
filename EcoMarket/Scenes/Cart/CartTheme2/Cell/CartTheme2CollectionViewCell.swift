@@ -8,17 +8,19 @@
 import UIKit
 
 class CartTheme2CollectionViewCell: UICollectionViewCell {
-
+    // MARK: - Outlets
+    //
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var brandName: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productImage: UIImageView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
     
+    // MARK: - Data Setup Method
+    
+    /// Configures the cell with the provided product data.
+    ///
+    /// - Parameter product: The product model to be displayed.
     func setup(product: Cart2Model) {
         productName.text = product.name
         brandName.text = product.brand
@@ -31,7 +33,7 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     
     /// Configures the initial UI settings for the cell.
     private func configureUI() {
-        productImage.layer.cornerRadius = 8
+        productImage.layer.cornerRadius = 12
         configureLabelsUI()
         configureButtonUI()
     }
@@ -39,8 +41,8 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     /// Configures the appearance of labels (brand name, product price, and product name).
     private func configureLabelsUI() {
         // Labels Font
-        brandName.font = .medium
-        productPrice.font = .medium
+        brandName.font = .h3
+        productPrice.font = .h3
         productName.font = .regular
         
         // Labels Color

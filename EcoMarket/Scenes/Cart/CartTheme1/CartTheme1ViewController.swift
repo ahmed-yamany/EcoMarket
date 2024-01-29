@@ -16,8 +16,6 @@ class CartViewController: UIViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Do any additional setup after loading the view.
         configureCollectionView()
     }
     
@@ -177,7 +175,7 @@ class CartViewController: UIViewController {
                 Logger.log("Failed to get header view", category: \.default, level: .fault)
                 return UICollectionReusableView()
             }
-            header.setTitle("Cart")
+            header.setTitle("My Cart")
             return header
         }
     }
@@ -185,7 +183,7 @@ class CartViewController: UIViewController {
 extension UICollectionReusableView: Identifiable {}
 
 class Header: UICollectionReusableView {
-    static let elementKind = String("Cart")
+    static let elementKind = String("My Cart")
     
     let label = UILabel()
     

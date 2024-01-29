@@ -12,19 +12,19 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CartTheme2CollectionViewCell" customModule="EcoMarket" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="373" height="145"/>
+            <rect key="frame" x="0.0" y="0.0" width="373" height="153"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="373" height="145"/>
+                <rect key="frame" x="0.0" y="0.0" width="373" height="153"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-MS-IXA">
-                        <rect key="frame" x="0.0" y="0.0" width="373" height="145"/>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="QfY-MS-IXA">
+                        <rect key="frame" x="0.0" y="0.0" width="373" height="153"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="erm-aH-7HU">
                                 <rect key="frame" x="0.0" y="0.0" width="373" height="100"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9SG-Jw-ggC">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9SG-Jw-ggC">
                                         <rect key="frame" x="0.0" y="0.0" width="373" height="100"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="Xvb-g4-zCn"/>
@@ -33,7 +33,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="lastBaseline" translatesAutoresizingMaskIntoConstraints="NO" id="0qR-9R-DbN">
-                                <rect key="frame" x="0.0" y="100" width="373" height="45"/>
+                                <rect key="frame" x="0.0" y="106" width="373" height="47"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="haR-tZ-sk2">
                                         <rect key="frame" x="0.0" y="0.0" width="331.66666666666669" height="40.666666666666664"/>
@@ -100,7 +100,7 @@
                 <constraint firstAttribute="trailing" secondItem="AlS-TB-qrf" secondAttribute="trailing" constant="15" id="j5I-g3-u5r"/>
                 <constraint firstItem="VrD-Kw-u0x" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="15" id="oSM-nu-9le"/>
             </constraints>
-            <size key="customSize" width="367" height="66"/>
+            <size key="customSize" width="367" height="74"/>
             <connections>
                 <outlet property="brandName" destination="l0D-Oy-IYz" id="qCM-SB-5fB"/>
                 <outlet property="deleteButton" destination="AlS-TB-qrf" id="hZ6-cW-wEK"/>
@@ -108,7 +108,7 @@
                 <outlet property="productName" destination="pmr-eW-2gq" id="sdR-cc-1W0"/>
                 <outlet property="productPrice" destination="c4Q-qw-QMF" id="bfg-We-MXQ"/>
             </connections>
-            <point key="canvasLocation" x="116.79389312977099" y="-16.549295774647888"/>
+            <point key="canvasLocation" x="116.79389312977099" y="-13.732394366197184"/>
         </collectionViewCell>
     </objects>
     <resources>
