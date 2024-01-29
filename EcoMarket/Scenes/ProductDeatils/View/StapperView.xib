@@ -2,15 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="StapperView" customModule="EcoMarket" customModuleProvider="target">
             <connections>
-                <outlet property="containerView" destination="ogD-Hf-XTM" id="35I-Dl-xKQ"/>
                 <outlet property="counterLabel" destination="jnt-br-NCs" id="yFI-c2-qxC"/>
                 <outlet property="minusButton" destination="Cdx-KV-KBp" id="MeT-A9-Arb"/>
                 <outlet property="plusButton" destination="PaM-xv-Qcn" id="Odr-6e-2o3"/>
@@ -44,7 +43,6 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ogD-Hf-XTM" secondAttribute="trailing" id="7qG-Cw-XJH"/>
                 <constraint firstAttribute="bottom" secondItem="ogD-Hf-XTM" secondAttribute="bottom" id="Kt2-dC-g1o"/>
@@ -55,9 +53,4 @@
             <point key="canvasLocation" x="46.564885496183201" y="252.46478873239437"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
