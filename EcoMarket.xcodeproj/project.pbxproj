@@ -19,8 +19,8 @@
 		D62F1C372B61851900FBE349 /* ColorViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C352B61851900FBE349 /* ColorViewButton.swift */; };
 		D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C3C2B61854500FBE349 /* SizeView.swift */; };
 		D62F1C3F2B61854500FBE349 /* ColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C3D2B61854500FBE349 /* ColorView.swift */; };
-		D62F1C412B61E80600FBE349 /* ReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C402B61E80600FBE349 /* ReviewView.swift */; };
-		D62F1C432B61E81500FBE349 /* ReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C422B61E81500FBE349 /* ReviewView.xib */; };
+		D62F1C412B61E80600FBE349 /* ProductReviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C402B61E80600FBE349 /* ProductReviewView.swift */; };
+		D62F1C432B61E81500FBE349 /* ProductReviewView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C422B61E81500FBE349 /* ProductReviewView.xib */; };
 		D62F1C452B61EFE800FBE349 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C442B61EFE800FBE349 /* Product.swift */; };
 		D62F1C592B64033E00FBE349 /* StapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C582B64033E00FBE349 /* StapperView.swift */; };
 		D62F1C5B2B64034A00FBE349 /* StapperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C5A2B64034A00FBE349 /* StapperView.xib */; };
@@ -127,8 +127,8 @@
 		D62F1C352B61851900FBE349 /* ColorViewButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorViewButton.swift; sourceTree = "<group>"; };
 		D62F1C3C2B61854500FBE349 /* SizeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeView.swift; sourceTree = "<group>"; };
 		D62F1C3D2B61854500FBE349 /* ColorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorView.swift; sourceTree = "<group>"; };
-		D62F1C402B61E80600FBE349 /* ReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewView.swift; sourceTree = "<group>"; };
-		D62F1C422B61E81500FBE349 /* ReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewView.xib; sourceTree = "<group>"; };
+		D62F1C402B61E80600FBE349 /* ProductReviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductReviewView.swift; sourceTree = "<group>"; };
+		D62F1C422B61E81500FBE349 /* ProductReviewView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductReviewView.xib; sourceTree = "<group>"; };
 		D62F1C442B61EFE800FBE349 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		D62F1C582B64033E00FBE349 /* StapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StapperView.swift; sourceTree = "<group>"; };
 		D62F1C5A2B64034A00FBE349 /* StapperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StapperView.xib; sourceTree = "<group>"; };
@@ -347,23 +347,11 @@
 		D62F1C1C2B616EDA00FBE349 /* ProductDeatils */ = {
 			isa = PBXGroup;
 			children = (
-				D62F1C3B2B61853E00FBE349 /* View */,
+				D62F1C442B61EFE800FBE349 /* Product.swift */,
 				D62F1C1D2B616EFA00FBE349 /* ProductDetailsViewController.swift */,
 				D62F1C1E2B616EFA00FBE349 /* ProductDetailsViewController.xib */,
-				D62F1C442B61EFE800FBE349 /* Product.swift */,
 			);
 			path = ProductDeatils;
-			sourceTree = "<group>";
-		};
-		D62F1C3B2B61853E00FBE349 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				D62F1C402B61E80600FBE349 /* ReviewView.swift */,
-				D62F1C422B61E81500FBE349 /* ReviewView.xib */,
-				D62F1C582B64033E00FBE349 /* StapperView.swift */,
-				D62F1C5A2B64034A00FBE349 /* StapperView.xib */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		D6A0EB8D2B5F0F8500079FF3 /* Cell */ = {
@@ -390,6 +378,24 @@
 				EE08DB092B68596700A358D9 /* +hexString.swift */,
 			);
 			path = UIColor;
+			sourceTree = "<group>";
+		};
+		EE27C2722B68742800B8C2A6 /* Stapper View */ = {
+			isa = PBXGroup;
+			children = (
+				D62F1C582B64033E00FBE349 /* StapperView.swift */,
+				D62F1C5A2B64034A00FBE349 /* StapperView.xib */,
+			);
+			path = "Stapper View";
+			sourceTree = "<group>";
+		};
+		EE27C2732B68743600B8C2A6 /* Product Review View */ = {
+			isa = PBXGroup;
+			children = (
+				D62F1C402B61E80600FBE349 /* ProductReviewView.swift */,
+				D62F1C422B61E81500FBE349 /* ProductReviewView.xib */,
+			);
+			path = "Product Review View";
 			sourceTree = "<group>";
 		};
 		EE32E27F2B45B1D100675EAE = {
@@ -495,6 +501,8 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EE27C2732B68743600B8C2A6 /* Product Review View */,
+				EE27C2722B68742800B8C2A6 /* Stapper View */,
 				EEA62F552B66DA0500771D99 /* Color View */,
 				EEA62F522B66C55300771D99 /* Size View */,
 				EE5CA1532B5F031300630C5D /* SearchView */,
@@ -897,7 +905,7 @@
 				EEA6F9D62B58683F00A9E0C2 /* Colors.xcassets in Resources */,
 				EE32E2CB2B45B41600675EAE /* .swiftlint.yml in Resources */,
 				EE32E2982B45B1D200675EAE /* LaunchScreen.storyboard in Resources */,
-				D62F1C432B61E81500FBE349 /* ReviewView.xib in Resources */,
+				D62F1C432B61E81500FBE349 /* ProductReviewView.xib in Resources */,
 				EEA6F9AC2B5866F100A9E0C2 /* LoginViewController.xib in Resources */,
 				EE5CA1482B5EF9D500630C5D /* CategoryViewController3.xib in Resources */,
 				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
@@ -1032,7 +1040,7 @@
 				EE5CA1552B5F033100630C5D /* SearchView.swift in Sources */,
 				EE5CA1402B5EF9CC00630C5D /* CategoryViewController2.swift in Sources */,
 				EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */,
-				D62F1C412B61E80600FBE349 /* ReviewView.swift in Sources */,
+				D62F1C412B61E80600FBE349 /* ProductReviewView.swift in Sources */,
 				EE5CA1492B5EF9D500630C5D /* CategoryViewController3.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
 				EE5CA14E2B5EFB0500630C5D /* UITableView+Extension.swift in Sources */,

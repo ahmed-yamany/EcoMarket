@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewView: UIView {
+class ProductReviewView: UIView {
     
     @IBOutlet weak var reviewCountLabel: UILabel!
     @IBOutlet weak var reviewLabel: UILabel!

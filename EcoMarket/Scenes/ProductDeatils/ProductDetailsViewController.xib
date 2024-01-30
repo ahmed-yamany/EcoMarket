@@ -161,7 +161,7 @@
                                         <constraint firstItem="nUX-nc-r9h" firstAttribute="width" secondItem="ZZZ-Hh-NLx" secondAttribute="width" id="cq9-yR-KmM"/>
                                     </constraints>
                                 </stackView>
-                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-Vw-vfa" customClass="ReviewView" customModule="EcoMarket" customModuleProvider="target">
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sDZ-Vw-vfa" customClass="ProductReviewView" customModule="EcoMarket" customModuleProvider="target">
                                     <rect key="frame" x="298" y="280" width="70" height="50"/>
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>

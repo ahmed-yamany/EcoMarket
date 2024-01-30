@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ReviewView" customModule="EcoMarket" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProductReviewView" customModule="EcoMarket" customModuleProvider="target">
             <connections>
                 <outlet property="reviewCountLabel" destination="415-3G-M9Q" id="g8b-ln-nQe"/>
                 <outlet property="reviewLabel" destination="fg7-t1-1g1" id="dBg-HN-yZA"/>

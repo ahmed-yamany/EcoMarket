@@ -11,7 +11,7 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Outlets
     //
     @IBOutlet weak var productImageView: UIImageView!
-    @IBOutlet weak var reviewView: ReviewView!
+    @IBOutlet weak var reviewView: ProductReviewView!
     @IBOutlet weak var stapperView: StapperView!
     @IBOutlet weak var productNameLabel: UILabel!
     @IBOutlet weak var productBrandLabel: UILabel!
