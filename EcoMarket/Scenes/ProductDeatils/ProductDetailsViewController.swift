@@ -10,18 +10,17 @@ import UIKit
 class ProductDetailsViewController: UIViewController {
     // MARK: - Outlets
     //
-    @IBOutlet weak var productImage: UIImageView!
+    @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var reviewView: ReviewView!
     @IBOutlet weak var stapperView: StapperView!
-    @IBOutlet weak var sizeView: CustomSizeView!
-    @IBOutlet weak var stackView: UIStackView!
-    @IBOutlet weak var colorView: ColorView!
-    @IBOutlet weak var sizeLabel: UILabel!
-    @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var productBrand: UILabel!
     @IBOutlet weak var productNameLabel: UILabel!
-    @IBOutlet weak var favouriteButton: UIButton!
+    @IBOutlet weak var productBrandLabel: UILabel!
+    @IBOutlet weak var descriptionTitleLabel: UILabel!
+    @IBOutlet weak var descriptionSubTitleLabel: UILabel!
+    @IBOutlet weak var sizeViewTitleLabel: UILabel!
+    @IBOutlet weak var sizeView: CustomSizeView!
+    @IBOutlet weak var colorView: ColorView!
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToCartButton: PrimaryButton!
     
     // MARK: - View Lifecycle
@@ -41,25 +40,31 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         
-        
-        productImage.image = product.uiImage
+        productNameLabel.text = product.name
+        productBrandLabel.text = product.brand
+        productImageView.image = product.uiImage
         sizeView.setSizes(product.sizes)
         colorView.setColors(product.uiColors)
         reviewView.setReview(count: "170 Review", review: 4.9)
+        descriptionTitleLabel.text = product.descriptionTitle
+        descriptionSubTitleLabel.text = product.description
+        sizeViewTitleLabel.text = product.sizeTitle
     }
     
     // MARK: - Private Methods
     //
     /// UI Configuration
     private func configureUI() {
+        productImageView.maskCustomProductShape()
+        setupProductNameLabel()
+        setupProductBrandLabel()
+        setupDescriptionTitleLabel()
+        setupDescriptionSubTitleLabel()
         setupSizeView()
         setupColorView()
         setupStapperView()
-        productImage.maskCustomProductShape()
-        
-        setupLabelsUI()
-        setupButtonsUI()
-        setupdata()
+        setupFavoriteButton()
+        setupAddToCartButton()
     }
     
     private func setupStapperView() {
@@ -69,59 +74,51 @@ class ProductDetailsViewController: UIViewController {
         stapperView.delegate = self
     }
     
-    private func setupLabelsUI() {
-        // Labels Font
+    private func setupProductNameLabel() {
         productNameLabel.font = .h2
-        productBrand.font = .regular
-        titleLabel.font = .h2
-        subtitleLabel.font = .regular
-        sizeLabel.font = .h2
-
-        // Labels TextColor
-        productBrand.textColor = AppColor.socialButton
-        subtitleLabel.textColor = AppColor.socialButton
-        
+        productNameLabel.textColor = AppColor.primaryText
     }
     
-    private func setupButtonsUI() {
-        // Add To Cart Button UI
-        addToCartButton.title = L10n.Product.Details.cart
-        addToCartButton.setImage(AppImage.cartIcon, for: .normal)
-        addToCartButton.tintColor = .white
-        
-        // Favourite Button UI
-        favouriteButton.setImage(AppImage.favIcon, for: .normal)
-        favouriteButton.setTitle("", for: .normal)
+    private func setupProductBrandLabel() {
+        productBrandLabel.font = .regular
+        productBrandLabel.textColor = AppColor.socialButton
     }
     
-    // MARK: - Data Setup
-    //
-    private func setupdata() {
-        productNameLabel.text = Product.mockData.name
-        productBrand.text = Product.mockData.brand
-        titleLabel.text = Product.mockData.descriptionTitle
-        subtitleLabel.text = Product.mockData.description
-        sizeLabel.text = Product.mockData.sizeTitle
+    private func setupDescriptionTitleLabel() {
+        descriptionTitleLabel.font = .h2
+        descriptionTitleLabel.textColor = AppColor.primaryText
     }
     
-    // MARK: - Setup Size and Color Views
-    //
+    private func setupDescriptionSubTitleLabel() {
+        descriptionSubTitleLabel.font = .regular
+        descriptionSubTitleLabel.textColor = AppColor.socialButton
+    }
+    
     private func setupSizeView() {
         sizeView.sizeDelegate = self
+        sizeViewTitleLabel.font = .h2
+        sizeViewTitleLabel.textColor = AppColor.primaryText
     }
     
     private func setupColorView() {
         colorView.delegate = self
+    }
+    
+    private func setupFavoriteButton() {
+        favoriteButton.setImage(AppImage.favIcon, for: .normal)
+        favoriteButton.setTitle("", for: .normal)
+    }
+    
+    private func setupAddToCartButton() {
+        addToCartButton.title = L10n.Product.Details.cart
+        addToCartButton.setImage(AppImage.cartIcon, for: .normal)
+        addToCartButton.tintColor = .white
     }
 }
 
 // MARK: - SizeViewDelegate
 //
 extension ProductDetailsViewController: SizeViewDelegate {
-    func sizeView(didSelect size: String) {
-        print(size)
-    }
-    
     func sizeView(_ sizeView: CustomSizeView, didSelect size: String) {
         print(size)
     }
@@ -130,8 +127,8 @@ extension ProductDetailsViewController: SizeViewDelegate {
 // MARK: - ColorViewDelegate
 //
 extension ProductDetailsViewController: ColorViewDelegate {
-    func colorView(_ sizeView: ColorView, didSelect color: UIColor) {
-        print(color)
+    func colorView(_ sizeView: ColorView, didSelect color: UIColor?) {
+        print(color ?? .red)
     }
 }
 

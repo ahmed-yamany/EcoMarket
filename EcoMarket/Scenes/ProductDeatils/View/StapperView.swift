@@ -27,7 +27,7 @@ open class StapperView: UIView {
     var maximumValue: Int = 100
     var minmumValue: Int = 0 {
         didSet(newValue) {
-            value = newValue
+            updateValue(newValue)
             configureCounterLabel()
         }
     }
@@ -100,7 +100,7 @@ open class StapperView: UIView {
     }
     
     private func minusButtonTapped() {
-        if value >= minmumValue {
+        if value > minmumValue {
             value -= 1
             updateValue(value)
         }

@@ -10,8 +10,7 @@ import UIKit
 // MARK: - SizeCollectionViewDelegate Protocol
 //
 protocol SizeCollectionViewDelegate: AnyObject {
-    func didSelect(cell: UICollectionViewCell, indexPath: Int)
-    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String)
+    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String, cell: UICollectionViewCell, at indexPath: Int)
 }
 
 class SizeCollectionView: UICollectionView {
@@ -92,7 +91,8 @@ extension SizeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         
         if selectedButton == sizes[indexPath.row] {
             cell.updateSelected(color: selectedColor)
-            sizeCollectionDelegate?.didSelect(cell: cell, indexPath: indexPath.row)
+            sizeCollectionDelegate?.sizeView(self, didSelect: sizes[indexPath.row], cell: cell, at: indexPath.item)
+
         } else {
             cell.updateUnSelected(color: defaultColor)
         }
@@ -102,7 +102,6 @@ extension SizeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         selectedButton = sizes[indexPath.row]
-        sizeCollectionDelegate?.sizeView(self, didSelect: sizes[indexPath.row])
         collectionView.reloadData()
     }
 }

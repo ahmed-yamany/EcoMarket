@@ -18,19 +18,15 @@ open class CustomSizeView: UIView {
     // MARK: Properties
     //
     let collectionView = SizeCollectionView(frame: .zero, collectionViewLayout: .init())
-    private let animatedView: UIView? = UIView()
+    private let animatedView: UIView = UIView()
     private var animatedViewConstraints: NSLayoutConstraint?
     
     // MARK: Private Properties
     //
     private var sizeLabels: [String] = []
-    private var buttonWidth: CGFloat {
-        frame.height
-    }
-    private var buttonHeight: CGFloat {
-        frame.height
-    }
-        
+    private var buttonWidth: CGFloat { frame.height }
+    private var buttonHeight: CGFloat { frame.height }
+    
     // MARK: Public Properties
     //
     public var selectedButton: String?
@@ -63,32 +59,28 @@ open class CustomSizeView: UIView {
     private func configureCollectionView() {
         collectionView.sizeCollectionDelegate = self
     }
-        
+    
     /// Sets up the layout for the animated view.
     private func setupAnimatedViewLayout() {
-        if let animatedView {
-            addSubview(animatedView)
-            animatedView.translatesAutoresizingMaskIntoConstraints = false
-            animatedView.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
-            animatedView.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
-            animatedView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
-            setupAnimatedView()
-        }
+        addSubview(animatedView)
+        animatedView.translatesAutoresizingMaskIntoConstraints = false
+        animatedView.widthAnchor.constraint(equalToConstant: buttonWidth).isActive = true
+        animatedView.heightAnchor.constraint(equalToConstant: buttonHeight).isActive = true
+        animatedView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
+        setupAnimatedView()
     }
     
     /// Sets up the appearance for the animated view.
     private func setupAnimatedView() {
-        if let animatedView {
-            animatedView.backgroundColor = collectionView.selectedColor
-            animatedView.layer.cornerRadius = buttonWidth / 2
-        }
+        animatedView.backgroundColor = collectionView.selectedColor
+        animatedView.layer.cornerRadius = buttonWidth / 2
     }
     
     /// Animates the selected button and updates the animated view position.
     private func animate(to view: UIView?) {
         animatedViewConstraints?.isActive = false
         if let view {
-            animatedViewConstraints = animatedView?.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+            animatedViewConstraints = animatedView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
             animatedViewConstraints?.isActive = true
         }
         
@@ -96,9 +88,8 @@ open class CustomSizeView: UIView {
             self.layoutIfNeeded()
         }
     }
-
-    // MARK: - Public Methods
     
+    // MARK: - Public Methods
     /// Sets the sizes for the buttons in the view.
     ///
     /// - Parameter sizes: An array of size strings to be displayed as buttons.
@@ -112,11 +103,8 @@ open class CustomSizeView: UIView {
 // MARK: - SizeCollectionViewDelegate
 //
 extension CustomSizeView: SizeCollectionViewDelegate {
-    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String) {
-        sizeDelegate?.sizeView(self, didSelect: size)
-    }
-    
-    func didSelect(cell: UICollectionViewCell, indexPath: Int) {
+    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String, cell: UICollectionViewCell, at indexPath: Int) {
         animate(to: cell)
+        sizeDelegate?.sizeView(self, didSelect: sizeLabels[indexPath])
     }
 }

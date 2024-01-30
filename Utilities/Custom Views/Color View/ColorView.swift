@@ -8,7 +8,7 @@
 import UIKit
 
 public protocol ColorViewDelegate: AnyObject {
-    func colorView(_ sizeView: ColorView, didSelect color: UIColor)
+    func colorView(_ sizeView: ColorView, didSelect color: UIColor?)
 }
 
 @IBDesignable
@@ -74,7 +74,11 @@ open class ColorView: UIStackView {
                 addArrangedSubview(button)
             }
         }
-        selectButton(items.first)
+        if !colors.isEmpty {
+            selectButton(items[0])
+            delegate?.colorView(self, didSelect: colors[0])
+        }
+
     }
     
     // MARK: - Private Methods

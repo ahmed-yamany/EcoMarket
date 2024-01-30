@@ -13,17 +13,16 @@
             <connections>
                 <outlet property="addToCartButton" destination="qyk-hm-ZAe" id="WkQ-eX-gHT"/>
                 <outlet property="colorView" destination="FUH-p6-o5O" id="TbZ-S0-aRU"/>
-                <outlet property="favouriteButton" destination="Eoy-b2-zvb" id="JLP-SG-oPQ"/>
-                <outlet property="productBrand" destination="Eq2-jT-tMQ" id="Y4y-ji-M0U"/>
-                <outlet property="productImage" destination="nUX-nc-r9h" id="xqE-8e-5d3"/>
+                <outlet property="descriptionSubTitleLabel" destination="Gca-7V-rn7" id="yUA-bF-DK6"/>
+                <outlet property="descriptionTitleLabel" destination="whe-aB-y0B" id="yDm-1k-b2B"/>
+                <outlet property="favoriteButton" destination="Eoy-b2-zvb" id="JLP-SG-oPQ"/>
+                <outlet property="productBrandLabel" destination="Eq2-jT-tMQ" id="Y4y-ji-M0U"/>
+                <outlet property="productImageView" destination="nUX-nc-r9h" id="xqE-8e-5d3"/>
                 <outlet property="productNameLabel" destination="mA0-3H-XQf" id="lOb-1p-56y"/>
                 <outlet property="reviewView" destination="sDZ-Vw-vfa" id="Gnc-fT-D4l"/>
-                <outlet property="sizeLabel" destination="0r8-j8-Exv" id="4VU-ap-bAl"/>
                 <outlet property="sizeView" destination="Rgv-U8-vsG" id="Q7O-T6-AyK"/>
-                <outlet property="stackView" destination="ZZZ-Hh-NLx" id="yRm-cK-9kg"/>
+                <outlet property="sizeViewTitleLabel" destination="0r8-j8-Exv" id="4VU-ap-bAl"/>
                 <outlet property="stapperView" destination="ghL-rU-arK" id="ui8-KL-48N"/>
-                <outlet property="subtitleLabel" destination="Gca-7V-rn7" id="yUA-bF-DK6"/>
-                <outlet property="titleLabel" destination="whe-aB-y0B" id="yDm-1k-b2B"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
