@@ -516,9 +516,9 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
+				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
