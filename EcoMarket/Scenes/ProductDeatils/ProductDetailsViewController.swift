@@ -55,6 +55,7 @@ class ProductDetailsViewController: UIViewController {
     //
     /// UI Configuration
     private func configureUI() {
+        view.backgroundColor = AppColor.backgroundColor
         productImageView.maskCustomProductShape()
         setupProductNameLabel()
         setupProductBrandLabel()

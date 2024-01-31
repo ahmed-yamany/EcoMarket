@@ -48,6 +48,7 @@ open class CustomSizeView: UIView {
     //
     /// Configures the initial setup of the  view.
     func setup() {
+        backgroundColor = .clear
         configureCollectionView()
         setupAnimatedViewLayout()
         
