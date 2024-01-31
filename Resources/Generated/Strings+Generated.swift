@@ -45,6 +45,12 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "login.password.placeholder", fallback: "*******")
     }
   }
+  internal enum Product {
+    internal enum Details {
+      /// Add to cart
+      internal static let cart = L10n.tr("Localizable", "product.details.cart", fallback: "Add to cart")
+    }
+  }
   internal enum Search {
     /// Search....
     internal static let placeholder = L10n.tr("Localizable", "search.placeholder", fallback: "Search....")
