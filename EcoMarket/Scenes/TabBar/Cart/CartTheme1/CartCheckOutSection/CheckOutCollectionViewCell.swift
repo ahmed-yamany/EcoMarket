@@ -7,7 +7,7 @@
 
 import UIKit
 
-class FooterCollectionViewCell: UICollectionViewCell {
+class CheckOutCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     //
     @IBOutlet weak var totalLabel: UILabel!

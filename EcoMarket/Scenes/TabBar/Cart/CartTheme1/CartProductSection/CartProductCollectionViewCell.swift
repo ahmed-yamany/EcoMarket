@@ -7,7 +7,7 @@
 
 import UIKit
 
-class PrroductCollectionViewCell: UICollectionViewCell {
+class CartProductCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     //
     @IBOutlet weak var containerView: UIStackView!

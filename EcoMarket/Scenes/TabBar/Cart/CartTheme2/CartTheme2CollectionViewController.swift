@@ -9,7 +9,6 @@ import UIKit
 
 class CartTheme2CollectionViewController: UICollectionViewController {
     
-    
     init() {
         super.init(collectionViewLayout: .init())
     }
@@ -30,7 +29,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         collectionView.registerNib(CartTheme2CollectionViewCell.self)
-        collectionView.registerNib(FooterCollectionViewCell.self)
+        collectionView.registerNib(CheckOutCollectionViewCell.self)
         
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
@@ -137,7 +136,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
                 return cell
                 
             case 1:
-                guard let cell: FooterCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+                guard let cell: CheckOutCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
                     Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
                     return UICollectionViewCell()
                 }
