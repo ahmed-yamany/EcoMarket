@@ -9,6 +9,15 @@ import UIKit
 
 class CartTheme2CollectionViewController: UICollectionViewController {
     
+    
+    init() {
+        super.init(collectionViewLayout: .init())
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - View Lifecycle
     //
     override func viewDidLoad() {

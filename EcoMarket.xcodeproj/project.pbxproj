@@ -17,8 +17,7 @@
 		D6275A032B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275A012B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift */; };
 		D6275A042B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6275A022B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib */; };
 		D6275A062B67E5770069CF9C /* Cart2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275A052B67E5770069CF9C /* Cart2Model.swift */; };
-		D62F1C692B653E3000FBE349 /* CartTheme1ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C672B653E3000FBE349 /* CartTheme1ViewController.swift */; };
-		D62F1C6A2B653E3000FBE349 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C682B653E3000FBE349 /* CartViewController.xib */; };
+		D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C672B653E3000FBE349 /* CartViewController.swift */; };
 		D62F1C6E2B653E8400FBE349 /* PrroductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C6C2B653E8400FBE349 /* PrroductCollectionViewCell.swift */; };
 		D62F1C6F2B653E8400FBE349 /* PrroductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C6D2B653E8400FBE349 /* PrroductCollectionViewCell.xib */; };
 		D62F1C712B65411100FBE349 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C702B65411100FBE349 /* CartModel.swift */; };
@@ -125,8 +124,7 @@
 		D6275A012B67DC8F0069CF9C /* CartTheme2CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme2CollectionViewCell.swift; sourceTree = "<group>"; };
 		D6275A022B67DC8F0069CF9C /* CartTheme2CollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartTheme2CollectionViewCell.xib; sourceTree = "<group>"; };
 		D6275A052B67E5770069CF9C /* Cart2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart2Model.swift; sourceTree = "<group>"; };
-		D62F1C672B653E3000FBE349 /* CartTheme1ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme1ViewController.swift; sourceTree = "<group>"; };
-		D62F1C682B653E3000FBE349 /* CartViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
+		D62F1C672B653E3000FBE349 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		D62F1C6C2B653E8400FBE349 /* PrroductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrroductCollectionViewCell.swift; sourceTree = "<group>"; };
 		D62F1C6D2B653E8400FBE349 /* PrroductCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PrroductCollectionViewCell.xib; sourceTree = "<group>"; };
 		D62F1C702B65411100FBE349 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
@@ -363,15 +361,6 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D62F1C662B653E1E00FBE349 /* Cart */ = {
-			isa = PBXGroup;
-			children = (
-				D62759FB2B67DA750069CF9C /* CartTheme2 */,
-				D62F1C7A2B6591EF00FBE349 /* CartTheme1 */,
-			);
-			path = Cart;
-			sourceTree = "<group>";
-		};
 		D62F1C6B2B653E6100FBE349 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -389,8 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				D62F1C6B2B653E6100FBE349 /* Cell */,
-				D62F1C672B653E3000FBE349 /* CartTheme1ViewController.swift */,
-				D62F1C682B653E3000FBE349 /* CartViewController.xib */,
+				D62F1C672B653E3000FBE349 /* CartViewController.swift */,
 				D62F1C702B65411100FBE349 /* CartModel.swift */,
 			);
 			path = CartTheme1;
@@ -527,7 +515,6 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D62F1C662B653E1E00FBE349 /* Cart */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 			);
@@ -608,6 +595,8 @@
 		EE32E2E02B45B8D400675EAE /* Cart */ = {
 			isa = PBXGroup;
 			children = (
+				D62F1C7A2B6591EF00FBE349 /* CartTheme1 */,
+				D62759FB2B67DA750069CF9C /* CartTheme2 */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -902,7 +891,6 @@
 				EEA6F9AC2B5866F100A9E0C2 /* LoginViewController.xib in Resources */,
 				EE5CA1482B5EF9D500630C5D /* CategoryViewController3.xib in Resources */,
 				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
-				D62F1C6A2B653E3000FBE349 /* CartViewController.xib in Resources */,
 				EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
 				EEF069B52B5ED20D0063EE80 /* Poppins-Bold.ttf in Resources */,
@@ -1020,7 +1008,7 @@
 				EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */,
 				EEA6F9CD2B5867E100A9E0C2 /* FacebookButton.swift in Sources */,
 				EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */,
-				D62F1C692B653E3000FBE349 /* CartTheme1ViewController.swift in Sources */,
+				D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
 				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
 				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
