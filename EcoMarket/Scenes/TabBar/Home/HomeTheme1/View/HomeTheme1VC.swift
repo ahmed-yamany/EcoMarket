@@ -7,41 +7,6 @@
 
 import UIKit
 
-enum SectionType: Codable {
-    case adds, newArrival
-}
-
-class SectionLayoutFactory {
-    func makeSetion(section: Section) -> any SectionLayout {
-        switch section.type {
-            case .adds: AdsSectionProvider(data: section.adds ?? [])
-            case .newArrival: NewArrivalsSectionProvider(data: section.newArrivarProducts ?? [])
-        }
-    }
-}
-
-struct Section: Codable {
-    let type: SectionType
-    let header: String
-    var newArrivarProducts: [ProductModel]?
-    var adds: [Adds]?
-}
-
-extension Section {
-    static let samples: [Section] = [
-        Section(type: .adds, header: "For You", adds: Adds.samples),
-        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
-//        Section(type: .adds, header: "For You", adds: Adds.samples),
-//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
-//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
-//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
-//        Section(type: .newArrival, header: "New Arrival", newArrivarProducts: ProductModel.samples),
-//        Section(type: .adds, header: "For You", adds: Adds.samples),
-//        Section(type: .adds, header: "For You", adds: Adds.samples),
-//        Section(type: .adds, header: "For You", adds: Adds.samples)
-    ]
-}
-
 class HomeTheme1VC: UIViewController {
     
     // MARK: - @IBOutlets
@@ -70,10 +35,9 @@ class HomeTheme1VC: UIViewController {
         collectionView.dataSource = self
         
         // Initialize section providers for Ads and New Arrivals
-//        sectionProviders = [AdsSectionProvider(), NewArrivalsSectionProvider()]
         let sections = Section.samples
         sections.forEach { section in
-            var sectionlayout = sectionFactory.makeSetion(section: section)
+            var sectionlayout = sectionFactory.makeSection(section: section)
             self.sectionProviders.append(sectionlayout)
         }
         
@@ -91,7 +55,6 @@ class HomeTheme1VC: UIViewController {
         collectionView.register(UINib(nibName: HeaderView.identifier, bundle: nil),
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
                                 withReuseIdentifier: HeaderView.identifier)
-//        collectionView.registerSupplementaryView(HeaderView.self)
     }
     
     // MARK: - Create Layout

@@ -10,7 +10,9 @@ import Foundation
 struct Adds: Codable {
     let title: String
     let image: String
-    
+}
+
+extension Adds {
     static let samples: [Adds] = [
         .init(title: "", image: "ads-image"),
         .init(title: "", image: "ads-image")

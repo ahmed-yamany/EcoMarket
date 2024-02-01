@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		7F7D36C72B5578CE000B9150 /* SectionLayoutProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D36C62B5578CE000B9150 /* SectionLayoutProtocols.swift */; };
 		7F7D36C92B5578FF000B9150 /* AdsSectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D36C82B5578FF000B9150 /* AdsSectionProvider.swift */; };
 		7F7D36CB2B558486000B9150 /* ProductSectionProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7D36CA2B558486000B9150 /* ProductSectionProvider.swift */; };
+		7FA2BCFD2B6C1D96007DD9DD /* SectionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2BCFC2B6C1D96007DD9DD /* SectionType.swift */; };
+		7FA2BD002B6C1E25007DD9DD /* SectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FA2BCFF2B6C1E25007DD9DD /* SectionsModel.swift */; };
 		7FDF42042B53381300606E44 /* SearchCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDF42032B53381300606E44 /* SearchCustomView.swift */; };
 		7FDF42062B53382D00606E44 /* SearchCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FDF42052B53382D00606E44 /* SearchCustomView.xib */; };
 		7FDF420A2B533CE200606E44 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDF42082B533CE200606E44 /* HeaderView.swift */; };
@@ -127,6 +129,9 @@
 		7F7D36C62B5578CE000B9150 /* SectionLayoutProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionLayoutProtocols.swift; sourceTree = "<group>"; };
 		7F7D36C82B5578FF000B9150 /* AdsSectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsSectionProvider.swift; sourceTree = "<group>"; };
 		7F7D36CA2B558486000B9150 /* ProductSectionProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductSectionProvider.swift; sourceTree = "<group>"; };
+		7FA2BCFB2B6C1CB1007DD9DD /* MakeConstraints */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MakeConstraints; path = Packages/MakeConstraints; sourceTree = "<group>"; };
+		7FA2BCFC2B6C1D96007DD9DD /* SectionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionType.swift; sourceTree = "<group>"; };
+		7FA2BCFF2B6C1E25007DD9DD /* SectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsModel.swift; sourceTree = "<group>"; };
 		7FDF42032B53381300606E44 /* SearchCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCustomView.swift; sourceTree = "<group>"; };
 		7FDF42052B53382D00606E44 /* SearchCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchCustomView.xib; sourceTree = "<group>"; };
 		7FDF42082B533CE200606E44 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
@@ -239,8 +244,10 @@
 		214AC06B2B4E973F0094297D /* HomeTheme1 */ = {
 			isa = PBXGroup;
 			children = (
-				7F4292CA2B5321C800DDAE6A /* HomeTheme1VC.swift */,
-				7F4292CB2B5321C800DDAE6A /* HomeTheme1VC.xib */,
+				7FA2BCFC2B6C1D96007DD9DD /* SectionType.swift */,
+				7FA2BD012B6C1E79007DD9DD /* View */,
+				7FA2BCFE2B6C1E1A007DD9DD /* Model */,
+				7FF0D1DE2B52C703006F2A9A /* HomeCollectionViewCell */,
 			);
 			path = HomeTheme1;
 			sourceTree = "<group>";
@@ -352,6 +359,31 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		7FA2BCFA2B6C1CB1007DD9DD /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				7FA2BCFB2B6C1CB1007DD9DD /* MakeConstraints */,
+			);
+			name = Packages;
+			sourceTree = "<group>";
+		};
+		7FA2BCFE2B6C1E1A007DD9DD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7FA2BCFF2B6C1E25007DD9DD /* SectionsModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7FA2BD012B6C1E79007DD9DD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7F4292CA2B5321C800DDAE6A /* HomeTheme1VC.swift */,
+				7F4292CB2B5321C800DDAE6A /* HomeTheme1VC.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7FDF42072B533CC800606E44 /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
@@ -369,7 +401,8 @@
 				7FF0D1EC2B52D80C006F2A9A /* ProductListCollectionViewCell */,
 				7FF0D1E72B52C77B006F2A9A /* AdsCollectionViewCell */,
 			);
-			path = HomeCollectionViewCell;
+			name = HomeCollectionViewCell;
+			path = "../../../../../Utilities/Custom Cells/HomeCollectionViewCell";
 			sourceTree = "<group>";
 		};
 		7FF0D1E72B52C77B006F2A9A /* AdsCollectionViewCell */ = {
@@ -399,7 +432,6 @@
 			isa = PBXGroup;
 			children = (
 				7FDF42072B533CC800606E44 /* HeaderView */,
-				7FF0D1DE2B52C703006F2A9A /* HomeCollectionViewCell */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -472,6 +504,7 @@
 		EE32E27F2B45B1D100675EAE = {
 			isa = PBXGroup;
 			children = (
+				7FA2BCFA2B6C1CB1007DD9DD /* Packages */,
 				EE32E2C92B45B41600675EAE /* .swiftlint.yml */,
 				EE32E2C82B45B41600675EAE /* swiftgen.yml */,
 				EE32E28A2B45B1D100675EAE /* EcoMarket */,
@@ -909,7 +942,6 @@
 		EE32E2802B45B1D100675EAE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
@@ -934,7 +966,7 @@
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			packageReferences = (
-				EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+				EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "(null)" */,
 			);
 			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
@@ -1049,6 +1081,7 @@
 				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
 				EE58F62B2B61B16700B11B7A /* ProductModel.swift in Sources */,
 				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
+				7FA2BD002B6C1E25007DD9DD /* SectionsModel.swift in Sources */,
 				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
 				EE5CA1362B5EF9BF00630C5D /* CategoryViewModel.swift in Sources */,
 				7F7D36CB2B558486000B9150 /* ProductSectionProvider.swift in Sources */,
@@ -1087,6 +1120,7 @@
 				7F5ACC432B53323F00DC7B86 /* UIView.swift in Sources */,
 				7F7D36C72B5578CE000B9150 /* SectionLayoutProtocols.swift in Sources */,
 				7F0106792B609A71005F26C2 /* NewArrivalsCollectionView.swift in Sources */,
+				7FA2BCFD2B6C1D96007DD9DD /* SectionType.swift in Sources */,
 				7FDF420A2B533CE200606E44 /* HeaderView.swift in Sources */,
 				7F52B1A42B561D8C0040211B /* Adds.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
@@ -1403,9 +1437,8 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
+		EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "(null)" */ = {
 			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/MakeConstraints;
 		};
 /* End XCLocalSwiftPackageReference section */
 
