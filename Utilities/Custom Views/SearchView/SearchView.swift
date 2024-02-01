@@ -8,6 +8,7 @@
 import UIKit
 @IBDesignable
 class SearchView: UIView {
+    static let viewID = String(describing: SearchView.self)
 
     // MARK: IBOutlet
     //
@@ -18,13 +19,13 @@ class SearchView: UIView {
     //
     override init(frame: CGRect) {
         super.init(frame: frame)
-        loadNib()
+        loadFromNib()
         applyStyling()
     }
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        loadNib()
+        loadFromNib()
         applyStyling()
     }
     
@@ -43,16 +44,10 @@ class SearchView: UIView {
         layer.cornerRadius = frame.height / 2
         backgroundColor = AppColor.searchbarBackground
     }
-}
 
-private extension SearchView {
-    /// Loads the view from a nib file and adds it as a subview to the SplashView view.
-    func loadNib() {
-        // Please do not update this code, as it's used to load the view from a nib.
-        // swiftlint:disable all
-        let view = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)![0] as! UIView
-        addSubview(view)
-        view.frame = bounds
-        // swiftlint:enable all
-    }
+    private func loadFromNib() {
+        guard let view = self.loadViewFromNib(nibName: SearchView.viewID) else { return }
+        view.frame = self.bounds
+        self.addSubview(view)
+        }
 }
