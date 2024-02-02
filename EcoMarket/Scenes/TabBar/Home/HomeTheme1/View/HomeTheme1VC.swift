@@ -10,14 +10,10 @@ import UIKit
 class HomeTheme1VC: UIViewController {
     
     // MARK: - @IBOutlets
-    
     @IBOutlet weak var collectionView: UICollectionView!
     
     // MARK: - Properties
-    
-    // Array to store section providers conforming to SectionLayout protocol
     var sectionProviders: [any SectionLayout] = []
-    
     let sectionFactory = SectionLayoutFactory()
      
     // MARK: - LifeCycle
@@ -25,31 +21,33 @@ class HomeTheme1VC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerCell()
+        setupUI()
         setupCollectionView()
+        
+        let sections = Section.samples
+        sections.forEach { section in
+            let sectionLayout = sectionFactory.makeSection(section: section)
+            self.sectionProviders.append(sectionLayout)
+        }
+        
+        collectionView.reloadData()
     }
     
     // MARK: - CollectionView Setup
+    private func setupUI() {
+        view.backgroundColor = AppColor.backgroundColor
+    }
     
     private func setupCollectionView() {
+        collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.delegate = self
         collectionView.dataSource = self
-        
-        // Initialize section providers for Ads and New Arrivals
-        let sections = Section.samples
-        sections.forEach { section in
-            var sectionlayout = sectionFactory.makeSection(section: section)
-            self.sectionProviders.append(sectionlayout)
-        }
-        
-        // Set up the compositional layout
         collectionView.collectionViewLayout = createLayout()
-        collectionView.reloadData()
     }
     
     // MARK: - Register Cell
     
     private func registerCell() {
-        // Register header view
         collectionView.registerNib(AdsCollectionViewCell.self)
         collectionView.registerNib(NewArrivalsCollectionView.self)
         collectionView.register(UINib(nibName: HeaderView.identifier, bundle: nil),
@@ -58,17 +56,16 @@ class HomeTheme1VC: UIViewController {
     }
     
     // MARK: - Create Layout
-    
     private func createLayout() -> UICollectionViewCompositionalLayout {
-        UICollectionViewCompositionalLayout { [weak self] sectionIndex, _ in
-            guard let self = self else { return nil }
-            return self.sectionProviders[sectionIndex].section
+        UICollectionViewCompositionalLayout { [weak self] sectionIndex, layoutEnvironment in
+//            guard let self = self else { return nil }
+            return self?.sectionProviders[sectionIndex].section(sectionIndex, layoutEnvironment: layoutEnvironment)
         }
+        
     }
 }
 
 extension HomeTheme1VC: UICollectionViewDelegate, UICollectionViewDataSource {
-    
     // MARK: - UICollectionViewDataSource
     
     func numberOfSections(in collectionView: UICollectionView) -> Int {

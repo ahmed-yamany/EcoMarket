@@ -11,18 +11,9 @@ import UIKit
 protocol SectionLayout {
     associatedtype DataType
     
-    // Item size for the collection view
-    var itemSize: NSCollectionLayoutItem { get }
-    
-    // Group layout for the collection view
-    var group: NSCollectionLayoutGroup { get }
-    
     // Section layout for the collection view
-    var section: NSCollectionLayoutSection { get }
-    
-    // Spacing between groups
-    var groupSpacing: CGFloat { get }
-    
+    func section(_ index: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection
+        
     // Data associated with the section
     var data: [DataType] { get set }
     
