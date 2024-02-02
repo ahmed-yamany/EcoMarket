@@ -48,9 +48,8 @@ class AdsSectionProvider: SectionLayout {
     }
 
     // MARK: - Section Layout
-
-    // Create the layout for the section
-    var section: NSCollectionLayoutSection {
+    
+    func section(_ index: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = scrollingBehavior
         section.interGroupSpacing = groupSpacing

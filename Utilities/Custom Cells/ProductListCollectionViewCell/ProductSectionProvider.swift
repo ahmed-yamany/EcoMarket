@@ -38,8 +38,8 @@ class ProductSectionProvider: SectionLayout {
     var scrollingBehavior: UICollectionLayoutSectionOrthogonalScrollingBehavior {
         .continuous
     }
-    
-    var section: NSCollectionLayoutSection {
+ 
+    func section(_ index: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = scrollingBehavior
         section.interGroupSpacing = groupSpacing
@@ -61,9 +61,10 @@ class ProductSectionProvider: SectionLayout {
                         viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
         case UICollectionView.elementKindSectionHeader:
-            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                               withReuseIdentifier: SupplementaryViewType.identifier,
-                                                                               for: indexPath) as? SupplementaryViewType
+            guard let header = collectionView
+                .dequeueReusableSupplementaryView(ofKind: kind,
+                                                  withReuseIdentifier: SupplementaryViewType.identifier,
+                                                  for: indexPath) as? SupplementaryViewType
             else { return UICollectionReusableView() }
             header.title = "New Arrivals" // Use indexPath.section instead of indexPath.row
             return header

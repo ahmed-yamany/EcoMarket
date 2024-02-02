@@ -48,12 +48,11 @@ class NewArrivalsSectionProvider: SectionLayout {
     
     // MARK: - Section Layout
     
-    // Create the layout for the section
-    var section: NSCollectionLayoutSection {
-        let section = NSCollectionLayoutSection(group: group)
-        section.orthogonalScrollingBehavior = scrollingBehavior
-        section.interGroupSpacing = groupSpacing
-        section.boundarySupplementaryItems = [supplementaryHeaderItem()]
+    func section(_ index: Int, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+        let section = NSCollectionLayoutSection(group: groupForSection)
+        section.orthogonalScrollingBehavior = .continuous
+        section.interGroupSpacing = spacingBetweenGroups
+        section.boundarySupplementaryItems = [createSupplementaryItemForHeader()]
         section.contentInsets = .init(top: 0, leading: 4, bottom: 0, trailing: 4)
         return section
     }
