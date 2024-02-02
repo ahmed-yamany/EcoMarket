@@ -39,6 +39,7 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
         // Price Label UI
         productPrice.font = .h2
         productPrice.text = "$500"
+        productPrice.textColor = AppColor.primaryText
     }
     
     /// Configures the appearance of the checkout button.

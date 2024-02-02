@@ -28,6 +28,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
+        collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.registerNib(CartTheme2CollectionViewCell.self)
         collectionView.registerNib(CheckOutCollectionViewCell.self)
         

@@ -24,7 +24,7 @@ class CartViewController: UICollectionViewController {
     
     var sections: [any CollectionSection] = []
     
-    // MARK: Intializer
+    // MARK: Initializer
     init() {
         super.init(collectionViewLayout: .init())
     }
@@ -53,7 +53,7 @@ class CartViewController: UICollectionViewController {
             section.registerCell(in: self.collectionView)
             section.registerSupplementaryView(in: self.collectionView)
         }
-        
+        collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
@@ -110,6 +110,7 @@ class Header: UICollectionReusableView {
     
     private func setupLabel() {
         label.font = .h2
+        label.textColor = AppColor.primaryText
         addSubview(label)
     }
     

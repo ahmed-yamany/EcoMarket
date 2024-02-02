@@ -39,7 +39,10 @@ class PromoCodeCollectionViewCell: UICollectionViewCell {
        /// Configures the appearance of the promo code text field.
        private func configureTextFieldUI() {
            codeField.borderStyle = .none
-           codeField.placeholder = "Promo Code"
+           codeField.attributedPlaceholder = NSAttributedString(
+            string: "Promo Code",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
        }
        
        /// Configures the appearance of the apply button.
