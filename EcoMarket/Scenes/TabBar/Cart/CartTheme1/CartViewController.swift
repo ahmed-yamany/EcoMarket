@@ -7,22 +7,9 @@
 
 import UIKit
 
-protocol CollectionSection {
-    associatedtype ItemsType
-    var items: [ItemsType] { get set }
-    func numberOfItems() -> Int
-    func sectionLayout() -> NSCollectionLayoutSection
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
-    func collectionView(_ collectionView: UICollectionView, 
-                        viewForSupplementaryElementOfKind kind: String,
-                        at indexPath: IndexPath) -> UICollectionReusableView
-    func registerCell(in collectionView: UICollectionView)
-    func registerSupplementaryView(in collectionView: UICollectionView)
-}
-
 class CartViewController: UICollectionViewController {
     
-    var sections: [any CollectionSection] = []
+    var sections: [any SectionsLayout] = []
     
     // MARK: Initializer
     init() {
@@ -80,7 +67,9 @@ class CartViewController: UICollectionViewController {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    override func collectionView(_ collectionView: UICollectionView, 
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
 }

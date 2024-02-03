@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CartCheckOutSection: CollectionSection {
+class CartCheckOutSection: SectionsLayout {
     typealias ItemsType = String
     var items: [String] = [""]
     
@@ -43,7 +43,9 @@ class CartCheckOutSection: CollectionSection {
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
-    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+    func collectionView(_ collectionView: UICollectionView, 
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
         UICollectionReusableView()
     }
     

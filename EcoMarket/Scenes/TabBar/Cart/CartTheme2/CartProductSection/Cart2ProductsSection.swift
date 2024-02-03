@@ -2,33 +2,24 @@
 //  CartProductsSection.swift
 //  EcoMarket
 //
-//  Created by Ibrahim Nasser Ibrahim on 31/01/2024.
+//  Created by Ibrahim Nasser Ibrahim on 03/02/2024.
 //
 
 import UIKit
 
-class CartProductsSection: SectionsLayout {
-    typealias ItemsType = CartModel
-    var items: [CartModel] = []
+class Cart2ProductsSection: SectionsLayout {
+    typealias ItemsType = Cart2Model
     
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: CartProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
-            Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
-            return UICollectionViewCell()
-        }
-        cell.setup(product: CartModel.products[indexPath.row])
-        return cell
-    }
+    var items: [Cart2Model] = []
     
     func numberOfItems() -> Int {
-        items.count
+        return items.count
     }
     
-    let interItemSpacing: CGFloat = 5
-    let padding: CGFloat = 15.0
-    let height: CGFloat = 130
-    
     func sectionLayout() -> NSCollectionLayoutSection {
+        let padding: CGFloat = 25.0
+        let height: CGFloat = 144
+        
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
@@ -47,7 +38,30 @@ class CartProductsSection: SectionsLayout {
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header]
         section.contentInsets.bottom = 40
+        section.interGroupSpacing = 22
         return section
+    }
+    
+    private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .estimated(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: Header.elementKind,
+            alignment: .top
+        )
+        
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        return header
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: CartTheme2CollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+            Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        cell.setup(product: Cart2Model.products[indexPath.row])
+        return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, 
@@ -64,20 +78,9 @@ class CartProductsSection: SectionsLayout {
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(CartProductCollectionViewCell.self)
+        collectionView.registerNib(CartTheme2CollectionViewCell.self)
     }
-    private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
-        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                heightDimension: .estimated(50))
-        let header = NSCollectionLayoutBoundarySupplementaryItem(
-            layoutSize: headerSize,
-            elementKind: Header.elementKind,
-            alignment: .top
-        )
-        
-        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
-        return header
-    }
+    
     func registerSupplementaryView(in collectionView: UICollectionView) {
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
