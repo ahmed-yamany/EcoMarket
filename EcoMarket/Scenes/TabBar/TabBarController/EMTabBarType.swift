@@ -15,10 +15,10 @@ enum EMTabBarType: Int, CaseIterable, Hashable {
     
     private var title: String {
         switch self {
-            case .home: "Home"
-            case .cart: "Cart"
-            case .notification: "Notifi"
-            case .profile: "Profile"
+            case .home: return "Home"
+            case .cart: return "Cart"
+            case .notification: return "Notifi"
+            case .profile: return "Profile"
         }
     }
     var viewController: UIViewController {
@@ -26,7 +26,7 @@ enum EMTabBarType: Int, CaseIterable, Hashable {
 
         switch self {
             case .home:
-                vcc.view.backgroundColor = .blue
+           return HomeTheme1VC()
             case .cart:
                 vcc.view.backgroundColor = .green
             case .notification:
@@ -40,19 +40,19 @@ enum EMTabBarType: Int, CaseIterable, Hashable {
     
     private var icon: UIImage? {
         switch self {
-            case .home: UIImage(named: "tabbar/home")?.withRenderingMode(.alwaysOriginal)
-            case .cart: UIImage(named: "tabbar/cart")?.withRenderingMode(.alwaysOriginal)
-            case .notification: UIImage(named: "tabbar/notification")?.withRenderingMode(.alwaysOriginal)
-            case .profile: UIImage(named: "tabbar/profile")?.withRenderingMode(.alwaysOriginal)
+            case .home: return UIImage(named: "tabbar/home")?.withRenderingMode(.alwaysOriginal)
+            case .cart: return UIImage(named: "tabbar/cart")?.withRenderingMode(.alwaysOriginal)
+            case .notification: return UIImage(named: "tabbar/notification")?.withRenderingMode(.alwaysOriginal)
+            case .profile: return UIImage(named: "tabbar/profile")?.withRenderingMode(.alwaysOriginal)
         }
     }
     
     private var selectedIcon: UIImage? {
         switch self {
-            case .home: UIImage(named: "tabbar/home-selected")?.withRenderingMode(.alwaysOriginal)
-            case .cart: UIImage(named: "tabbar/cart-selected")?.withRenderingMode(.alwaysOriginal)
-            case .notification: UIImage(named: "tabbar/notification-selected")?.withRenderingMode(.alwaysOriginal)
-            case .profile: UIImage(named: "tabbar/profile-selected")?.withRenderingMode(.alwaysOriginal)
+            case .home: return UIImage(named: "tabbar/home-selected")?.withRenderingMode(.alwaysOriginal)
+            case .cart: return UIImage(named: "tabbar/cart-selected")?.withRenderingMode(.alwaysOriginal)
+            case .notification: return UIImage(named: "tabbar/notification-selected")?.withRenderingMode(.alwaysOriginal)
+            case .profile: return UIImage(named: "tabbar/profile-selected")?.withRenderingMode(.alwaysOriginal)
         }
     }
     

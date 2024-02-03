@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AdsCollectionViewCell" customModule="EcoMarket" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="AdsCollectionViewCell" reuseIdentifier="AdsCollectionViewCell" id="gTV-IL-0wX" customClass="AdsCollectionViewCell" customModule="EcoMarket" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="258" height="118"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="258" height="118"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Sc-aJ-N1U">
+                        <rect key="frame" x="0.0" y="0.0" width="258" height="118"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ads-image" translatesAutoresizingMaskIntoConstraints="NO" id="2yn-fq-lbZ">
+                                <rect key="frame" x="0.0" y="0.0" width="258" height="118"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="2yn-fq-lbZ" firstAttribute="leading" secondItem="2Sc-aJ-N1U" secondAttribute="leading" id="5ZM-PN-siq"/>
+                            <constraint firstAttribute="bottom" secondItem="2yn-fq-lbZ" secondAttribute="bottom" id="REh-IE-yUY"/>
+                            <constraint firstAttribute="trailing" secondItem="2yn-fq-lbZ" secondAttribute="trailing" id="ZP8-Ns-Ghv"/>
+                            <constraint firstItem="2yn-fq-lbZ" firstAttribute="top" secondItem="2Sc-aJ-N1U" secondAttribute="top" id="s31-kb-egX"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2Sc-aJ-N1U" secondAttribute="bottom" id="Eeq-bs-b4R"/>
+                <constraint firstAttribute="trailing" secondItem="2Sc-aJ-N1U" secondAttribute="trailing" id="F2O-cU-kue"/>
+                <constraint firstItem="2Sc-aJ-N1U" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="LXG-qF-MAO"/>
+                <constraint firstItem="2Sc-aJ-N1U" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="WS8-C5-1Dj"/>
+            </constraints>
+            <size key="customSize" width="258" height="118"/>
+            <connections>
+                <outlet property="adsImage" destination="2yn-fq-lbZ" id="ziY-9A-yLT"/>
+            </connections>
+            <point key="canvasLocation" x="167.93893129770993" y="12.67605633802817"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ads-image" width="260" height="160"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
