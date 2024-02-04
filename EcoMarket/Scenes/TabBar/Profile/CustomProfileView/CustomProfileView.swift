@@ -44,6 +44,7 @@ class CustomProfileView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
+        tableView.backgroundColor = AppColor.backgroundColor
         tableView.isScrollEnabled = false
         tableView.register(UINib(nibName: ProfileTableViewCell.identifier, 
                                  bundle: nil), 
@@ -52,6 +53,7 @@ class CustomProfileView: UIView {
     
     /// Customizes the appearance of the view.
     private func customizeAppearance() {
+        backgroundColor = AppColor.backgroundColor
         layer.cornerRadius = 15
         layer.borderWidth = 1
         layer.borderColor = AppColor.textFieldUnderLine.cgColor

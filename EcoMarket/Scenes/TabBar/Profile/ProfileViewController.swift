@@ -31,6 +31,7 @@ class ProfileViewController: UIViewController {
     // MARK: - UI Setup
     //
     private func setupViewsUI() {
+        view.backgroundColor = AppColor.backgroundColor
         containerStackView.isLayoutMarginsRelativeArrangement = true
         containerStackView.layoutMargins = UIEdgeInsets(top: 10, left: 25, bottom: 0, right: 25)
         userStackViewUI()
