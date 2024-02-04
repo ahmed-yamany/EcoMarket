@@ -9,7 +9,56 @@ import UIKit
 
 class CartProductsSection: SectionsLayout {
     typealias ItemsType = CartModel
+    
     var items: [CartModel] = []
+    
+    func sectionLayout(
+        _ collectionView: UICollectionView,
+        layoutEnvironment: NSCollectionLayoutEnvironment
+    ) -> NSCollectionLayoutSection {
+        
+        var configurations = UICollectionLayoutListConfiguration(appearance: .plain)
+        configurations.backgroundColor = .clear
+        configurations.showsSeparators = false
+        
+        configurations.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in self?.trailingSwipeActionConfiguration(collectionView, at: indexPath)
+        }
+        
+        let header = createHeader()
+        let section = NSCollectionLayoutSection.list(using: configurations, layoutEnvironment: layoutEnvironment)
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = .init(top: 0, leading: 24, bottom: 40, trailing: 24)
+        
+        return section
+    }
+    
+    private func trailingSwipeActionConfiguration(
+        _ collectionView: UICollectionView,
+        at indexPath: IndexPath
+    ) -> UISwipeActionsConfiguration {
+        
+        let actionHandler: UIContextualAction.Handler = { [weak self] _, _, completion in
+            self?.trailingSwipeAction(collectionView, at: indexPath)
+            completion(true)
+        }
+        
+        let action = UIContextualAction(style: .normal, title: nil, handler: actionHandler)
+        action.image = AppImage.Icon.productDelete
+        action.backgroundColor = AppColor.primaryButton
+        
+        return UISwipeActionsConfiguration(actions: [action])
+    }
+    
+    private func trailingSwipeAction(_ collectionView: UICollectionView, at indexPath: IndexPath) {
+        let item = items[indexPath.row]
+        items.removeAll { $0 == item }
+        collectionView.reloadData()
+        collectionView.layoutIfNeeded()
+    }
+    
+    func numberOfItems() -> Int {
+        items.count
+    }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: CartProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
@@ -20,37 +69,7 @@ class CartProductsSection: SectionsLayout {
         return cell
     }
     
-    func numberOfItems() -> Int {
-        items.count
-    }
-    
-    let interItemSpacing: CGFloat = 5
-    let padding: CGFloat = 15.0
-    let height: CGFloat = 130
-    
-    func sectionLayout() -> NSCollectionLayoutSection {
-        // Item
-        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .fractionalHeight(1.0))
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        
-        // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
-                                               heightDimension: .absolute(height))
-        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding)
-        
-        // Header
-        let header = createHeader()
-        
-        // Section
-        let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header]
-        section.contentInsets.bottom = 40
-        return section
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, 
+    func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -66,6 +85,7 @@ class CartProductsSection: SectionsLayout {
     func registerCell(in collectionView: UICollectionView) {
         collectionView.registerNib(CartProductCollectionViewCell.self)
     }
+    
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                 heightDimension: .estimated(50))
@@ -78,6 +98,7 @@ class CartProductsSection: SectionsLayout {
         header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
         return header
     }
+    
     func registerSupplementaryView(in collectionView: UICollectionView) {
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,

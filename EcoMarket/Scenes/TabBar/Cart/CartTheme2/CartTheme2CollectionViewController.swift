@@ -40,7 +40,6 @@ class CartTheme2CollectionViewController: UICollectionViewController {
             section.registerSupplementaryView(in: self.collectionView)
         }
         collectionView.backgroundColor = AppColor.backgroundColor
-//        collectionView.registerNib(CheckOutCollectionViewCell.self)
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
@@ -49,8 +48,8 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     /// Creates a compositional layout for the collection view.
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionIndex, _) in
-            self.sections[sectionIndex].sectionLayout()
+        return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
+            self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
         }
     }
     

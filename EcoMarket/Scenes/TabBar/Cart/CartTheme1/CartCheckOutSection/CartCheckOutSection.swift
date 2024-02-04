@@ -27,7 +27,10 @@ class CartCheckOutSection: SectionsLayout {
     let padding: CGFloat = 15.0
     let height: CGFloat = 130
     
-    func sectionLayout() -> NSCollectionLayoutSection {
+    func sectionLayout(
+        _ collectionView: UICollectionView,
+        layoutEnvironment: NSCollectionLayoutEnvironment
+    ) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
