@@ -41,5 +41,6 @@ class ProfileTableViewCell: UITableViewCell {
         // Cell UI
         backgroundColor = .clear
         selectionStyle = .none
+        accessoryType = .disclosureIndicator
     }
 }

@@ -46,7 +46,7 @@ class CustomProfileView: UIView {
         tableView.separatorStyle = .none
         tableView.backgroundColor = AppColor.backgroundColor
         tableView.isScrollEnabled = false
-        tableView.register(UINib(nibName: ProfileTableViewCell.identifier, 
+        tableView.register(UINib(nibName: ProfileTableViewCell.identifier,
                                  bundle: nil), 
                            forCellReuseIdentifier: ProfileTableViewCell.identifier)
     }
