@@ -13,6 +13,8 @@
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
+		A1D73D902B6E4ADF00B251EB /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D73D8E2B6E4ADF00B251EB /* AlertViewController.swift */; };
+		A1D73D912B6E4ADF00B251EB /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D73D8F2B6E4ADF00B251EB /* AlertViewController.xib */; };
 		EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28B2B45B1D100675EAE /* AppDelegate.swift */; };
 		EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */; };
 		EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2942B45B1D200675EAE /* Assets.xcassets */; };
@@ -108,6 +110,8 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		A1D73D8E2B6E4ADF00B251EB /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
+		A1D73D8F2B6E4ADF00B251EB /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		EE32E28B2B45B1D100675EAE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE32E2942B45B1D200675EAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -318,6 +322,15 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		A1D73D892B6E4A9A00B251EB /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				A1D73D8E2B6E4ADF00B251EB /* AlertViewController.swift */,
+				A1D73D8F2B6E4ADF00B251EB /* AlertViewController.xib */,
+			);
+			path = Alert;
+			sourceTree = "<group>";
+		};
 		D6A0EB8D2B5F0F8500079FF3 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -438,6 +451,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				A1D73D892B6E4A9A00B251EB /* Alert */,
 				EE5CA1532B5F031300630C5D /* SearchView */,
 				EEA6F9CF2B5867EC00A9E0C2 /* TextField */,
 				EEA6F9C22B5867D900A9E0C2 /* Buttons */,
@@ -834,6 +848,7 @@
 				EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */,
 				EEA6F9B12B58670500A9E0C2 /* SignupViewController.xib in Resources */,
 				A1CB8C702B52788600316DD4 /* OnboardingViewController.xib in Resources */,
+				A1D73D912B6E4ADF00B251EB /* AlertViewController.xib in Resources */,
 				A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */,
 				EE32E2952B45B1D200675EAE /* Assets.xcassets in Resources */,
 				EEF069B42B5ED20D0063EE80 /* Poppins-SemiBold.ttf in Resources */,
@@ -909,6 +924,7 @@
 				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
 				EE5CA1362B5EF9BF00630C5D /* CategoryViewModel.swift in Sources */,
 				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
+				A1D73D902B6E4ADF00B251EB /* AlertViewController.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
