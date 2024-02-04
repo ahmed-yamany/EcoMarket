@@ -8,10 +8,13 @@
 import UIKit
 
 class CartViewController: UICollectionViewController {
-    
+    // MARK: - Properties
+    //
+    /// Array holding sections conforming to SectionsLayout protocol.
     var sections: [any SectionsLayout] = []
     
-    // MARK: Initializer
+    // MARK: - Initialization
+    //
     init() {
         super.init(collectionViewLayout: .init())
     }

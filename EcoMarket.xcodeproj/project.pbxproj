@@ -13,7 +13,7 @@
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
-		D62759FF2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */; };
+		D62759FF2B67DC7A0069CF9C /* Cart2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62759FE2B67DC7A0069CF9C /* Cart2CollectionViewController.swift */; };
 		D6275A062B67E5770069CF9C /* Cart2Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6275A052B67E5770069CF9C /* Cart2Model.swift */; };
 		D62BD3C62B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3C32B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift */; };
 		D62BD3C72B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62BD3C42B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib */; };
@@ -125,7 +125,7 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
-		D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme2CollectionViewController.swift; sourceTree = "<group>"; };
+		D62759FE2B67DC7A0069CF9C /* Cart2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart2CollectionViewController.swift; sourceTree = "<group>"; };
 		D6275A052B67E5770069CF9C /* Cart2Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cart2Model.swift; sourceTree = "<group>"; };
 		D62BD3C32B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoCodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D62BD3C42B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromoCodeCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -356,7 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				D62BD3D82B6D947E000CF78A /* CartProductSection */,
-				D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */,
+				D62759FE2B67DC7A0069CF9C /* Cart2CollectionViewController.swift */,
 				D6275A052B67E5770069CF9C /* Cart2Model.swift */,
 			);
 			path = CartTheme2;
@@ -405,9 +405,9 @@
 		D62F1C7A2B6591EF00FBE349 /* CartTheme1 */ = {
 			isa = PBXGroup;
 			children = (
-				D62BD3C92B6D9426000CF78A /* CartCheckOutSection */,
-				D62BD3C22B6D93D6000CF78A /* CartPromoSection */,
 				D62BD3BB2B6D93B3000CF78A /* CartProductSection */,
+				D62BD3C22B6D93D6000CF78A /* CartPromoSection */,
+				D62BD3C92B6D9426000CF78A /* CartCheckOutSection */,
 				D62F1C672B653E3000FBE349 /* CartViewController.swift */,
 				D62F1C702B65411100FBE349 /* CartModel.swift */,
 			);
@@ -1055,7 +1055,7 @@
 				EE58F5DB2B5ECFA30068B93F /* GoogleButton.swift in Sources */,
 				EE5CA1552B5F033100630C5D /* SearchView.swift in Sources */,
 				EE5CA1402B5EF9CC00630C5D /* CategoryViewController2.swift in Sources */,
-				D62759FF2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift in Sources */,
+				D62759FF2B67DC7A0069CF9C /* Cart2CollectionViewController.swift in Sources */,
 				D62BD3DB2B6D9487000CF78A /* CartTheme2CollectionViewCell.swift in Sources */,
 				EE58F5D92B5ECF910068B93F /* EMTextField.swift in Sources */,
 				EE5CA1492B5EF9D500630C5D /* CategoryViewController3.swift in Sources */,

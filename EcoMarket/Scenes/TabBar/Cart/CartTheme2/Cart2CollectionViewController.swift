@@ -1,5 +1,5 @@
 //
-//  CartTheme2CollectionViewController.swift
+//  Cart2CollectionViewController.swift
 //  EcoMarket
 //
 //  Created by Ibrahim Nasser Ibrahim on 29/01/2024.
@@ -7,10 +7,14 @@
 
 import UIKit
 
-class CartTheme2CollectionViewController: UICollectionViewController {
-    
+class Cart2CollectionViewController: UICollectionViewController {
+    // MARK: - Properties
+    //
+    /// Array holding sections conforming to SectionsLayout protocol.
     var sections: [any SectionsLayout] = []
     
+    // MARK: - Initialization
+    //
     init() {
         super.init(collectionViewLayout: .init())
     }
@@ -40,7 +44,6 @@ class CartTheme2CollectionViewController: UICollectionViewController {
             section.registerSupplementaryView(in: self.collectionView)
         }
         collectionView.backgroundColor = AppColor.backgroundColor
-//        collectionView.registerNib(CheckOutCollectionViewCell.self)
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
