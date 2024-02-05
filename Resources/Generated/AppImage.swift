@@ -69,13 +69,6 @@ enum AppImage {
         static var logo: UIImage? {
             return UIImage(named: "\(folderName)/logo")
         }
-    }
-    
-    enum Icon {
-        private static var folderName: String {"icon"}
 
-        static var productDelete: UIImage? {
-            UIImage(named: "\(folderName)/product-delete")
-        }
     }
 }
