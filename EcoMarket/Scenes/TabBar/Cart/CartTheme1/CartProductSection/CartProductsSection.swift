@@ -21,7 +21,8 @@ class CartProductsSection: SectionsLayout {
         configurations.backgroundColor = .clear
         configurations.showsSeparators = false
         
-        configurations.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in self?.trailingSwipeActionConfiguration(collectionView, at: indexPath)
+        configurations.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in 
+            self?.trailingSwipeActionConfiguration(collectionView, at: indexPath)
         }
         
         let header = createHeader()
@@ -52,8 +53,7 @@ class CartProductsSection: SectionsLayout {
     private func trailingSwipeAction(_ collectionView: UICollectionView, at indexPath: IndexPath) {
         let item = items[indexPath.row]
         items.removeAll { $0 == item }
-        collectionView.reloadData()
-        collectionView.layoutIfNeeded()
+        collectionView.deleteItems(at: [indexPath])
     }
     
     func numberOfItems() -> Int {
@@ -66,6 +66,8 @@ class CartProductsSection: SectionsLayout {
             return UICollectionViewCell()
         }
         cell.setup(product: CartModel.products[indexPath.row])
+        cell.layoutIfNeeded()
+        collectionView.layoutIfNeeded()
         return cell
     }
     
