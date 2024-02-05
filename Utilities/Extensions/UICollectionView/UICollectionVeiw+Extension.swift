@@ -12,8 +12,6 @@ extension Identifiable {
     static var identifier: String { String(describing: Self.self) }
 }
 
-extension UICollectionViewCell: Identifiable {}
-
 extension UICollectionView {
     func registerNib<Cell: UICollectionViewCell>(_ cell: Cell.Type) where Cell: Identifiable {
         self.register(UINib(nibName: Cell.identifier, bundle: nil),
