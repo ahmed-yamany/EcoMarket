@@ -39,6 +39,22 @@ enum AppImage {
         return UIImage(systemName: "magnifyingglass")
     }
     
+    static var checkImage: UIImage? {
+        return UIImage(named: "checkImage")
+    }
+    
+    static var cartIcon: UIImage? {
+        return UIImage(named: "cart")
+    }
+    
+    static var favIcon: UIImage? {
+        return UIImage(named: "favourite")
+    }
+    
+    static var ratingIcon: UIImage? {
+        return UIImage(named: "rating")
+	}
+
     static var arrowImage: UIImage? {
         return UIImage(named: "arrow")
     }
