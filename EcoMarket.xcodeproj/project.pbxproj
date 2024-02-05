@@ -13,6 +13,12 @@
 		A1CB8C7C2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB8C7B2B5294AA00316DD4 /* UICollectionVeiw+Extension.swift */; };
 		A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */; };
 		A1CB8C8A2B540FCF00316DD4 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */; };
+		D62BD3F82B711D6A000CF78A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3F62B711D6A000CF78A /* SettingsViewController.swift */; };
+		D62BD3F92B711D6A000CF78A /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62BD3F72B711D6A000CF78A /* SettingsViewController.xib */; };
+		D62BD3FC2B7143B0000CF78A /* SettingsCustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3FB2B7143B0000CF78A /* SettingsCustomTextField.swift */; };
+		D62BD3FE2B7143BB000CF78A /* SettingsCustomTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62BD3FD2B7143BB000CF78A /* SettingsCustomTextField.xib */; };
+		D62BD4002B715754000CF78A /* GenderCustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3FF2B715754000CF78A /* GenderCustomView.swift */; };
+		D62BD4022B71575C000CF78A /* GenderCustomView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62BD4012B71575C000CF78A /* GenderCustomView.xib */; };
 		D62F1C1F2B616EFA00FBE349 /* ProductDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C1D2B616EFA00FBE349 /* ProductDetailsViewController.swift */; };
 		D62F1C202B616EFA00FBE349 /* ProductDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C1E2B616EFA00FBE349 /* ProductDetailsViewController.xib */; };
 		D62F1C362B61851900FBE349 /* SizeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C342B61851900FBE349 /* SizeCollectionViewCell.swift */; };
@@ -122,6 +128,12 @@
 		A1CB8C832B53DA6000316DD4 /* SplashViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashViewController.xib; sourceTree = "<group>"; };
 		A1CB8C872B540FCF00316DD4 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		A1CB8C882B540FCF00316DD4 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		D62BD3F62B711D6A000CF78A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		D62BD3F72B711D6A000CF78A /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		D62BD3FB2B7143B0000CF78A /* SettingsCustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsCustomTextField.swift; sourceTree = "<group>"; };
+		D62BD3FD2B7143BB000CF78A /* SettingsCustomTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsCustomTextField.xib; sourceTree = "<group>"; };
+		D62BD3FF2B715754000CF78A /* GenderCustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderCustomView.swift; sourceTree = "<group>"; };
+		D62BD4012B71575C000CF78A /* GenderCustomView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GenderCustomView.xib; sourceTree = "<group>"; };
 		D62F1C1D2B616EFA00FBE349 /* ProductDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewController.swift; sourceTree = "<group>"; };
 		D62F1C1E2B616EFA00FBE349 /* ProductDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductDetailsViewController.xib; sourceTree = "<group>"; };
 		D62F1C342B61851900FBE349 /* SizeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SizeCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -346,6 +358,43 @@
 			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
+		D62BD3F52B711D34000CF78A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD3FA2B714391000CF78A /* SettingsCustomViews */,
+				D62BD3F62B711D6A000CF78A /* SettingsViewController.swift */,
+				D62BD3F72B711D6A000CF78A /* SettingsViewController.xib */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		D62BD3FA2B714391000CF78A /* SettingsCustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD4042B7157F2000CF78A /* GenderView */,
+				D62BD4032B7157E5000CF78A /* TextField */,
+			);
+			path = SettingsCustomViews;
+			sourceTree = "<group>";
+		};
+		D62BD4032B7157E5000CF78A /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD3FB2B7143B0000CF78A /* SettingsCustomTextField.swift */,
+				D62BD3FD2B7143BB000CF78A /* SettingsCustomTextField.xib */,
+			);
+			path = TextField;
+			sourceTree = "<group>";
+		};
+		D62BD4042B7157F2000CF78A /* GenderView */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD3FF2B715754000CF78A /* GenderCustomView.swift */,
+				D62BD4012B71575C000CF78A /* GenderCustomView.xib */,
+			);
+			path = GenderView;
+			sourceTree = "<group>";
+		};
 		D62F1C1C2B616EDA00FBE349 /* ProductDeatils */ = {
 			isa = PBXGroup;
 			children = (
@@ -518,6 +567,7 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D62BD3F52B711D34000CF78A /* Settings */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
@@ -917,8 +967,10 @@
 				D62F1C202B616EFA00FBE349 /* ProductDetailsViewController.xib in Resources */,
 				EEF069B52B5ED20D0063EE80 /* Poppins-Bold.ttf in Resources */,
 				EE5CA14A2B5EF9D500630C5D /* CategoryCollectionViewCell3.xib in Resources */,
+				D62BD3FE2B7143BB000CF78A /* SettingsCustomTextField.xib in Resources */,
 				D62F1C5B2B64034A00FBE349 /* StapperView.xib in Resources */,
 				EEA6F9D32B58680D00A9E0C2 /* EMTextField.xib in Resources */,
+				D62BD4022B71575C000CF78A /* GenderCustomView.xib in Resources */,
 				EEA6F9BD2B5867A800A9E0C2 /* OnboardingCollectionViewCell.xib in Resources */,
 				EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */,
 				A1CB8C852B53DA6000316DD4 /* SplashViewController.xib in Resources */,
@@ -933,6 +985,7 @@
 				EE32E2CA2B45B41600675EAE /* swiftgen.yml in Resources */,
 				EE5CA1412B5EF9CC00630C5D /* CategoryCollectionViewCell.xib in Resources */,
 				EEA6F9B42B58671200A9E0C2 /* SuccessViewController.xib in Resources */,
+				D62BD3F92B711D6A000CF78A /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1013,10 +1066,12 @@
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
 				EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */,
 				EEA6F9A32B58665B00A9E0C2 /* mainWindow.swift in Sources */,
+				D62BD4002B715754000CF78A /* GenderCustomView.swift in Sources */,
 				EE5CA1352B5EF9BF00630C5D /* CategoryViewController1.swift in Sources */,
 				EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */,
 				D62F1C362B61851900FBE349 /* SizeCollectionViewCell.swift in Sources */,
 				D62F1C372B61851900FBE349 /* ColorViewButton.swift in Sources */,
+				D62BD3FC2B7143B0000CF78A /* SettingsCustomTextField.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
 				D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */,
 				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
@@ -1035,6 +1090,7 @@
 				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
 				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
+				D62BD3F82B711D6A000CF78A /* SettingsViewController.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,
 				EE5CA13E2B5EF9CC00630C5D /* Category2ViewModel.swift in Sources */,
 				EE58F5D72B5ECF7F0068B93F /* parentViewController.swift in Sources */,
