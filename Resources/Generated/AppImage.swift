@@ -53,6 +53,14 @@ enum AppImage {
     
     static var ratingIcon: UIImage? {
         return UIImage(named: "rating")
+	}
+
+    static var arrowImage: UIImage? {
+        return UIImage(named: "arrow")
+    }
+    
+    static var delete: UIImage? {
+        return UIImage(named: "delete")
     }
     
     static var arrow: UIImage? {
@@ -73,6 +81,13 @@ enum AppImage {
         static var logo: UIImage? {
             return UIImage(named: "\(folderName)/logo")
         }
+    }
+    
+    enum Icon {
+        private static var folderName: String {"icon"}
 
+        static var productDelete: UIImage? {
+            UIImage(named: "\(folderName)/product-delete")
+        }
     }
 }
