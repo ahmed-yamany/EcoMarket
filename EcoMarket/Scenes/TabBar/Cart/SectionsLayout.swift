@@ -30,4 +30,6 @@ protocol SectionsLayout {
     func registerCell(in collectionView: UICollectionView)
     
     func registerSupplementaryView(in collectionView: UICollectionView)
+    
+    func registerDecorationView(layout: UICollectionViewLayout)
 }

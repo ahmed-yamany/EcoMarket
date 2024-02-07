@@ -63,6 +63,10 @@ enum AppImage {
         return UIImage(named: "delete")
     }
     
+    static var arrow: UIImage? {
+        return UIImage(named: "icon/profile-arrow")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         
