@@ -55,6 +55,10 @@ enum AppImage {
         return UIImage(named: "rating")
     }
     
+    static var arrow: UIImage? {
+        return UIImage(named: "arrow")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         

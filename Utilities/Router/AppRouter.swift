@@ -21,7 +21,7 @@ final class AppRouter: Router {
         let window = UIWindow(windowScene: windowScene)
         window.makeKeyAndVisible()
         self.window = window
-        self.present(ProfileViewController())
+        self.present(ProfileCollectionViewController())
     }
     
     func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {

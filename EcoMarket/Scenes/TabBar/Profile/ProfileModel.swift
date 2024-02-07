@@ -36,5 +36,5 @@ extension ProfileModel {
 }
 
 extension UserModel {
-    static let user = UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com")
+    static let user = [UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com")]
 }
