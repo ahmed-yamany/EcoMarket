@@ -51,7 +51,6 @@ class SettingsViewController: UIViewController {
     }
     
     private func configureGenderView() {
-        genderView.title = L10n.Profile.genderTitle
         genderView.maleButton.setTitle("Male", for: .normal)
         genderView.femaleButton.setTitle("Female", for: .normal)
     }
