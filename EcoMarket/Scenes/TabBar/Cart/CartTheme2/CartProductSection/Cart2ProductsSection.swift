@@ -8,6 +8,7 @@
 import UIKit
 
 class Cart2ProductsSection: SectionsLayout {
+    
     typealias ItemsType = Cart2Model
     
     var items: [Cart2Model] = []
@@ -88,5 +89,9 @@ class Cart2ProductsSection: SectionsLayout {
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
+    }
+    
+    func registerDecorationView(layout: UICollectionViewLayout) {
+        
     }
 }

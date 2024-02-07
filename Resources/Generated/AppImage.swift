@@ -64,7 +64,7 @@ enum AppImage {
     }
     
     static var arrow: UIImage? {
-        return UIImage(named: "arrow")
+        return UIImage(named: "icon/profile-arrow")
     }
     
     enum Onboarding {

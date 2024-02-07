@@ -106,4 +106,8 @@ class CartProductsSection: SectionsLayout {
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
     }
+    
+    func registerDecorationView(layout: UICollectionViewLayout) {
+        
+    }
 }

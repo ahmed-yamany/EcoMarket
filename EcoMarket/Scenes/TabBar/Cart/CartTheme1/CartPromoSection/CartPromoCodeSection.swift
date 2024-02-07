@@ -61,4 +61,8 @@ class CartPromoCodeSection: SectionsLayout {
     func registerSupplementaryView(in collectionView: UICollectionView) {
   
     }
+    
+    func registerDecorationView(layout: UICollectionViewLayout) {
+        
+    }
 }
