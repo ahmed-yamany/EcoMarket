@@ -16,7 +16,10 @@ class Cart2ProductsSection: SectionsLayout {
         return items.count
     }
     
-    func sectionLayout() -> NSCollectionLayoutSection {
+    func sectionLayout(
+        _ collectionView: UICollectionView,
+        layoutEnvironment: NSCollectionLayoutEnvironment
+    ) -> NSCollectionLayoutSection {
         let padding: CGFloat = 25.0
         let height: CGFloat = 144
         

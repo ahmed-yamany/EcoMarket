@@ -52,8 +52,8 @@ class CartViewController: UICollectionViewController {
     /// Creates a compositional layout for the collection view.
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
-        return UICollectionViewCompositionalLayout { (sectionIndex, _) in
-            self.sections[sectionIndex].sectionLayout()
+        return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
+            self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
         }
     }
     

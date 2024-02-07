@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct CartModel {
+struct CartModel: Equatable {
+    let id = UUID()
     let name: String
     let brand: String
     let price: String
