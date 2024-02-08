@@ -13,7 +13,9 @@ protocol SettingsCustomTextFieldDelegate: AnyObject {
 //
 @IBDesignable
 class SettingsCustomTextField: UIView {
-
+    
+    // MARK: - IBOutlets
+    //
     @IBOutlet weak var bottomLine: UIView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var titleLabel: UILabel!
@@ -59,6 +61,7 @@ class SettingsCustomTextField: UIView {
 // MARK: - Configurations
 private extension SettingsCustomTextField {
     func configureUI() {
+        backgroundColor = AppColor.backgroundColor
         configureTitleLable()
         configureTextField()
         configureButtomLine()
@@ -72,6 +75,7 @@ private extension SettingsCustomTextField {
     
     func configureTextField() {
         textField.borderStyle = .none
+        textField.textColor = AppColor.primaryText
     }
     
     func configureButtomLine() {

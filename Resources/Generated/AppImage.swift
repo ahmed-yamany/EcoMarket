@@ -105,7 +105,7 @@ enum AppImage {
     
     enum Icon {
         private static var folderName: String {"icon"}
-
+        
         static var productDelete: UIImage? {
             UIImage(named: "\(folderName)/product-delete")
         }

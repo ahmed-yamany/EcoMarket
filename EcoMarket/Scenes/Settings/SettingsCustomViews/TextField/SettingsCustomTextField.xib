@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -40,7 +39,6 @@
                                 </textField>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HoD-Ts-nfW">
                                     <rect key="frame" x="0.0" y="88" width="523.66666666666663" height="1"/>
-                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="1" id="cmd-yN-pCJ"/>
                                     </constraints>
@@ -51,7 +49,6 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="wbH-hG-kyk" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="2tq-bJ-ROx"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="wbH-hG-kyk" secondAttribute="trailing" id="bZi-rG-Hg2"/>
@@ -62,9 +59,4 @@
             <point key="canvasLocation" x="292.36641221374043" y="229.22535211267606"/>
         </view>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

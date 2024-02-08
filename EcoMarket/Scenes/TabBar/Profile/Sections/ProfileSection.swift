@@ -13,6 +13,8 @@ class ProfileSection: SectionsLayout {
     
     var items: [ProfileModel] = []
     
+    var headerTitle: String = ""
+    
     func numberOfItems() -> Int {
         items.count
     }
@@ -21,24 +23,26 @@ class ProfileSection: SectionsLayout {
         _ collectionView: UICollectionView,
         layoutEnvironment: NSCollectionLayoutEnvironment
     ) -> NSCollectionLayoutSection {
-            // Item
-            let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
-            let item = NSCollectionLayoutItem(layoutSize: itemSize)
-            
-            // Group
-            let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(50))
-            let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-            group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20)
-            
-            // Section
-            
-            let section = NSCollectionLayoutSection(group: group)
-            section.decorationItems = [
-                NSCollectionLayoutDecorationItem.background(elementKind: SectionDecorationView.identifier)
-            ]
-            section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 25, bottom: 30 + 15, trailing: 25)
-            // Create and return a compositional layout with the defined section.
-            return section
+        // Item
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        // Group
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(55))
+        let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20)
+        
+        let header = createHeader()
+        
+        // Section
+        let section = NSCollectionLayoutSection(group: group)
+        section.boundarySupplementaryItems = [header]
+        section.decorationItems = [
+            NSCollectionLayoutDecorationItem.background(elementKind: SectionDecorationView.identifier)
+        ]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 25, bottom: 30 + 15, trailing: 25)
+
+        return section
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -55,7 +59,27 @@ class ProfileSection: SectionsLayout {
         viewForSupplementaryElementOfKind kind: String,
         at indexPath: IndexPath
     ) -> UICollectionReusableView {
-        UICollectionReusableView()
+        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                           withReuseIdentifier: Header.identifier,
+                                                                           for: indexPath) as? Header else {
+            Logger.log("Failed to get header view", category: \.default, level: .fault)
+            return UICollectionReusableView()
+        }
+        header.setTitle(headerTitle)
+        return header
+    }
+    
+    private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
+        let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
+                                                heightDimension: .estimated(50))
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: Header.elementKind,
+            alignment: .top
+        )
+        
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        return header
     }
     
     func registerCell(in collectionView: UICollectionView) {
@@ -63,7 +87,9 @@ class ProfileSection: SectionsLayout {
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {
-        
+        collectionView.register(Header.self,
+                                forSupplementaryViewOfKind: Header.elementKind,
+                                withReuseIdentifier: Header.identifier)
     }
     
     func registerDecorationView(layout: UICollectionViewLayout) {

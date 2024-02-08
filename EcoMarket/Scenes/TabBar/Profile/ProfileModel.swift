@@ -33,6 +33,13 @@ extension ProfileModel {
         ProfileModel(title: "Privacy Policy", image: "profile/icon-8"),
         ProfileModel(title: "Community", image: "profile/icon-9")
     ]
+    
+    static let mockData3 = [
+        ProfileModel(title: "Language", image: "settings/icon"),
+        ProfileModel(title: "Notification", image: "settings/icon-2"),
+        ProfileModel(title: "Dark Mood", image: "settings/icon-3"),
+        ProfileModel(title: "Help Center", image: "settings/icon-4")
+    ]
 }
 
 extension UserModel {
