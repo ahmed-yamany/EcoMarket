@@ -27,6 +27,7 @@ class SettingsCollectionViewController: UICollectionViewController {
         super.viewDidLoad()
         let settingsSection = ProfileSection()
         settingsSection.items = ProfileModel.mockData3
+        settingsSection.headerTitle = "Settings" 
         
         sections = [EditProfileSection(), settingsSection, FooterSection()]
         configureCollectionView()
@@ -69,5 +70,13 @@ class SettingsCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, 
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        sections[indexPath.section].collectionView(collectionView, 
+                                                   viewForSupplementaryElementOfKind: kind,
+                                                   at: indexPath)
     }
 }

@@ -62,7 +62,7 @@ class ProfileCollectionViewController: UICollectionViewController {
     }
 
     // MARK: UICollectionViewDataSource
-    
+    //
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
@@ -73,5 +73,9 @@ class ProfileCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
     }
 }

@@ -36,12 +36,20 @@ class ProfileSection: SectionsLayout {
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.boundarySupplementaryItems = [header]
-        section.decorationItems = [
-            NSCollectionLayoutDecorationItem.background(elementKind: SectionDecorationView.identifier)
-        ]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 25, leading: 25, bottom: 30 + 15, trailing: 25)
-
+        
+        if !headerTitle.isEmpty {
+            section.boundarySupplementaryItems = [header]
+            section.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 25, bottom: 30 + 15, trailing: 25)
+            section.decorationItems = [
+                NSCollectionLayoutDecorationItem.background(elementKind: SectionDecorationView.identifier)
+            ]
+        } else {
+            section.decorationItems = [
+                NSCollectionLayoutDecorationItem.background(elementKind: SectionDecorationView.identifier)
+            ]
+            section.contentInsets = NSDirectionalEdgeInsets(top: 60, leading: 25, bottom: 30 + 15, trailing: 25)
+        }
+        
         return section
     }
     
@@ -52,6 +60,10 @@ class ProfileSection: SectionsLayout {
         }
         cell.setup(profile: items[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     func collectionView(
@@ -71,14 +83,14 @@ class ProfileSection: SectionsLayout {
     
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                                heightDimension: .estimated(50))
+                                                heightDimension: .absolute(40))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: Header.elementKind,
             alignment: .top
         )
         
-        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0)
+        header.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
         return header
     }
     

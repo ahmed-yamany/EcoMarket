@@ -16,6 +16,7 @@ struct UserModel {
     let image: String
     let name: String
     let email: String
+    let action: () -> Void
 }
 
 extension ProfileModel {
@@ -43,5 +44,7 @@ extension ProfileModel {
 }
 
 extension UserModel {
-    static let user = [UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com")]
+    static let user = [UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com", action: {
+        print("Profile")
+    })]
 }

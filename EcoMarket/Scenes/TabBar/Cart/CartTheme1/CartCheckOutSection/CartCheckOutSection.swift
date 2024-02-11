@@ -8,6 +8,7 @@
 import UIKit
 
 class CartCheckOutSection: SectionsLayout {
+    
     typealias ItemsType = String
     var items: [String] = [""]
     
@@ -50,6 +51,10 @@ class CartCheckOutSection: SectionsLayout {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         UICollectionReusableView()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
     }
     
     func registerCell(in collectionView: UICollectionView) {

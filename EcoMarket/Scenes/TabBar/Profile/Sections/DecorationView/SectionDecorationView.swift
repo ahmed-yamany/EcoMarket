@@ -15,6 +15,7 @@ class SectionDecorationView: UICollectionReusableView {
         super.init(frame: frame)
         configure()
     }
+    
     required init?(coder: NSCoder) {
         fatalError("not implemented")
     }
@@ -25,6 +26,6 @@ class SectionDecorationView: UICollectionReusableView {
         view.layer.cornerRadius = 15
         view.layer.borderWidth = 1
         view.layer.borderColor = AppColor.textFieldUnderLine.cgColor
-        view.fillSuperview(padding: UIEdgeInsets(top: 0, left: 25, bottom: 30, right: 25))
+        view.fillSuperview(padding: UIEdgeInsets(top: 40, left: 25, bottom: 30, right: 25))
     }
 }

@@ -27,11 +27,11 @@ class UserSection: SectionsLayout {
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(100))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 15, trailing: 20)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 20)
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets.bottom = 30
+            section.contentInsets.bottom = 0
         return section
     }
     
@@ -45,6 +45,10 @@ class UserSection: SectionsLayout {
         }
         cell.setup(user: items[indexPath.row])
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        items[indexPath.row].action()
     }
     
     func collectionView(
