@@ -99,15 +99,19 @@
 		EE5CA1552B5F033100630C5D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1542B5F033100630C5D /* SearchView.swift */; };
 		EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CA1562B5F033300630C5D /* SearchView.xib */; };
 		EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5D818E2B641B3E00222466 /* drawOnboardingShape.swift */; };
+		EE62257C2B7ACA92002E2476 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE62257B2B7ACA92002E2476 /* LoginViewModel.swift */; };
+		EE6225812B7ACD57002E2476 /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE6225802B7ACD57002E2476 /* TabBarCoordinator.swift */; };
 		EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */; };
 		EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */; };
 		EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */; };
 		EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */; };
 		EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */; };
+		EE7D33782B7AB0DC00EF5C34 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33772B7AB0DC00EF5C34 /* Coordinator.swift */; };
+		EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */; };
+		EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */; };
+		EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */; };
 		EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */; };
 		EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBE2B4E9D9200BC5524 /* Router.swift */; };
-		EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */; };
-		EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
 		EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA62F532B66D99F00771D99 /* maskCustomProductShape.swift */; };
 		EEA6F9992B5865BA00A9E0C2 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE11B1FA2B570EAF0077F5AA /* MakeConstraints */; };
@@ -221,15 +225,19 @@
 		EE5CA1542B5F033100630C5D /* SearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 		EE5CA1562B5F033300630C5D /* SearchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchView.xib; sourceTree = "<group>"; };
 		EE5D818E2B641B3E00222466 /* drawOnboardingShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drawOnboardingShape.swift; sourceTree = "<group>"; };
+		EE62257B2B7ACA92002E2476 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		EE6225802B7ACD57002E2476 /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		EE64D7962B5AB94900C5CBD7 /* EMTabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EMTabBarViewController.swift; sourceTree = "<group>"; };
 		EE64D7982B5AB9CE00C5CBD7 /* EMTabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarItem.swift; sourceTree = "<group>"; };
 		EE64D79A2B5ABA0900C5CBD7 /* EMTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBar.swift; sourceTree = "<group>"; };
 		EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarType.swift; sourceTree = "<group>"; };
 		EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EMTabBarViewModel.swift; sourceTree = "<group>"; };
+		EE7D33772B7AB0DC00EF5C34 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		EE95CEBE2B4E9D9200BC5524 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
-		EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalRouter.swift; sourceTree = "<group>"; };
 		EE95CEC62B4E9E1600BC5524 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		EEA62F532B66D99F00771D99 /* maskCustomProductShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = maskCustomProductShape.swift; sourceTree = "<group>"; };
 		EEA6F9A22B58665B00A9E0C2 /* mainWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = mainWindow.swift; sourceTree = "<group>"; };
@@ -621,6 +629,7 @@
 		EE32E2D32B45B6C800675EAE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				EE7D33762B7AB0D000EF5C34 /* Coordnator */,
 				EE95CEC52B4E9E0E00BC5524 /* Logger */,
 				EE95CEBC2B4E9D3B00BC5524 /* Router */,
 				EE32E2D52B45B6E100675EAE /* Custom Views */,
@@ -680,9 +689,7 @@
 			isa = PBXGroup;
 			children = (
 				EE32E2DC2B45B88800675EAE /* Splash */,
-				EE32E2DD2B45B89100675EAE /* Login */,
-				EE32E2DE2B45B89400675EAE /* Signup */,
-				D6C6C6EB2B4F484500836A05 /* SuccessScreen */,
+				EE7D337E2B7AC16A00EF5C34 /* Auth */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -702,9 +709,9 @@
 		EE32E2DC2B45B88800675EAE /* Splash */ = {
 			isa = PBXGroup;
 			children = (
+				A1CB8C6B2B5277C600316DD4 /* Splash */,
 				A1CB8C6C2B52783200316DD4 /* Onboarding */,
 				A1CB8C862B540F7900316DD4 /* LaunchScreen */,
-				A1CB8C6B2B5277C600316DD4 /* Splash */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -712,8 +719,8 @@
 		EE32E2DD2B45B89100675EAE /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				EEA6F9AB2B5866F100A9E0C2 /* LoginViewController.swift */,
-				EEA6F9AA2B5866F100A9E0C2 /* LoginViewController.xib */,
+				EE62257D2B7ACA96002E2476 /* View */,
+				EE62257E2B7ACAA7002E2476 /* ViewModel */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -802,6 +809,31 @@
 			path = SearchView;
 			sourceTree = "<group>";
 		};
+		EE62257D2B7ACA96002E2476 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EEA6F9AB2B5866F100A9E0C2 /* LoginViewController.swift */,
+				EEA6F9AA2B5866F100A9E0C2 /* LoginViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EE62257E2B7ACAA7002E2476 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				EE62257F2B7ACAAE002E2476 /* Model */,
+				EE62257B2B7ACA92002E2476 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		EE62257F2B7ACAAE002E2476 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		EE64D7A22B5ADDF100C5CBD7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
@@ -834,6 +866,28 @@
 			path = Onboarding;
 			sourceTree = "<group>";
 		};
+		EE7D33762B7AB0D000EF5C34 /* Coordnator */ = {
+			isa = PBXGroup;
+			children = (
+				EE7D33772B7AB0DC00EF5C34 /* Coordinator.swift */,
+				EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */,
+				EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */,
+				EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */,
+				EE6225802B7ACD57002E2476 /* TabBarCoordinator.swift */,
+			);
+			path = Coordnator;
+			sourceTree = "<group>";
+		};
+		EE7D337E2B7AC16A00EF5C34 /* Auth */ = {
+			isa = PBXGroup;
+			children = (
+				EE32E2DD2B45B89100675EAE /* Login */,
+				EE32E2DE2B45B89400675EAE /* Signup */,
+				D6C6C6EB2B4F484500836A05 /* SuccessScreen */,
+			);
+			path = Auth;
+			sourceTree = "<group>";
+		};
 		EE8925612B5AE1FE0025C166 /* EcoMarketTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -846,8 +900,6 @@
 			isa = PBXGroup;
 			children = (
 				EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */,
-				EE95CEC02B4E9D9200BC5524 /* ModalRouter.swift */,
-				EE95CEBF2B4E9D9200BC5524 /* NavigationRouter.swift */,
 				EE95CEBE2B4E9D9200BC5524 /* Router.swift */,
 			);
 			path = Router;
@@ -1159,6 +1211,7 @@
 				EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */,
 				EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */,
 				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
+				EE6225812B7ACD57002E2476 /* TabBarCoordinator.swift in Sources */,
 				EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */,
 				D6E9AB512B73E3EE00BEA301 /* ProfileSection.swift in Sources */,
 				EE58F5E62B5ED0710068B93F /* LaunchViewController.swift in Sources */,
@@ -1169,7 +1222,6 @@
 				EE08DB0A2B68596700A358D9 /* +hexString.swift in Sources */,
 				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
-				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
 				EE5CA1332B5EF9BF00630C5D /* CategoryTableViewCell.swift in Sources */,
 				EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */,
@@ -1183,16 +1235,18 @@
 				D62BD3CD2B6D9430000CF78A /* CartCheckOutSection.swift in Sources */,
 				D62BD3D52B6D944C000CF78A /* CartProductsSection.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
+				EE7D33782B7AB0DC00EF5C34 /* Coordinator.swift in Sources */,
+				EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */,
 				D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */,
 				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
 				D62BD3C62B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift in Sources */,
 				EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */,
 				D62BD3CE2B6D9430000CF78A /* CheckOutCollectionViewCell.swift in Sources */,
-				EE95CEC42B4E9D9200BC5524 /* ModalRouter.swift in Sources */,
 				EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */,
 				EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */,
 				EEA6F9CB2B5867E100A9E0C2 /* AppleButton.swift in Sources */,
 				EE58F5DD2B5ECFAB0068B93F /* SocialMediaButton.swift in Sources */,
+				EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */,
 				D6E9AB542B73EE8100BEA301 /* SectionDecorationView.swift in Sources */,
 				EE5CA1372B5EF9BF00630C5D /* CategoryModel.swift in Sources */,
 				EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */,
@@ -1204,6 +1258,7 @@
 				EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */,
 				D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */,
 				D62BD3DE2B6D94DB000CF78A /* SectionsLayout.swift in Sources */,
+				EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
 				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
 				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
@@ -1223,6 +1278,7 @@
 				EE5CA1492B5EF9D500630C5D /* CategoryViewController3.swift in Sources */,
 				EE32E28E2B45B1D100675EAE /* SceneDelegate.swift in Sources */,
 				EE5CA14E2B5EFB0500630C5D /* UITableView+Extension.swift in Sources */,
+				EE62257C2B7ACA92002E2476 /* LoginViewModel.swift in Sources */,
 				EE5CA14B2B5EF9D500630C5D /* CategoryCollectionViewCell3.swift in Sources */,
 				EE58F5E22B5ED01F0068B93F /* FlexiblePageControl.swift in Sources */,
 				EE64D79B2B5ABA0900C5CBD7 /* EMTabBar.swift in Sources */,

@@ -84,6 +84,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="38.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="loginButtonTapped:" destination="-1" eventType="touchUpInside" id="DU3-05-Sff"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>
