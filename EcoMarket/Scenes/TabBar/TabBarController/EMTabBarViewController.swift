@@ -27,13 +27,18 @@ class EMTabBarViewController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.isHidden = true
-        viewControllers = EMTabBarType.allCases.map { $0.viewController }
+        viewControllers = viewModel.viewControllers
         setupEMTapBar()
+        
         viewModel.selectedTabPublisher.sink { [weak self] type in
             self?.selectedIndex = type.rawValue
             self?.emTabBar.selectItem(at: type.rawValue)
         }
         .store(in: &cancellable)
+        
+        viewModel.tabBarIsHiddenPublisher
+            .assign(to: \.isHidden, on: emTabBar)
+            .store(in: &cancellable)
     }
     
     private func setupEMTapBar() {

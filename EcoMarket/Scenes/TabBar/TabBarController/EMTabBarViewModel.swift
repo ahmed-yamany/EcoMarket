@@ -8,15 +8,25 @@
 import UIKit
 import Combine
 
-class EMTabBarViewModel: ObservableObject {
 protocol EMTabBarViewModelInterface: AnyObject {
+    var tabBarIsHidden: Bool { get set }
+    var tabBarIsHiddenPublisher: Published<Bool>.Publisher { get }
+    
     var selectedTab: EMTabBarType { get set }
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { get }
-}
-class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     
+    var viewControllers: [UIViewController] { get set }
+}
+
+class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     static let shared = EMTabBarViewModel()
     
-    @Published var selectedTab: EMTabBarType = .home
+    @Published var tabBarIsHidden: Bool = false
+    var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
+    
+    @Published var selectedTab: EMTabBarType = .cart
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { $selectedTab }
+    
+    var viewControllers: [UIViewController] = []
+
 }
