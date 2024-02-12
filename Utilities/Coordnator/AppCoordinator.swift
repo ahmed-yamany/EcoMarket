@@ -34,6 +34,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
+        window.makeKeyAndVisible()
         self.window = window
     }
     
