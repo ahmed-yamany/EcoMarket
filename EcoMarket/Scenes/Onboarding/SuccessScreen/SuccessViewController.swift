@@ -10,6 +10,7 @@ import UIKit
 class SuccessViewController: UIViewController {
     
     // MARK: - Outlets
+    @IBOutlet private(set) weak var containerView: UIView!
     @IBOutlet private(set) weak var successLabel: UILabel!
     @IBOutlet private(set) weak var successMessage: UILabel!
     @IBOutlet private(set) weak var imageView: UIImageView!
@@ -24,9 +25,15 @@ class SuccessViewController: UIViewController {
     
     // MARK: - Setup UI
     private func setupUI() {
+        view.backgroundColor = AppColor.backgroundColor
+        containerView.backgroundColor = AppColor.backgroundColor
+        
         // Labels UI
         successLabel.text = L10n.Success.title
+        successLabel.textColor = AppColor.primaryText
+        
         successMessage.text = L10n.Success.message
+        successMessage.textColor = AppColor.socialButton
         
         // Images UI
         imageView.image = AppImage.successImage
