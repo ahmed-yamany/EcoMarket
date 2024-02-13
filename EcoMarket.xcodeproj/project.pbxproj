@@ -630,8 +630,8 @@
 			isa = PBXGroup;
 			children = (
 				EE7D33762B7AB0D000EF5C34 /* Coordnator */,
-				EE95CEC52B4E9E0E00BC5524 /* Logger */,
 				EE95CEBC2B4E9D3B00BC5524 /* Router */,
+				EE95CEC52B4E9E0E00BC5524 /* Logger */,
 				EE32E2D52B45B6E100675EAE /* Custom Views */,
 				EE32E2D42B45B6D200675EAE /* Extensions */,
 			);

@@ -11,6 +11,7 @@ protocol AppCoordinatorProtocol: Coordinator {
     func makeWindow(from windowScene: UIWindowScene)
     func showTabBar()
     func showOnboarding()
+    func showAuth()
 }
 
 class AppCoordinator: AppCoordinatorProtocol {
@@ -34,32 +35,26 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
+        window.rootViewController = self.router.navigationController
         window.makeKeyAndVisible()
         self.window = window
-    }
+    } 
     
     func showOnboarding() {
-        let navigationController = UINavigationController()
-        let router = AppRouter(navigationController: navigationController)
-        let coordinator = OnboardingCoordinator(router: router)
+        let coordinator = OnboardingCoordinator(router: self.router)
+        router.reset()
         coordinator.start()
-        self.present(navigationController)
     }
     
     func showTabBar() {
-        let navigationController = UINavigationController()
-        let router = AppRouter(navigationController: navigationController)
-        let coordinator = TabBarCoordinator(router: router)
+        let coordinator = TabBarCoordinator(router: self.router)
+        router.reset()
         coordinator.start()
-        self.present(navigationController)
     }
     
-    private func present(_ viewController: UIViewController) {
-        guard let window else {
-            Logger.log("App Router Window is nil", category: \.default, level: .fault)
-            return
-        }
-        window.rootViewController = viewController
-        window.makeKeyAndVisible()
+    func showAuth() {
+        let authCoordinator = AuthCoordinator(router: self.router)
+        router.reset()
+        authCoordinator.start()
     }
 }

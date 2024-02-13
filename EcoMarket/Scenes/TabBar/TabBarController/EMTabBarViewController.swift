@@ -13,6 +13,7 @@ class EMTabBarViewController: UITabBarController {
     let emTabBar = EMTabBar()
     
     var cancellable = Set<AnyCancellable>()
+    var tabBarConstraints: AnchoredConstraints?
     
     let viewModel: EMTabBarViewModelInterface
     init(viewModel: EMTabBarViewModelInterface) {
@@ -37,7 +38,20 @@ class EMTabBarViewController: UITabBarController {
         .store(in: &cancellable)
         
         viewModel.tabBarIsHiddenPublisher
-            .assign(to: \.isHidden, on: emTabBar)
+            .sink { [self] hidden in
+                self.tabBarConstraints?.bottom?.constant = hidden ? 100 : 0
+                
+                UIView.animate(withDuration: 0.5) {
+                    self.view.layoutIfNeeded()
+                    
+                    if !hidden {
+                        self.emTabBar.isHidden = hidden
+                    }
+                } completion: { _ in
+                    self.emTabBar.isHidden = hidden
+                }
+                
+            }
             .store(in: &cancellable)
     }
     
@@ -45,7 +59,7 @@ class EMTabBarViewController: UITabBarController {
         emTabBar.delegate = self
         view.addSubview(emTabBar)
         emTabBar.fillXSuperView()
-        emTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
+        tabBarConstraints = emTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
         emTabBar.setItems(EMTabBarType.allCases.map { $0.tabBarItem })
     }
 }

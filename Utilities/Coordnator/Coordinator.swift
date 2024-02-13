@@ -5,7 +5,7 @@
 //  Created by Ahmed Yamany on 12/02/2024.
 //
 
-import Foundation
+import UIKit
 
 protocol Coordinator {
     var router: Router { get }

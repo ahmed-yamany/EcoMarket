@@ -28,5 +28,4 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { $selectedTab }
     
     var viewControllers: [UIViewController] = []
-
 }

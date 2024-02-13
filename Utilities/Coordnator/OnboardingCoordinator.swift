@@ -36,12 +36,6 @@ class OnboardingCoordinator: OnboardingCoordinatorProtocol {
     }
     
     func showAuthFlow() {
-        let navigationController = UINavigationController()
-        
-        let router = AppRouter(navigationController: navigationController)
-        let authCoordinator = AuthCoordinator(router: router)
-        authCoordinator.start()
-        
-        self.router.presentFullScreen(navigationController)
+        AppCoordinator.shared.showAuth()
     }
 }

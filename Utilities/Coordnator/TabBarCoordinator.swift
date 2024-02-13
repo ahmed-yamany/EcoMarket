@@ -16,7 +16,7 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showProfile()
 }
 
-class TabBarCoordinator: TabBarCoordinatorProtocol {
+final class TabBarCoordinator: TabBarCoordinatorProtocol {
     
     let viewModel: EMTabBarViewModelInterface = EMTabBarViewModel.shared
     let router: Router

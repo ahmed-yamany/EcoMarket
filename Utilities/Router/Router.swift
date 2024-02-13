@@ -18,9 +18,11 @@ public protocol Router {
     func presentOverFullScreen(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void)
     
     func dismiss(animated: Bool, completion: @escaping () -> Void)
-        
-    func push(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void)
     
+    func reset(completion: @escaping () -> Void)
+    
+    func push(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void)
+        
     func popToViewController(_ viewController: UIViewController, animated: Bool, completion: @escaping () -> Void)
     
     func popToRoot(animated: Bool, completion: @escaping () -> Void)
@@ -41,6 +43,10 @@ extension Router {
     
     func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {
         self.dismiss(animated: animated, completion: completion)
+    }
+    
+    func reset(completion: @escaping () -> Void = {}) {
+        self.reset(completion: completion)
     }
     
     func push(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {

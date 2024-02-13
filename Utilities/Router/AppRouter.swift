@@ -47,8 +47,14 @@ public final class AppRouter: Router {
     }
     
     public func push(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
+        navigationController.dismiss(animated: false)
         navigationController.pushViewController(viewController, animated: animated)
         completion()
+    }
+    
+    public func reset(completion: @escaping () -> Void) {
+        navigationController.dismiss(animated: false)
+        navigationController.viewControllers.removeAll()
     }
     
     public func popToViewController(
