@@ -26,7 +26,9 @@ class LoginViewController: UIViewController {
         configureViews()
     }
     
-    // MARK: - Setup UI
+    // MARK: - UI Setup
+        
+    /// Configures the initial appearance of UI elements
     private func configureViews() {
         view.backgroundColor = AppColor.backgroundColor
         lineView.backgroundColor = AppColor.textFieldUnderLine
@@ -42,16 +44,19 @@ class LoginViewController: UIViewController {
         configureLabelsUI()
     }
     
+    /// Configures email text field with title and placeholder
     private func configureEmailTextField() {
         emailTextField.title = L10n.email
         emailTextField.placeholder = L10n.Login.Email.placeholder
     }
     
+    /// Configures password text field with title and placeholder
     private func configurePasswordTextField() {
         passwordTextField.title = L10n.password
         passwordTextField.placeholder = L10n.Login.Password.placeholder
     }
     
+    /// Configures appearance of labels
     private func configureLabelsUI() {
         titleLabel.text = L10n.Login.title
         titleLabel.textColor = AppColor.primaryText

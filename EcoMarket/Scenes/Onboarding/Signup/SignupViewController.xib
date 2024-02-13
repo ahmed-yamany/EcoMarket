@@ -61,7 +61,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fdl-HD-qDE">
                                                     <rect key="frame" x="0.0" y="26.666666666666686" width="345" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -99,7 +99,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mQY-gn-1Vj">
                                                     <rect key="frame" x="309.66666666666669" y="0.0" width="35.333333333333314" height="34.333333333333336"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -117,7 +117,6 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstItem="9Fh-EV-8oo" firstAttribute="top" secondItem="Tts-Yd-XlU" secondAttribute="top" id="MLP-pN-ZEK"/>
                                 <constraint firstItem="9Fh-EV-8oo" firstAttribute="leading" secondItem="Tts-Yd-XlU" secondAttribute="leading" constant="24" id="ZAq-At-kYX"/>
@@ -137,7 +136,6 @@
                 </scrollView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="m9N-gl-Y4l" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="0Cf-C6-u5J"/>
                 <constraint firstItem="m9N-gl-Y4l" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KVJ-NY-MNd"/>
