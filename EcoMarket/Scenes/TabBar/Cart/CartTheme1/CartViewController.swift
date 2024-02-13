@@ -25,15 +25,13 @@ class CartViewController: UICollectionViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-//        let productsSection = CartProductsSection()
-//        productsSection.items = CartModel.products
         
         let sections = SectionsModel.mockData
         sections.forEach { section in
             let sectionLayout = sectionFactory.createSection(section: section)
             self.sections.append(sectionLayout)
         }
-//        sections = [productsSection, CartPromoCodeSection(), CartCheckOutSection()]
+        
         configureCollectionView()
         collectionView.reloadData()
     }
@@ -77,39 +75,5 @@ class CartViewController: UICollectionViewController {
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
-    }
-}
-    
-extension UICollectionReusableView: Identifiable {}
-
-class Header: UICollectionReusableView {
-    static let elementKind = String("My Cart")
-    
-    let label = UILabel()
-    
-    // MARK: - Initialization
-    //
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setupLabel()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        label.frame = bounds
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupLabel() {
-        label.font = .h2
-        label.textColor = AppColor.primaryText
-        addSubview(label)
-    }
-    
-    public func setTitle(_ title: String) {
-        label.text = title
     }
 }

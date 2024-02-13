@@ -17,7 +17,7 @@ struct SectionsModel: Codable {
 extension SectionsModel {
     static let mockData: [SectionsModel] = [
         SectionsModel(type: .product, products: CartModel.products),
-        SectionsModel(type: .promoCode, promo: [""]),
-        SectionsModel(type: .checkOut, checkOut: [""])
+        SectionsModel(type: .promoCode),
+        SectionsModel(type: .checkOut)
     ]
 }

@@ -50,6 +50,7 @@
 		D62F1C712B65411100FBE349 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C702B65411100FBE349 /* CartModel.swift */; };
 		D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */; };
 		D6C397CB2B7BCCFD008649E1 /* SectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */; };
+		D6C397CF2B7BDE2B008649E1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CE2B7BDE2B008649E1 /* Header.swift */; };
 		D6E9AB4F2B73E21000BEA301 /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB4E2B73E21000BEA301 /* UserSection.swift */; };
 		D6E9AB512B73E3EE00BEA301 /* ProfileSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB502B73E3EE00BEA301 /* ProfileSection.swift */; };
 		D6E9AB542B73EE8100BEA301 /* SectionDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB532B73EE8100BEA301 /* SectionDecorationView.swift */; };
@@ -187,6 +188,7 @@
 		D62F1C702B65411100FBE349 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsFactory.swift; sourceTree = "<group>"; };
 		D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsModel.swift; sourceTree = "<group>"; };
+		D6C397CE2B7BDE2B008649E1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		D6E9AB4E2B73E21000BEA301 /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
 		D6E9AB502B73E3EE00BEA301 /* ProfileSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSection.swift; sourceTree = "<group>"; };
 		D6E9AB532B73EE8100BEA301 /* SectionDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDecorationView.swift; sourceTree = "<group>"; };
@@ -494,6 +496,24 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		D6C397CC2B7BDC32008649E1 /* CartFactory */ = {
+			isa = PBXGroup;
+			children = (
+				D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */,
+				D62BD3DD2B6D94DB000CF78A /* SectionsLayout.swift */,
+				D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */,
+			);
+			path = CartFactory;
+			sourceTree = "<group>";
+		};
+		D6C397CD2B7BDE1A008649E1 /* HeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				D6C397CE2B7BDE2B008649E1 /* Header.swift */,
+			);
+			path = HeaderView;
+			sourceTree = "<group>";
+		};
 		D6C6C6EB2B4F484500836A05 /* SuccessScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -650,6 +670,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				D6C397CD2B7BDE1A008649E1 /* HeaderView */,
 				EE27C2732B68743600B8C2A6 /* Product Review View */,
 				EE27C2722B68742800B8C2A6 /* Stapper View */,
 				EEA62F552B66DA0500771D99 /* Color View */,
@@ -748,9 +769,7 @@
 			children = (
 				D62F1C7A2B6591EF00FBE349 /* CartTheme1 */,
 				D62759FB2B67DA750069CF9C /* CartTheme2 */,
-				D62BD3DD2B6D94DB000CF78A /* SectionsLayout.swift */,
-				D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */,
-				D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */,
+				D6C397CC2B7BDC32008649E1 /* CartFactory */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -1178,6 +1197,7 @@
 				EE95CEC32B4E9D9200BC5524 /* NavigationRouter.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
 				EE5CA1332B5EF9BF00630C5D /* CategoryTableViewCell.swift in Sources */,
+				D6C397CF2B7BDE2B008649E1 /* Header.swift in Sources */,
 				EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */,
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
 				D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */,
