@@ -10,6 +10,7 @@ import UIKit
 class CartViewController: UICollectionViewController {
     
     var sections: [any SectionsLayout] = []
+    let sectionFactory = SectionsFactory()
     
     // MARK: Initializer
     init() {
@@ -24,10 +25,15 @@ class CartViewController: UICollectionViewController {
     //
     override func viewDidLoad() {
         super.viewDidLoad()
-        let productsSection = CartProductsSection()
-        productsSection.items = CartModel.products
+//        let productsSection = CartProductsSection()
+//        productsSection.items = CartModel.products
         
-        sections = [productsSection, CartPromoCodeSection(), CartCheckOutSection()]
+        let sections = SectionsModel.mockData
+        sections.forEach { section in
+            let sectionLayout = sectionFactory.createSection(section: section)
+            self.sections.append(sectionLayout)
+        }
+//        sections = [productsSection, CartPromoCodeSection(), CartCheckOutSection()]
         configureCollectionView()
         collectionView.reloadData()
     }
