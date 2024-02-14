@@ -52,5 +52,10 @@ enum AppColor {
     static var profileColor: UIColor {
         return UIColor(named: "em-profileColor")!
     }
+
+    static var stapperBackground: UIColor {
+        return UIColor(named: "em-stapperBackground")!
+    }
+
 }
 // swiftlint: enable all

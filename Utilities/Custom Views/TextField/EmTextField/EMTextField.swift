@@ -13,6 +13,7 @@ protocol EMTextFieldDelegate: AnyObject {
 //
 class EMTextField: UIView {
     // MARK: IBOutlet
+    @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var textfield: UITextField!
     @IBOutlet weak var bottomLine: UIView!
@@ -46,9 +47,11 @@ class EMTextField: UIView {
 // MARK: - Configurations
 private extension EMTextField {
     func configureUI() {
+        backgroundColor = AppColor.backgroundColor
+        containerView.backgroundColor = AppColor.backgroundColor
         configureTitleLable()
         configureTextField()
-        configureButtomLine()
+        configureBottomLine()
         heightConstraints(48)
     }
     
@@ -59,9 +62,11 @@ private extension EMTextField {
     
     func configureTextField() {
         textfield.borderStyle = .none
+        textfield.textColor = AppColor.socialButton
+        textfield.backgroundColor = AppColor.backgroundColor
     }
     
-    func configureButtomLine() {
+    func configureBottomLine() {
         bottomLine.backgroundColor = AppColor.textFieldUnderLine
     }
 }
@@ -71,13 +76,14 @@ private extension EMTextField {
 }
 
 private extension EMTextField {
-    /// Loads the view from a nib file and adds it as a subview to the SplashView view.
-    func loadNib() {
-        // Please do not update this code, as it's used to load the view from a nib.
+    /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.
+    private func loadNib() {
         // swiftlint:disable all
-        let view = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil)![0] as! UIView
-        addSubview(view)
-        view.frame = bounds
+        if let loadedViews = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil),
+            let view = loadedViews.first as? UIView {
+            addSubview(view)
+            view.frame = bounds
+        }
         // swiftlint:enable all
     }
 }

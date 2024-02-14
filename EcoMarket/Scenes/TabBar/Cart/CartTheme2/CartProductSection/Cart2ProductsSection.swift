@@ -24,21 +24,17 @@ class Cart2ProductsSection: SectionsLayout {
         let padding: CGFloat = 25.0
         let height: CGFloat = 144
         
-        // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
-        // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1),
                                                heightDimension: .absolute(height))
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: padding, bottom: 0, trailing: padding)
         
-        // Header
         let header = createHeader()
         
-        // Section
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header]
         section.contentInsets.bottom = 40
@@ -51,7 +47,7 @@ class Cart2ProductsSection: SectionsLayout {
                                                 heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: Header.elementKind,
+            elementKind: CollectionSectionHeader.elementKind,
             alignment: .top
         )
         
@@ -75,9 +71,11 @@ class Cart2ProductsSection: SectionsLayout {
     func collectionView(_ collectionView: UICollectionView, 
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
-        guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
-                                                                           withReuseIdentifier: Header.identifier,
-                                                                           for: indexPath) as? Header else {
+        guard let header = collectionView.dequeueReusableSupplementaryView(
+            ofKind: kind,
+            withReuseIdentifier: CollectionSectionHeader.identifier,
+            for: indexPath
+        ) as? CollectionSectionHeader else {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
@@ -90,9 +88,9 @@ class Cart2ProductsSection: SectionsLayout {
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {
-        collectionView.register(Header.self,
-                                forSupplementaryViewOfKind: Header.elementKind,
-                                withReuseIdentifier: Header.identifier)
+        collectionView.register(CollectionSectionHeader.self,
+                                forSupplementaryViewOfKind: CollectionSectionHeader.elementKind,
+                                withReuseIdentifier: CollectionSectionHeader.identifier)
     }
     
     func registerDecorationView(layout: UICollectionViewLayout) {
