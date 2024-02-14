@@ -68,6 +68,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="345" height="38.333333333333336"/>
                                                     <state key="normal" title="Button"/>
                                                     <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                    <connections>
+                                                        <action selector="startShoppingButtonTapped:" destination="-1" eventType="touchUpInside" id="1Gj-pr-tDf"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                         </stackView>

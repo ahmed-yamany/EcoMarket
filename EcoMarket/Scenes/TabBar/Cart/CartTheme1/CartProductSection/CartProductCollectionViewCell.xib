@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -62,9 +61,8 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbg-kh-lpv">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dbg-kh-lpv" customClass="StapperView" customModule="EcoMarket" customModuleProvider="target">
                                                 <rect key="frame" x="168" y="0.0" width="70" height="30"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="70" id="9P7-av-bb5"/>
                                                     <constraint firstAttribute="height" constant="30" id="mw7-Ca-R9M"/>
@@ -92,13 +90,9 @@
                 <outlet property="productImage" destination="odm-G4-stM" id="IUr-G7-gVs"/>
                 <outlet property="productName" destination="nSZ-rd-mDJ" id="HOk-fd-OoD"/>
                 <outlet property="productPrice" destination="PZr-wM-L1R" id="rHW-kN-XCw"/>
+                <outlet property="stapperView" destination="Dbg-kh-lpv" id="KyP-zF-fYs"/>
             </connections>
             <point key="canvasLocation" x="270.2290076335878" y="44.366197183098592"/>
         </collectionViewCell>
     </objects>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

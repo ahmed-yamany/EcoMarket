@@ -6,31 +6,69 @@
 //
 
 import UIKit
-import SwiftUI
-import Combine
 
-final class AppRouter: Router {
-    public static let shared = AppRouter()
+public final class AppRouter: Router {
+    public let navigationController: UINavigationController
     
-    var window: UIWindow?
-    var parentViewController: UIViewController?
-    
-    private init() { }
-    
-    func makeWindow(from windowScene: UIWindowScene) {
-        let window = UIWindow(windowScene: windowScene)
-        window.makeKeyAndVisible()
-        self.window = window
-        self.present(SuccessViewController())
+    public required init(navigationController: UINavigationController) {
+        self.navigationController = navigationController
     }
     
-    func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
-        guard let window else {
-            Logger.log("App Router Window is nil", category: \.default, level: .fault)
-            return
+    public func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
+        navigationController.present(viewController, animated: animated, completion: completion)
+    }
+    
+    public func presentFullScreen(
+        _ viewController: UIViewController,
+        animated: Bool = true,
+        completion: @escaping () -> Void = {}
+    ) {
+        viewController.modalPresentationStyle = .fullScreen
+        self.present(viewController, animated: animated, completion: completion)
+    }
+    
+    public func presentOverFullScreen(
+        _ viewController: UIViewController,
+        animated: Bool = true,
+        completion: @escaping () -> Void = {}
+    ) {
+        viewController.modalPresentationStyle = .overFullScreen
+        viewController.view.backgroundColor = .clear
+        self.present(viewController, animated: animated, completion: completion)
+    }
+    
+    public func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {
+        if navigationController.presentedViewController != nil {
+            navigationController.dismiss(animated: animated, completion: completion)
+        } else {
+            navigationController.popViewController(animated: animated)
+            completion()
         }
-        window.rootViewController = viewController
     }
     
-    func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {}
+    public func push(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
+        navigationController.dismiss(animated: false)
+//        navigationController.navigationBar.isHidden = false
+        navigationController.pushViewController(viewController, animated: animated)
+        completion()
+    }
+    
+    public func reset(completion: @escaping () -> Void) {
+        navigationController.dismiss(animated: false)
+        navigationController.viewControllers.removeAll()
+    }
+    
+    public func popToViewController(
+        _ viewController: UIViewController,
+        animated: Bool = true,
+        completion: @escaping () -> Void = {}
+    ) {
+        navigationController.popToViewController(viewController, animated: animated)
+        completion()
+    }
+    
+    public func popToRoot(animated: Bool = true, completion: @escaping () -> Void = {}) {
+        navigationController.popToRootViewController(animated: animated)
+        completion()
+    }
 }

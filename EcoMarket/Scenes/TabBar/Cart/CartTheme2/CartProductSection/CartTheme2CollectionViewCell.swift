@@ -10,6 +10,7 @@ import UIKit
 class CartTheme2CollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     //
+    @IBOutlet weak var stapperView: StapperView!
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var brandName: UILabel!
@@ -36,6 +37,7 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
         productImage.layer.cornerRadius = 12
         configureLabelsUI()
         configureButtonUI()
+        setupStapperView()
     }
     
     /// Configures the appearance of labels (brand name, product price, and product name).
@@ -56,8 +58,23 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
         deleteButton.setTitle("", for: .normal)
         deleteButton.setImage(AppImage.delete, for: .normal)
     }
+    
+    private func setupStapperView() {
+        stapperView.maximumValue = 100
+        stapperView.backgroundColor = AppColor.backgroundColor
+        stapperView.setTintColor(AppColor.primaryButton)
+        stapperView.delegate = self
+    }
 
     @IBAction func deleteButtonPressed(_ sender: Any) {
         print("Product Deleted")
+    }
+}
+
+// MARK: - StapperDelegate
+//
+extension CartTheme2CollectionViewCell: StapperViewDelegate {
+    func stapperView(_ stapper: StapperView, didSet value: Int) {
+        print(value)
     }
 }

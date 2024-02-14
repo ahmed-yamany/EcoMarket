@@ -48,6 +48,10 @@ enum AppColor {
     static var secondaryBackground: UIColor {
         return UIColor(named: "em-secondaryBackground")!
     }
+    
+    static var stapperBackground: UIColor {
+        return UIColor(named: "em-stapperBackground")!
+    }
 
 }
 // swiftlint: enable all

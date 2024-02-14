@@ -15,6 +15,7 @@ class ProfileCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         indicatorImage.image = AppImage.arrow
+        setupUI()
     }
 
     func setup(profile: ProfileModel) {
