@@ -8,7 +8,7 @@
 import UIKit
 
 class ProfileSection: SectionsLayout {
-    
+    typealias Header = CollectionSectionHeader
     typealias ItemsType = ProfileModel
     
     var items: [ProfileModel] = []
