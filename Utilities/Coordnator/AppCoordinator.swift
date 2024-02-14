@@ -35,7 +35,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = NotificationCollectionViewController(viewModel: NotificationViewModel.init())
+        window.rootViewController = NotificationCollectionViewController()
         window.makeKeyAndVisible()
         self.window = window
     } 

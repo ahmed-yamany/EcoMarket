@@ -12,13 +12,12 @@ class NotificationCollectionViewController: UICollectionViewController {
     // MARK: - Properties
     //
     var sections: [any SectionsLayout] = []
-    var viewModel: NotificationViewModel
+//    var viewModel: NotificationViewModel
     private var cancellable: Set<AnyCancellable> = []
     
     // MARK: - Initializers
     //
-    init(viewModel: NotificationViewModel) {
-        self.viewModel = viewModel
+    init() {
         super.init(collectionViewLayout: .init())
     }
     
@@ -28,10 +27,10 @@ class NotificationCollectionViewController: UICollectionViewController {
     
     // MARK: - View Lifecycle
     //
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        super.viewWillAppear(animated)
+//        viewModel.viewDidLoad()
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +43,10 @@ class NotificationCollectionViewController: UICollectionViewController {
         collectionView.reloadData()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        cancellable.forEach { $0.cancel() }
-    }
+//    override func viewDidDisappear(_ animated: Bool) {
+//        super.viewWillDisappear(animated)
+//        cancellable.forEach { $0.cancel() }
+//    }
     
     // MARK: - UI Configuration
     

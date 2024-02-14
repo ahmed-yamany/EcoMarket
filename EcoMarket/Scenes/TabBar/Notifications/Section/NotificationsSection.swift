@@ -8,8 +8,13 @@
 import UIKit
 
 class NotificationsSection: SectionsLayout {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
+    
     // MARK: - Properties
     //
+    typealias Header = CollectionSectionHeader
     typealias ItemsType = NotificationModel
     
     var items: [ItemsType] = []
