@@ -7,11 +7,11 @@
 
 import UIKit
 
-class ProfileSection: SectionsLayout {
+class ProfileCollectionSection: SectionsLayout {
     typealias Header = CollectionSectionHeader
-    typealias ItemsType = ProfileModel
+    typealias ItemsType = ProfileItem
     
-    var items: [ProfileModel] = []
+    var items: [ProfileItem] = []
     
     var headerTitle: String = ""
     
@@ -58,7 +58,7 @@ class ProfileSection: SectionsLayout {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(profile: items[indexPath.row])
+        cell.setup(profile: items[indexPath.row].model)
         return cell
     }
     

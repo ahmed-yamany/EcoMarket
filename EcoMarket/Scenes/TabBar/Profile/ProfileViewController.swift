@@ -6,16 +6,17 @@
 //
 
 import UIKit
-import MakeConstraints
 
-class ProfileCollectionViewController: UICollectionViewController {
+class ProfileViewController: UICollectionViewController {
     // MARK: - Properties
     //
     var sections: [any SectionsLayout] = []
 
     // MARK: - Initialization
     //
-    init() {
+    let viewModel: ProfileViewModel
+    init(viewModel: ProfileViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -25,19 +26,12 @@ class ProfileCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let profileSection1 = ProfileSection()
-        profileSection1.items = ProfileModel.mockData1
-        
-        let profileSection2 = ProfileSection()
-        profileSection2.items = ProfileModel.mockData2
-        
-        sections = [UserSection(), profileSection1, profileSection2]
+        addCollectionViewSections()
         configureCollectionView()
         collectionView.reloadData()
     }
     
     // MARK: - UI Configuration
-    
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         sections.forEach { section in
@@ -47,10 +41,14 @@ class ProfileCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
-    // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
+    private func addCollectionViewSections() {
+        self.sections.removeAll()
+        self.sections.append(UserSection())
+        
+        _ = viewModel.getSectionLayouts().map { self.sections.append($0) }
+    }
+    
+    // MARK: - Compositional Layout.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
             self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)

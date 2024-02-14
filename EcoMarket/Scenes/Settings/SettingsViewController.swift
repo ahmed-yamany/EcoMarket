@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SettingsCollectionViewController: UICollectionViewController {
+class SettingsViewController: UICollectionViewController {
     
     // MARK: - Properties
     //
@@ -15,7 +15,9 @@ class SettingsCollectionViewController: UICollectionViewController {
     
     // MARK: - Initialization
     //
-    init() {
+    let viewModel: SettingsViewModel
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -25,11 +27,7 @@ class SettingsCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let settingsSection = ProfileSection()
-        settingsSection.items = ProfileModel.mockData3
-        settingsSection.headerTitle = "Settings" 
-        
-        sections = [EditProfileSection(), settingsSection, FooterSection()]
+        addCollectionViewSections()
         configureCollectionView()
         collectionView.reloadData()
     }
@@ -44,6 +42,15 @@ class SettingsCollectionViewController: UICollectionViewController {
         }
         collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.collectionViewLayout = createCompositionalLayout()
+    }
+    
+    private func addCollectionViewSections() {
+        self.sections.removeAll()
+        self.sections.append(EditProfileSection())
+        
+        _ = viewModel.getSectionLayouts().map { self.sections.append($0) }
+        
+        self.sections.append(FooterSection())
     }
     
     // MARK: - Compositional Layout

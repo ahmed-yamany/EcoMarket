@@ -24,7 +24,7 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     
-    @Published var selectedTab: EMTabBarType = .cart
+    @Published var selectedTab: EMTabBarType = .profile
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { $selectedTab }
     
     var viewControllers: [UIViewController] = []
