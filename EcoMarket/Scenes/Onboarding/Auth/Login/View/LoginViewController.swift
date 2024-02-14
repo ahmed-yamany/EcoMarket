@@ -17,6 +17,17 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var loginButton: PrimaryButton!
     
+    let viewModel: LoginViewModel
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureViews()
@@ -43,5 +54,10 @@ class LoginViewController: UIViewController {
         
         // Buttons UI
         loginButton.title = L10n.login
+    }
+    
+    @IBAction func loginButtonTapped(_ sender: UIButton) {
+        Logger.log("login Button Tapped", category: \.onboarding, level: .info)
+        viewModel.loginButtonTapped()
     }
 }

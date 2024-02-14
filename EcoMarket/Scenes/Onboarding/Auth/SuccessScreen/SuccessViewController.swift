@@ -16,6 +16,16 @@ class SuccessViewController: UIViewController {
     
     @IBOutlet weak var startButton: PrimaryButton!
     
+    let coordinator: AuthCoordinatorProtocol
+    init(coordinator: AuthCoordinatorProtocol) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,5 +43,9 @@ class SuccessViewController: UIViewController {
         
         // Buttons UI
         startButton.title = L10n.Success.Button.title
+    }
+    @IBAction func startShoppingButtonTapped(_ sender: UIButton) {
+        Logger.log("Start Shopping Button Tapped", category: \.onboarding, level: .info)
+        coordinator.showTabBar()
     }
 }

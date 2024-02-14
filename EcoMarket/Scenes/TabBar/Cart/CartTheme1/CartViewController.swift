@@ -11,8 +11,10 @@ class CartViewController: UICollectionViewController {
     
     var sections: [any SectionsLayout] = []
     
+    let coordinator: CartCoordinatorProtocol
     // MARK: Initializer
-    init() {
+    init(coordinator: CartCoordinatorProtocol) {
+        self.coordinator = coordinator
         super.init(collectionViewLayout: .init())
     }
     
@@ -22,8 +24,13 @@ class CartViewController: UICollectionViewController {
     
     // MARK: - View Lifecycle
     //
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         let productsSection = CartProductsSection()
         productsSection.items = CartModel.products
         
@@ -71,6 +78,9 @@ class CartViewController: UICollectionViewController {
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    }
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        coordinator.showLogin()
     }
 }
     
