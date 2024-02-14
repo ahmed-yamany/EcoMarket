@@ -10,6 +10,7 @@ import UIKit
 class CartProductCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     //
+    @IBOutlet weak var stapperView: StapperView!
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productName: UILabel!
@@ -37,6 +38,7 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         productImage.layer.cornerRadius = 8
         configureLabelsUI()
         configureContainerView()
+        setupStapperView()
     }
     
     /// Configures the appearance of labels (brand name, product price, and product name).
@@ -64,5 +66,20 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowRadius = 5
         containerView.layer.cornerRadius = 20
+    }
+    
+    private func setupStapperView() {
+        stapperView.maximumValue = 100
+        stapperView.backgroundColor = AppColor.stapperBackground
+        stapperView.setTintColor(AppColor.primaryButton)
+        stapperView.delegate = self
+    }
+}
+
+// MARK: - StapperDelegate
+//
+extension CartProductCollectionViewCell: StapperViewDelegate {
+    func stapperView(_ stapper: StapperView, didSet value: Int) {
+        print(value)
     }
 }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,8 +13,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
                 <outlet property="emailTextField" destination="AYv-2o-D7p" id="weC-kx-eZi"/>
+                <outlet property="lineView" destination="ckF-Ml-rdo" id="gK8-90-Zi0"/>
                 <outlet property="loginButton" destination="CpJ-qk-dtj" id="9Ub-1V-GRA"/>
                 <outlet property="logoImage" destination="g6X-Yu-wya" id="Xj1-Fw-4H9"/>
+                <outlet property="orLabel" destination="xXy-Jh-17F" id="sPH-2u-sXa"/>
                 <outlet property="passwordTextField" destination="3G2-ze-fVP" id="scf-4b-kYk"/>
                 <outlet property="subtitleLabel" destination="wTo-ud-lwf" id="Ptu-kB-xof"/>
                 <outlet property="titleLabel" destination="Vme-z8-Fsl" id="Xt2-j0-wE9"/>
@@ -59,7 +61,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wTo-ud-lwf">
                                                     <rect key="frame" x="0.0" y="26.666666666666686" width="37.333333333333336" height="18"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <color key="textColor" systemColor="systemGrayColor"/>
+                                                    <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -122,7 +124,6 @@
                                     </subviews>
                                 </stackView>
                             </subviews>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="ELz-Fp-ygc" secondAttribute="bottom" id="OzB-Qc-I00"/>
                                 <constraint firstItem="ELz-Fp-ygc" firstAttribute="leading" secondItem="PCU-Gy-SfY" secondAttribute="leading" constant="24" id="YoH-Lu-rbu"/>
@@ -141,7 +142,7 @@
                     <viewLayoutGuide key="frameLayoutGuide" id="t06-Ks-nTE"/>
                 </scrollView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXy-Jh-17F">
-                    <rect key="frame" x="188.66666666666666" y="640.66666666666663" width="15.666666666666657" height="20.333333333333371"/>
+                    <rect key="frame" x="188.66666666666666" y="649.33333333333337" width="15.666666666666657" height="20.333333333333371"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
@@ -149,7 +150,6 @@
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="GOC-ct-Ggc" secondAttribute="trailing" id="1yD-Yc-HF8"/>
                 <constraint firstItem="PCU-Gy-SfY" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="2NF-v7-6ct"/>
@@ -168,9 +168,6 @@
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemGrayColor">
-            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

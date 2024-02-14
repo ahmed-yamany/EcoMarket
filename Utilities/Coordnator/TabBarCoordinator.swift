@@ -16,7 +16,11 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showProfile()
 }
 
-final class TabBarCoordinator: TabBarCoordinatorProtocol {
+protocol CartCoordinatorProtocol: Coordinator {
+    func showCart()
+}
+
+final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtocol {
     
     let viewModel: EMTabBarViewModelInterface = EMTabBarViewModel.shared
     let router: Router
@@ -66,9 +70,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
     }
     
     private func cartViewController() -> UIViewController {
-        let vcc = UIViewController()
-        vcc.view.backgroundColor = .green
-        return vcc
+        return CartViewController(coordinator: self)
     }
     
     private func notificationViewController() -> UIViewController {
@@ -78,8 +80,9 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
     }
     
     private func profileViewController() -> UIViewController {
-        let vcc = UIViewController()
-        vcc.view.backgroundColor = .red
-        return vcc
+        let coordinator = ProfileCoordinator(router: router)
+        coordinator.start()
+        let viewModel = ProfileViewModel(coordinator: coordinator)
+        return ProfileViewController(viewModel: viewModel)
     }
 }

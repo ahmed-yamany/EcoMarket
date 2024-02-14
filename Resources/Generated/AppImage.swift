@@ -67,6 +67,26 @@ enum AppImage {
         return UIImage(named: "icon/profile-arrow")
     }
     
+    static var editButton: UIImage? {
+        return UIImage(named: "edit")
+    }
+    
+    static var profileImage: UIImage? {
+        return UIImage(named: "profileImage")
+    }
+    
+    static var logout: UIImage? {
+        return UIImage(named: "logout")
+    }
+    
+    static var dot1: UIImage? {
+        return UIImage(named: "dots")
+    }
+    
+    static var dot2: UIImage? {
+        return UIImage(named: "dots-2")
+    }
+    
     enum Onboarding {
         private static var folderName: String {"Onboarding"}
         
@@ -85,7 +105,7 @@ enum AppImage {
     
     enum Icon {
         private static var folderName: String {"icon"}
-
+        
         static var productDelete: UIImage? {
             UIImage(named: "\(folderName)/product-delete")
         }

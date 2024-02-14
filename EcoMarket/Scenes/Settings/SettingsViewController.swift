@@ -1,21 +1,23 @@
 //
-//  ProfileCollectionViewController.swift
+//  SettingsCollectionViewController.swift
 //  EcoMarket
 //
-//  Created by Ibrahim Nasser Ibrahim on 07/02/2024.
+//  Created by Ibrahim Nasser Ibrahim on 08/02/2024.
 //
 
 import UIKit
-import MakeConstraints
 
-class ProfileCollectionViewController: UICollectionViewController {
+class SettingsViewController: UICollectionViewController {
+    
     // MARK: - Properties
     //
     var sections: [any SectionsLayout] = []
-
+    
     // MARK: - Initialization
     //
-    init() {
+    let viewModel: SettingsViewModel
+    init(viewModel: SettingsViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -25,13 +27,7 @@ class ProfileCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let profileSection1 = ProfileSection()
-        profileSection1.items = ProfileModel.mockData1
-        
-        let profileSection2 = ProfileSection()
-        profileSection2.items = ProfileModel.mockData2
-        
-        sections = [UserSection(), profileSection1, profileSection2]
+        addCollectionViewSections()
         configureCollectionView()
         collectionView.reloadData()
     }
@@ -42,9 +38,19 @@ class ProfileCollectionViewController: UICollectionViewController {
     private func configureCollectionView() {
         sections.forEach { section in
             section.registerCell(in: self.collectionView)
+            section.registerSupplementaryView(in: self.collectionView)
         }
         collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.collectionViewLayout = createCompositionalLayout()
+    }
+    
+    private func addCollectionViewSections() {
+        self.sections.removeAll()
+        self.sections.append(EditProfileSection())
+        
+        _ = viewModel.getSectionLayouts().map { self.sections.append($0) }
+        
+        self.sections.append(FooterSection())
     }
     
     // MARK: - Compositional Layout
@@ -60,8 +66,6 @@ class ProfileCollectionViewController: UICollectionViewController {
         }
         return layout
     }
-
-    // MARK: UICollectionViewDataSource
     
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
@@ -73,5 +77,17 @@ class ProfileCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, 
+                                 viewForSupplementaryElementOfKind kind: String,
+                                 at indexPath: IndexPath) -> UICollectionReusableView {
+        sections[indexPath.section].collectionView(collectionView, 
+                                                   viewForSupplementaryElementOfKind: kind,
+                                                   at: indexPath)
     }
 }

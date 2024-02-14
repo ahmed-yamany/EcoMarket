@@ -16,7 +16,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
     @IBOutlet weak var loginButton: PrimaryButton!
+    @IBOutlet weak var lineView: UIView!
+    @IBOutlet weak var orLabel: UILabel!
     
+    // MARK: - Life Cycle
+    //
     let viewModel: LoginViewModel
     
     init(viewModel: LoginViewModel) {
@@ -33,27 +37,45 @@ class LoginViewController: UIViewController {
         configureViews()
     }
     
-    // MARK: - Setup UI
-    private func configureViews() {
-        // Email TextField
-        emailTextField.title = L10n.email
-        emailTextField.placeholder = L10n.Login.Email.placeholder
+    // MARK: - UI Setup
         
-        // Password TextField UI
-        passwordTextField.title = L10n.password
-        passwordTextField.placeholder = L10n.Login.Password.placeholder
+    /// Configures the initial appearance of UI elements
+    private func configureViews() {
+        view.backgroundColor = AppColor.backgroundColor
+        lineView.backgroundColor = AppColor.textFieldUnderLine
         
         // Images UI
         logoImage.image = AppImage.appLogo
         
-        // Labels UI
-        titleLabel.text = L10n.Login.title
-        titleLabel.font = .h1
-        subtitleLabel.text = L10n.Login.subtitle
-        subtitleLabel.font = .medium
-        
         // Buttons UI
         loginButton.title = L10n.login
+        
+        configureEmailTextField()
+        configurePasswordTextField()
+        configureLabelsUI()
+    }
+    
+    /// Configures email text field with title and placeholder
+    private func configureEmailTextField() {
+        emailTextField.title = L10n.email
+        emailTextField.placeholder = L10n.Login.Email.placeholder
+    }
+    
+    /// Configures password text field with title and placeholder
+    private func configurePasswordTextField() {
+        passwordTextField.title = L10n.password
+        passwordTextField.placeholder = L10n.Login.Password.placeholder
+    }
+    
+    /// Configures appearance of labels
+    private func configureLabelsUI() {
+        titleLabel.text = L10n.Login.title
+        titleLabel.textColor = AppColor.primaryText
+        titleLabel.font = .h1
+        subtitleLabel.text = L10n.Login.subtitle
+        subtitleLabel.textColor = AppColor.socialButton
+        subtitleLabel.font = .medium
+        orLabel.textColor = AppColor.primaryText
     }
     
     @IBAction func loginButtonTapped(_ sender: UIButton) {

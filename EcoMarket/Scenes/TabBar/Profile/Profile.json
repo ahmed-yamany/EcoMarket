@@ -1,0 +1,61 @@
+[
+    
+    {
+        "type": "normal",
+        "title": "",
+        "models": [
+            {
+                "title": "Personal Details",
+                "image": "profile/icon",
+                "action": "personalDetails"
+            },
+            {
+                "title": "My Order",
+                "image": "profile/icon-2",
+                "action": "order"
+            },
+            {
+                "title": "My Favourites",
+                "image": "profile/icon-3",
+                "action": "favourites"
+            },
+            {
+                "title": "Shipping Address",
+                "image": "profile/icon-4",
+                "action": "shippingAddress"
+            },
+            {
+                "title": "My Card",
+                "image": "profile/icon-5",
+                "action": "card"
+            },
+            {
+                "title": "Settings",
+                "image": "profile/icon-6",
+                "action": "settings"
+            }
+        ]
+    },
+    
+    {
+        "type": "custom",
+        "title": "",
+        "models": [
+          {
+              "title": "FAQs",
+              "image": "profile/icon-7",
+              "action": "faq"
+          },
+          {
+              "title": "Privacy Policy",
+              "image": "profile/icon-8",
+              "action": "privacyPolicy"
+          },
+          {
+              "title": "Community",
+              "image": "profile/icon-9",
+              "action": "community"
+          }
+        ]
+    }
+]
