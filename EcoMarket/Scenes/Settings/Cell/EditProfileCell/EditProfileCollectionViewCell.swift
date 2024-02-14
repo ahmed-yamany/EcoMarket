@@ -65,6 +65,10 @@ class EditProfileCollectionViewCell: UICollectionViewCell {
         editButton.setTitle("", for: .normal)
         editButton.setImage(AppImage.editButton, for: .normal)
     }
+    
+    @IBAction func editButtonTapped(_ sender: Any) {
+        print("Edit Tapped")
+    }
 }
 
 // MARK: - GenderViewDelegate

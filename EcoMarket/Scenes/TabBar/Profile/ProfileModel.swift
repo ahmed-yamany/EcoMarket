@@ -44,28 +44,28 @@ extension ProfileModel {
     
     static let mockData2 = [
         ProfileModel(title: "FAQs", image: "profile/icon-7", action: {
-            
+            print("FAQs")
         }),
         ProfileModel(title: "Privacy Policy", image: "profile/icon-8", action: {
-            
+            print("Privacy Policy")
         }),
         ProfileModel(title: "Community", image: "profile/icon-9", action: {
-            
+            print("Community")
         })
     ]
     
     static let mockData3 = [
         ProfileModel(title: "Language", image: "settings/icon", action: {
-            
+            print("Language")
         }),
         ProfileModel(title: "Notification", image: "settings/icon-2", action: {
-            
+            print("Notification")
         }),
         ProfileModel(title: "Dark Mood", image: "settings/icon-3", action: {
-            
+            print("Dark Mood")
         }),
         ProfileModel(title: "Help Center", image: "settings/icon-4", action: {
-            
+            print("Help Center")
         })
     ]
 }

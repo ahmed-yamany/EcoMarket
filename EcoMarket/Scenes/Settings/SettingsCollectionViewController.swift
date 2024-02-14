@@ -72,6 +72,10 @@ class SettingsCollectionViewController: UICollectionViewController {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, 
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {

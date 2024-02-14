@@ -63,7 +63,7 @@ class ProfileSection: SectionsLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        items[indexPath.row].action()
     }
     
     func collectionView(
