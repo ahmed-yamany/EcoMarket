@@ -125,6 +125,7 @@
 		EEA6F9CD2B5867E100A9E0C2 /* FacebookButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9C72B5867E100A9E0C2 /* FacebookButton.swift */; };
 		EEA6F9D32B58680D00A9E0C2 /* EMTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9D12B58680D00A9E0C2 /* EMTextField.xib */; };
 		EEA6F9D62B58683F00A9E0C2 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EEA6F9D52B58683F00A9E0C2 /* Colors.xcassets */; };
+		EEA8A3802B7D4A8C000CD3AF /* CollectionSectionHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA8A37F2B7D4A8C000CD3AF /* CollectionSectionHeader.swift */; };
 		EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069AE2B5ED20D0063EE80 /* Poppins-Regular.ttf */; };
 		EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069AF2B5ED20D0063EE80 /* Poppins-Medium.ttf */; };
 		EEF069B42B5ED20D0063EE80 /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEF069B02B5ED20D0063EE80 /* Poppins-SemiBold.ttf */; };
@@ -263,6 +264,7 @@
 		EEA6F9D72B58685100A9E0C2 /* AppImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppImage.swift; sourceTree = "<group>"; };
 		EEA6F9D82B58685100A9E0C2 /* AppColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+JSONDecoder.swift"; sourceTree = "<group>"; };
+		EEA8A37F2B7D4A8C000CD3AF /* CollectionSectionHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionSectionHeader.swift; sourceTree = "<group>"; };
 		EEF069AE2B5ED20D0063EE80 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		EEF069AF2B5ED20D0063EE80 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
 		EEF069B02B5ED20D0063EE80 /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -655,6 +657,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				EEA8A37E2B7D4A7E000CD3AF /* Reusable Views */,
 				EE27C2732B68743600B8C2A6 /* Product Review View */,
 				EE27C2722B68742800B8C2A6 /* Stapper View */,
 				EEA62F552B66DA0500771D99 /* Color View */,
@@ -1017,6 +1020,14 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		EEA8A37E2B7D4A7E000CD3AF /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				EEA8A37F2B7D4A8C000CD3AF /* CollectionSectionHeader.swift */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1234,6 +1245,7 @@
 				D62F1C372B61851900FBE349 /* ColorViewButton.swift in Sources */,
 				D62BD3CD2B6D9430000CF78A /* CartCheckOutSection.swift in Sources */,
 				D62BD3D52B6D944C000CF78A /* CartProductsSection.swift in Sources */,
+				EEA8A3802B7D4A8C000CD3AF /* CollectionSectionHeader.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
 				EE7D33782B7AB0DC00EF5C34 /* Coordinator.swift in Sources */,
 				EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */,
