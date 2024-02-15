@@ -35,9 +35,10 @@ class NotificationCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
+        sections.append(viewModel.notificationSection)
         configureCollectionView()
         collectionView.reloadData()
+        bindViewModel()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -57,15 +58,12 @@ class NotificationCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
-    // MARK: - ViewModel Binding
+    //MARK: - Bind ViewModel
     //
     private func bindViewModel() {
         viewModel.$notifications
             .receive(on: DispatchQueue.main)
-            .sink { [weak self] notifications in
-                let notificationSection = NotificationsSection()
-                notificationSection.items = notifications
-                self?.sections.append(notificationSection)
+            .sink { [weak self] _ in
                 self?.collectionView.reloadData()
             }
             .store(in: &cancellable)
@@ -80,22 +78,22 @@ class NotificationCollectionViewController: UICollectionViewController {
             self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
         }
     }
-
+    
     // MARK: UICollectionViewDataSource
-
+    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return sections[section].numberOfItems()
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, 
+    override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)

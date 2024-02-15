@@ -13,7 +13,8 @@ class NotificationViewModel {
         
     /// Published property holding the array of notifications.
     @Published var notifications: [NotificationModel] = []
-    
+    let notificationSection = NotificationsSection()
+
     // MARK: - Public Methods
     //
     func viewDidLoad() {
@@ -23,11 +24,12 @@ class NotificationViewModel {
     // MARK: - Private Methods
     //
     private func getData() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 4) { [weak self] in
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 self.notifications = NotificationModel.mockData
+                self.notificationSection.items = self.notifications
             }
         }
     }
