@@ -40,3 +40,15 @@ our app and start working in it.";
 with our them & conduction.";
 //
 "search.placeholder" = "Search....";
+//
+"product.details.cart" = "Add to cart";
+//
+"profile.nameTitle" = "Name";
+"profile.nameText" = "Fscreation";
+"profile.genderTitle" = "Gender";
+"profile.ageTitle" = "Age   ";
+"profile.ageText" = "22 Year";
+"profile.emailTitle" = "Email";
+"profile.emailText" = "Fscreation441@gmai.com";
+//
+"logout.title" = "Log Out";

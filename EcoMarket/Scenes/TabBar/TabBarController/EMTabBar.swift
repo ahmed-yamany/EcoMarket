@@ -36,6 +36,11 @@ class EMTabBar: UIView {
         setup()
     }
     
+    public func selectItem(at index: Int) {
+        let item = emItems[index]
+        self.select(item)
+    }
+    
     // MARK: - setup subviews
     //
     private func setup() {

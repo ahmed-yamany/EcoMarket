@@ -1,0 +1,28 @@
+[
+    {
+        "type": "custom",
+        "title": "Settings",
+        "models": [
+          {
+              "title": "Language",
+              "image": "settings/icon",
+              "action": "language"
+          },
+          {
+              "title": "Notification",
+              "image": "settings/icon-2",
+              "action": "notification"
+          },
+          {
+              "title": "Dark Mood",
+              "image": "settings/icon-3",
+              "action": "mode"
+          },
+          {
+              "title": "Help Center",
+              "image": "settings/icon-4",
+              "action": "help"
+          }
+        ]
+    }
+]

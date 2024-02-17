@@ -17,6 +17,10 @@ extension JSONDecoder {
             return nil
         }
         
-        return try? decode(T.self, from: data)
+        return try? decode(data: data)
+    }
+    
+    func decode<T: Decodable>(data: Data) throws -> T? {
+        return try decode(T.self, from: data)
     }
 }
