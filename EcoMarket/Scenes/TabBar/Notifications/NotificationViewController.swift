@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-class NotificationCollectionViewController: UICollectionViewController {
+class NotificationViewController: UICollectionViewController {
     // MARK: - Properties
     //
     var sections: [any SectionsLayout] = []
@@ -47,8 +47,6 @@ class NotificationCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - UI Configuration
-    
-    /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         sections.forEach { section in
             section.registerCell(in: self.collectionView)
@@ -58,8 +56,7 @@ class NotificationCollectionViewController: UICollectionViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
-    //MARK: - Bind ViewModel
-    //
+    // MARK: - Bind ViewModel
     private func bindViewModel() {
         viewModel.$notifications
             .receive(on: DispatchQueue.main)
@@ -70,9 +67,6 @@ class NotificationCollectionViewController: UICollectionViewController {
     }
     
     // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
             self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
@@ -80,7 +74,6 @@ class NotificationCollectionViewController: UICollectionViewController {
     }
     
     // MARK: UICollectionViewDataSource
-    
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }

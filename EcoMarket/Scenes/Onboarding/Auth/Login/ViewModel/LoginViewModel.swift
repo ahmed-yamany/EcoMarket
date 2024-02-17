@@ -8,6 +8,7 @@
 import Foundation
 
 class LoginViewModel {
+    
     let coordinator: AuthCoordinatorProtocol
     init(coordinator: AuthCoordinatorProtocol) {
         self.coordinator = coordinator
@@ -15,5 +16,9 @@ class LoginViewModel {
     
     func loginButtonTapped() {
         coordinator.showSuccessScreen()
+    }
+    
+    func login() {
+        
     }
 }

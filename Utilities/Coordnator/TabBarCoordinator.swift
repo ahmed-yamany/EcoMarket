@@ -74,8 +74,8 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func notificationViewController() -> UIViewController {
-        let viewModel = NotificationViewModel()
-        let vcc = NotificationCollectionViewController(viewModel: viewModel)
+        let viewModel = NotificationViewModel(tabBarViewModelInterface: viewModel)
+        let vcc = NotificationViewController(viewModel: viewModel)
         return vcc
     }
     

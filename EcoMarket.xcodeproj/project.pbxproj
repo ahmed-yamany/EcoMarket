@@ -53,10 +53,10 @@
 		D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C672B653E3000FBE349 /* CartViewController.swift */; };
 		D62F1C712B65411100FBE349 /* CartModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C702B65411100FBE349 /* CartModel.swift */; };
 		D67B4A052B7D17380023E451 /* +makeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B4A042B7D17380023E451 /* +makeRounded.swift */; };
-		D6C397D12B7CF894008649E1 /* NotificationCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D02B7CF894008649E1 /* NotificationCollectionViewController.swift */; };
+		D6C397D12B7CF894008649E1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D02B7CF894008649E1 /* NotificationViewController.swift */; };
 		D6C397D52B7CF8B4008649E1 /* NotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */; };
 		D6C397D62B7CF8B4008649E1 /* NotificationCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6C397D42B7CF8B4008649E1 /* NotificationCollectionViewCell.xib */; };
-		D6C397DA2B7CFBB3008649E1 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D92B7CFBB3008649E1 /* NotificationModel.swift */; };
+		D6C397DA2B7CFBB3008649E1 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D92B7CFBB3008649E1 /* Notification.swift */; };
 		D6C397DC2B7CFEB7008649E1 /* NotificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397DB2B7CFEB7008649E1 /* NotificationViewModel.swift */; };
 		D6C397DF2B7CFFF5008649E1 /* NotificationsSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397DE2B7CFFF5008649E1 /* NotificationsSection.swift */; };
 		D6E9AB4F2B73E21000BEA301 /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB4E2B73E21000BEA301 /* UserSection.swift */; };
@@ -218,10 +218,10 @@
 		D62F1C672B653E3000FBE349 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		D62F1C702B65411100FBE349 /* CartModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartModel.swift; sourceTree = "<group>"; };
 		D67B4A042B7D17380023E451 /* +makeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+makeRounded.swift"; sourceTree = "<group>"; };
-		D6C397D02B7CF894008649E1 /* NotificationCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewController.swift; sourceTree = "<group>"; };
+		D6C397D02B7CF894008649E1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6C397D42B7CF8B4008649E1 /* NotificationCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationCollectionViewCell.xib; sourceTree = "<group>"; };
-		D6C397D92B7CFBB3008649E1 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
+		D6C397D92B7CFBB3008649E1 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		D6C397DB2B7CFEB7008649E1 /* NotificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewModel.swift; sourceTree = "<group>"; };
 		D6C397DE2B7CFFF5008649E1 /* NotificationsSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsSection.swift; sourceTree = "<group>"; };
 		D6E9AB4E2B73E21000BEA301 /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
@@ -598,19 +598,10 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
-		D6C397D22B7CF898008649E1 /* Cell */ = {
-			isa = PBXGroup;
-			children = (
-				D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */,
-				D6C397D42B7CF8B4008649E1 /* NotificationCollectionViewCell.xib */,
-			);
-			path = Cell;
-			sourceTree = "<group>";
-		};
 		D6C397D72B7CFB98008649E1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				D6C397D92B7CFBB3008649E1 /* NotificationModel.swift */,
+				D6C397D92B7CFBB3008649E1 /* Notification.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -618,6 +609,7 @@
 		D6C397D82B7CFB9F008649E1 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D6C397D72B7CFB98008649E1 /* Model */,
 				D6C397DB2B7CFEB7008649E1 /* NotificationViewModel.swift */,
 			);
 			path = ViewModel;
@@ -626,6 +618,8 @@
 		D6C397DD2B7CFFDF008649E1 /* Section */ = {
 			isa = PBXGroup;
 			children = (
+				D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */,
+				D6C397D42B7CF8B4008649E1 /* NotificationCollectionViewCell.xib */,
 				D6C397DE2B7CFFF5008649E1 /* NotificationsSection.swift */,
 			);
 			path = Section;
@@ -933,9 +927,7 @@
 			children = (
 				D6C397DD2B7CFFDF008649E1 /* Section */,
 				D6C397D82B7CFB9F008649E1 /* ViewModel */,
-				D6C397D72B7CFB98008649E1 /* Model */,
-				D6C397D22B7CF898008649E1 /* Cell */,
-				D6C397D02B7CF894008649E1 /* NotificationCollectionViewController.swift */,
+				D6C397D02B7CF894008649E1 /* NotificationViewController.swift */,
 			);
 			path = Notifications;
 			sourceTree = "<group>";
@@ -1001,17 +993,9 @@
 		EE62257E2B7ACAA7002E2476 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				EE62257F2B7ACAAE002E2476 /* Model */,
 				EE62257B2B7ACA92002E2476 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		EE62257F2B7ACAAE002E2476 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		EE64D7A22B5ADDF100C5CBD7 /* Scenes */ = {
@@ -1432,7 +1416,7 @@
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
 				EE5CA1332B5EF9BF00630C5D /* CategoryTableViewCell.swift in Sources */,
-				D6C397D12B7CF894008649E1 /* NotificationCollectionViewController.swift in Sources */,
+				D6C397D12B7CF894008649E1 /* NotificationViewController.swift in Sources */,
 				EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */,
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
 				EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */,
@@ -1481,7 +1465,7 @@
 				EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
 				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
-				D6C397DA2B7CFBB3008649E1 /* NotificationModel.swift in Sources */,
+				D6C397DA2B7CFBB3008649E1 /* Notification.swift in Sources */,
 				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,

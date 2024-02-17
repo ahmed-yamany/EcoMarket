@@ -10,27 +10,28 @@ import Combine
 
 class NotificationViewModel {
     // MARK: - Properties
-        
-    /// Published property holding the array of notifications.
-    @Published var notifications: [NotificationModel] = []
     let notificationSection = NotificationsSection()
-
+    @Published var notifications: [Notification] = []
+    var cancellable = Set<AnyCancellable>()
+    let tabBarViewModelInterface: EMTabBarViewModelInterface
+    
+    init(tabBarViewModelInterface: EMTabBarViewModelInterface) {
+        self.tabBarViewModelInterface = tabBarViewModelInterface
+    }
+    
     // MARK: - Public Methods
-    //
     func viewDidLoad() {
-        getData()
+        bindNotifications()
     }
     
     // MARK: - Private Methods
-    //
-    private func getData() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-            
-            DispatchQueue.main.async {
-                self.notifications = NotificationModel.mockData
-                self.notificationSection.items = self.notifications
+    private func bindNotifications() {
+        tabBarViewModelInterface
+            .notificationsPublisher
+            .sink { [weak self] notifications in
+                self?.notifications = notifications
+                self?.notificationSection.items = notifications
             }
-        }
+            .store(in: &cancellable)
     }
 }

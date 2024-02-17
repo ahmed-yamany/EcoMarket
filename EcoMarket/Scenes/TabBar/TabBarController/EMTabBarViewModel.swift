@@ -15,7 +15,12 @@ protocol EMTabBarViewModelInterface: AnyObject {
     var selectedTab: EMTabBarType { get set }
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { get }
     
+    var notifications: [Notification] { get set }
+    var notificationsPublisher: Published<[Notification]>.Publisher { get }
+    
     var viewControllers: [UIViewController] { get set }
+    
+    func viewDidLoad()
 }
 
 class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
@@ -27,5 +32,23 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     @Published var selectedTab: EMTabBarType = .profile
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { $selectedTab }
     
+    @Published var notifications: [Notification] = []
+    var notificationsPublisher: Published<[Notification]>.Publisher { $notifications }
+    
     var viewControllers: [UIViewController] = []
+    
+    func viewDidLoad() {
+        getData()
+    }
+    
+    private func getData() {
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.notifications = Notification.mockData
+            }
+        }
+    }
+    
 }

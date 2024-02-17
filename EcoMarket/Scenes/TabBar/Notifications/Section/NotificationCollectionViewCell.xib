@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,17 +18,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="6mq-VV-w7d">
-                        <rect key="frame" x="0.0" y="0.0" width="317" height="105"/>
+                        <rect key="frame" x="0.0" y="12" width="317" height="91"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3IQ-oy-Osm">
-                                <rect key="frame" x="0.0" y="22.666666666666671" width="60" height="60"/>
+                                <rect key="frame" x="0.0" y="15.666666666666671" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="Z5K-Y2-3md"/>
                                     <constraint firstAttribute="height" constant="60" id="ia7-7d-ZFG"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="WGd-HV-wIK">
-                                <rect key="frame" x="75" y="19" width="242" height="67"/>
+                                <rect key="frame" x="75" y="12" width="242" height="67"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZv-eH-rQP">
                                         <rect key="frame" x="0.0" y="0.0" width="242" height="20.333333333333332"/>
@@ -56,9 +56,9 @@
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="6mq-VV-w7d" secondAttribute="bottom" constant="10" id="EfC-yZ-JQe"/>
+                <constraint firstAttribute="bottom" secondItem="6mq-VV-w7d" secondAttribute="bottom" constant="12" id="EfC-yZ-JQe"/>
                 <constraint firstItem="6mq-VV-w7d" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Xp0-qH-Cd5"/>
-                <constraint firstItem="6mq-VV-w7d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="nYz-tf-ZEN"/>
+                <constraint firstItem="6mq-VV-w7d" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="12" id="nYz-tf-ZEN"/>
                 <constraint firstAttribute="trailing" secondItem="6mq-VV-w7d" secondAttribute="trailing" id="vgp-v9-s1i"/>
             </constraints>
             <size key="customSize" width="317" height="115"/>

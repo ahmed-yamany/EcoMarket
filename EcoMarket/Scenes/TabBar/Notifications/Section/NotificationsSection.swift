@@ -8,23 +8,17 @@
 import UIKit
 
 class NotificationsSection: SectionsLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-    }
-    
     // MARK: - Properties
     //
     typealias Header = CollectionSectionHeader
-    typealias ItemsType = NotificationModel
+    typealias ItemsType = Notification
     
     var items: [ItemsType] = []
     
-    /// Returns the number of items in the section.
     func numberOfItems() -> Int {
         return items.count
     }
     
-    /// Configures and returns the layout for the section.
     func sectionLayout(_ collectionView: UICollectionView,
                        layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         var configurations = UICollectionLayoutListConfiguration(appearance: .plain)
@@ -40,7 +34,6 @@ class NotificationsSection: SectionsLayout {
         return section
     }
     
-    /// Returns the cell for the item at the specified index path.
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: NotificationCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can not dequeue NotificationCollectionViewCell", category: \.default, level: .fault)
@@ -49,8 +42,10 @@ class NotificationsSection: SectionsLayout {
         cell.setup(notification: items[indexPath.row])
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+    }
     
-    /// Returns the supplementary view for the section.
     func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
@@ -65,7 +60,6 @@ class NotificationsSection: SectionsLayout {
     }
     
     // MARK: - Private Methods
-       
     /// Creates and returns the header for the section.
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
@@ -80,7 +74,6 @@ class NotificationsSection: SectionsLayout {
         return header
     }
     
-    /// Registers the cell class for the section.
     func registerCell(in collectionView: UICollectionView) {
         collectionView.registerNib(NotificationCollectionViewCell.self)
     }
