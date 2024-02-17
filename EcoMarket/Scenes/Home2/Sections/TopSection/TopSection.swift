@@ -1,5 +1,5 @@
 //
-//  CategoriesSection.swift
+//  TopSection.swift
 //  EcoMarket
 //
 //  Created by Ibrahim Nasser Ibrahim on 17/02/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CategoriesSection: SectionsLayout {
+class TopSection: SectionsLayout {
     typealias ItemsType = CategoriesModel
     
     var items: [CategoriesModel] = []
@@ -22,23 +22,30 @@ class CategoriesSection: SectionsLayout {
         _ collectionView: UICollectionView,
         layoutEnvironment: NSCollectionLayoutEnvironment
     ) -> NSCollectionLayoutSection {
+        
+        let interItemSpacing: CGFloat = 15.0
+        let padding: CGFloat = 25.0
+        let height: CGFloat = 260.0
+        
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         // Group
-        let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(80), heightDimension: .absolute(30))
-        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(height))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: padding, bottom: padding, trailing: padding)
+        group.interItemSpacing = .fixed(interItemSpacing)
         
+        // Header
         let header = createHeader()
-
+        
         // Section
         let section = NSCollectionLayoutSection(group: group)
-        section.interGroupSpacing = 6
-        section.contentInsets.bottom = 25
         section.boundarySupplementaryItems = [header]
-        section.orthogonalScrollingBehavior = .groupPaging
+        
         return section
+        
     }
     
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
@@ -79,13 +86,14 @@ class CategoriesSection: SectionsLayout {
     ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
-            withReuseIdentifier: CollectionSectionHeader.identifier,
+            withReuseIdentifier: HeaderCollectionReusableView.identifier,
             for: indexPath
-        ) as? CollectionSectionHeader else {
+        ) as? HeaderCollectionReusableView else {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Categories")
+        header.title = "Top Dresses"
+        header.buttonTitle = "View All"
         return header
     }
     
@@ -94,9 +102,9 @@ class CategoriesSection: SectionsLayout {
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {
-        collectionView.register(CollectionSectionHeader.self,
-                                forSupplementaryViewOfKind: CollectionSectionHeader.elementKind,
-                                withReuseIdentifier: CollectionSectionHeader.identifier)
+        collectionView.register(HeaderCollectionReusableView.self,
+                                forSupplementaryViewOfKind: HeaderCollectionReusableView.elementKind,
+                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
     }
     
     func registerDecorationView(layout: UICollectionViewLayout) {
