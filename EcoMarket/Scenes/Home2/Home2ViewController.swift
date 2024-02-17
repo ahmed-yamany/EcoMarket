@@ -35,6 +35,7 @@ class Home2ViewController: UIViewController {
     }
     
     private func configureUI() {
+        view.backgroundColor = AppColor.backgroundColor
         containerStackView.layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
         containerStackView.isLayoutMarginsRelativeArrangement = true
         setupButtonsUI()

@@ -65,6 +65,9 @@
                         </constraints>
                         <state key="normal" title="Button"/>
                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                        <connections>
+                            <action selector="favouriteButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Uf7-mK-hbq"/>
+                        </connections>
                     </button>
                 </subviews>
             </view>

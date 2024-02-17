@@ -92,7 +92,6 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="awC-hm-fbO" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="9oc-mz-9ls"/>
                 <constraint firstItem="awC-hm-fbO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="LtS-rZ-Xvd"/>

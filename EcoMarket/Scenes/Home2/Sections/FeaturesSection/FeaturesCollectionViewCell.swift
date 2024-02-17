@@ -69,4 +69,8 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
         goToProductButton.setTitle("", for: .normal)
         goToProductButton.setImage(AppImage.HomeTheme2.arrowButtonIcon, for: .normal)
     }
+    
+    @IBAction func goToProductButtonTapped(_ sender: Any) {
+        print("Product Details")
+    }
 }

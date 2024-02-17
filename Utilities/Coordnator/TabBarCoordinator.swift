@@ -64,8 +64,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func homeViewController() -> UIViewController {
-        let vcc = UIViewController()
-        vcc.view.backgroundColor = .blue
+        let vcc = Home2ViewController()
         return vcc
     }
     

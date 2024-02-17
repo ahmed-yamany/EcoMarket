@@ -58,6 +58,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="goToProductButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="xtb-wu-8jZ"/>
+                                </connections>
                             </button>
                         </subviews>
                     </stackView>

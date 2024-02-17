@@ -46,6 +46,12 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         brandName.font = .h3
         productName.font = .regular
         productPrice.font = .h3
+        brandName.textColor = AppColor.primaryText
         productName.textColor = AppColor.socialButton
+        productPrice.textColor = AppColor.primaryText
+    }
+    
+    @IBAction func favouriteButtonTapped(_ sender: Any) {
+        print("Added to favourites")
     }
 }
