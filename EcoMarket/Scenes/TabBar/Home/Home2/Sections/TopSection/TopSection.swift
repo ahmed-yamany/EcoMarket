@@ -8,9 +8,9 @@
 import UIKit
 
 class TopSection: SectionsLayout {
-    typealias ItemsType = ProductModel
+    typealias ItemsType = TopProductModel
     
-    var items: [ProductModel] = []
+    var items: [TopProductModel] = []
     
     init(items: [ItemsType]) {
         self.items = items
@@ -65,7 +65,7 @@ class TopSection: SectionsLayout {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell: TopCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: TopProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
@@ -95,7 +95,7 @@ class TopSection: SectionsLayout {
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(TopCollectionViewCell.self)
+        collectionView.registerNib(TopProductCollectionViewCell.self)
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {

@@ -28,7 +28,7 @@ class HomeFactory {
             case .categories:
                 return CategoriesSection(items: CategoriesModel.mockData)
             case .top:
-                return TopSection(items: ProductModel.mockData)
+                return TopSection(items: TopProductModel.mockData)
         }
     }
 }
