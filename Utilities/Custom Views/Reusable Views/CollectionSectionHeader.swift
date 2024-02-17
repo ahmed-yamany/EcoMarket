@@ -7,8 +7,6 @@
 
 import UIKit
 
-extension UICollectionReusableView: Identifiable {}
-
 class CollectionSectionHeader: UICollectionReusableView {
     static let elementKind = String("My Cart")
     

@@ -40,10 +40,6 @@ extension AppRouter: Router {
         self.present(viewController, animated: animated, completion: completion)
     }
     
-    func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
-        guard let window else {
-            Logger.log("App Router Window is nil", category: \.default, level: .fault)
-            return
     public func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {
         if navigationController.presentedViewController != nil {
             navigationController.dismiss(animated: animated, completion: completion)
@@ -51,10 +47,8 @@ extension AppRouter: Router {
             navigationController.popViewController(animated: animated)
             completion()
         }
-        window.rootViewController = viewController
     }
     
-    func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {}
     public func push(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
         navigationController.dismiss(animated: false)
         navigationController.pushViewController(viewController, animated: animated)
