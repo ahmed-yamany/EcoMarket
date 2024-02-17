@@ -6,11 +6,10 @@
 //
 
 import UIKit
-import SwiftUI
-import Combine
 
-final class AppRouter: Router {
-    public static let shared = AppRouter()
+public final class AppRouter {
+    public let navigationController: UINavigationController
+    public let alertInterface: AlertInterface & UIViewController
     
     var window: UIWindow?
     var parentViewController: UIViewController?
@@ -23,14 +22,4 @@ final class AppRouter: Router {
         self.window = window
         self.present(ProductsViewController(viewModel: .init()))
     }
-    
-    func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
-        guard let window else {
-            Logger.log("App Router Window is nil", category: \.default, level: .fault)
-            return
-        }
-        window.rootViewController = viewController
-    }
-    
-    func dismiss(animated: Bool = true, completion: @escaping () -> Void = {}) {}
 }

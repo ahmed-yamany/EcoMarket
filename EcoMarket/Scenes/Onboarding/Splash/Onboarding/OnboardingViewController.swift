@@ -17,7 +17,16 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak private(set) var nextButton: UIButton!
     @IBOutlet weak private(set) var pageControlView: FlexiblePageControl!
     
-    let viewModel = OnboardingViewModel()
+    let viewModel: OnboardingViewModel
+    
+    init(viewModel: OnboardingViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +46,7 @@ class OnboardingViewController: UIViewController {
     }
     
     private func setupCollectionView() {
-        onboardingCollectionView.registerNib(cell: OnboardingCollectionViewCell.self)
+        onboardingCollectionView.registerNib(OnboardingCollectionViewCell.self)
         onboardingCollectionView.isPagingEnabled = true
         onboardingCollectionView.showsHorizontalScrollIndicator = false
         onboardingCollectionView.isScrollEnabled = false
@@ -65,10 +74,7 @@ class OnboardingViewController: UIViewController {
         viewModel.move(didMoved: {currentIndex in
             pageControlView.currentPage = currentIndex
             scroll(to: currentIndex)
-        }, reachedEnd: {
-            let viewController = SplashViewController()
-            AppRouter.shared.present(viewController)
-        })
+        }, reachedEnd: { })
     }
     
     // MARK: - Private Functions

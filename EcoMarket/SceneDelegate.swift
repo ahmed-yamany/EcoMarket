@@ -8,9 +8,8 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
-
-    var window: UIWindow?
-
+    var appCoordinator: AppCoordinator?
+    
     // swiftlint: disable all
     func scene(_ scene: UIScene,willConnectTo session: UISceneSession,options connectionOptions: UIScene.ConnectionOptions) {
         // swiftlint: enable all
@@ -18,6 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             Logger.log("Fialed to get windowScene", category: \.default, level: .fault)
             return
         }
-        AppRouter.shared.makeWindow(from: windowScene)
+        AppCoordinator.shared.makeWindow(from: windowScene)
+        AppCoordinator.shared.start()
     }
 }

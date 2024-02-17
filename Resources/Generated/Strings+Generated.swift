@@ -45,6 +45,36 @@ internal enum L10n {
       internal static let placeholder = L10n.tr("Localizable", "login.password.placeholder", fallback: "*******")
     }
   }
+  internal enum Logout {
+    /// Log Out
+    internal static let title = L10n.tr("Localizable", "logout.title", fallback: "Log Out")
+  }
+  internal enum Product {
+    internal enum Details {
+      /// Add to cart
+      internal static let cart = L10n.tr("Localizable", "product.details.cart", fallback: "Add to cart")
+    }
+  }
+  internal enum Profile {
+    /// 22 Year
+    internal static let ageText = L10n.tr("Localizable", "profile.ageText", fallback: "22 Year")
+    /// Age   
+    internal static let ageTitle = L10n.tr("Localizable", "profile.ageTitle", fallback: "Age   ")
+    /// Fscreation441@gmai.com
+    internal static let emailText = L10n.tr("Localizable", "profile.emailText", fallback: "Fscreation441@gmai.com")
+    /// Email
+    internal static let emailTitle = L10n.tr("Localizable", "profile.emailTitle", fallback: "Email")
+    /// Gender
+    internal static let genderTitle = L10n.tr("Localizable", "profile.genderTitle", fallback: "Gender")
+    /// Fscreation
+    internal static let nameText = L10n.tr("Localizable", "profile.nameText", fallback: "Fscreation")
+    /// Name
+    internal static let nameTitle = L10n.tr("Localizable", "profile.nameTitle", fallback: "Name")
+  }
+  internal enum Search {
+    /// Search....
+    internal static let placeholder = L10n.tr("Localizable", "search.placeholder", fallback: "Search....")
+  }
   internal enum Signup {
     /// Confirm Password
     internal static let confirmPassword = L10n.tr("Localizable", "signup.confirmPassword", fallback: "Confirm Password")

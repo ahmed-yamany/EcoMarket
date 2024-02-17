@@ -9,6 +9,12 @@ import Foundation
 import Combine
 
 class OnboardingViewModel {
+    
+    let coordinator: OnboardingCoordinatorProtocol
+    init(coordinator: OnboardingCoordinatorProtocol, currentIndex: Int = 0) {
+        self.coordinator = coordinator
+    }
+    
     var onboardingArray: [Onboarding] {
         JSONDecoder().decode(forResource: "OnboardingData") ?? []
     }
@@ -21,6 +27,11 @@ class OnboardingViewModel {
             didMoved(currentIndex)
         } else {
             reachedEnd()
+            self.showSplashScreen()
         }
+    }
+    
+    func showSplashScreen() {
+        coordinator.showAuthFlow()
     }
 }
