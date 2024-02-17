@@ -110,4 +110,24 @@ enum AppImage {
             UIImage(named: "\(folderName)/product-delete")
         }
     }
+    
+    enum HomeTheme2 {
+        private static var folderName: String {"hometheme2"}
+        
+        static var menuButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/menu")
+        }
+        
+        static var userButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/user")
+        }
+        
+        static var filterButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/filter")
+        }
+        
+        static var arrowButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/arrowbutton")
+        }
+    }
 }

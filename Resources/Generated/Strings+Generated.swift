@@ -25,6 +25,14 @@ internal enum L10n {
     ///   Created by Ahmed Yamany on 03/01/2024.
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
+  internal enum Home {
+    internal enum Theme2 {
+      /// Our EcoMarket App
+      internal static let subtitle = L10n.tr("Localizable", "home.theme2.subtitle", fallback: "Our EcoMarket App")
+      /// Wellcome,
+      internal static let title = L10n.tr("Localizable", "home.theme2.title", fallback: "Wellcome,")
+    }
+  }
   internal enum Login {
     /// Continue with Apple
     internal static let apple = L10n.tr("Localizable", "login.apple", fallback: "Continue with Apple")
