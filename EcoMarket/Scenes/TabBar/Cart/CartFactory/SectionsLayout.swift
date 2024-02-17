@@ -27,6 +27,8 @@ protocol SectionsLayout {
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath)
+    
     func registerCell(in collectionView: UICollectionView)
     
     func registerSupplementaryView(in collectionView: UICollectionView)

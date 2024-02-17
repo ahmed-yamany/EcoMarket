@@ -7,34 +7,50 @@
 
 import Foundation
 
-struct ProfileModel {
+struct ProfileItem {
+    let model: ProfileModel
+    let action: () -> Void
+}
+
+struct ProfileSection: Codable {
+    let type: String
     let title: String
-    let image: String
+    let models: [ProfileModel]
+}
+
+// MARK: - Model
+struct ProfileModel: Codable {
+    let title, image: String
+    let action: ProfileAction?
 }
 
 struct UserModel {
     let image: String
     let name: String
     let email: String
+    let action: () -> Void
 }
 
-extension ProfileModel {
-    static let mockData1 = [
-        ProfileModel(title: "Personal Details", image: "profile/icon"),
-        ProfileModel(title: "My Order", image: "profile/icon-2"),
-        ProfileModel(title: "My Favourites", image: "profile/icon-3"),
-        ProfileModel(title: "Shipping Address", image: "profile/icon-4"),
-        ProfileModel(title: "My Card", image: "profile/icon-5"),
-        ProfileModel(title: "Settings", image: "profile/icon-6")
-    ]
-    
-    static let mockData2 = [
-        ProfileModel(title: "FAQs", image: "profile/icon-7"),
-        ProfileModel(title: "Privacy Policy", image: "profile/icon-8"),
-        ProfileModel(title: "Community", image: "profile/icon-9")
-    ]
+enum ProfileAction: String, Codable {
+    case personalDetails
+    case order
+    case favourites
+    case shippingAddress
+    case card
+    case settings 
+    case faq
+    case privacyPolicy
+    case community
+    case language
+    case notification
+    case mode
+    case help
 }
 
 extension UserModel {
-    static let user = [UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com")]
+    static let user = [
+        UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com", action: {
+        print("Profile")
+    })
+    ]
 }

@@ -8,6 +8,7 @@
 import UIKit
 
 enum AppImage {
+  
     static var appLogo: UIImage? {
         return UIImage(named: "app-logo")
     }
@@ -67,27 +68,71 @@ enum AppImage {
         return UIImage(named: "icon/profile-arrow")
     }
     
+    static var editButton: UIImage? {
+        return UIImage(named: "edit")
+    }
+    
+    static var profileImage: UIImage? {
+        return UIImage(named: "profileImage")
+    }
+    
+    static var logout: UIImage? {
+        return UIImage(named: "logout")
+    }
+    
+    static var dot1: UIImage? {
+        return UIImage(named: "dots")
+    }
+    
+    static var dot2: UIImage? {
+        return UIImage(named: "dots-2")
+	}
+
+    static var alertSuccessefulShopping: UIImage? {
+        return UIImage(named: "icon-alertSuccessefulShopping")
+	}
+
+    static var favouriteImage: UIImage? {
+        return UIImage(systemName: "heart.circle.fill")
+    }
+    
     enum Onboarding {
-        private static var folderName: String {"Onboarding"}
-        
         static var nextButton: UIImage? {
-            return UIImage(named: "\(folderName)/next-button")
+            return UIImage(folderName: .onboarding, named: "next-button")
         }
         
         static var splash1: UIImage? {
-            return UIImage(named: "\(folderName)/splash-2")
+            return UIImage(folderName: .onboarding, named: "splash-2")
         }
         
         static var logo: UIImage? {
-            return UIImage(named: "\(folderName)/logo")
+            return UIImage(folderName: .onboarding, named: "logo")
         }
     }
     
     enum Icon {
-        private static var folderName: String {"icon"}
-
+        
         static var productDelete: UIImage? {
-            UIImage(named: "\(folderName)/product-delete")
+            return UIImage(folderName: .icon, named: "product-delete")
         }
+    }
+    
+    enum Alert {
+        
+        static var addToCart: UIImage? {
+            return UIImage(folderName: .alert, named: "add-to-cart")
+        }
+    }
+}
+
+enum AssetsFolderName: String {
+    case onboarding = "Onboarding"
+    case icon = "icon"
+    case alert = "Alert"
+}
+
+extension UIImage {
+    convenience init?(folderName: AssetsFolderName, named: String) {
+        self.init(named: "\(folderName.rawValue)/\(named)")
     }
 }
