@@ -22,7 +22,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     var router: Router
     init() {
-        router = AppRouter(navigationController: .init())
+        router = AppRouter(navigationController: .init(), alertInterface: AlertViewController())
     }
     
     func start() {
