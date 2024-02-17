@@ -7,13 +7,17 @@
 
 import UIKit
 
-public final class AppRouter: Router {
+public final class AppRouter {
     public let navigationController: UINavigationController
+    public let alertInterface: AlertInterface & UIViewController
     
-    public required init(navigationController: UINavigationController) {
+    public required init(navigationController: UINavigationController, alertInterface: AlertInterface & UIViewController) {
         self.navigationController = navigationController
+        self.alertInterface = alertInterface
     }
-    
+}
+
+extension AppRouter: Router {
     public func present(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
         navigationController.present(viewController, animated: animated, completion: completion)
     }
@@ -33,7 +37,6 @@ public final class AppRouter: Router {
         completion: @escaping () -> Void = {}
     ) {
         viewController.modalPresentationStyle = .overFullScreen
-        viewController.view.backgroundColor = .clear
         self.present(viewController, animated: animated, completion: completion)
     }
     
@@ -48,7 +51,6 @@ public final class AppRouter: Router {
     
     public func push(_ viewController: UIViewController, animated: Bool = true, completion: @escaping () -> Void = {}) {
         navigationController.dismiss(animated: false)
-//        navigationController.navigationBar.isHidden = false
         navigationController.pushViewController(viewController, animated: animated)
         completion()
     }
@@ -70,5 +72,11 @@ public final class AppRouter: Router {
     public func popToRoot(animated: Bool = true, completion: @escaping () -> Void = {}) {
         navigationController.popToRootViewController(animated: animated)
         completion()
+    }
+    
+    func showAlert(item: AlertItem, completion: @escaping () -> Void) {
+        alertInterface.modalTransitionStyle = .crossDissolve
+        self.presentOverFullScreen(alertInterface, completion: completion)
+        alertInterface.show(item: item)
     }
 }
