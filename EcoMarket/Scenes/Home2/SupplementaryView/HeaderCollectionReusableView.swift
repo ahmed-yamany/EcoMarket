@@ -14,21 +14,17 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
     
-    var title: String? {
-        get { titleLabel.text }
-        set { titleLabel.text = newValue }
-    }
-    
-    var buttonTitle: String? {
-        get {""}
-        set { button.setTitle(newValue, for: .normal)}
-    }
     override func awakeFromNib() {
         super.awakeFromNib()
         titleLabel.font = .h2
         titleLabel.textColor = AppColor.primaryText
         
         button.setTitleColor(AppColor.socialButton, for: .normal)
+    }
+    
+    func setupHeader(title: String, buttonTitle: String) {
+        titleLabel.text = title
+        button.setTitle(buttonTitle, for: .normal)
     }
     
 }

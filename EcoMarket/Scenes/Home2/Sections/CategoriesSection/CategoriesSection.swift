@@ -14,6 +14,10 @@ class CategoriesSection: SectionsLayout {
     
     var isSelectedIndex: Int?
     
+    init(items: [ItemsType]) {
+        self.items = items
+    }
+    
     func numberOfItems() -> Int {
         items.count
     }

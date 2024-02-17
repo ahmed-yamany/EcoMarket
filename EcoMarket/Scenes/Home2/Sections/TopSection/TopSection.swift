@@ -11,7 +11,11 @@ class TopSection: SectionsLayout {
     typealias ItemsType = ProductModel
     
     var items: [ProductModel] = []
-        
+    
+    init(items: [ItemsType]) {
+        self.items = items
+    }
+    
     func numberOfItems() -> Int {
         items.count
     }
@@ -22,7 +26,6 @@ class TopSection: SectionsLayout {
     ) -> NSCollectionLayoutSection {
         
         let interItemSpacing: CGFloat = 15.0
-        let padding: CGFloat = 25.0
         let height: CGFloat = 260.0
         
         // Item
@@ -32,7 +35,7 @@ class TopSection: SectionsLayout {
         // Group
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .absolute(height))
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitem: item, count: 2)
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: padding, bottom: padding, trailing: padding)
+        
         group.interItemSpacing = .fixed(interItemSpacing)
         
         // Header
@@ -43,7 +46,6 @@ class TopSection: SectionsLayout {
         section.boundarySupplementaryItems = [header]
         
         return section
-        
     }
     
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {
@@ -51,7 +53,7 @@ class TopSection: SectionsLayout {
                                                 heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: HeaderCollectionReusableView.elementKind,
+            elementKind: CollectionSectionHeader.elementKind,
             alignment: .top
         )
         
@@ -82,14 +84,13 @@ class TopSection: SectionsLayout {
     ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
-            withReuseIdentifier: HeaderCollectionReusableView.identifier,
+            withReuseIdentifier: CollectionSectionHeader.identifier,
             for: indexPath
-        ) as? HeaderCollectionReusableView else {
+        ) as? CollectionSectionHeader else {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.title = "Top Dresses"
-        header.buttonTitle = "View All"
+        header.setTitle("Top Dresses")
         return header
     }
     
@@ -98,9 +99,9 @@ class TopSection: SectionsLayout {
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {
-        collectionView.register(HeaderCollectionReusableView.self,
-                                forSupplementaryViewOfKind: HeaderCollectionReusableView.elementKind,
-                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
+        collectionView.register(CollectionSectionHeader.self,
+                                forSupplementaryViewOfKind: CollectionSectionHeader.elementKind,
+                                withReuseIdentifier: CollectionSectionHeader.identifier)
     }
     
     func registerDecorationView(layout: UICollectionViewLayout) {

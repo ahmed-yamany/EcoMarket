@@ -78,7 +78,7 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JB6-T1-fXx">
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="JB6-T1-fXx">
                             <rect key="frame" x="0.0" y="193" width="393" height="566"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6IG-Sd-3Y7">

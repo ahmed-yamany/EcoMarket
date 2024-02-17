@@ -40,7 +40,7 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     }
 }
 
-struct CategoriesModel {
+struct CategoriesModel: Codable {
     let name: String
 }
 

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct FeaturesModel {
+struct FeaturesModel: Codable {
     let image: String
     let brandName: String
     let productName: String

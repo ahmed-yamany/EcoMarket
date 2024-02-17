@@ -13,6 +13,10 @@ class FeaturesSection: SectionsLayout {
     
     var items: [FeaturesModel] = []
     
+    init(items: [ItemsType]) {
+        self.items = items
+    }
+    
     func numberOfItems() -> Int {
         items.count
     }

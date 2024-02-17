@@ -10,6 +10,7 @@ import UIKit
 class Home2ViewController: UIViewController {
     
     var sections: [any SectionsLayout] = []
+    let homeFactory = HomeFactory()
     
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -21,19 +22,16 @@ class Home2ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let featuresSection = FeaturesSection()
-        featuresSection.items = FeaturesModel.mockData
         
-        let categoriesSection = CategoriesSection()
-        categoriesSection.items = CategoriesModel.mockData
-        
-        let topSection = TopSection()
-        topSection.items = ProductModel.mockData
-        
-        sections = [featuresSection, categoriesSection, topSection]
+        let sections = HomeFactoryModel.mockData
+        sections.forEach { section in
+            let sectionLayout = homeFactory.createSection(section: section)
+            self.sections.append(sectionLayout)
+        }
         configureCollectionView()
         collectionView.reloadData()
         configureUI()
+        
     }
     
     private func configureUI() {
