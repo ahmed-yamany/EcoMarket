@@ -65,7 +65,7 @@ class TopSection: SectionsLayout {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell: ProductsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: TopCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
@@ -95,7 +95,7 @@ class TopSection: SectionsLayout {
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(ProductsCollectionViewCell.self)
+        collectionView.registerNib(TopCollectionViewCell.self)
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {

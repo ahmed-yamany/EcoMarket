@@ -1,5 +1,5 @@
 //
-//  ProductsCollectionViewCell.swift
+//  TopCollectionViewCell.swift
 //  EcoMarket
 //
 //  Created by Ibrahim Nasser Ibrahim on 23/01/2024.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsCollectionViewCell: UICollectionViewCell {
+class TopCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
     //
