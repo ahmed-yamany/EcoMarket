@@ -9,17 +9,24 @@ import UIKit
 
 class FeaturesCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Outlets
+    //
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var goToProductButton: UIButton!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var brandName: UILabel!
     @IBOutlet weak var productImage: UIImageView!
+    
+    // MARK: - Lifecycle Methods
+    //
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
     }
     
+    // MARK: - Configuration
+    //
     func setup(feature: FeaturesModel) {
         productImage.image = UIImage(named: feature.image)
         productName.text = feature.productName

@@ -9,17 +9,27 @@ import UIKit
 
 class CategoriesCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Outlets
+    //
     @IBOutlet weak var categoryName: UILabel!
+    
+    // MARK: - Lifecycle Methods
+    //
     override func awakeFromNib() {
         super.awakeFromNib()
         configureUI()
     }
+    
+    // MARK: - Configuration
+    //
     func setup(category: CategoriesModel, isSelected: Bool) {
         categoryName.text = category.name
         selected(isSelected: isSelected)
     }
     
-    func configureUI() {
+    // MARK: - Private Methods
+    //
+    private func configureUI() {
         layer.cornerRadius = 15
         backgroundColor = AppColor.backgroundColor
         layer.borderWidth = 1
@@ -38,17 +48,4 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
             categoryName.textColor = AppColor.primaryText
         }
     }
-}
-
-struct CategoriesModel: Codable {
-    let name: String
-}
-
-extension CategoriesModel {
-    static let mockData: [CategoriesModel] = [
-        .init(name: "Dresses"),
-        .init(name: "Jackets"),
-        .init(name: "Jeans"),
-        .init(name: "Shoese")
-    ]
 }

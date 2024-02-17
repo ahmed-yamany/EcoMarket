@@ -9,9 +9,13 @@ import UIKit
 
 class Home2ViewController: UIViewController {
     
+    // MARK: - Properties
+    //
     var sections: [any SectionsLayout] = []
     let homeFactory = HomeFactory()
     
+    // MARK: - Outlets
+    //
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterButton: UIButton!
@@ -20,6 +24,8 @@ class Home2ViewController: UIViewController {
     @IBOutlet weak var userButton: UIButton!
     @IBOutlet weak var menuButton: UIButton!
     
+    // MARK: - Lifecycle Methods
+    //
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,6 +40,8 @@ class Home2ViewController: UIViewController {
         
     }
     
+    // MARK: - Private Methods
+    //
     private func configureUI() {
         view.backgroundColor = AppColor.backgroundColor
         containerStackView.layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
@@ -42,6 +50,7 @@ class Home2ViewController: UIViewController {
         setupLabelsUI()
     }
     
+    /// Configure buttons UI
     private func setupButtonsUI() {
         menuButton.setTitle("", for: .normal)
         menuButton.setImage(AppImage.HomeTheme2.menuButtonIcon, for: .normal)
@@ -53,6 +62,7 @@ class Home2ViewController: UIViewController {
         filterButton.setImage(AppImage.HomeTheme2.filterButtonIcon, for: .normal)
     }
     
+    /// Congiure Labels UI
     private func setupLabelsUI() {
         titleLabel.text = L10n.Home.Theme2.title
         titleLabel.font = .h1
