@@ -327,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				EE32E2D62B45B76A00675EAE /* Scenes */,
+				D6A0EB9C2B60364F00079FF3 /* Products */,
 				EE32E28B2B45B1D100675EAE /* AppDelegate.swift */,
 				EE32E28D2B45B1D100675EAE /* SceneDelegate.swift */,
 				EE32E2992B45B1D200675EAE /* Info.plist */,
@@ -421,7 +422,6 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D6A0EB9C2B60364F00079FF3 /* Products */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 			);
