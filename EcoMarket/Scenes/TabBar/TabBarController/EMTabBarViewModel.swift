@@ -29,7 +29,7 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     
-    @Published var selectedTab: EMTabBarType = .profile
+    @Published var selectedTab: EMTabBarType = .home
     var selectedTabPublisher: Published<EMTabBarType>.Publisher { $selectedTab }
     
     @Published var notifications: [Notification] = []

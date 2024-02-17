@@ -13,7 +13,7 @@ extension LoggingCategories {
 }
 
 class ProductsViewController: UICollectionViewController {
-    
+    typealias Header = CollectionSectionHeader
     // MARK: - Properties
     //
     private var viewModel: ProductViewModel
@@ -51,8 +51,6 @@ class ProductsViewController: UICollectionViewController {
     }
     
     // MARK: - Combine Subscriptions
-    //
-    /// Sets up Combine subscriptions to update the collection view when the `viewModel.categories` change.
     private func subscribedCategories() {
         viewModel.$products
             .receive(on: DispatchQueue.main)
@@ -63,11 +61,9 @@ class ProductsViewController: UICollectionViewController {
     }
     
     // MARK: - Configuration
-    //
-    /// Configures the collection view properties.
     private func configureCollectionView() {
         
-        collectionView.registerNib(cell: ProductsCollectionViewCell.self)
+        collectionView.registerNib(ProductsCollectionViewCell.self)
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
@@ -75,9 +71,6 @@ class ProductsViewController: UICollectionViewController {
     }
     
     // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         
         let interItemSpacing: CGFloat = 15.0
@@ -108,7 +101,7 @@ class ProductsViewController: UICollectionViewController {
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: Header.elementKind,
+            elementKind: CollectionSectionHeader.elementKind,
             alignment: .top
         )
         
