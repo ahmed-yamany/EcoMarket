@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopCollectionViewCell: UICollectionViewCell {
+class TopProductCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
     //
@@ -21,7 +21,7 @@ class TopCollectionViewCell: UICollectionViewCell {
     //
     /// Configures the cell with data from the given product model.
     /// - Parameter product: The product model to display in the cell.
-    func setup(product: ProductModel) {
+    func setup(product: TopProductModel) {
         productImage.image = UIImage(named: product.image)
         productName.text = product.name
         brandName.text = product.brand

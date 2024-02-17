@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ProductModel: Codable {
+struct TopProductModel: Codable {
     
     // MARK: - Properties
     let name: String
@@ -16,8 +16,8 @@ struct ProductModel: Codable {
     let image: String
 }
 
-extension ProductModel {
-    static var mockData: [ProductModel] = [
+extension TopProductModel {
+    static var mockData: [TopProductModel] = [
         .init(name: "Vado Odelle Dress", brand: "Roller Rabbit", price: "$198.00", image: "hometheme2/image-5"),
          .init(name: "Giselle Top in White Linen", brand: "Madewell", price: "$108.00", image: "hometheme2/image-4"),
          .init(name: "Vado Odelle Dress", brand: "Roller Rabbit", price: "$96.00", image: "hometheme2/image-3"),

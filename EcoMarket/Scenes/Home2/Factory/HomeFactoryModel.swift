@@ -11,13 +11,13 @@ struct HomeFactoryModel: Codable {
     let type: HomeType
     var features: [FeaturesModel]?
     var categories: [CategoriesModel]?
-    var top: [ProductModel]?
+    var top: [TopProductModel]?
 }
 
 extension HomeFactoryModel {
     static let mockData: [HomeFactoryModel] = [
         HomeFactoryModel(type: .features, features: FeaturesModel.mockData),
         HomeFactoryModel(type: .categories, categories: CategoriesModel.mockData),
-        HomeFactoryModel(type: .top, top: ProductModel.mockData)
+        HomeFactoryModel(type: .top, top: TopProductModel.mockData)
     ]
 }
