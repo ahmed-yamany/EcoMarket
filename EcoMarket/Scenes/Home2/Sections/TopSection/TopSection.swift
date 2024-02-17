@@ -8,12 +8,10 @@
 import UIKit
 
 class TopSection: SectionsLayout {
-    typealias ItemsType = CategoriesModel
+    typealias ItemsType = ProductModel
     
-    var items: [CategoriesModel] = []
-    
-    var isSelectedIndex: Int?
-    
+    var items: [ProductModel] = []
+        
     func numberOfItems() -> Int {
         items.count
     }
@@ -53,7 +51,7 @@ class TopSection: SectionsLayout {
                                                 heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: CollectionSectionHeader.elementKind,
+            elementKind: HeaderCollectionReusableView.elementKind,
             alignment: .top
         )
         
@@ -65,18 +63,16 @@ class TopSection: SectionsLayout {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
-        guard let cell: CategoriesCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: ProductsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        let isSelected = indexPath.item == isSelectedIndex
-        cell.setup(category: items[indexPath.row], isSelected: isSelected)
+        cell.setup(product: items[indexPath.row])
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        isSelectedIndex = indexPath.item
-        collectionView.reloadData()
+        
     }
     
     func collectionView(
@@ -98,7 +94,7 @@ class TopSection: SectionsLayout {
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(CategoriesCollectionViewCell.self)
+        collectionView.registerNib(ProductsCollectionViewCell.self)
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {

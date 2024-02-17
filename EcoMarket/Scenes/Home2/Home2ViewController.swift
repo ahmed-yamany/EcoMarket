@@ -27,7 +27,10 @@ class Home2ViewController: UIViewController {
         let categoriesSection = CategoriesSection()
         categoriesSection.items = CategoriesModel.mockData
         
-        sections = [featuresSection, categoriesSection]
+        let topSection = TopSection()
+        topSection.items = ProductModel.mockData
+        
+        sections = [featuresSection, categoriesSection, topSection]
         configureCollectionView()
         collectionView.reloadData()
         configureUI()

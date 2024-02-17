@@ -109,6 +109,10 @@ enum AppImage {
         static var productDelete: UIImage? {
             UIImage(named: "\(folderName)/product-delete")
         }
+        
+        static var loveButton: UIImage? {
+            UIImage(named: "\(folderName)/love")
+        }
     }
     
     enum HomeTheme2 {
