@@ -117,13 +117,26 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-       animateHeaderStackView(with: scrollView.contentOffset.y)
+        animateHeaderStackView(with: scrollView.contentOffset.y)
     }
     
     private func animateHeaderStackView(with offsetY: CGFloat) {
-        if offsetY <= headerViewHeight {
-            headerStackViewHeightConstraints.constant = headerViewHeight - offsetY
+        print(offsetY)
+        if offsetY <= 0.0 {
+            headerStackViewHeightConstraints.constant = 80
+            if offsetY > -24.0 {
+                titleLabel.font = .custom(size: 24 - (offsetY * 0.5), weight: .bold)
+            }
+            
+        } else {
+            if offsetY * 2 <= 24 {
+                titleLabel.font = .custom(size: 24 - (offsetY * 0.5), weight: .bold)
+            }
+            headerStackViewHeightConstraints.constant = 80 - offsetY
+            
         }
         self.view.layoutIfNeeded()
     }
+    
+    
 }
