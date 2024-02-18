@@ -13,6 +13,7 @@ class Home2ViewController: UIViewController {
     //
     var sections: [any SectionsLayout] = []
     let homeFactory = HomeFactory()
+    private var headerViewHeight: CGFloat = 0
     
     // MARK: - Outlets
     //
@@ -20,14 +21,14 @@ class Home2ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var filterButton: UIButton!
     @IBOutlet weak var subtitleLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var userButton: UIButton!
-    @IBOutlet weak var menuButton: UIButton!
+    @IBOutlet weak var titleLabel: UILabel!    
+    @IBOutlet weak var headerStackViewHeightConstraints: NSLayoutConstraint!
     
     // MARK: - Lifecycle Methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
+        headerViewHeight = headerStackViewHeightConstraints.constant
         
         let sections = HomeFactoryModel.mockData
         sections.forEach { section in
@@ -52,12 +53,6 @@ class Home2ViewController: UIViewController {
     
     /// Configure buttons UI
     private func setupButtonsUI() {
-        menuButton.setTitle("", for: .normal)
-        menuButton.setImage(AppImage.HomeTheme2.menuButtonIcon, for: .normal)
-        
-        userButton.setTitle("", for: .normal)
-        userButton.setImage(AppImage.HomeTheme2.userButtonIcon, for: .normal)
-        
         filterButton.setTitle("", for: .normal)
         filterButton.setImage(AppImage.HomeTheme2.filterButtonIcon, for: .normal)
     }
@@ -119,5 +114,16 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+       animateHeaderStackView(with: scrollView.contentOffset.y)
+    }
+    
+    private func animateHeaderStackView(with offsetY: CGFloat) {
+        if offsetY <= headerViewHeight {
+            headerStackViewHeightConstraints.constant = headerViewHeight - offsetY
+        }
+        self.view.layoutIfNeeded()
     }
 }

@@ -372,6 +372,11 @@
 		214AC06C2B4E974D0094297D /* HomeTheme2 */ = {
 			isa = PBXGroup;
 			children = (
+				D6519E802B8105300049FEB1 /* Factory */,
+				D6519E702B80E4180049FEB1 /* SupplementaryView */,
+				D6519E5C2B8036190049FEB1 /* Sections */,
+				D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */,
+				D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */,
 			);
 			path = HomeTheme2;
 			sourceTree = "<group>";
@@ -601,18 +606,6 @@
 				D62F1C702B65411100FBE349 /* CartModel.swift */,
 			);
 			path = CartTheme1;
-			sourceTree = "<group>";
-		};
-		D6519E572B7E6F160049FEB1 /* Home2 */ = {
-			isa = PBXGroup;
-			children = (
-				D6519E802B8105300049FEB1 /* Factory */,
-				D6519E702B80E4180049FEB1 /* SupplementaryView */,
-				D6519E5C2B8036190049FEB1 /* Sections */,
-				D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */,
-				D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */,
-			);
-			path = Home2;
 			sourceTree = "<group>";
 		};
 		D6519E5C2B8036190049FEB1 /* Sections */ = {
@@ -894,7 +887,6 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D6519E572B7E6F160049FEB1 /* Home2 */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
