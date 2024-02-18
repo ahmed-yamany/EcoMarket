@@ -53,7 +53,7 @@ class TopSection: SectionsLayout {
                                                 heightDimension: .estimated(50))
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
-            elementKind: CollectionSectionHeader.elementKind,
+            elementKind: HeaderCollectionReusableView.elementKind,
             alignment: .top
         )
         
@@ -84,13 +84,14 @@ class TopSection: SectionsLayout {
     ) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(
             ofKind: kind,
-            withReuseIdentifier: CollectionSectionHeader.identifier,
+            withReuseIdentifier: HeaderCollectionReusableView.identifier,
             for: indexPath
-        ) as? CollectionSectionHeader else {
+        ) as? HeaderCollectionReusableView else {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Top Dresses")
+        header.setupHeaderTitle(title: "Top Dresses")
+        header.setupHeaderButtonTitle(buttonTitle: "View All")
         return header
     }
     
@@ -99,9 +100,9 @@ class TopSection: SectionsLayout {
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {
-        collectionView.register(CollectionSectionHeader.self,
-                                forSupplementaryViewOfKind: CollectionSectionHeader.elementKind,
-                                withReuseIdentifier: CollectionSectionHeader.identifier)
+        collectionView.register(HeaderCollectionReusableView.self,
+                                forSupplementaryViewOfKind: HeaderCollectionReusableView.elementKind,
+                                withReuseIdentifier: HeaderCollectionReusableView.identifier)
     }
     
     func registerDecorationView(layout: UICollectionViewLayout) {

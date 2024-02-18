@@ -121,7 +121,6 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     private func animateHeaderStackView(with offsetY: CGFloat) {
-        print(offsetY)
         if offsetY <= 0.0 {
             headerStackViewHeightConstraints.constant = 80
             if offsetY > -24.0 {
@@ -133,10 +132,7 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
                 titleLabel.font = .custom(size: 24 - (offsetY * 0.5), weight: .bold)
             }
             headerStackViewHeightConstraints.constant = 80 - offsetY
-            
         }
         self.view.layoutIfNeeded()
     }
-    
-    
 }
