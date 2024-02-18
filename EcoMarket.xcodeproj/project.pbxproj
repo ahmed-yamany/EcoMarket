@@ -70,6 +70,8 @@
 		D6519E822B8105860049FEB1 /* HomeFactoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E812B8105860049FEB1 /* HomeFactoryModel.swift */; };
 		D6519E842B8106290049FEB1 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E832B8106290049FEB1 /* HomeFactory.swift */; };
 		D6519E862B81148C0049FEB1 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E852B81148C0049FEB1 /* CategoriesModel.swift */; };
+		D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */; };
+		D66084FF2B82BEA50071B562 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FE2B82BEA50071B562 /* HomeModel.swift */; };
 		D6E9AB4F2B73E21000BEA301 /* UserSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB4E2B73E21000BEA301 /* UserSection.swift */; };
 		D6E9AB512B73E3EE00BEA301 /* ProfileCollectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB502B73E3EE00BEA301 /* ProfileCollectionSection.swift */; };
 		D6E9AB542B73EE8100BEA301 /* SectionDecorationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6E9AB532B73EE8100BEA301 /* SectionDecorationView.swift */; };
@@ -246,6 +248,8 @@
 		D6519E812B8105860049FEB1 /* HomeFactoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryModel.swift; sourceTree = "<group>"; };
 		D6519E832B8106290049FEB1 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		D6519E852B81148C0049FEB1 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
+		D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		D66084FE2B82BEA50071B562 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D6E9AB4E2B73E21000BEA301 /* UserSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSection.swift; sourceTree = "<group>"; };
 		D6E9AB502B73E3EE00BEA301 /* ProfileCollectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCollectionSection.swift; sourceTree = "<group>"; };
 		D6E9AB532B73EE8100BEA301 /* SectionDecorationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionDecorationView.swift; sourceTree = "<group>"; };
@@ -375,6 +379,7 @@
 				D6519E802B8105300049FEB1 /* Factory */,
 				D6519E702B80E4180049FEB1 /* SupplementaryView */,
 				D6519E5C2B8036190049FEB1 /* Sections */,
+				D66084FD2B82BE260071B562 /* ViewModel */,
 				D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */,
 				D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */,
 			);
@@ -667,6 +672,15 @@
 				D6519E832B8106290049FEB1 /* HomeFactory.swift */,
 			);
 			path = Factory;
+			sourceTree = "<group>";
+		};
+		D66084FD2B82BE260071B562 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */,
+				D66084FE2B82BEA50071B562 /* HomeModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		D6A0EB8D2B5F0F8500079FF3 /* Cell */ = {
@@ -1517,6 +1531,7 @@
 				EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */,
 				D6E9AB542B73EE8100BEA301 /* SectionDecorationView.swift in Sources */,
 				EE5CA1372B5EF9BF00630C5D /* CategoryModel.swift in Sources */,
+				D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */,
 				EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */,
 				D62BD3C82B6D93DD000CF78A /* CartPromoCodeSection.swift in Sources */,
 				D6E9AB4F2B73E21000BEA301 /* UserSection.swift in Sources */,
@@ -1528,6 +1543,7 @@
 				EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */,
 				D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */,
 				D62BD3DE2B6D94DB000CF78A /* SectionsLayout.swift in Sources */,
+				D66084FF2B82BEA50071B562 /* HomeModel.swift in Sources */,
 				D6519E5A2B7E6F310049FEB1 /* Home2ViewController.swift in Sources */,
 				EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
