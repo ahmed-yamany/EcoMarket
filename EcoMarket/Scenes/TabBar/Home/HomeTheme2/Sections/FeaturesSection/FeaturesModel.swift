@@ -16,6 +16,6 @@ struct FeaturesModel: Codable {
 
 extension FeaturesModel {
     static let mockData: [FeaturesModel] = [
-        .init(image: "shoes", brandName: "Axel Arigato", productName: "Clean 90 Triple Sneakers", productPrice: "$245.00")
+        .init(image: "hometheme2/image-5", brandName: "Roller Rabbit", productName: "Vado Odelle Dress.", productPrice: "$245.00")
     ]
 }
