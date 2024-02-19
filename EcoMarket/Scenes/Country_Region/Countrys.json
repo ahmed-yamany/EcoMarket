@@ -1,0 +1,34 @@
+[
+    {
+        "name": "Canada",
+        "image": "Canada"
+    },
+    {
+        "name": "United Kingdom",
+        "image": "UnitedKingdom"
+    },
+    {
+        "name": "United States",
+        "image": "UnitedStates"
+    },
+    {
+        "name": "Brazil",
+        "image": "Brazil"
+    },
+    {
+        "name": "Bangladesh",
+        "image": "Bangladesh"
+    },
+    {
+        "name": "Germany",
+        "image": "Germany"
+    },
+    {
+        "name": "Portugal",
+        "image": "Portugal"
+    },
+    {
+        "name": "Egypt",
+        "image": "Egypt"
+    }
+]
