@@ -67,7 +67,6 @@
 		D6519E782B80F9E20049FEB1 /* TopProductModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E772B80F9E20049FEB1 /* TopProductModel.swift */; };
 		D6519E7E2B80FFA90049FEB1 /* TopProductCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6519E7C2B80FFA90049FEB1 /* TopProductCollectionViewCell.xib */; };
 		D6519E7F2B80FFA90049FEB1 /* TopProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E7D2B80FFA90049FEB1 /* TopProductCollectionViewCell.swift */; };
-		D6519E822B8105860049FEB1 /* HomeFactoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E812B8105860049FEB1 /* HomeFactoryModel.swift */; };
 		D6519E842B8106290049FEB1 /* HomeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E832B8106290049FEB1 /* HomeFactory.swift */; };
 		D6519E862B81148C0049FEB1 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E852B81148C0049FEB1 /* CategoriesModel.swift */; };
 		D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */; };
@@ -142,6 +141,7 @@
 		EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */; };
 		EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */; };
 		EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */; };
+		EE8AE0242B83F3D2001B767A /* Home2.json in Resources */ = {isa = PBXBuildFile; fileRef = EE8AE0232B83F3D2001B767A /* Home2.json */; };
 		EE95CEC12B4E9D9200BC5524 /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */; };
 		EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEBE2B4E9D9200BC5524 /* Router.swift */; };
 		EE95CEC72B4E9E1600BC5524 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE95CEC62B4E9E1600BC5524 /* Logger.swift */; };
@@ -246,7 +246,6 @@
 		D6519E772B80F9E20049FEB1 /* TopProductModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopProductModel.swift; sourceTree = "<group>"; };
 		D6519E7C2B80FFA90049FEB1 /* TopProductCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopProductCollectionViewCell.xib; sourceTree = "<group>"; };
 		D6519E7D2B80FFA90049FEB1 /* TopProductCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopProductCollectionViewCell.swift; sourceTree = "<group>"; };
-		D6519E812B8105860049FEB1 /* HomeFactoryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactoryModel.swift; sourceTree = "<group>"; };
 		D6519E832B8106290049FEB1 /* HomeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFactory.swift; sourceTree = "<group>"; };
 		D6519E852B81148C0049FEB1 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 		D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -308,6 +307,7 @@
 		EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
+		EE8AE0232B83F3D2001B767A /* Home2.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Home2.json; sourceTree = "<group>"; };
 		EE95CEBD2B4E9D9200BC5524 /* AppRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		EE95CEBE2B4E9D9200BC5524 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		EE95CEC62B4E9E1600BC5524 /* Logger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
@@ -384,6 +384,7 @@
 				D66084FD2B82BE260071B562 /* ViewModel */,
 				D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */,
 				D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */,
+				EE8AE0232B83F3D2001B767A /* Home2.json */,
 			);
 			path = HomeTheme2;
 			sourceTree = "<group>";
@@ -670,7 +671,6 @@
 		D6519E802B8105300049FEB1 /* Factory */ = {
 			isa = PBXGroup;
 			children = (
-				D6519E812B8105860049FEB1 /* HomeFactoryModel.swift */,
 				D6519E832B8106290049FEB1 /* HomeFactory.swift */,
 			);
 			path = Factory;
@@ -1382,6 +1382,7 @@
 				D62F1C5B2B64034A00FBE349 /* StapperView.xib in Resources */,
 				EEA6F9D32B58680D00A9E0C2 /* EMTextField.xib in Resources */,
 				D62BD4022B71575C000CF78A /* GenderCustomView.xib in Resources */,
+				EE8AE0242B83F3D2001B767A /* Home2.json in Resources */,
 				EEA6F9BD2B5867A800A9E0C2 /* OnboardingCollectionViewCell.xib in Resources */,
 				D6519E5B2B7E6F310049FEB1 /* Home2ViewController.xib in Resources */,
 				EEF069B22B5ED20D0063EE80 /* Poppins-Regular.ttf in Resources */,
@@ -1517,7 +1518,6 @@
 				EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */,
 				D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */,
 				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
-				D6519E822B8105860049FEB1 /* HomeFactoryModel.swift in Sources */,
 				D62BD3C62B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift in Sources */,
 				EE58F5DE2B5ECFC10068B93F /* AppColor.swift in Sources */,
 				D6E9AB612B7508A200BEA301 /* EditProfileSection.swift in Sources */,

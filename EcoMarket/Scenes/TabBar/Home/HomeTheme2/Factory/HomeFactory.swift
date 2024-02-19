@@ -7,28 +7,15 @@
 
 import Foundation
 
-// Enum to represent the types of sections
-enum HomeType: Codable {
-    case features
-    case categories
-    case top
-}
-
-// Factory class responsible for creating different sections based on their type
 class HomeFactory {
-    
-    /// Creates a section based on the provided SectionsModel.
-        ///
-        /// - Parameter section: The SectionsModel containing the type and products for the section.
-        /// - Returns: An instance conforming to the SectionsLayout protocol.
-    func createSection(section: HomeFactoryModel) -> any SectionsLayout {
-        switch section.type {
-            case .features:
-                return FeaturesSection(items: FeaturesModel.mockData)
-            case .categories:
-                return CategoriesSection(items: CategoriesModel.mockData)
-            case .top:
-                return TopSection(items: TopProductModel.mockData)
+    func createSection(section: HomeType) -> any SectionsLayout {
+        switch section {
+            case .features(let item):
+                return FeaturesSection(items: item)
+            case .categories(let items):
+                return CategoriesSection(items: items)
+            case .top(let items):
+                return TopSection(items: items)
         }
     }
 }

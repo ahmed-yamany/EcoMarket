@@ -10,12 +10,3 @@ import Foundation
 struct CategoriesModel: Codable {
     let name: String
 }
-
-extension CategoriesModel {
-    static let mockData: [CategoriesModel] = [
-        .init(name: "Dresses"),
-        .init(name: "Jackets"),
-        .init(name: "Jeans"),
-        .init(name: "Shoese")
-    ]
-}

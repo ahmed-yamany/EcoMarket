@@ -29,6 +29,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     func start() {
+        router.navigationController.navigationBar.isHidden = true
         viewModel.viewControllers = [
             homeViewController(),
             cartViewController(),
@@ -64,8 +65,11 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func homeViewController() -> UIViewController {
-        let vcc = Home2ViewController()
-        return vcc
+        let navigationController = UINavigationController()
+        let router = AppRouter(navigationController: navigationController)
+        let coordinator = HomeCoordinator(router: router)
+        coordinator.start()
+        return navigationController
     }
     
     private func cartViewController() -> UIViewController {

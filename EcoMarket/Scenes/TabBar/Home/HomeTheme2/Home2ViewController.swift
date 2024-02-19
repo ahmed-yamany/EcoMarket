@@ -24,17 +24,23 @@ class Home2ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!    
     @IBOutlet weak var headerStackViewHeightConstraints: NSLayoutConstraint!
     
+    let viewModel: HomeViewModel
+    init(viewModel: HomeViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     // MARK: - Lifecycle Methods
     //
     override func viewDidLoad() {
         super.viewDidLoad()
         headerViewHeight = headerStackViewHeightConstraints.constant
-        
-        let sections = HomeFactoryModel.mockData
-        sections.forEach { section in
-            let sectionLayout = homeFactory.createSection(section: section)
-            self.sections.append(sectionLayout)
-        }
+        sections = viewModel.getSections()
+       
         configureCollectionView()
         collectionView.reloadData()
         configureUI()
