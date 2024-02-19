@@ -9,7 +9,7 @@ import Foundation
 
 protocol HomeCoordinatorProtocol: Coordinator {
     func showHome()
-    func showDetails()
+    func showDetails(product: Product)
 }
 
 class HomeCoordinator: HomeCoordinatorProtocol {
@@ -25,13 +25,13 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showHome() {
-        let viewModel = HomeViewModel()
+        let viewModel = HomeViewModel(coordinator: self)
         let vcc = Home2ViewController(viewModel: viewModel)
         router.push(vcc)
     }
     
-    func showDetails() {
-        let viewController = ProductDetailsViewController(product: Product.mockData)
+    func showDetails(product: Product) {
+        let viewController = ProductDetailsViewController(product: product)
         router.push(viewController)
     }
 }

@@ -7,13 +7,19 @@
 
 import UIKit
 
+protocol TopSectionDelegate: AnyObject {
+    func topSection(_ section: TopSection, didSelect item: TopProductModel)
+}
+
 class TopSection: SectionsLayout {
     typealias ItemsType = TopProductModel
     
     var items: [TopProductModel] = []
     
-    init(items: [ItemsType]) {
+   weak var delegate: TopSectionDelegate?
+    init(items: [ItemsType], delegate: TopSectionDelegate) {
         self.items = items
+        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {
@@ -74,7 +80,8 @@ class TopSection: SectionsLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let item = items[indexPath.row]
+        delegate?.topSection(self, didSelect: item)
     }
     
     func collectionView(

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol CategoriesSectionDelegate: AnyObject {
+    func categoriesSection(_ section: CategoriesSection, didSelect item: CategoriesModel)
+}
+
 class CategoriesSection: SectionsLayout {
     typealias ItemsType = CategoriesModel
     
@@ -14,8 +18,10 @@ class CategoriesSection: SectionsLayout {
     
     var isSelectedIndex: Int?
     
-    init(items: [ItemsType]) {
+     weak var delegate: CategoriesSectionDelegate?
+    init(items: [ItemsType], delegate: CategoriesSectionDelegate) {
         self.items = items
+        self.delegate = delegate
     }
     
     func numberOfItems() -> Int {
@@ -74,6 +80,8 @@ class CategoriesSection: SectionsLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         isSelectedIndex = indexPath.item
         collectionView.reloadData()
+        let item = items[indexPath.item]
+        delegate?.categoriesSection(self, didSelect: item)
     }
     
     func collectionView(

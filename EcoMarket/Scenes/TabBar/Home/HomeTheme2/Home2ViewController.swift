@@ -12,7 +12,6 @@ class Home2ViewController: UIViewController {
     // MARK: - Properties
     //
     var sections: [any SectionsLayout] = []
-    let homeFactory = HomeFactory()
     private var headerViewHeight: CGFloat = 0
     
     // MARK: - Outlets
