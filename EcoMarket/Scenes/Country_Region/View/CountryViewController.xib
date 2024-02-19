@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryViewController" customModule="EcoMarket" customModuleProvider="target">
             <connections>
+                <outlet property="headerLabel" destination="4SZ-J9-KKO" id="RMY-ES-0wq"/>
                 <outlet property="searchView" destination="Wad-PY-5q7" id="IzD-hw-B5y"/>
                 <outlet property="tableView" destination="tcR-UN-tfw" id="Ogt-3u-uds"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -31,8 +32,17 @@
                                 <constraint firstAttribute="height" constant="50" id="P5X-uU-zaA"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4SZ-J9-KKO">
+                            <rect key="frame" x="0.0" y="70" width="353" height="30"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="30" id="uEy-Jd-lr8"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tcR-UN-tfw">
-                            <rect key="frame" x="0.0" y="70" width="353" height="689"/>
+                            <rect key="frame" x="0.0" y="120" width="353" height="639"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
                     </subviews>

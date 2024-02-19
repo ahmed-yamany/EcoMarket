@@ -10,6 +10,7 @@ import UIKit
 class CountryViewController: UIViewController {
 
     @IBOutlet weak var searchView: SearchView!
+    @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     
     var viewModel = CountryViewModel()
@@ -24,18 +25,17 @@ class CountryViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(UINib(nibName: "CountryTableViewCell", bundle: nil), forCellReuseIdentifier: "CountryTableViewCell")
-        
         tableView.separatorStyle = .none
-        
-        let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 50))
-        headerLabel.text = "Country or Region"
-        headerLabel.font = .h2
-        tableView.tableHeaderView = headerLabel
+        tableView.showsVerticalScrollIndicator = false
+        tableView.showsHorizontalScrollIndicator = false
     }
     
     private func setupUI(){
         searchView.layer.borderWidth = 0.2
         searchView.layer.borderColor = AppColor.primaryText.cgColor
+        
+        headerLabel.text = "Country or Region"
+        headerLabel.font = .h2
     }
     
 }
@@ -57,6 +57,5 @@ extension CountryViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
-    
-    
+     
 }

@@ -13,7 +13,30 @@ class CountryTableViewCell: UITableViewCell {
     @IBOutlet weak var countryName: UILabel!
     @IBOutlet weak var selectedButton: UIButton!
     @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var circleViewAboveSelectedButton: UIView!
+    
+//    var circleViewAboveSelectedButton: UIView {
+//        let circleView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 10))
+//        circleView.backgroundColor = UIColor.red
+//        circleView.layer.cornerRadius = circleView.bounds.width / 2
+//        return circleView
+//    }
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
 
+        if selected {
+            // Configure the view for the selected state
+            cellView.backgroundColor = UIColor.black
+            countryName.textColor = UIColor.white
+            selectedButton.layer.borderColor = UIColor.white.cgColor
+        } else {
+            cellView.backgroundColor = UIColor.white
+            countryName.textColor = UIColor.black
+            selectedButton.layer.borderColor = UIColor.black.cgColor
+        }
+    }
+    
     func setup(country: CountryModel){
         flagImage.image = UIImage(named: country.image)
         countryName.text = country.name
@@ -26,7 +49,7 @@ class CountryTableViewCell: UITableViewCell {
         flagImage.layer.masksToBounds = true
         flagImage.contentMode = .scaleAspectFill
         
-        countryName.font = .regular
+        countryName.font = .medium
         countryName.textColor = AppColor.primaryText
         
         selectedButton.layer.borderColor = AppColor.primaryText.cgColor
@@ -42,6 +65,9 @@ class CountryTableViewCell: UITableViewCell {
         cellView.layer.borderWidth = 0.3
         cellView.layer.borderColor = AppColor.primaryText.cgColor
         cellView.layer.cornerRadius = 10
+        
+        circleViewAboveSelectedButton.backgroundColor = .white
+        circleViewAboveSelectedButton.layer.cornerRadius = circleViewAboveSelectedButton.bounds.width / 2
     }
     
     
