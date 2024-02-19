@@ -13,7 +13,6 @@ protocol HomeCoordinatorProtocol: Coordinator {
 
 class HomeCoordinator: HomeCoordinatorProtocol {
     
-    
     var router: Router
     
     init(router: Router) {

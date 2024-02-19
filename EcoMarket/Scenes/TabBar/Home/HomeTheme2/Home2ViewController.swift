@@ -112,6 +112,7 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
                         at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
     }
@@ -121,17 +122,21 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
     }
     
     private func animateHeaderStackView(with offsetY: CGFloat) {
+        let maxHeight: CGFloat = 80
+        let maxFontSize: CGFloat = 24
+        let midOffsetY: CGFloat = offsetY * 0.5
+        
         if offsetY <= 0.0 {
-            headerStackViewHeightConstraints.constant = 80
-            if offsetY > -24.0 {
-                titleLabel.font = .custom(size: 24 - (offsetY * 0.5), weight: .bold)
+            headerStackViewHeightConstraints.constant = maxHeight
+            if offsetY > -maxFontSize {
+                titleLabel.font = .custom(size: maxFontSize - midOffsetY, weight: .bold)
             }
             
         } else {
-            if offsetY * 2 <= 24 {
-                titleLabel.font = .custom(size: 24 - (offsetY * 0.5), weight: .bold)
+            if offsetY * 2 <= maxFontSize {
+                titleLabel.font = .custom(size: maxFontSize - midOffsetY, weight: .bold)
             }
-            headerStackViewHeightConstraints.constant = 80 - offsetY
+            headerStackViewHeightConstraints.constant = maxHeight - offsetY
         }
         self.view.layoutIfNeeded()
     }
