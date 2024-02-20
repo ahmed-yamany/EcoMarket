@@ -18,10 +18,13 @@ class CategoriesSection: SectionsLayout {
     
     var isSelectedIndex: Int?
     
+    var headerTitle: String?
+    
      weak var delegate: CategoriesSectionDelegate?
-    init(items: [ItemsType], delegate: CategoriesSectionDelegate) {
+    init(items: [ItemsType], delegate: CategoriesSectionDelegate, headerTitle: String?) {
         self.items = items
         self.delegate = delegate
+        self.headerTitle = headerTitle
     }
     
     func numberOfItems() -> Int {
@@ -97,7 +100,7 @@ class CategoriesSection: SectionsLayout {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Categories")
+        header.setTitle(headerTitle ?? "")
         return header
     }
     

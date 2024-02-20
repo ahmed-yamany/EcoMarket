@@ -16,10 +16,13 @@ class TopSection: SectionsLayout {
     
     var items: [TopProductModel] = []
     
+    var headerTitle: String?
+    
    weak var delegate: TopSectionDelegate?
-    init(items: [ItemsType], delegate: TopSectionDelegate) {
+    init(items: [ItemsType], delegate: TopSectionDelegate, headerTitle: String) {
         self.items = items
         self.delegate = delegate
+        self.headerTitle = headerTitle
     }
     
     func numberOfItems() -> Int {
@@ -97,7 +100,7 @@ class TopSection: SectionsLayout {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setupHeaderTitle(title: "Top Dresses")
+        header.setupHeaderTitle(title: headerTitle ?? "")
         header.setupHeaderButtonTitle(buttonTitle: "View All")
         return header
     }

@@ -17,10 +17,10 @@ class HomeFactory {
         switch section {
             case .features(let item):
                 return FeaturesSection(items: item, delegate: delegate)
-            case .categories(let items):
-                return CategoriesSection(items: items, delegate: delegate)
-            case .top(let items):
-                return TopSection(items: items, delegate: delegate)
+            case .categories(let items, let title):
+                return CategoriesSection(items: items, delegate: delegate, headerTitle: title)
+            case .top(let items, let title):
+                return TopSection(items: items, delegate: delegate, headerTitle: title)
         }
     }
 }

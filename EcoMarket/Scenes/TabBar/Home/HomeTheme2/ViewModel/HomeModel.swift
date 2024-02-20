@@ -13,6 +13,6 @@ struct HomeModel: Codable {
 
 enum HomeType: Codable {
     case features(items: [FeaturesModel])
-    case categories(items: [CategoriesModel])
-    case top(items: [TopProductModel])
+    case categories(items: [CategoriesModel], title: String)
+    case top(items: [TopProductModel], title: String)
 }

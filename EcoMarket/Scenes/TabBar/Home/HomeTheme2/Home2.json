@@ -17,6 +17,7 @@
         {
             "categories":
                     {
+                        "title" : "Categories",
                         "items": [
                             {
                                 "name": "Dresses",
@@ -41,6 +42,7 @@
         {
             "top":
                     {
+                        "title" : "Top Dresses",
                         "items": [
                             {
                                 "name": "Vado Odelle Dress",
