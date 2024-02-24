@@ -894,7 +894,6 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D6519E572B7E6F160049FEB1 /* Home2 */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
@@ -967,6 +966,7 @@
 				214AC06D2B4E97560094297D /* HomeTheme3 */,
 				214AC06C2B4E974D0094297D /* HomeTheme2 */,
 				214AC06B2B4E973F0094297D /* HomeTheme1 */,
+				D6519E572B7E6F160049FEB1 /* Home2 */,
 				214AC06F2B4E97810094297D /* Categories */,
 			);
 			path = Home;
