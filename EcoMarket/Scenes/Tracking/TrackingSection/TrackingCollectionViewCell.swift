@@ -9,18 +9,21 @@ import UIKit
 
 class TrackingCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - Outlets
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var shippingStatus: UILabel!
     @IBOutlet weak var shippingArea: UILabel!
     @IBOutlet weak var shippingID: UILabel!
     @IBOutlet weak var transportImage: UIImageView!
     
+    // MARK: - Lifecycle
     override func awakeFromNib() {
         super.awakeFromNib()
         configureContainerStackView()
         configureLabelsUI()
     }
 
+    // MARK: - Configuration
     func setup(shipping: Shipping) {
         transportImage.image = UIImage(named: shipping.transportImage)
         shippingID.text = shipping.shippingID
@@ -28,6 +31,7 @@ class TrackingCollectionViewCell: UICollectionViewCell {
         shippingStatus.text = shipping.shippingStatus
     }
     
+    // MARK: - Private Methods
     private func configureContainerStackView() {
         containerView.layoutMargins = .init(top: 20, left: 20, bottom: 20, right: 20)
         containerView.isLayoutMarginsRelativeArrangement = true

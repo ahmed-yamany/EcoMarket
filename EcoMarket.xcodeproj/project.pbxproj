@@ -678,13 +678,11 @@
 		D6BB63F62B8747020008752F /* Tracking */ = {
 			isa = PBXGroup;
 			children = (
-				D6BB640A2B88EA470008752F /* TrackingViewModel */,
-				D6BB64022B88E9330008752F /* Sections */,
 				D6BB63FD2B88E6870008752F /* CustomView */,
+				D6BB640A2B88EA470008752F /* TrackingViewModel */,
+				D6BB64022B88E9330008752F /* TrackingSection */,
 				D6BB63F72B8747240008752F /* TrackingViewController.swift */,
 				D6BB63F82B8747240008752F /* TrackingViewController.xib */,
-				D6BB63FB2B88DEFE0008752F /* Tracking.swift */,
-				D6BB64102B8A2EB40008752F /* Shipping.json */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -698,15 +696,7 @@
 			path = CustomView;
 			sourceTree = "<group>";
 		};
-		D6BB64022B88E9330008752F /* Sections */ = {
-			isa = PBXGroup;
-			children = (
-				D6BB64032B88E93E0008752F /* TrackingSection */,
-			);
-			path = Sections;
-			sourceTree = "<group>";
-		};
-		D6BB64032B88E93E0008752F /* TrackingSection */ = {
+		D6BB64022B88E9330008752F /* TrackingSection */ = {
 			isa = PBXGroup;
 			children = (
 				D6BB64042B88E96B0008752F /* TrackingCollectionViewCell.swift */,
@@ -720,6 +710,8 @@
 			isa = PBXGroup;
 			children = (
 				D6BB640E2B8A2E680008752F /* TrackingViewModel.swift */,
+				D6BB63FB2B88DEFE0008752F /* Tracking.swift */,
+				D6BB64102B8A2EB40008752F /* Shipping.json */,
 			);
 			path = TrackingViewModel;
 			sourceTree = "<group>";

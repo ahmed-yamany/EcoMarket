@@ -10,10 +10,14 @@ import Combine
 
 class TrackingViewController: UIViewController {
     
+    // MARK: - Properties
     var sections: [any SectionsLayout] = []
     var viewModel: TrackingViewModel
+    let tracking: Tracking
     private var cancellable: Set<AnyCancellable> = []
     
+    // MARK: - Outlets
+    @IBOutlet weak var trackingStackViewHeightConstraints: NSLayoutConstraint!
     @IBOutlet weak var trackingView: UIStackView!
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var trackingStackView: UIStackView!
@@ -28,7 +32,7 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var scanButton: UIButton!
     
-    let tracking: Tracking
+    // MARK: - Initialization
     init (tracking: Tracking, viewModel: TrackingViewModel) {
         self.tracking = tracking
         self.viewModel = viewModel
@@ -48,6 +52,7 @@ class TrackingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         image.image = UIImage(named: tracking.image)
         shippingID.text = tracking.ID
         titleLabel.text = tracking.title
@@ -73,6 +78,7 @@ class TrackingViewController: UIViewController {
             .store(in: &cancellable)
     }
     
+    // MARK: - Setup UI
     private func configureUI() {
         view.backgroundColor = AppColor.backgroundColor
         containerStackView.isLayoutMarginsRelativeArrangement = true
@@ -159,6 +165,7 @@ class TrackingViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegate, UICollectionViewDataSource
 extension TrackingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     // MARK: UICollectionViewDataSource
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -177,5 +184,20 @@ extension TrackingViewController: UICollectionViewDelegate, UICollectionViewData
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        animateHeaderStackView(with: scrollView.contentOffset.y)
+    }
+    
+    private func animateHeaderStackView(with offsetY: CGFloat) {
+        let maxHeight: CGFloat = 198
+        print(offsetY)
+        if offsetY <= 0.0 {
+            trackingStackViewHeightConstraints.constant = maxHeight
+        } else {
+            trackingStackViewHeightConstraints.constant = maxHeight - offsetY
+        }
+        self.view.layoutIfNeeded()
     }
 }
