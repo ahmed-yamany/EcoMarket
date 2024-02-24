@@ -1,13 +1,13 @@
 //
-//  CollectionSectionHeader.swift
+//  Header.swift
 //  EcoMarket
 //
-//  Created by Ahmed Yamany on 14/02/2024.
+//  Created by Ibrahim Nasser Ibrahim on 13/02/2024.
 //
 
 import UIKit
 
-class CollectionSectionHeader: UICollectionReusableView {
+class Header: UICollectionReusableView {
     static let elementKind = String("My Cart")
     
     let label = UILabel()
@@ -38,3 +38,5 @@ class CollectionSectionHeader: UICollectionReusableView {
         label.text = title
     }
 }
+
+extension UICollectionReusableView: Identifiable {}

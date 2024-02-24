@@ -27,16 +27,31 @@ class EMTabBarViewController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         tabBar.isHidden = true
         viewControllers = viewModel.viewControllers
         setupEMTapBar()
-        
+        bindSelectedTab()
+        bindTabBarIsHidden()
+    }
+    
+    private func setupEMTapBar() {
+        emTabBar.delegate = self
+        view.addSubview(emTabBar)
+        emTabBar.fillXSuperView()
+        tabBarConstraints = emTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
+        emTabBar.setItems(EMTabBarType.allCases.map { $0.tabBarItem })
+    }
+    
+    private func bindSelectedTab() {
         viewModel.selectedTabPublisher.sink { [weak self] type in
             self?.selectedIndex = type.rawValue
             self?.emTabBar.selectItem(at: type.rawValue)
         }
         .store(in: &cancellable)
-        
+    }
+    
+    private func bindTabBarIsHidden() {
         viewModel.tabBarIsHiddenPublisher
             .sink { [self] hidden in
                 self.tabBarConstraints?.bottom?.constant = hidden ? 100 : 0
@@ -53,14 +68,6 @@ class EMTabBarViewController: UITabBarController {
                 
             }
             .store(in: &cancellable)
-    }
-    
-    private func setupEMTapBar() {
-        emTabBar.delegate = self
-        view.addSubview(emTabBar)
-        emTabBar.fillXSuperView()
-        tabBarConstraints = emTabBar.makeConstraints(bottomAnchor: view.bottomAnchor)
-        emTabBar.setItems(EMTabBarType.allCases.map { $0.tabBarItem })
     }
 }
 

@@ -1,21 +1,24 @@
 //
-//  CartViewController.swift
+//  NotificationCollectionViewController.swift
 //  EcoMarket
 //
-//  Created by Ibrahim Nasser Ibrahim on 27/01/2024.
+//  Created by Ibrahim Nasser Ibrahim on 14/02/2024.
 //
 
 import UIKit
+import Combine
 
-class CartViewController: UICollectionViewController {
-    
+class NotificationViewController: UICollectionViewController {
+    // MARK: - Properties
+    //
     var sections: [any SectionsLayout] = []
-    let sectionFactory = SectionsFactory()
+    var viewModel: NotificationViewModel
+    private var cancellable: Set<AnyCancellable> = []
     
-    let coordinator: CartCoordinatorProtocol
-    // MARK: Initializer
-    init(coordinator: CartCoordinatorProtocol) {
-        self.coordinator = coordinator
+    // MARK: - Initializers
+    //
+    init(viewModel: NotificationViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -27,24 +30,23 @@ class CartViewController: UICollectionViewController {
     //
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel.viewDidLoad()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let sections = SectionsModel.mockData
-        sections.forEach { section in
-            let sectionLayout = sectionFactory.createSection(section: section)
-            self.sections.append(sectionLayout)
-        }
-        
+        sections.append(viewModel.notificationSection)
         configureCollectionView()
         collectionView.reloadData()
+        bindViewModel()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancellable.forEach { $0.cancel() }
     }
     
     // MARK: - UI Configuration
-    
-    /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         sections.forEach { section in
             section.registerCell(in: self.collectionView)
@@ -54,34 +56,39 @@ class CartViewController: UICollectionViewController {
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
     
+    // MARK: - Bind ViewModel
+    private func bindViewModel() {
+        viewModel.$notifications
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellable)
+    }
+    
     // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
             self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
         }
     }
     
-    // MARK: - UICollectionViewDataSource
+    // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return sections.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        sections[section].numberOfItems()
+        return sections[section].numberOfItems()
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, 
+    override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
-    }
-    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     }
 }

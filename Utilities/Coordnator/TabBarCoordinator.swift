@@ -73,8 +73,8 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func notificationViewController() -> UIViewController {
-        let vcc = UIViewController()
-        vcc.view.backgroundColor = .yellow
+        let viewModel = NotificationViewModel(tabBarViewModelInterface: viewModel)
+        let vcc = NotificationViewController(viewModel: viewModel)
         return vcc
     }
     

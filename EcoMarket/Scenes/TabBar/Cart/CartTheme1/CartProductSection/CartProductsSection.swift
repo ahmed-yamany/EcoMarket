@@ -7,11 +7,25 @@
 
 import UIKit
 
+/// A section layout for displaying products in a cart.
 class CartProductsSection: SectionsLayout {
     typealias ItemsType = CartModel
     
     var items: [CartModel] = []
     
+    /// Initializes the CartProductsSection with the provided items.
+        ///
+        /// - Parameter items: The array of products to be displayed in the section.
+    init(items: [ItemsType]) {
+        self.items = items
+    }
+    
+    /// Provides the layout for the section.
+       ///
+       /// - Parameters:
+       ///   - collectionView: The collection view displaying the section.
+       ///   - layoutEnvironment: The environment describing the layout of the collection view.
+       /// - Returns: An NSCollectionLayoutSection representing the layout of the section.
     func sectionLayout(
         _ collectionView: UICollectionView,
         layoutEnvironment: NSCollectionLayoutEnvironment
@@ -56,6 +70,7 @@ class CartProductsSection: SectionsLayout {
         collectionView.deleteItems(at: [indexPath])
     }
     
+    /// Returns the number of items in the section.
     func numberOfItems() -> Int {
         items.count
     }
