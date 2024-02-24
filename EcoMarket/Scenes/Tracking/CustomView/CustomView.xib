@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomView" customModule="test" customModuleProvider="target">
+            <connections>
+                <outlet property="circleView" destination="oxA-kM-Kkw" id="azf-BJ-8Pr"/>
+                <outlet property="lineView" destination="vmx-fO-Ai4" id="8ry-MO-DhP"/>
+                <outlet property="stackView" destination="EXE-ot-tpd" id="hCg-cY-2wM"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="191" height="63"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="EXE-ot-tpd">
+                    <rect key="frame" x="0.0" y="0.0" width="191" height="63"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-kM-Kkw">
+                            <rect key="frame" x="0.0" y="21.666666666666668" width="20" height="20.000000000000004"/>
+                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="6eH-JB-AS0"/>
+                                <constraint firstAttribute="height" constant="20" id="NsS-NJ-85G"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-fO-Ai4">
+                            <rect key="frame" x="24" y="30.666666666666668" width="167" height="2.0000000000000036"/>
+                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="2" id="ePv-aG-OIr"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EXE-ot-tpd" secondAttribute="trailing" id="5wr-Xg-sLD"/>
+                <constraint firstItem="EXE-ot-tpd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7KI-Tx-tbL"/>
+                <constraint firstItem="EXE-ot-tpd" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="7eA-Kx-sYh"/>
+                <constraint firstAttribute="bottom" secondItem="EXE-ot-tpd" secondAttribute="bottom" id="ZuT-4W-Ems"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="-206.87022900763358" y="308.0985915492958"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

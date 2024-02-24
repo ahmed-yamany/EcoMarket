@@ -115,6 +115,10 @@ enum AppImage {
         static var productDelete: UIImage? {
             return UIImage(folderName: .icon, named: "product-delete")
         }
+        
+        static var scanerIcon: UIImage? {
+            return UIImage(folderName: .icon, named: "scaner")
+        }
     }
     
     enum Alert {
