@@ -16,7 +16,10 @@ class TrackingSection: SectionsLayout {
         return items.count
     }
     
-    func sectionLayout(_ collectionView: UICollectionView, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    func sectionLayout(
+        _ collectionView: UICollectionView,
+        layoutEnvironment: NSCollectionLayoutEnvironment
+    ) -> NSCollectionLayoutSection {
         let padding: CGFloat = 25.0
         let height: CGFloat = 100
         

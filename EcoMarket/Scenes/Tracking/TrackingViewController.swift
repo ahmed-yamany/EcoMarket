@@ -18,7 +18,9 @@ class TrackingViewController: UIViewController {
     
     // MARK: - Outlets
     @IBOutlet weak var trackingStackViewHeightConstraints: NSLayoutConstraint!
-    @IBOutlet weak var trackingView: UIStackView!
+    
+    @IBOutlet weak var trackingContanerViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trackingView: TrackingView!
     @IBOutlet weak var containerStackView: UIStackView!
     @IBOutlet weak var trackingStackView: UIStackView!
     @IBOutlet weak var shippingDate: UILabel!
@@ -95,11 +97,8 @@ class TrackingViewController: UIViewController {
     }
     
     private func configureTrackingView() {
-        for _ in 0..<4 {
-            let viewToAdd = CustomView()
-            trackingView.addArrangedSubview(viewToAdd)
-        }
-        trackingView.distribution = .fillEqually
+        trackingView.count = 4
+        trackingView.select(at: 1)
     }
     
     private func configureTrackingStackView() {
@@ -191,13 +190,67 @@ extension TrackingViewController: UICollectionViewDelegate, UICollectionViewData
     }
     
     private func animateHeaderStackView(with offsetY: CGFloat) {
-        let maxHeight: CGFloat = 198
+        let maxHeight: CGFloat = 200
         print(offsetY)
-        if offsetY <= 0.0 {
-            trackingStackViewHeightConstraints.constant = maxHeight
-        } else {
+        
+        if offsetY < 108 && offsetY > -30 {
             trackingStackViewHeightConstraints.constant = maxHeight - offsetY
         }
-        self.view.layoutIfNeeded()
+        
+        if offsetY < 108 && offsetY > 0 {
+            trackingContanerViewHeightConstraint.constant = maxHeight - offsetY
+        }
+    }
+}
+
+
+class TrackingView: UIStackView {
+    
+    private var views: [CustomView] = []
+    
+    var count: Int = 0 {
+        didSet {
+            addViews(count)
+        }
+    }
+    
+    private func addViews(_ count: Int) {
+        removeAllSubViews()
+        for _ in 0..<count-1 {
+            let viewToAdd = CustomView()
+            addArrangedSubview(viewToAdd)
+            views.append(viewToAdd)
+        }
+        distribution = .fillEqually
+        
+        let view = UIView()
+        view.backgroundColor = .red
+        view.equalSizeConstraints(14)
+        view.layoutIfNeeded()
+        view.makeCircular()
+        
+        addSubview(view)
+        view.centerYInSuperview()
+        view.makeConstraints(trailingAnchor: trailingAnchor)
+    }
+    
+    private func removeAllSubViews() {
+        arrangedSubviews.forEach { view in
+            self.removeArrangedSubview(view)
+        }
+    }
+    
+    func select(at index: Int) {
+        for iii in 0...index {
+            views[iii].selectLine()
+            views[iii].selectCircule()
+        }
+        
+        if index < views.count - 1 {
+            views[index+1].selectCircule()
+        } else {
+            
+        }
+        
     }
 }

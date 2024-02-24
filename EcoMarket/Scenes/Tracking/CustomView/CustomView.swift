@@ -12,6 +12,7 @@ class CustomView: UIView {
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var lineView: UIView!
     @IBOutlet weak var circleView: UIView!
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNib()
@@ -26,7 +27,8 @@ class CustomView: UIView {
     
     func configureUI() {
         widthAnchor.constraint(equalToConstant: 50).isActive = true
-        circleView.layer.cornerRadius = 7
+//        circleView.layer.cornerRadius = 7
+        circleView.makeCircular()
     }
     
     private func loadNib() {
@@ -38,5 +40,19 @@ class CustomView: UIView {
         }
         // swiftlint:enable all
     }
+    
+    func selectLine() {
+        lineView.backgroundColor = .black
+    }
+    
+    func selectCircule() {
+        circleView.backgroundColor = .black
+    }
 
+}
+
+extension UIView {
+    func makeCircular() {
+        layer.cornerRadius = frame.height / 2
+    }
 }
