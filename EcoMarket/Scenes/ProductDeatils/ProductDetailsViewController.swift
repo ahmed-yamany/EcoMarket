@@ -25,9 +25,9 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: - View Lifecycle
     //
-    let product: Product
+    let product: ProductDetails
     
-    init(product: Product) {
+    init(product: ProductDetails) {
         self.product = product
         super.init(nibName: nil, bundle: nil)
     }
