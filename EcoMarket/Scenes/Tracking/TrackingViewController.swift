@@ -1,0 +1,156 @@
+//
+//  TrackingViewController.swift
+//  EcoMarket
+//
+//  Created by Ibrahim Nasser Ibrahim on 22/02/2024.
+//
+
+import UIKit
+
+class TrackingViewController: UIViewController {
+    
+    var sections: [any SectionsLayout] = []
+    
+    @IBOutlet weak var trackingView: UIStackView!
+    @IBOutlet weak var containerStackView: UIStackView!
+    @IBOutlet weak var trackingStackView: UIStackView!
+    @IBOutlet weak var shippingDate: UILabel!
+    @IBOutlet weak var shippingArea: UILabel!
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var deliveryArea: UILabel!
+    @IBOutlet weak var deliveryDate: UILabel!
+    @IBOutlet weak var subtitleLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var shippingID: UILabel!
+    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var scanButton: UIButton!
+    
+    let tracking: Tracking
+    init (tracking: Tracking) {
+        self.tracking = tracking
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        image.image = UIImage(named: tracking.image)
+        shippingID.text = tracking.ID
+        titleLabel.text = tracking.title
+        subtitleLabel.text = tracking.subtitle
+        shippingDate.text = tracking.shippingDate
+        shippingArea.text = tracking.shippingArea
+        deliveryArea.text = tracking.deliveryArea
+        deliveryDate.text = tracking.deliveryDate
+        configureUI()
+        configureCollectionView()
+    }
+    
+    private func configureUI() {
+        containerStackView.isLayoutMarginsRelativeArrangement = true
+        containerStackView.layoutMargins = .init(top: 0, left: 20, bottom: 0, right: 20)
+        configureTrackingStackView()
+        configureTrackingView()
+        configureScanButtonUI()
+        configureLabelsUI()
+    }
+    
+    private func configureScanButtonUI() {
+        scanButton.setTitle("", for: .normal)
+        scanButton.setImage(AppImage.Icon.scanerIcon, for: .normal)
+    }
+    
+    private func configureTrackingView() {
+        for _ in 0..<4 {
+            let viewToAdd = CustomView()
+            trackingView.addArrangedSubview(viewToAdd)
+        }
+        trackingView.distribution = .fillEqually
+    }
+    
+    private func configureTrackingStackView() {
+        trackingStackView.layoutMargins = .init(top: 20, left: 20, bottom: 20, right: 20)
+        trackingStackView.isLayoutMarginsRelativeArrangement = true
+        
+        // Adding a custom view to the container with shadow
+        trackingStackView.backgroundColor = AppColor.mainTheme
+        trackingStackView.layer.shadowColor = AppColor.primaryButton.cgColor
+        trackingStackView.layer.shadowOffset = .zero
+        trackingStackView.layer.shadowOpacity = 0.2
+        trackingStackView.layer.shadowRadius = 5
+        trackingStackView.layer.cornerRadius = 20
+    }
+    
+    private func configureLabelsUI() {
+        shippingID.textColor = AppColor.primaryText
+        shippingID.font = .h2
+        
+        titleLabel.textColor = AppColor.socialButton
+        titleLabel.font = .medium
+        
+        subtitleLabel.textColor = AppColor.primaryText
+        subtitleLabel.font = .h3
+        
+        configureShippingUI()
+        configureDeliveryUI()
+    }
+    
+    private func configureShippingUI() {
+        shippingDate.textColor = AppColor.socialButton
+        shippingDate.font = .medium
+        
+        shippingArea.textColor = AppColor.primaryText
+        shippingArea.font = .h3
+    }
+    
+    private func configureDeliveryUI() {
+        deliveryDate.textColor = AppColor.socialButton
+        deliveryDate.font = .medium
+        
+        deliveryArea.textColor = AppColor.primaryText
+        deliveryArea.font = .h3
+    }
+    
+    // MARK: - UI Configuration
+    private func configureCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        sections.forEach { section in
+            section.registerCell(in: self.collectionView)
+            section.registerSupplementaryView(in: self.collectionView)
+        }
+        collectionView.backgroundColor = AppColor.backgroundColor
+        collectionView.collectionViewLayout = createCompositionalLayout()
+    }
+    
+    // MARK: - Compositional Layout
+    private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
+        return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
+            self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
+        }
+    }
+}
+
+extension TrackingViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    // MARK: UICollectionViewDataSource
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return sections.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return sections[section].numberOfItems()
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        viewForSupplementaryElementOfKind kind: String,
+                        at indexPath: IndexPath) -> UICollectionReusableView {
+        sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
+    }
+}
