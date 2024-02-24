@@ -6,10 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class TrackingViewController: UIViewController {
     
     var sections: [any SectionsLayout] = []
+    var viewModel: TrackingViewModel
+    private var cancellable: Set<AnyCancellable> = []
     
     @IBOutlet weak var trackingView: UIStackView!
     @IBOutlet weak var containerStackView: UIStackView!
@@ -26,13 +29,21 @@ class TrackingViewController: UIViewController {
     @IBOutlet weak var scanButton: UIButton!
     
     let tracking: Tracking
-    init (tracking: Tracking) {
+    init (tracking: Tracking, viewModel: TrackingViewModel) {
         self.tracking = tracking
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - View Lifecycle
+    //
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewDidLoad()
     }
     
     override func viewDidLoad() {
@@ -46,10 +57,24 @@ class TrackingViewController: UIViewController {
         deliveryArea.text = tracking.deliveryArea
         deliveryDate.text = tracking.deliveryDate
         configureUI()
+        sections.append(viewModel.tracking)
         configureCollectionView()
+        collectionView.reloadData()
+        bindViewModel()
+    }
+    
+    // MARK: - Bind ViewModel
+    private func bindViewModel() {
+        viewModel.$shipping
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] _ in
+                self?.collectionView.reloadData()
+            }
+            .store(in: &cancellable)
     }
     
     private func configureUI() {
+        view.backgroundColor = AppColor.backgroundColor
         containerStackView.isLayoutMarginsRelativeArrangement = true
         containerStackView.layoutMargins = .init(top: 0, left: 20, bottom: 0, right: 20)
         configureTrackingStackView()
@@ -86,7 +111,7 @@ class TrackingViewController: UIViewController {
     
     private func configureLabelsUI() {
         shippingID.textColor = AppColor.primaryText
-        shippingID.font = .h2
+        shippingID.font = .h3
         
         titleLabel.textColor = AppColor.socialButton
         titleLabel.font = .medium

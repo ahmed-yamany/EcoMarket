@@ -69,7 +69,7 @@
 		D6BB64072B88E96B0008752F /* TrackingCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6BB64052B88E96B0008752F /* TrackingCollectionViewCell.xib */; };
 		D6BB64092B88EA370008752F /* TrackingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB64082B88EA370008752F /* TrackingSection.swift */; };
 		D6BB640F2B8A2E680008752F /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB640E2B8A2E680008752F /* TrackingViewModel.swift */; };
-		D6BB64112B8A2EB40008752F /* Tracking.json in Resources */ = {isa = PBXBuildFile; fileRef = D6BB64102B8A2EB40008752F /* Tracking.json */; };
+		D6BB64112B8A2EB40008752F /* Shipping.json in Resources */ = {isa = PBXBuildFile; fileRef = D6BB64102B8A2EB40008752F /* Shipping.json */; };
 		D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */; };
 		D6C397CB2B7BCCFD008649E1 /* SectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */; };
 		D6C397CF2B7BDE2B008649E1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CE2B7BDE2B008649E1 /* Header.swift */; };
@@ -257,7 +257,7 @@
 		D6BB64052B88E96B0008752F /* TrackingCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TrackingCollectionViewCell.xib; sourceTree = "<group>"; };
 		D6BB64082B88EA370008752F /* TrackingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSection.swift; sourceTree = "<group>"; };
 		D6BB640E2B8A2E680008752F /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
-		D6BB64102B8A2EB40008752F /* Tracking.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tracking.json; sourceTree = "<group>"; };
+		D6BB64102B8A2EB40008752F /* Shipping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Shipping.json; sourceTree = "<group>"; };
 		D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsFactory.swift; sourceTree = "<group>"; };
 		D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsModel.swift; sourceTree = "<group>"; };
 		D6C397CE2B7BDE2B008649E1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
@@ -684,7 +684,7 @@
 				D6BB63F72B8747240008752F /* TrackingViewController.swift */,
 				D6BB63F82B8747240008752F /* TrackingViewController.xib */,
 				D6BB63FB2B88DEFE0008752F /* Tracking.swift */,
-				D6BB64102B8A2EB40008752F /* Tracking.json */,
+				D6BB64102B8A2EB40008752F /* Shipping.json */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -1449,7 +1449,7 @@
 				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
 				EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
-				D6BB64112B8A2EB40008752F /* Tracking.json in Resources */,
+				D6BB64112B8A2EB40008752F /* Shipping.json in Resources */,
 				D6E9AB5C2B73F99400BEA301 /* EditProfileCollectionViewCell.xib in Resources */,
 				D62F1C202B616EFA00FBE349 /* ProductDetailsViewController.xib in Resources */,
 				D6BB64072B88E96B0008752F /* TrackingCollectionViewCell.xib in Resources */,

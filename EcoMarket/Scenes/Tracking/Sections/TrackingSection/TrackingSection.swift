@@ -18,7 +18,7 @@ class TrackingSection: SectionsLayout {
     
     func sectionLayout(_ collectionView: UICollectionView, layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
         let padding: CGFloat = 25.0
-        let height: CGFloat = 144
+        let height: CGFloat = 100
         
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))
@@ -33,7 +33,6 @@ class TrackingSection: SectionsLayout {
         
         let section = NSCollectionLayoutSection(group: group)
         section.boundarySupplementaryItems = [header]
-        section.contentInsets.bottom = 40
         section.interGroupSpacing = 22
         return section
     }
@@ -78,7 +77,7 @@ class TrackingSection: SectionsLayout {
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(CartTheme2CollectionViewCell.self)
+        collectionView.registerNib(TrackingCollectionViewCell.self)
     }
     
     func registerSupplementaryView(in collectionView: UICollectionView) {

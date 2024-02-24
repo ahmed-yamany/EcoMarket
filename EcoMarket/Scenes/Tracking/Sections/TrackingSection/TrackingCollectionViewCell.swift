@@ -18,6 +18,7 @@ class TrackingCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         configureContainerStackView()
+        configureLabelsUI()
     }
 
     func setup(shipping: Shipping) {
@@ -38,5 +39,16 @@ class TrackingCollectionViewCell: UICollectionViewCell {
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowRadius = 5
         containerView.layer.cornerRadius = 20
+    }
+    
+    private func configureLabelsUI() {
+        shippingID.textColor = AppColor.primaryText
+        shippingID.font = .h3
+        
+        shippingArea.textColor = AppColor.socialButton
+        shippingArea.font = .medium
+        
+        shippingStatus.textColor = AppColor.primaryText
+        shippingStatus.font = .h3
     }
 }

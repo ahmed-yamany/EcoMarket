@@ -2,13 +2,14 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomView" customModule="test" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CustomView" customModule="EcoMarket" customModuleProvider="target">
             <connections>
                 <outlet property="circleView" destination="oxA-kM-Kkw" id="azf-BJ-8Pr"/>
                 <outlet property="lineView" destination="vmx-fO-Ai4" id="8ry-MO-DhP"/>
@@ -24,15 +25,15 @@
                     <rect key="frame" x="0.0" y="0.0" width="191" height="63"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oxA-kM-Kkw">
-                            <rect key="frame" x="0.0" y="21.666666666666668" width="20" height="20.000000000000004"/>
-                            <color key="backgroundColor" systemColor="labelColor"/>
+                            <rect key="frame" x="0.0" y="24.666666666666668" width="14" height="14.000000000000004"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="width" constant="20" id="6eH-JB-AS0"/>
-                                <constraint firstAttribute="height" constant="20" id="NsS-NJ-85G"/>
+                                <constraint firstAttribute="width" constant="14" id="6eH-JB-AS0"/>
+                                <constraint firstAttribute="height" constant="14" id="NsS-NJ-85G"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vmx-fO-Ai4">
-                            <rect key="frame" x="24" y="30.666666666666668" width="167" height="2.0000000000000036"/>
+                            <rect key="frame" x="18" y="30.666666666666668" width="173" height="2.0000000000000036"/>
                             <color key="backgroundColor" systemColor="labelColor"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="2" id="ePv-aG-OIr"/>
@@ -42,7 +43,6 @@
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="EXE-ot-tpd" secondAttribute="trailing" id="5wr-Xg-sLD"/>
                 <constraint firstItem="EXE-ot-tpd" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="7KI-Tx-tbL"/>
@@ -56,9 +56,6 @@
     <resources>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
