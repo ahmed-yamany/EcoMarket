@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol FeaturesCollectionViewCellDelegate: AnyObject {
+    func featuresCell(_ cell: UICollectionViewCell, didTapped model: ProductModel)
+}
+
 class FeaturesCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
@@ -18,6 +22,8 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var brandName: UILabel!
     @IBOutlet weak var productImage: UIImageView!
     
+    weak var delegate: FeaturesCollectionViewCellDelegate?
+    var model: ProductModel?
     // MARK: - Lifecycle Methods
     //
     override func awakeFromNib() {
@@ -27,11 +33,13 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Configuration
     //
-    func setup(feature: FeaturesModel) {
+    func setup(feature: ProductModel, delegate: FeaturesCollectionViewCellDelegate?) {
         productImage.image = UIImage(named: feature.image)
         productName.text = feature.productName
         brandName.text = feature.brandName
         productPrice.text = feature.productPrice
+        self.delegate = delegate
+        self.model = feature
     }
     
     // MARK: - UI Configuration
@@ -78,6 +86,10 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func goToProductButtonTapped(_ sender: Any) {
-        print("Product Details")
+        guard let model = model else {
+            Logger.log("could not wrap model", category: \.default, level: .error)
+            return
+        }
+        delegate?.featuresCell(self, didTapped: model)
     }
 }
