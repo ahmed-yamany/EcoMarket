@@ -115,12 +115,36 @@ enum AppImage {
         static var productDelete: UIImage? {
             return UIImage(folderName: .icon, named: "product-delete")
         }
+        
+        static var loveButton: UIImage? {
+            return UIImage(folderName: .icon, named: "love")
+        }
     }
     
     enum Alert {
         
         static var addToCart: UIImage? {
             return UIImage(folderName: .alert, named: "add-to-cart")
+        }
+    }
+    
+    enum HomeTheme2 {
+        private static var folderName: String {"hometheme2"}
+        
+        static var menuButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/menu")
+        }
+        
+        static var userButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/user")
+        }
+        
+        static var filterButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/filter")
+        }
+        
+        static var arrowButtonIcon: UIImage? {
+            UIImage(named: "\(folderName)/arrowbutton")
         }
     }
 }

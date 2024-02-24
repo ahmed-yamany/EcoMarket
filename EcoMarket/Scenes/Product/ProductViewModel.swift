@@ -27,7 +27,7 @@ public final class ProductViewModel {
         Task { [weak self] in
             guard let self = self else { return }
             do {
-                self.products = try await ProductModel.mockData
+//                self.products = try await ProductModel.mockData
             } catch {
                 errorMessage = error.localizedDescription
             }

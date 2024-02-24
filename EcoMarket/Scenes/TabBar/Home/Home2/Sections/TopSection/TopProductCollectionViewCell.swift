@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ProductsCollectionViewCell: UICollectionViewCell {
+class TopProductCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
     //
@@ -18,11 +18,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
 
     // MARK: - Cell Configuration
-    func setup(product: ProductModel) {
+    func setup(product: TopProductModel) {
         productImage.image = UIImage(named: product.image)
-        productName.text = product.productName
-        brandName.text = product.brandName
-        productPrice.text = product.productPrice
+        productName.text = product.name
+        brandName.text = product.brand
+        productPrice.text = product.price
         
         setupUI()
     }
@@ -34,7 +34,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         // Button UI
         favouriteButton.setTitle("", for: .normal)
-//        favouriteButton.setImage(AppImage.Icon.loveButton, for: .normal)
+        favouriteButton.setImage(AppImage.Icon.loveButton, for: .normal)
         favouriteButton.tintColor = AppColor.primaryButton
         
         // Labels UI
