@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TopProductCollectionViewCell: UICollectionViewCell {
+class ProductsCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
     //
