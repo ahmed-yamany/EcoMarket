@@ -25,9 +25,9 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: - View Lifecycle
     //
-    let product: ProductDetails
+    let product: Product
     
-    init(product: ProductDetails) {
+    init(product: Product) {
         self.product = product
         super.init(nibName: nil, bundle: nil)
     }
@@ -41,14 +41,14 @@ class ProductDetailsViewController: UIViewController {
         configureUI()
         
         productNameLabel.text = product.name
-        productBrandLabel.text = product.brand
-        productImageView.image = product.uiImage
-        sizeView.setSizes(product.sizes)
-        colorView.setColors(product.uiColors)
+        productBrandLabel.text = product.brandName
+        productImageView.image = product.image
+        sizeView.setSizes(["s", "m", "l", "x", "xl"])
+        colorView.setColors([.red, .green, .blue, .purple])
         reviewView.setReview(count: "170 Review", review: 4.9)
-        descriptionTitleLabel.text = product.descriptionTitle
-        descriptionSubTitleLabel.text = product.description
-        sizeViewTitleLabel.text = product.sizeTitle
+        descriptionTitleLabel.text = "product.descriptionTitle"
+        descriptionSubTitleLabel.text = "product.description"
+        sizeViewTitleLabel.text = "sizes"
     }
     
     // MARK: - Private Methods
