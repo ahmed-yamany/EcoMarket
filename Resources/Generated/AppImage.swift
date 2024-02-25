@@ -147,6 +147,42 @@ enum AppImage {
             UIImage(named: "\(folderName)/arrowbutton")
         }
     }
+    
+    enum CreditCard {
+        private static var folderName: String {"creditcard"}
+        
+        static var credit1: UIImage? {
+            UIImage(named: "\(folderName)/credit1")
+        }
+        
+        static var credit2: UIImage? {
+            UIImage(named: "\(folderName)/credit2")
+        }
+        
+        static var credit3: UIImage? {
+            UIImage(named: "\(folderName)/credit3")
+        }
+        
+        static var credit4: UIImage? {
+            UIImage(named: "\(folderName)/credit4")
+        }
+        
+        static var visaLogo: UIImage? {
+            UIImage(named: "\(folderName)/visa")
+        }
+        
+        static var masterLogo: UIImage? {
+            UIImage(named: "\(folderName)/mastercard")
+        }
+        
+        static var paypalLogo: UIImage? {
+            UIImage(named: "\(folderName)/paypal")
+        }
+        
+        static var americanLogo: UIImage? {
+            UIImage(named: "\(folderName)/ameri")
+        }
+    }
 }
 
 enum AssetsFolderName: String {

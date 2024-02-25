@@ -74,6 +74,12 @@
 		D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */; };
 		D66084FF2B82BEA50071B562 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FE2B82BEA50071B562 /* HomeModel.swift */; };
 		D66085032B8375BB0071B562 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66085022B8375BB0071B562 /* HomeCoordinator.swift */; };
+		D67511712B8B749E007AAD92 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675116F2B8B749E007AAD92 /* CreditCardViewController.swift */; };
+		D67511722B8B749E007AAD92 /* CreditCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67511702B8B749E007AAD92 /* CreditCardViewController.xib */; };
+		D67511752B8B7636007AAD92 /* CardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67511742B8B7636007AAD92 /* CardTextField.swift */; };
+		D67511772B8B763C007AAD92 /* CardTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67511762B8B763C007AAD92 /* CardTextField.xib */; };
+		D675117A2B8B8C8D007AAD92 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */; };
+		D675117C2B8B8CC5007AAD92 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675117B2B8B8CC5007AAD92 /* CreditCardViewModel.swift */; };
 		D67B4A052B7D17380023E451 /* +makeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B4A042B7D17380023E451 /* +makeRounded.swift */; };
 		D6A0EBA32B6036B700079FF3 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */; };
 		D6A0EBA82B60386200079FF3 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */; };
@@ -272,6 +278,12 @@
 		D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D66084FE2B82BEA50071B562 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D66085022B8375BB0071B562 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		D675116F2B8B749E007AAD92 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
+		D67511702B8B749E007AAD92 /* CreditCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardViewController.xib; sourceTree = "<group>"; };
+		D67511742B8B7636007AAD92 /* CardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTextField.swift; sourceTree = "<group>"; };
+		D67511762B8B763C007AAD92 /* CardTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTextField.xib; sourceTree = "<group>"; };
+		D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
+		D675117B2B8B8CC5007AAD92 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
 		D67B4A042B7D17380023E451 /* +makeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+makeRounded.swift"; sourceTree = "<group>"; };
 		D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -738,6 +750,34 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D675116E2B8B7484007AAD92 /* CreditCard */ = {
+			isa = PBXGroup;
+			children = (
+				D67511732B8B7618007AAD92 /* CardTextField */,
+				D675117B2B8B8CC5007AAD92 /* CreditCardViewModel.swift */,
+				D675116F2B8B749E007AAD92 /* CreditCardViewController.swift */,
+				D67511702B8B749E007AAD92 /* CreditCardViewController.xib */,
+			);
+			path = CreditCard;
+			sourceTree = "<group>";
+		};
+		D67511732B8B7618007AAD92 /* CardTextField */ = {
+			isa = PBXGroup;
+			children = (
+				D67511742B8B7636007AAD92 /* CardTextField.swift */,
+				D67511762B8B763C007AAD92 /* CardTextField.xib */,
+			);
+			path = CardTextField;
+			sourceTree = "<group>";
+		};
+		D67511782B8B8C78007AAD92 /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */,
+			);
+			path = UITextField;
+			sourceTree = "<group>";
+		};
 		D67B4A032B7D17240023E451 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -999,6 +1039,7 @@
 		EE32E2D42B45B6D200675EAE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D67511782B8B8C78007AAD92 /* UITextField */,
 				D67B4A032B7D17240023E451 /* UIImageView */,
 				EE08DB082B68595400A358D9 /* UIColor */,
 				EEA6F9A72B58667E00A9E0C2 /* UIViewController */,
@@ -1032,6 +1073,7 @@
 		EE32E2D62B45B76A00675EAE /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D675116E2B8B7484007AAD92 /* CreditCard */,
 				EE32E2DA2B45B81E00675EAE /* Onboarding */,
 				EE32E2DB2B45B82400675EAE /* TabBar */,
 				D62F1C1C2B616EDA00FBE349 /* ProductDeatils */,
@@ -1507,6 +1549,7 @@
 				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
 				EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
+				D67511772B8B763C007AAD92 /* CardTextField.xib in Resources */,
 				D6E9AB5C2B73F99400BEA301 /* EditProfileCollectionViewCell.xib in Resources */,
 				D62F1C202B616EFA00FBE349 /* ProductDetailsViewController.xib in Resources */,
 				EEF069B52B5ED20D0063EE80 /* Poppins-Bold.ttf in Resources */,
@@ -1545,6 +1588,7 @@
 				EEA6F9B42B58671200A9E0C2 /* SuccessViewController.xib in Resources */,
 				D6C397D62B7CF8B4008649E1 /* NotificationCollectionViewCell.xib in Resources */,
 				D6519E632B80365C0049FEB1 /* FeaturesCollectionViewCell.xib in Resources */,
+				D67511722B8B749E007AAD92 /* CreditCardViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1614,6 +1658,7 @@
 				EEA8A38F2B7D75FA000CD3AF /* SettingsViewModel.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */,
+				D67511712B8B749E007AAD92 /* CreditCardViewController.swift in Sources */,
 				EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */,
 				EE64D7992B5AB9CE00C5CBD7 /* EMTabBarItem.swift in Sources */,
 				EE6225812B7ACD57002E2476 /* TabBarCoordinator.swift in Sources */,
@@ -1634,6 +1679,7 @@
 				EE8841542B81272200907CD1 /* AlertStatus.swift in Sources */,
 				A1D73D902B6E4ADF00B251EB /* AlertViewController.swift in Sources */,
 				D6519E842B8106290049FEB1 /* HomeFactory.swift in Sources */,
+				D675117C2B8B8CC5007AAD92 /* CreditCardViewModel.swift in Sources */,
 				EE08DB0A2B68596700A358D9 /* +hexString.swift in Sources */,
 				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
 				EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */,
@@ -1703,10 +1749,12 @@
 				EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */,
 				EE95CEC22B4E9D9200BC5524 /* Router.swift in Sources */,
 				EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */,
+				D675117A2B8B8C8D007AAD92 /* UITextField+Extension.swift in Sources */,
 				D6C397DA2B7CFBB3008649E1 /* Notification.swift in Sources */,
 				EE58F5DC2B5ECFA80068B93F /* PrimaryButton.swift in Sources */,
 				EE32E28C2B45B1D100675EAE /* AppDelegate.swift in Sources */,
 				D6519E5F2B80363D0049FEB1 /* FeaturesSection.swift in Sources */,
+				D67511752B8B7636007AAD92 /* CardTextField.swift in Sources */,
 				A1CB8C6F2B52788600316DD4 /* OnboardingViewController.swift in Sources */,
 				EE5CA13E2B5EF9CC00630C5D /* Category2ViewModel.swift in Sources */,
 				D67B4A052B7D17380023E451 /* +makeRounded.swift in Sources */,

@@ -25,6 +25,48 @@ internal enum L10n {
     ///   Created by Ahmed Yamany on 03/01/2024.
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
+  internal enum Credit {
+    internal enum AddButton {
+      /// Add Card
+      internal static let label = L10n.tr("Localizable", "credit.addButton.label", fallback: "Add Card")
+    }
+    internal enum CancelButton {
+      /// Cancel
+      internal static let label = L10n.tr("Localizable", "credit.cancelButton.label", fallback: "Cancel")
+    }
+    internal enum Card {
+      /// Card Details
+      internal static let label = L10n.tr("Localizable", "credit.card.label", fallback: "Card Details")
+    }
+    internal enum Cvv {
+      /// CVV
+      internal static let placeholder = L10n.tr("Localizable", "credit.cvv.placeholder", fallback: "CVV")
+    }
+    internal enum Details {
+      /// CARD HOLDER NAME
+      internal static let cardHolder = L10n.tr("Localizable", "credit.details.cardHolder", fallback: "CARD HOLDER NAME")
+      /// CARD NUMBER
+      internal static let cardNumber = L10n.tr("Localizable", "credit.details.cardNumber", fallback: "CARD NUMBER")
+      /// VALID THRU
+      internal static let valid = L10n.tr("Localizable", "credit.details.valid", fallback: "VALID THRU")
+    }
+    internal enum Expdate {
+      /// Exp date
+      internal static let placeholder = L10n.tr("Localizable", "credit.expdate.placeholder", fallback: "Exp date")
+    }
+    internal enum Header {
+      /// Add New Card
+      internal static let label = L10n.tr("Localizable", "credit.header.label", fallback: "Add New Card")
+    }
+    internal enum Holder {
+      /// Card holder name
+      internal static let placeholder = L10n.tr("Localizable", "credit.holder.placeholder", fallback: "Card holder name")
+    }
+    internal enum Number {
+      /// Card number
+      internal static let placeholder = L10n.tr("Localizable", "credit.number.placeholder", fallback: "Card number")
+    }
+  }
   internal enum Home {
     internal enum Theme2 {
       /// Our EcoMarket App

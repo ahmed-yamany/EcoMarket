@@ -55,3 +55,15 @@ with our them & conduction.";
 //
 "home.theme2.title" = "Wellcome,";
 "home.theme2.subtitle" = "Our EcoMarket App";
+//
+"credit.number.placeholder" = "Card number";
+"credit.holder.placeholder" = "Card holder name";
+"credit.expdate.placeholder" = "Exp date";
+"credit.cvv.placeholder" = "CVV";
+"credit.card.label" = "Card Details";
+"credit.header.label" = "Add New Card";
+"credit.addButton.label" = "Add Card";
+"credit.cancelButton.label" = "Cancel";
+"credit.details.cardNumber" = "CARD NUMBER";
+"credit.details.cardHolder" = "CARD HOLDER NAME";
+"credit.details.valid" = "VALID THRU";

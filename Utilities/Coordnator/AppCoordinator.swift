@@ -35,7 +35,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = self.router.navigationController
+        window.rootViewController = CreditCardViewController()
         window.makeKeyAndVisible()
         self.window = window
     } 

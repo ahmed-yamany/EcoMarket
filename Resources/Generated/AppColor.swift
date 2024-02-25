@@ -56,6 +56,13 @@ enum AppColor {
     static var stapperBackground: UIColor {
         return UIColor(named: "em-stapperBackground")!
     }
-
+    
+    static var cardTextFieldBorder: UIColor {
+        return UIColor(named: "em-cardTextFieldBorder")!
+    }
+    
+    static var cardTextFieldPlaceholder: UIColor {
+        return UIColor(named: "em-cardTextFieldPlaceholder")!
+    }
 }
 // swiftlint: enable all
