@@ -30,9 +30,7 @@ class ProductUseCase: ProductRepositories, ObservableObject {
     private func updateProducts() {
         repo.getProductsSource()
             .map { $0.toProducts() }
-            .sink { [weak self] products in
-                self?.products = products
-            }
+            .assign(to: \.products, on: self)
             .store(in: &cancellables)
     }
 
@@ -45,14 +43,12 @@ class ProductUseCase: ProductRepositories, ObservableObject {
              .eraseToAnyPublisher()
     }
     
-    func getProducts(category: String) -> AnyPublisher<[String: [Product]], Never> {
-        return $products
-            .map { products in
-                Dictionary(grouping: products, by: { $0.category.capitalized })
-                    .mapValues { products in
-                        products.sorted { $0.name < $1.name }
-                    }
-            }
-            .eraseToAnyPublisher()
+    func getProducts(category: String) async throws -> [Product] {
+        let filteredProducts = products
+            .filter { $0.category.lowercased() == category.lowercased() }
+        
+        let sortedProducts = filteredProducts.sorted { $0.name < $1.name }
+        
+        return sortedProducts
     }
 }

@@ -10,5 +10,5 @@ import Combine
 
 protocol ProductRepositories {
     func getCategories() -> AnyPublisher<[String], Never>
-    func getProducts(category: String) -> AnyPublisher<[String: [Product]], Never>
+    func getProducts(category: String) async throws -> [Product] 
 }

@@ -8,8 +8,8 @@
 import UIKit
 
 struct ProductDetail {
-    let images: [String]// url(string: images)
-    let rating: Double // 1 - 5
+    let images: [String]
+    let rating: Double
     let review: Int
     let productAttribute: [ProductAttribute]
     let description: String
@@ -31,7 +31,7 @@ struct ProductAttribute {
     let colors: [UIColor]
 }
 
-enum ProductSizes: String, CaseIterable {
+public enum ProductSizes: String, CaseIterable {
     case s
     case m
     case l
