@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct HomeModel: Codable {
+struct HomeModel {
     let sections: [HomeType]
 }
 
-enum HomeType: Codable {
-    case features(items: [ProductModel])
-    case categories(items: [CategoriesModel], title: String)
-    case top(items: [TopProductModel], title: String)
+enum HomeType {
+    case features(items: [Product])
+    case categories(items: [String], title: String)
+    case top(items: [Product], title: String)
 }

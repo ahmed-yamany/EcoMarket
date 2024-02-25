@@ -43,7 +43,10 @@ class Home2ViewController: UIViewController {
         configureCollectionView()
         collectionView.reloadData()
         configureUI()
-        
+        viewModel.reloadData = {[weak self] in
+            self?.sections = self?.viewModel.getSections() ?? []
+            self?.collectionView.reloadData()
+        }
     }
     
     // MARK: - Private Methods
