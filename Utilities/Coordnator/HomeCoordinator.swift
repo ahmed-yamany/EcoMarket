@@ -32,7 +32,8 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showDetails(product: Product) {
-        let viewController = ProductDetailsViewController(product: product)
+        let viewModel = ProductDetailViewModel(product: product, productDetailUseCase: ProductDetailUseCase())
+        let viewController = ProductDetailsViewController(viewModel: viewModel)
         router.push(viewController)
     }
 }
