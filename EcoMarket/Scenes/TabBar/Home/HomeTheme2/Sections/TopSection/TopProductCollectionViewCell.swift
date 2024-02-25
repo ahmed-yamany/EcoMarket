@@ -18,11 +18,11 @@ class TopProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
 
     // MARK: - Cell Configuration
-    func setup(product: TopProductModel) {
-        productImage.image = UIImage(named: product.image)
+    func setup(product: Product) {
+        productImage.image = product.image
         productName.text = product.name
-        brandName.text = product.brand
-        productPrice.text = product.price
+        brandName.text = product.brandName
+        productPrice.text = "\(product.price)"
         
         setupUI()
     }
