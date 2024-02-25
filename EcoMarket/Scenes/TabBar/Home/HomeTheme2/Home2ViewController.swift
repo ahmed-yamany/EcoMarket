@@ -45,7 +45,9 @@ class Home2ViewController: UIViewController {
         configureUI()
         viewModel.reloadData = {[weak self] in
             self?.sections = self?.viewModel.getSections() ?? []
-            self?.collectionView.reloadData()
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
         }
     }
     

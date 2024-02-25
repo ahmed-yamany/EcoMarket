@@ -15,22 +15,22 @@ class HomeViewModel {
     lazy var factory = HomeFactory(delegate: self)
     var reloadData: (() -> Void)?
     let coordinator: HomeCoordinatorProtocol
-    let productUseCase: ProductUseCase
+    let productUseCase: ProductRepositories
     private var cancellables = Set<AnyCancellable>()
 
-    @Published var products: [String: [Product]] = [:] {
+    @Published var products: [Product] = [] {
         didSet {
             updateHomeModel()
         }
     }
     
     @Published var categories: [String] = []
-    @Published var selectedCategory: String = "Dresses" {
+    @Published var selectedCategory: String = "" {
         didSet {
             updateProducts()
         }
     }
-    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductUseCase) {
+    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductRepositories) {
         self.coordinator = coordinator
         self.productUseCase = productUseCase
         updateCategories()
@@ -47,9 +47,9 @@ class HomeViewModel {
     func updateHomeModel() {
         homeModel = HomeModel(
             sections: [
-                .features(items: products["Features"] ?? [Product.mockData]),
+                .features(items: products ),
                 .categories(items: categories, title: "categories"),
-                .top(items: products[selectedCategory] ?? [Product.mockData], title: selectedCategory)])
+                .top(items: products, title: selectedCategory)])
         reloadData?()
     }
     
@@ -66,12 +66,14 @@ class HomeViewModel {
     }
     
     private func updateProducts() {
-        productUseCase.getProducts(category: selectedCategory)
-            .sink { [weak self] product in
-                self?.products = product
-                
+        Task {
+            do {
+                self.products = try await productUseCase.getProducts(category: selectedCategory)
+            } catch {
+                print(error.localizedDescription)
             }
-            .store(in: &cancellables)
+        }
+            
     }
 }
 

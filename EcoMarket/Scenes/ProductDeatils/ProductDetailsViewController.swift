@@ -6,7 +6,7 @@
 //
 
 import UIKit
-
+import Combine
 class ProductDetailsViewController: UIViewController {
     // MARK: - Outlets
     //
@@ -25,10 +25,11 @@ class ProductDetailsViewController: UIViewController {
     
     // MARK: - View Lifecycle
     //
-    let product: Product
-    
-    init(product: Product) {
-        self.product = product
+    let viewModel: ProductDetailViewModel
+    private var cancellables = Set<AnyCancellable>()
+
+    init(viewModel: ProductDetailViewModel) {
+        self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -39,16 +40,7 @@ class ProductDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        
-        productNameLabel.text = product.name
-        productBrandLabel.text = product.brandName
-        productImageView.image = product.image
-        sizeView.setSizes(["s", "m", "l", "x", "xl"])
-        colorView.setColors([.red, .green, .blue, .purple])
-        reviewView.setReview(count: "170 Review", review: 4.9)
-        descriptionTitleLabel.text = "product.descriptionTitle"
-        descriptionSubTitleLabel.text = "product.description"
-        sizeViewTitleLabel.text = "sizes"
+        bindUI()
     }
     
     // MARK: - Private Methods
@@ -68,6 +60,33 @@ class ProductDetailsViewController: UIViewController {
         setupAddToCartButton()
     }
     
+    private func bindUI() {
+        viewModel.$product.sink { [weak self] product in
+            self?.productNameLabel.text = product.name
+            self?.productBrandLabel.text = product.brandName
+            self?.productImageView.image = product.image
+        }.store(in: &cancellables)
+        viewModel.$productDetail.sink { [weak self] productDetail in
+            self?.reviewView.setReview(count: "\(productDetail.review)Review", review: productDetail.rating)
+            self?.descriptionTitleLabel.text = "Description"
+            self?.descriptionSubTitleLabel.text = productDetail.description
+            self?.sizeViewTitleLabel.text = "sizes"
+        }.store(in: &cancellables)
+        viewModel.$availableSizes.sink { [weak self] sizes in
+            self?.sizeView.setSizes(sizes)
+        }
+        .store(in: &cancellables)
+        viewModel.$availableColors.sink { [weak self] colors in
+            print(colors)
+            self?.colorView.setColors(colors)
+        }
+        .store(in: &cancellables)
+        viewModel.$maxAvailableProduct.sink {[weak self] max in
+            self?.stapperView.maximumValue = max
+            self?.stapperView.minmumValue = 1
+            
+        }.store(in: &cancellables)
+    }
     private func setupStapperView() {
         stapperView.maximumValue = 100
         stapperView.backgroundColor = AppColor.secondaryBackground
@@ -120,8 +139,8 @@ class ProductDetailsViewController: UIViewController {
 // MARK: - SizeViewDelegate
 //
 extension ProductDetailsViewController: SizeViewDelegate {
-    func sizeView(_ sizeView: CustomSizeView, didSelect size: String) {
-        print(size)
+    func sizeView(_ sizeView: CustomSizeView, didSelect size: ProductSizes) {
+        viewModel.selectedSize = size
     }
 }
 
@@ -129,7 +148,7 @@ extension ProductDetailsViewController: SizeViewDelegate {
 //
 extension ProductDetailsViewController: ColorViewDelegate {
     func colorView(_ sizeView: ColorView, didSelect color: UIColor?) {
-        print(color ?? .red)
+        viewModel.selectedColor = color ?? .blue
     }
 }
 
