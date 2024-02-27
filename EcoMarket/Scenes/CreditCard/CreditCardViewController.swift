@@ -10,7 +10,9 @@ import Combine
 import MakeConstraints
 
 class CreditCardViewController: UIViewController {
-
+    
+    private var cancellable = Set<AnyCancellable>()
+    
     @IBOutlet weak var cardDetailsStackView: UIStackView!
     @IBOutlet weak var validDate: UILabel!
     @IBOutlet weak var validLabel: UILabel!
@@ -35,8 +37,79 @@ class CreditCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        bindCardNumberTextField()
+        bindCardHolderTextField()
+        bindExpDateTextField()
         configureUI()
         cardNumberTextField.delegate = self
+    }
+    
+    private func bindCardNumberTextField() {
+        cardNumberTextField.textField.textFieldDidChange
+            .sink { [weak self] value in
+                // Remove any non-digit characters
+                let cleanedValue = value.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+                
+                guard cleanedValue.count <= 16 else {
+                    
+                    return
+                }
+                
+                // Insert space every 4 characters
+                var formattedValue = ""
+                var index = cleanedValue.startIndex
+                while index < cleanedValue.endIndex {
+                    let nextIndex = cleanedValue.index(index,
+                                                       offsetBy: min(4, cleanedValue.distance(from: index,
+                                                                                              to: cleanedValue.endIndex)))
+                    formattedValue += cleanedValue[index..<nextIndex]
+                    if nextIndex != cleanedValue.endIndex {
+                        formattedValue += " "
+                    }
+                    index = nextIndex
+                }
+                
+                self?.cardNumber.text = formattedValue
+                
+                if cleanedValue.isEmpty {
+                    self?.cardLogo.image = UIImage()
+                    self?.cardType.text = ""
+                } else if cleanedValue.hasPrefix("4") {
+                    self?.cardLogo.image = UIImage(named: "creditcard/visa")
+                    self?.cardType.text = "VISA"
+                } else if cleanedValue.hasPrefix("5") {
+                    self?.cardLogo.image = UIImage(named: "creditcard/mastercard")
+                    self?.cardType.text = "MasterCard"
+                }
+            }.store(in: &cancellable)
+    }
+    
+    private func bindCardHolderTextField() {
+        cardHolderTextField.textField.textFieldDidChange
+            .sink { [weak self] value in
+                let uppercasedValue = value.uppercased()
+                self?.cardHolderName.text = uppercasedValue
+            }.store(in: &cancellable)
+    }
+    
+    private func bindExpDateTextField() {
+        cardExpDateTextField.textField.textFieldDidChange
+            .sink { [weak self] value in
+                if self?.isValidExpirationDate(value) ?? false {
+                    self?.validDate.text = value
+                } else {
+                    self?.validDate.text = ""
+                }
+            }.store(in: &cancellable)
+    }
+    
+    func isValidExpirationDate(_ date: String) -> Bool {
+        let components = date.components(separatedBy: "/")
+        guard components.count == 2 else { return false }
+        guard let month = Int(components[0]), let year = Int(components[1]) else { return false }
+        // Check if month is within range 1-12 and year is in the future
+        let currentYear = Calendar.current.component(.year, from: Date()) % 100
+        return (1...12).contains(month) && year >= currentYear
     }
     
     private func configureUI() {
@@ -48,7 +121,7 @@ class CreditCardViewController: UIViewController {
         
         cardImage.layer.cornerRadius = 15
         cardImage.image = AppImage.CreditCard.credit1
-
+        
         configureTextFieldsPlaceHolder()
         configureCardLabel()
         configureHeaderLabel()
@@ -113,7 +186,7 @@ class CreditCardViewController: UIViewController {
 }
 
 extension CreditCardViewController: CardTextFieldDelegate {
-    func cardTextField(_ textField: CardTextField, textDidChange: String?) {
+    func cardTextField(_ textField: CardTextField, textDidChange newText: String?) {
         
     }
 }
