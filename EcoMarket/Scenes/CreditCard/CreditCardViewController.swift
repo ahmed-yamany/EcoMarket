@@ -45,6 +45,7 @@ class CreditCardViewController: UIViewController {
     }
     
     private func bindCardNumberTextField() {
+        cardNumberTextField.textField.keyboardType = .numberPad
         cardNumberTextField.textField.textFieldDidChange
             .sink { [weak self] value in
                 // Remove any non-digit characters
@@ -75,11 +76,17 @@ class CreditCardViewController: UIViewController {
                     self?.cardLogo.image = UIImage()
                     self?.cardType.text = ""
                 } else if cleanedValue.hasPrefix("4") {
-                    self?.cardLogo.image = UIImage(named: "creditcard/visa")
+                    self?.cardImage.image = AppImage.CreditCard.credit3
+                    self?.cardLogo.image = AppImage.CreditCard.visaLogo
                     self?.cardType.text = "VISA"
                 } else if cleanedValue.hasPrefix("5") {
-                    self?.cardLogo.image = UIImage(named: "creditcard/mastercard")
+                    self?.cardImage.image = AppImage.CreditCard.credit2
+                    self?.cardLogo.image = AppImage.CreditCard.masterCardLogo
                     self?.cardType.text = "MasterCard"
+                } else if cleanedValue.hasPrefix("6") {
+                    self?.cardImage.image = AppImage.CreditCard.credit4
+                    self?.cardLogo.image = AppImage.CreditCard.paypalLogo
+                    self?.cardType.text = "PAYPAl"
                 }
             }.store(in: &cancellable)
     }
@@ -93,13 +100,10 @@ class CreditCardViewController: UIViewController {
     }
     
     private func bindExpDateTextField() {
+        cardExpDateTextField.textField.keyboardType = .numberPad
         cardExpDateTextField.textField.textFieldDidChange
             .sink { [weak self] value in
-                if self?.isValidExpirationDate(value) ?? false {
-                    self?.validDate.text = value
-                } else {
-                    self?.validDate.text = ""
-                }
+                self?.validDate.text = value
             }.store(in: &cancellable)
     }
     
@@ -119,8 +123,8 @@ class CreditCardViewController: UIViewController {
         cardDetailsStackView.layoutMargins = .init(top: 20, left: 20, bottom: 20, right: 20)
         cardDetailsStackView.isLayoutMarginsRelativeArrangement = true
         
-        cardImage.layer.cornerRadius = 15
         cardImage.image = AppImage.CreditCard.credit1
+        cardImage.layer.cornerRadius = 15
         
         configureTextFieldsPlaceHolder()
         configureCardLabel()

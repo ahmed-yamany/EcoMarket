@@ -171,7 +171,7 @@ enum AppImage {
             UIImage(named: "\(folderName)/visa")
         }
         
-        static var masterLogo: UIImage? {
+        static var masterCardLogo: UIImage? {
             UIImage(named: "\(folderName)/mastercard")
         }
         
