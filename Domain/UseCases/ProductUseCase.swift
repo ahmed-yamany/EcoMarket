@@ -33,7 +33,7 @@ class ProductUseCase: ProductRepositories, ObservableObject {
             .assign(to: \.products, on: self)
             .store(in: &cancellables)
     }
-
+    
     func getCategories() -> AnyPublisher<[String], Never> {
         return $products
              .map { products in

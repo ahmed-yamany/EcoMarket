@@ -36,6 +36,7 @@ class HomeViewModel {
         updateCategories()
         updateHomeModel()
     }
+    
     func getSections() -> [any SectionsLayout] {
         guard let sections = homeModel?.sections else {
             return []

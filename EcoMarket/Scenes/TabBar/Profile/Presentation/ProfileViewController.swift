@@ -27,16 +27,12 @@ class ProfileViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         addCollectionViewSections()
-        configureCollectionView()
         collectionView.reloadData()
     }
     
     // MARK: - UI Configuration
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
-        sections.forEach { section in
-            section.registerCell(in: self.collectionView)
-        }
         collectionView.backgroundColor = AppColor.backgroundColor
         collectionView.collectionViewLayout = createCompositionalLayout()
     }
@@ -45,9 +41,26 @@ class ProfileViewController: UICollectionViewController {
         self.sections.removeAll()
         self.sections.append(UserSection())
         
-        _ = viewModel.getSectionLayouts().map { self.sections.append($0) }
+        Task {
+            do {
+                let sections: [any SectionsLayout] = try await viewModel.getSectionLayouts()
+                DispatchQueue.main.async { [weak self] in
+                    self?.updateCollectionView(with: sections)
+                }
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
     
+    private func updateCollectionView(with sections: [any SectionsLayout]) {
+        self.sections += sections
+        self.sections.forEach { section in
+            section.registerCell(in: self.collectionView)
+        }
+        self.configureCollectionView()
+    }
+ 
     // MARK: - Compositional Layout.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         let layout = UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in

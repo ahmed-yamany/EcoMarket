@@ -111,6 +111,8 @@
 		EE32E2C42B45B3D700675EAE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = EE32E2C62B45B3D700675EAE /* Localizable.strings */; };
 		EE32E2CF2B45B56700675EAE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2CE2B45B56700675EAE /* Fonts.swift */; };
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
+		EE33BB602B8FD35D00BA49D3 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE33BB5F2B8FD35D00BA49D3 /* MakeConstraints */; };
+		EE33BB652B8FD41700BA49D3 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */; };
 		EE3FDCB62B8A897300142AE2 /* ProductSourceDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = EE3FDCB52B8A897300142AE2 /* ProductSourceDetail.json */; };
 		EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */; };
 		EE58F5D72B5ECF7F0068B93F /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */; };
@@ -318,6 +320,7 @@
 		EE32E2C72B45B3D900675EAE /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
 		EE32E2CE2B45B56700675EAE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
+		EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 		EE3FDCB52B8A897300142AE2 /* ProductSourceDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProductSourceDetail.json; sourceTree = "<group>"; };
 		EE58F5E02B5ED0100068B93F /* OnboardingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		EE58F5E92B5ED0F20068B93F /* OnboardingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
@@ -403,6 +406,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EEA6F9992B5865BA00A9E0C2 /* MakeConstraints in Frameworks */,
+				EE33BB602B8FD35D00BA49D3 /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1209,15 +1213,40 @@
 		EE32E2E22B45B8E100675EAE /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				EEA8A3852B7D5A77000CD3AF /* Profile.json */,
+				EE33BB622B8FD3EC00BA49D3 /* Data */,
+				EE33BB612B8FD3E200BA49D3 /* Domain */,
+				EE33BB632B8FD3EF00BA49D3 /* Presentation */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		EE33BB612B8FD3E200BA49D3 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		EE33BB622B8FD3EC00BA49D3 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD3EE2B6FEC0B000CF78A /* ProfileModel.swift */,
 				EEA8A3892B7D7492000CD3AF /* Factory */,
+				EEA8A3852B7D5A77000CD3AF /* Profile.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		EE33BB632B8FD3EF00BA49D3 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
 				D62BD3F02B6FEC6F000CF78A /* Cell */,
 				D6E9AB4D2B73E1FF00BEA301 /* Sections */,
 				D62BD40E2B73B250000CF78A /* ProfileViewController.swift */,
-				D62BD3EE2B6FEC0B000CF78A /* ProfileModel.swift */,
 				EEA8A3832B7D513E000CD3AF /* ProfileViewModel.swift */,
 			);
-			path = Profile;
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		EE5CA14C2B5EFACE00630C5D /* UITableView */ = {
@@ -1494,6 +1523,7 @@
 			name = EcoMarket;
 			packageProductDependencies = (
 				EE11B1FA2B570EAF0077F5AA /* MakeConstraints */,
+				EE33BB5F2B8FD35D00BA49D3 /* MakeConstraints */,
 			);
 			productName = EcoMarket;
 			productReference = EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */;
@@ -1547,7 +1577,7 @@
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			packageReferences = (
-				EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+				EE33BB5E2B8FD35D00BA49D3 /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
 			);
 			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
@@ -1678,6 +1708,7 @@
 				5C45B09C2B8B59E500BE62F4 /* ProductDetailUseCase.swift in Sources */,
 				D62BD4082B73AC61000CF78A /* UserCollectionViewCell.swift in Sources */,
 				EE5CA1472B5EF9D500630C5D /* Category3ViewModel.swift in Sources */,
+				EE33BB652B8FD41700BA49D3 /* ProfileUseCase.swift in Sources */,
 				EEA8A38F2B7D75FA000CD3AF /* SettingsViewModel.swift in Sources */,
 				EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */,
 				EE58F5E42B5ED04F0068B93F /* OnboardingCollectionViewCell.swift in Sources */,
@@ -2106,7 +2137,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCLocalSwiftPackageReference section */
-		EE11B1F92B570EAF0077F5AA /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
+		EE33BB5E2B8FD35D00BA49D3 /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
 			isa = XCLocalSwiftPackageReference;
 			relativePath = Packages/MakeConstraints;
 		};
@@ -2114,6 +2145,10 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		EE11B1FA2B570EAF0077F5AA /* MakeConstraints */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = MakeConstraints;
+		};
+		EE33BB5F2B8FD35D00BA49D3 /* MakeConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MakeConstraints;
 		};
