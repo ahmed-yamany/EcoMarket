@@ -11,7 +11,8 @@ import MakeConstraints
 
 class CreditCardViewController: UIViewController {
     
-    private var cancellable = Set<AnyCancellable>()
+    var viewModel: CreditCardViewModel
+    private var cancellables = Set<AnyCancellable>()
     
     @IBOutlet weak var cardDetailsStackView: UIStackView!
     @IBOutlet weak var validDate: UILabel!
@@ -35,14 +36,57 @@ class CreditCardViewController: UIViewController {
     @IBOutlet weak var cardNumberTextField: CardTextField!
     @IBOutlet weak var containerStackView: UIStackView!
     
+    init(viewModel: CreditCardViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindCardNumberTextField()
+        bindViewModel()
+//        bindCardNumberTextField()
         bindCardHolderTextField()
         bindExpDateTextField()
         configureUI()
         cardNumberTextField.delegate = self
     }
+    
+    private func bindViewModel() {
+            cardNumberTextField.textField.textFieldDidChange
+                .compactMap { $0 }
+                .sink { [weak self] value in
+                    self?.viewModel.cardNumber.send(value)
+                }
+                .store(in: &cancellables)
+            
+        viewModel.$formattedCardNumber
+                .sink { [weak self] formattedNumber in
+                    self?.cardNumber.text = formattedNumber
+                }
+                .store(in: &cancellables)
+            
+            viewModel.$cardType
+                .sink { [weak self] cardType in
+                    self?.cardType.text = cardType
+                }
+                .store(in: &cancellables)
+            
+            viewModel.$cardLogo
+                .sink { [weak self] logo in
+                    self?.cardLogo.image = logo
+                }
+                .store(in: &cancellables)
+        
+        viewModel.$cardImage
+            .sink { [weak self] image in
+                self?.cardImage.image = image
+            }
+            .store(in: &cancellables)
+        }
     
     private func bindCardNumberTextField() {
         cardNumberTextField.textField.keyboardType = .numberPad
@@ -50,9 +94,9 @@ class CreditCardViewController: UIViewController {
             .sink { [weak self] value in
                 // Remove any non-digit characters
                 let cleanedValue = value.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+                self?.cardNumberTextField.textField.text = String(cleanedValue.prefix(16))
                 
                 guard cleanedValue.count <= 16 else {
-                    
                     return
                 }
                 
@@ -88,7 +132,7 @@ class CreditCardViewController: UIViewController {
                     self?.cardLogo.image = AppImage.CreditCard.paypalLogo
                     self?.cardType.text = "PAYPAl"
                 }
-            }.store(in: &cancellable)
+            }.store(in: &cancellables)
     }
     
     private func bindCardHolderTextField() {
@@ -96,7 +140,7 @@ class CreditCardViewController: UIViewController {
             .sink { [weak self] value in
                 let uppercasedValue = value.uppercased()
                 self?.cardHolderName.text = uppercasedValue
-            }.store(in: &cancellable)
+            }.store(in: &cancellables)
     }
     
     private func bindExpDateTextField() {
@@ -104,7 +148,7 @@ class CreditCardViewController: UIViewController {
         cardExpDateTextField.textField.textFieldDidChange
             .sink { [weak self] value in
                 self?.validDate.text = value
-            }.store(in: &cancellable)
+            }.store(in: &cancellables)
     }
     
     func isValidExpirationDate(_ date: String) -> Bool {
