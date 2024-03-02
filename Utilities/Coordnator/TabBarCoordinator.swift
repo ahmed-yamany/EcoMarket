@@ -86,7 +86,10 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     private func profileViewController() -> UIViewController {
         let coordinator = ProfileCoordinator(router: router)
         coordinator.start()
-        let viewModel = ProfileViewModel(coordinator: coordinator)
+        
+        let sectionLayoutFactory = ProfileSectionLayoutFactory(coordinator: coordinator)
+        let useCase = ProfileUseCase(sectionLayoutFactory: sectionLayoutFactory)
+        let viewModel = ProfileViewModel(coordinator: coordinator, useCase: useCase)
         return ProfileViewController(viewModel: viewModel)
     }
 }

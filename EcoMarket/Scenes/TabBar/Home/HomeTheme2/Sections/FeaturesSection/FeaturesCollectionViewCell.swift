@@ -8,7 +8,7 @@
 import UIKit
 
 protocol FeaturesCollectionViewCellDelegate: AnyObject {
-    func featuresCell(_ cell: UICollectionViewCell, didTapped model: ProductModel)
+    func featuresCell(_ cell: UICollectionViewCell, didTapped model: Product)
 }
 
 class FeaturesCollectionViewCell: UICollectionViewCell {
@@ -23,7 +23,7 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     
     weak var delegate: FeaturesCollectionViewCellDelegate?
-    var model: ProductModel?
+    var model: Product?
     // MARK: - Lifecycle Methods
     //
     override func awakeFromNib() {
@@ -33,13 +33,13 @@ class FeaturesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Configuration
     //
-    func setup(feature: ProductModel, delegate: FeaturesCollectionViewCellDelegate?) {
-        productImage.image = UIImage(named: feature.image)
-        productName.text = feature.productName
-        brandName.text = feature.brandName
-        productPrice.text = feature.productPrice
+    func setup(product: Product, delegate: FeaturesCollectionViewCellDelegate?) {
+        productImage.image = product.image
+        productName.text = product.name
+        brandName.text = product.brandName
+        productPrice.text = "\(product.price)"
         self.delegate = delegate
-        self.model = feature
+        self.model = product
     }
     
     // MARK: - UI Configuration

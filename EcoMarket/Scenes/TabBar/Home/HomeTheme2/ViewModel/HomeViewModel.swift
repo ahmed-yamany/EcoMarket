@@ -6,18 +6,35 @@
 //
 
 import UIKit
-
+import Combine
 typealias HomeSectionsDelegate = FeaturesSectionDelegate & CategoriesSectionDelegate & TopSectionDelegate
 
 class HomeViewModel {
-    let homeModel: HomeModel? = JSONDecoder().decode(forResource: "Home2")
-    lazy var factory = HomeFactory(delegate: self)
     
+    var homeModel: HomeModel? = HomeModel(sections: [])
+    lazy var factory = HomeFactory(delegate: self)
+    var reloadData: (() -> Void)?
     let coordinator: HomeCoordinatorProtocol
-    let useCase: HomeThem2UseCaseProtocol
-    init(coordinator: HomeCoordinatorProtocol, useCase: HomeThem2UseCaseProtocol) {
+    let productUseCase: ProductRepositories
+    private var cancellables = Set<AnyCancellable>()
+
+    @Published var products: [Product] = [] {
+        didSet {
+            updateHomeModel()
+        }
+    }
+    
+    @Published var categories: [String] = []
+    @Published var selectedCategory: String = "" {
+        didSet {
+            updateProducts()
+        }
+    }
+    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductRepositories) {
         self.coordinator = coordinator
-        self.useCase = useCase
+        self.productUseCase = productUseCase
+        updateCategories()
+        updateHomeModel()
     }
     
     func getSections() -> [any SectionsLayout] {
@@ -27,19 +44,50 @@ class HomeViewModel {
         
         return sections.map {factory.createSection(section: $0)}
     }
+    
+    func updateHomeModel() {
+        homeModel = HomeModel(
+            sections: [
+                .features(items: products ),
+                .categories(items: categories, title: "categories"),
+                .top(items: products, title: selectedCategory)])
+        reloadData?()
+    }
+    
+    private func updateCategories() {
+        productUseCase.getCategories()
+            .receive(on: DispatchQueue.main)
+            .sink { [weak self] categories in
+                self?.categories = categories
+                if let firstCategory = categories.first {
+                    self?.selectedCategory = firstCategory
+                }
+            }
+            .store(in: &cancellables)
+    }
+    
+    private func updateProducts() {
+        Task {
+            do {
+                self.products = try await productUseCase.getProducts(category: selectedCategory)
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+            
+    }
 }
 
 extension HomeViewModel: HomeSectionsDelegate {
-    func featuresSection(_ section: FeaturesSection, didSelect item: ProductModel) {
-        let product = useCase.getProductDetails(by: item.id)
-        coordinator.showDetails(product: product)
+    func featuresSection(_ section: FeaturesSection, didSelect item: Product) {
+        coordinator.showDetails(product: item)
     }
     
-    func categoriesSection(_ section: CategoriesSection, didSelect item: CategoriesModel) {
-        
+    func categoriesSection(_ section: CategoriesSection, didSelect item: String) {
+        selectedCategory = item
     }
     
-    func topSection(_ section: TopSection, didSelect item: TopProductModel) {
+    func topSection(_ section: TopSection, didSelect item: Product) {
         
     }
 }

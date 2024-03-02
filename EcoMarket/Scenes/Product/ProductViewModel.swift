@@ -11,7 +11,7 @@ import Combine
 public final class ProductViewModel {
     
     // MARK: - Published Properties
-    @Published var products: [ProductModel] = []
+    @Published var products: [Product] = []
     @Published var errorMessage: String?
     
     // MARK: - Public Methods

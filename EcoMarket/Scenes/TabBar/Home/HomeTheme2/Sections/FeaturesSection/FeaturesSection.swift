@@ -8,14 +8,14 @@
 import UIKit
 
 protocol FeaturesSectionDelegate: AnyObject {
-    func featuresSection(_ section: FeaturesSection, didSelect item: ProductModel)
+    func featuresSection(_ section: FeaturesSection, didSelect item: Product)
 }
 
 class FeaturesSection: SectionsLayout {
     
-    typealias ItemsType = ProductModel
+    typealias ItemsType = Product
     
-    var items: [ProductModel] = []
+    var items: [Product] = []
     weak var delegate: FeaturesSectionDelegate?
     
     init(items: [ItemsType], delegate: FeaturesSectionDelegate) {
@@ -53,7 +53,7 @@ class FeaturesSection: SectionsLayout {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(feature: items[indexPath.row], delegate: self)
+        cell.setup(product: items[indexPath.row], delegate: self)
         return cell
     }
     
@@ -82,7 +82,7 @@ class FeaturesSection: SectionsLayout {
 }
 
 extension FeaturesSection: FeaturesCollectionViewCellDelegate {
-    func featuresCell(_ cell: UICollectionViewCell, didTapped model: ProductModel) {
+    func featuresCell(_ cell: UICollectionViewCell, didTapped model: Product) {
         delegate?.featuresSection(self, didSelect: model)
     }
 }
