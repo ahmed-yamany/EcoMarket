@@ -42,6 +42,7 @@ class FeaturesSection: SectionsLayout {
         // Section
         let section = NSCollectionLayoutSection(group: group)
             section.contentInsets.bottom = 25
+        section.orthogonalScrollingBehavior = .groupPaging
         return section
     }
     

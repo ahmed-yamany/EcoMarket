@@ -15,5 +15,4 @@ struct ProductSource: Identifiable, Codable {
     let discountPercentage: Double
     let image: String
     let category: String
-    
 }
