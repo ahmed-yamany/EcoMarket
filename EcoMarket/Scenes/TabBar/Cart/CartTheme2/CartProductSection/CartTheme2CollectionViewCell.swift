@@ -34,6 +34,7 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     
     /// Configures the initial UI settings for the cell.
     private func configureUI() {
+        clipsToBounds = false
         productImage.layer.cornerRadius = 12
         configureLabelsUI()
         configureButtonUI()

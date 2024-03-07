@@ -34,6 +34,7 @@ class CartProductCollectionViewCell: UICollectionViewCell {
     
     /// Configures the initial UI settings for the cell.
     private func configureUI() {
+        clipsToBounds = false
         backgroundColor = .clear
         productImage.layer.cornerRadius = 8
         configureLabelsUI()
