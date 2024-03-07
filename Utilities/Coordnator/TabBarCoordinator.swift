@@ -68,7 +68,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
         let navigationController = UINavigationController()
         let alertInterface = AlertViewController()
         let router = AppRouter(navigationController: navigationController, alertInterface: alertInterface)
-        let coordinator = HomeCoordinator(router: router)
+        let coordinator = HomeCoordinator(router: router, tabBarCoordinator: self)
         coordinator.start()
         return navigationController
     }

@@ -76,11 +76,16 @@ class HomeViewModel {
         }
             
     }
+    
+    func viewWillAppear() {
+        coordinator.showTabBar()
+    }
 }
 
 extension HomeViewModel: HomeSectionsDelegate {
     func featuresSection(_ section: FeaturesSection, didSelect item: Product) {
         coordinator.showDetails(product: item)
+        coordinator.hideTabBar()
     }
     
     func categoriesSection(_ section: CategoriesSection, didSelect item: String) {
