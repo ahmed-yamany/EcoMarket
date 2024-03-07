@@ -83,6 +83,7 @@
 		D67DA32C2B9A008E0061C22C /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */; };
 		D67DA32E2B9A02830061C22C /* ColorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */; };
 		D67DA3302B9A04810061C22C /* CustomColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32F2B9A04810061C22C /* CustomColorView.swift */; };
+		D67DA3322B9A10AE0061C22C /* ColorViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA3312B9A10AE0061C22C /* ColorViewButton.swift */; };
 		D6A0EBA32B6036B700079FF3 /* ProductsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */; };
 		D6A0EBA82B60386200079FF3 /* ProductViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6A0EBA72B60386200079FF3 /* ProductViewModel.swift */; };
 		D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */; };
@@ -288,6 +289,7 @@
 		D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionView.swift; sourceTree = "<group>"; };
 		D67DA32F2B9A04810061C22C /* CustomColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColorView.swift; sourceTree = "<group>"; };
+		D67DA3312B9A10AE0061C22C /* ColorViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewButton.swift; sourceTree = "<group>"; };
 		D6A0EB9D2B6036A300079FF3 /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
 		D6A0EBA12B6036B600079FF3 /* ProductsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsCollectionViewCell.swift; sourceTree = "<group>"; };
 		D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductsCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -1412,6 +1414,7 @@
 				D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */,
 				D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */,
 				D67DA32F2B9A04810061C22C /* CustomColorView.swift */,
+				D67DA3312B9A10AE0061C22C /* ColorViewButton.swift */,
 			);
 			path = "Color View";
 			sourceTree = "<group>";
@@ -1762,6 +1765,7 @@
 				EEA8A3802B7D4A8C000CD3AF /* CollectionSectionHeader.swift in Sources */,
 				EEA6F9AD2B5866F100A9E0C2 /* LoginViewController.swift in Sources */,
 				EE7D33782B7AB0DC00EF5C34 /* Coordinator.swift in Sources */,
+				D67DA3322B9A10AE0061C22C /* ColorViewButton.swift in Sources */,
 				D6519E6F2B80E3FD0049FEB1 /* TopSection.swift in Sources */,
 				D6519E622B80365C0049FEB1 /* FeaturesCollectionViewCell.swift in Sources */,
 				EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */,
