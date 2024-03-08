@@ -22,8 +22,8 @@ class CategoriesCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Configuration
     //
-    func setup(category: CategoriesModel, isSelected: Bool) {
-        categoryName.text = category.name
+    func setup(category: String, isSelected: Bool) {
+        categoryName.text = category
         selected(isSelected: isSelected)
     }
     

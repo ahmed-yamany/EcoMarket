@@ -8,13 +8,13 @@
 import UIKit
 
 protocol TopSectionDelegate: AnyObject {
-    func topSection(_ section: TopSection, didSelect item: TopProductModel)
+    func topSection(_ section: TopSection, didSelect item: Product)
 }
 
 class TopSection: SectionsLayout {
-    typealias ItemsType = TopProductModel
+    typealias ItemsType = Product
     
-    var items: [TopProductModel] = []
+    var items: [Product] = []
     
     var headerTitle: String?
     

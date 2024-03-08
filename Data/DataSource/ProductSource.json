@@ -1,0 +1,74 @@
+[
+    {
+        "id": "1",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Features",
+    },
+    {
+        "id": "2",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Jackets"
+    },
+    {
+        "id": "3",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Jeans"
+    },
+    {
+        "id": "4",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Shoese"
+    },
+    {
+        "id": "5",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Dresses",
+    },
+    {
+        "id": "6",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Jackets"
+    },
+    {
+        "id": "7",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Jeans"
+    },
+    {
+        "id": "8",
+        "name": "Jacket_3",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Shoese"
+    }
+]

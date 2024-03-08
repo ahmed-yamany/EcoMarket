@@ -66,6 +66,9 @@ open class ColorView: UIStackView {
     ///
     /// - Parameter colors: An array of UIColor objects representing the available colors.
     public func setColors(_ colors: [UIColor?]) {
+        arrangedSubviews.forEach {
+            self.removeArrangedSubview($0)
+        }
         for color in colors {
             if let color {
                 let button = createRoundedButton(for: color)

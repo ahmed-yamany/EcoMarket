@@ -28,7 +28,7 @@ open class StapperView: UIView {
     var minmumValue: Int = 0 {
         didSet(newValue) {
             updateValue(newValue)
-            configureCounterLabel()
+           value = newValue
         }
     }
     

@@ -8,13 +8,13 @@
 import UIKit
 
 protocol CategoriesSectionDelegate: AnyObject {
-    func categoriesSection(_ section: CategoriesSection, didSelect item: CategoriesModel)
+    func categoriesSection(_ section: CategoriesSection, didSelect item: String)
 }
 
 class CategoriesSection: SectionsLayout {
-    typealias ItemsType = CategoriesModel
+    typealias ItemsType = String
     
-    var items: [CategoriesModel] = []
+    var items: [String] = []
     
     var isSelectedIndex: Int?
     
