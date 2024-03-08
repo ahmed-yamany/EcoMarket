@@ -18,8 +18,7 @@ class FeaturesSection: SectionsLayout {
     var items: [Product] = []
     weak var delegate: FeaturesSectionDelegate?
     
-    init(items: [ItemsType], delegate: FeaturesSectionDelegate) {
-        self.items = items
+    init(delegate: FeaturesSectionDelegate) {
         self.delegate = delegate
     }
     
@@ -41,8 +40,7 @@ class FeaturesSection: SectionsLayout {
         
         // Section
         let section = NSCollectionLayoutSection(group: group)
-            section.contentInsets.bottom = 25
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.contentInsets.bottom = 25
         return section
     }
     
@@ -54,7 +52,13 @@ class FeaturesSection: SectionsLayout {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(product: items[indexPath.row], delegate: self)
+        
+        guard let feature = items[safe: indexPath.row] else {
+            Logger.log("failed to get feature at \(String(describing: indexPath))", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        
+        cell.setup(product: feature, delegate: self)
         return cell
     }
     

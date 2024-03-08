@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Combine
 
 class Home2ViewController: UIViewController {
     
@@ -23,6 +24,8 @@ class Home2ViewController: UIViewController {
     @IBOutlet weak var titleLabel: UILabel!    
     @IBOutlet weak var headerStackViewHeightConstraints: NSLayoutConstraint!
     
+    var sectionsCancellable: Cancellable?
+    
     let viewModel: HomeViewModel
     init(viewModel: HomeViewModel) {
         self.viewModel = viewModel
@@ -38,13 +41,10 @@ class Home2ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         headerViewHeight = headerStackViewHeightConstraints.constant
-        sections = viewModel.getSections()
-       
-        configureCollectionView()
-        collectionView.reloadData()
+        bindViewModel()
         configureUI()
+        
         viewModel.reloadData = {[weak self] in
-            self?.sections = self?.viewModel.getSections() ?? []
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
             }
@@ -58,6 +58,22 @@ class Home2ViewController: UIViewController {
     
     // MARK: - Private Methods
     //
+    
+    private func bindViewModel() {
+        sectionsCancellable = viewModel.$sections
+            .sink {[weak self] sections in
+                guard let self = self else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    self.sections = sections
+                    self.configureCollectionView()
+                    self.collectionView.reloadData()
+                }
+            }
+    }
+    
+    // MARK: - UI Configuration
     private func configureUI() {
         view.backgroundColor = AppColor.backgroundColor
         containerStackView.layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
@@ -66,13 +82,11 @@ class Home2ViewController: UIViewController {
         setupLabelsUI()
     }
     
-    /// Configure buttons UI
     private func setupButtonsUI() {
         filterButton.setTitle("", for: .normal)
         filterButton.setImage(AppImage.HomeTheme2.filterButtonIcon, for: .normal)
     }
     
-    /// Congiure Labels UI
     private func setupLabelsUI() {
         titleLabel.text = L10n.Home.Theme2.title
         titleLabel.font = .h1
@@ -83,9 +97,6 @@ class Home2ViewController: UIViewController {
         subtitleLabel.textColor = AppColor.socialButton
     }
     
-    // MARK: - UI Configuration
-    
-    /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -98,9 +109,6 @@ class Home2ViewController: UIViewController {
     }
     
     // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
             self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
@@ -140,7 +148,6 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let maxHeight: CGFloat = 80
         let maxFontSize: CGFloat = 24
         let midOffsetY: CGFloat = offsetY * 0.5
-        
         if offsetY <= 0.0 {
             headerStackViewHeightConstraints.constant = maxHeight
             if offsetY > -maxFontSize {
@@ -151,7 +158,7 @@ extension Home2ViewController: UICollectionViewDelegate, UICollectionViewDataSou
             if offsetY * 2 <= maxFontSize {
                 titleLabel.font = .custom(size: maxFontSize - midOffsetY, weight: .bold)
             }
-            headerStackViewHeightConstraints.constant = maxHeight - offsetY
+            headerStackViewHeightConstraints.constant = maxHeight - offsetY * 2
         }
         self.view.layoutIfNeeded()
     }

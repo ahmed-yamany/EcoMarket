@@ -20,9 +20,9 @@ class CategoriesSection: SectionsLayout {
     
     var headerTitle: String?
     
-     weak var delegate: CategoriesSectionDelegate?
-    init(items: [ItemsType], delegate: CategoriesSectionDelegate, headerTitle: String?) {
-        self.items = items
+    weak var delegate: CategoriesSectionDelegate?
+    
+    init(delegate: CategoriesSectionDelegate, headerTitle: String?) {
         self.delegate = delegate
         self.headerTitle = headerTitle
     }
@@ -50,7 +50,7 @@ class CategoriesSection: SectionsLayout {
         section.interGroupSpacing = 6
         section.contentInsets.bottom = 25
         section.boundarySupplementaryItems = [header]
-        section.orthogonalScrollingBehavior = .groupPaging
+        section.orthogonalScrollingBehavior = .continuous
         return section
     }
     
@@ -82,7 +82,6 @@ class CategoriesSection: SectionsLayout {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         isSelectedIndex = indexPath.item
-        collectionView.reloadData()
         let item = items[indexPath.item]
         delegate?.categoriesSection(self, didSelect: item)
     }

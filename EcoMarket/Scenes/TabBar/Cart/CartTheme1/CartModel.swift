@@ -8,7 +8,7 @@
 import Foundation
 
 struct CartModel: Equatable, Codable {
-    let id = UUID()
+    var id = UUID()
     let name: String
     let brand: String
     let price: String

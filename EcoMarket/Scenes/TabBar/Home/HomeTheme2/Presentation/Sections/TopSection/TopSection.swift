@@ -18,11 +18,10 @@ class TopSection: SectionsLayout {
     
     var headerTitle: String?
     
-   weak var delegate: TopSectionDelegate?
-    init(items: [ItemsType], delegate: TopSectionDelegate, headerTitle: String) {
-        self.items = items
+    weak var delegate: TopSectionDelegate?
+    
+    init(delegate: TopSectionDelegate) {
         self.delegate = delegate
-        self.headerTitle = headerTitle
     }
     
     func numberOfItems() -> Int {
@@ -74,11 +73,17 @@ class TopSection: SectionsLayout {
         _ collectionView: UICollectionView,
         cellForItemAt indexPath: IndexPath
     ) -> UICollectionViewCell {
+        guard let product = items[safe: indexPath.row] else {
+            Logger.log("failed to get product at \(String(describing: indexPath))", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        
         guard let cell: TopProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(product: items[indexPath.row])
+        
+        cell.setup(product: product)
         return cell
     }
     
