@@ -85,6 +85,6 @@ extension HomeViewModel: HomeSectionsDelegate {
     }
     
     func topSection(_ section: TopSection, didSelect item: Product) {
-        
+        coordinator.showDetails(product: item)
     }
 }
