@@ -41,7 +41,6 @@ class ProductDetailsViewController: UIViewController {
         super.viewDidLoad()
         configureUI()
         bindUI()
-        colorView.setColors([.blue, .yellow, .red, .black, .purple, .green])
     }
     
     // MARK: - Private Methods
@@ -79,7 +78,7 @@ class ProductDetailsViewController: UIViewController {
         .store(in: &cancellables)
         viewModel.$availableColors.sink { [weak self] colors in
             print(colors)
-//            self?.colorView.setColors(colors)
+            self?.colorView.setColors(colors)
         }
         .store(in: &cancellables)
         viewModel.$maxAvailableProduct.sink {[weak self] max in
@@ -149,7 +148,7 @@ extension ProductDetailsViewController: SizeViewDelegate {
 //
 extension ProductDetailsViewController: CustomColorViewDelegate {
     func colorView(_ colorView: CustomColorView, didSelect color: UIColor) {
-//        viewModel.selectedColor = color ?? .blue
+        viewModel.selectedColor = color ?? .blue
         print(color)
     }
 }

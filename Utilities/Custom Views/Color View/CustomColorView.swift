@@ -20,8 +20,6 @@ open class CustomColorView: UIView {
     
     // MARK: Private Properties
     private var colors: [UIColor] = []
-    private var buttonWidth: CGFloat { frame.height }
-    private var buttonHeight: CGFloat { frame.height }
     
     // MARK: Public Properties
     public var selectedButton: UIColor?

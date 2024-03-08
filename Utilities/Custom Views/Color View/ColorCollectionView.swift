@@ -10,7 +10,7 @@ import UIKit
 // MARK: - SizeCollectionViewDelegate Protocol
 //
 protocol ColorCollectionViewDelegate: AnyObject {
-    func colorView(_ sizeView: ColorCollectionView, didSelect color: UIColor, cell: UICollectionViewCell, at indexPath: Int)
+    func colorView(_ colorView: ColorCollectionView, didSelect color: UIColor, cell: UICollectionViewCell, at indexPath: Int)
 }
 
 class ColorCollectionView: UICollectionView {

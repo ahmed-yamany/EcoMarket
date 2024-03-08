@@ -11,7 +11,7 @@ import MakeConstraints
 
 open class ColorCollectionViewCell: UICollectionViewCell {
     
-    let button = ColorViewButton()
+    let button = UIButton()
     // MARK: - Initializer
     //
     override init(frame: CGRect) {
@@ -29,7 +29,7 @@ open class ColorCollectionViewCell: UICollectionViewCell {
     private func setup() {
         // Button UI
         layer.cornerRadius = 10
-        
+        button.layer.cornerRadius = 10
         // Label
         addSubview(button)
         button.fillSuperview()
