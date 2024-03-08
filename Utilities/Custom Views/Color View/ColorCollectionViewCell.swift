@@ -11,7 +11,8 @@ import MakeConstraints
 
 open class ColorCollectionViewCell: UICollectionViewCell {
     
-    let button = UIButton()
+    let imageView = UIImageView()
+    
     // MARK: - Initializer
     //
     override init(frame: CGRect) {
@@ -28,26 +29,28 @@ open class ColorCollectionViewCell: UICollectionViewCell {
     //
     private func setup() {
         // Button UI
-        layer.cornerRadius = 10
-        button.layer.cornerRadius = 10
-        // Label
-        addSubview(button)
-        button.fillSuperview()
+        contentView.layer.cornerRadius = 10
+        
+        contentView.addSubview(imageView)
+        imageView.centerInSuperview()
+        imageView.equalSizeConstraints(15)
+        imageView.contentMode = .scaleAspectFit
     }
     
     // MARK: - Public Methods
     //
     func setupColor(_ color: UIColor) {
-        button.backgroundColor = color
+        contentView.backgroundColor = color
     }
     
     /// Updates the UI of the selected Cell and its Label
     func updateSelected() {
-        button.setImage(AppImage.checkImage, for: .normal)
+        imageView.image = UIImage(systemName: "checkmark")
+        imageView.tintColor = .black
     }
     
     /// Updates the UI of the unselected Cell and its Label
     func updateUnSelected() {
-        button.setImage(UIImage(), for: .normal)
+        imageView.image = nil
     }
 }

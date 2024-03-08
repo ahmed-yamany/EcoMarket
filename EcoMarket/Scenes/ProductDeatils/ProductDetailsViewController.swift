@@ -77,7 +77,6 @@ class ProductDetailsViewController: UIViewController {
         }
         .store(in: &cancellables)
         viewModel.$availableColors.sink { [weak self] colors in
-            print(colors)
             self?.colorView.setColors(colors)
         }
         .store(in: &cancellables)
@@ -148,8 +147,7 @@ extension ProductDetailsViewController: SizeViewDelegate {
 //
 extension ProductDetailsViewController: CustomColorViewDelegate {
     func colorView(_ colorView: CustomColorView, didSelect color: UIColor) {
-        viewModel.selectedColor = color ?? .blue
-        print(color)
+        viewModel.selectedColor = color
     }
 }
 

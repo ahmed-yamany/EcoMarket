@@ -85,13 +85,18 @@ extension ColorCollectionView: UICollectionViewDelegate, UICollectionViewDataSou
             return UICollectionViewCell()
         }
         
-        if selectedButton == colors[indexPath.row] {
+        guard let color = colors[safe: indexPath.row] else {
+            Logger.log("Failed to get color at indexPath \(String(describing: indexPath))", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        
+        if selectedButton == color {
             cell.updateSelected()
-            colorCollectionDelegate?.colorView(self, didSelect: colors[indexPath.row], cell: cell, at: indexPath.item)
+            colorCollectionDelegate?.colorView(self, didSelect: color, cell: cell, at: indexPath.item)
         } else {
             cell.updateUnSelected()
         }
-        cell.setupColor(colors[indexPath.row])
+        cell.setupColor(color)
         return cell
     }
     
