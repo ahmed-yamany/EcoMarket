@@ -30,6 +30,11 @@ class ProfileViewController: UICollectionViewController {
         collectionView.reloadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+    
     // MARK: - UI Configuration
     /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {

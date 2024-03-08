@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ProfileCoordinatorProtocol: Coordinator {
+    func showProfile()
     func showPersonalDetails()
     func showOrder()
     func showFavourites()
@@ -17,17 +18,31 @@ protocol ProfileCoordinatorProtocol: Coordinator {
     func showFAQ()
     func showPrivacyPolicy()
     func showCommunity()
+    func showTabBar()
+    func hideTabeBar()
 }
 
 class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     var router: Router
+    let tabBarCoordinator: TabBarCoordinatorProtocol
     
-    init(router: Router) {
+    init(router: Router, tabBarCoordinator: TabBarCoordinatorProtocol) {
         self.router = router
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
-    func start() {}
+    func start() {
+        showProfile()
+    }
+    
+    func showProfile() {
+        let factory = ProfileSectionLayoutFactory(coordinator: self)
+        let useCase = ProfileUseCase(sectionLayoutFactory: factory)
+        let viewModel = ProfileViewModel(coordinator: self, useCase: useCase)
+        let viewController = ProfileViewController(viewModel: viewModel)
+        router.push(viewController)
+    }
     
     func showPersonalDetails() {
         print("show personal detail")
@@ -65,5 +80,13 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     func showCommunity() {
         print("Community")
+    }
+    
+    func showTabBar() {
+        tabBarCoordinator.showTabBar()
+    }
+    
+    func hideTabeBar() {
+        tabBarCoordinator.hideTabBar()
     }
 }
