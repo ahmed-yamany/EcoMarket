@@ -90,6 +90,7 @@ open class StapperView: UIView {
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
         button.backgroundColor = .clear
+        button.tintColor = AppColor.primaryText
     }
     
     private func plusButtonTapped() {

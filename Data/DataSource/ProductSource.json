@@ -1,35 +1,35 @@
 [
     {
         "id": "1",
-        "name": "Jacket_3",
+        "name": "Vado Odelle Dress",
         "brandName": "Roller Rabbit",
         "price": 33,
         "discountPercentage": 33,
-        "image": "hometheme2/image-5",
+        "image": "hometheme2/image-6",
         "category": "Features",
     },
     {
         "id": "2",
-        "name": "Jacket_3",
-        "brandName": "Roller Rabbit",
+        "name": "Clean 90 Triole Sneakers",
+        "brandName": "Axel Arigato",
         "price": 33,
         "discountPercentage": 33,
-        "image": "hometheme2/image-5",
-        "category": "Jackets"
+        "image": "hometheme2/image-7",
+        "category": "Shoese"
     },
     {
         "id": "3",
-        "name": "Jacket_3",
-        "brandName": "Roller Rabbit",
+        "name": "Daypack Backpack",
+        "brandName": "Herschel Supply Co.",
         "price": 33,
         "discountPercentage": 33,
-        "image": "hometheme2/image-5",
+        "image": "hometheme2/image-8",
         "category": "Jeans"
     },
     {
         "id": "4",
-        "name": "Jacket_3",
-        "brandName": "Roller Rabbit",
+        "name": "Clean 90 Triole Sneakers",
+        "brandName": "Axel Arigato",
         "price": 33,
         "discountPercentage": 33,
         "image": "hometheme2/image-5",
@@ -37,7 +37,7 @@
     },
     {
         "id": "5",
-        "name": "Jacket_3",
+        "name": "Vado Odelle Dress",
         "brandName": "Roller Rabbit",
         "price": 33,
         "discountPercentage": 33,
@@ -50,25 +50,88 @@
         "brandName": "Roller Rabbit",
         "price": 33,
         "discountPercentage": 33,
-        "image": "hometheme2/image-5",
+        "image": "hometheme2/image-6",
         "category": "Jackets"
     },
     {
         "id": "7",
-        "name": "Jacket_3",
+        "name": "Vado Odelle Dress",
         "brandName": "Roller Rabbit",
         "price": 33,
         "discountPercentage": 33,
-        "image": "hometheme2/image-5",
+        "image": "hometheme2/image-6",
         "category": "Jeans"
     },
     {
         "id": "8",
-        "name": "Jacket_3",
+        "name": "Clean 90 Triole Sneakers",
+        "brandName": "Axel Arigato",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-7",
+        "category": "Shoese"
+    },
+    {
+        "id": "9",
+        "name": "Vado Odelle Dress",
         "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-6",
+        "category": "Features",
+    },
+    {
+        "id": "10",
+        "name": "Vado Odelle Dress",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-6",
+        "category": "Jeans"
+    },
+    {
+        "id": "11",
+        "name": "Clean 90 Triole Sneakers",
+        "brandName": "Axel Arigato",
         "price": 33,
         "discountPercentage": 33,
         "image": "hometheme2/image-5",
         "category": "Shoese"
+    },
+    {
+        "id": "12",
+        "name": "Vado Odelle Dress",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Dresses",
+    },
+    {
+        "id": "13",
+        "name": "Clean 90 Triole Sneakers",
+        "brandName": "Axel Arigato",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-7",
+        "category": "Shoese"
+    },
+    {
+        "id": "14",
+        "name": "Vado Odelle Dress",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Dresses",
+    },
+    {
+        "id": "15",
+        "name": "Vado Odelle Dress",
+        "brandName": "Roller Rabbit",
+        "price": 33,
+        "discountPercentage": 33,
+        "image": "hometheme2/image-5",
+        "category": "Dresses",
     }
 ]

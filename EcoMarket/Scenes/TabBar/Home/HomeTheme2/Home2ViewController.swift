@@ -51,6 +51,11 @@ class Home2ViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.viewWillAppear()
+    }
+    
     // MARK: - Private Methods
     //
     private func configureUI() {
