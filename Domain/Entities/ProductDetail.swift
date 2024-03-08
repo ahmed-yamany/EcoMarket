@@ -28,7 +28,7 @@ struct ProductDetail {
 struct ProductAttribute {
     let sizes: ProductSizes
     let avaliableInStok: [Int]
-    let colors: [UIColor]
+    let colors: [UIColor] 
 }
 
 public enum ProductSizes: String, CaseIterable {

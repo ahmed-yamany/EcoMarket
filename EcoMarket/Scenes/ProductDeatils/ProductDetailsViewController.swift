@@ -19,7 +19,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionSubTitleLabel: UILabel!
     @IBOutlet weak var sizeViewTitleLabel: UILabel!
     @IBOutlet weak var sizeView: CustomSizeView!
-    @IBOutlet weak var colorView: ColorView!
+    @IBOutlet weak var colorView: CustomColorView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToCartButton: PrimaryButton!
     
@@ -77,7 +77,6 @@ class ProductDetailsViewController: UIViewController {
         }
         .store(in: &cancellables)
         viewModel.$availableColors.sink { [weak self] colors in
-            print(colors)
             self?.colorView.setColors(colors)
         }
         .store(in: &cancellables)
@@ -121,7 +120,7 @@ class ProductDetailsViewController: UIViewController {
     }
     
     private func setupColorView() {
-        colorView.delegate = self
+        colorView.colorDelegate = self
     }
     
     private func setupFavoriteButton() {
@@ -146,9 +145,9 @@ extension ProductDetailsViewController: SizeViewDelegate {
 
 // MARK: - ColorViewDelegate
 //
-extension ProductDetailsViewController: ColorViewDelegate {
-    func colorView(_ sizeView: ColorView, didSelect color: UIColor?) {
-        viewModel.selectedColor = color ?? .blue
+extension ProductDetailsViewController: CustomColorViewDelegate {
+    func colorView(_ colorView: CustomColorView, didSelect color: UIColor) {
+        viewModel.selectedColor = color
     }
 }
 

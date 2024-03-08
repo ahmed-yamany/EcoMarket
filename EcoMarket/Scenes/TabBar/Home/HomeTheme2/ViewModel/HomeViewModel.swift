@@ -48,8 +48,8 @@ class HomeViewModel {
     func updateHomeModel() {
         homeModel = HomeModel(
             sections: [
-                .features(items: products ),
-                .categories(items: categories, title: "categories"),
+                .features(items: products),
+                .categories(items: categories, title: "Categories"),
                 .top(items: products, title: selectedCategory)])
         reloadData?()
     }
