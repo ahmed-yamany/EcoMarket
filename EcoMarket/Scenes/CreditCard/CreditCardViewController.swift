@@ -47,46 +47,13 @@ class CreditCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        bindViewModel()
-//        bindCardNumberTextField()
+        bindCardNumberTextField()
         bindCardHolderTextField()
+        bindCVVTextField()
         bindExpDateTextField()
         configureUI()
         cardNumberTextField.delegate = self
     }
-    
-    private func bindViewModel() {
-            cardNumberTextField.textField.textFieldDidChange
-                .compactMap { $0 }
-                .sink { [weak self] value in
-                    self?.viewModel.cardNumber.send(value)
-                }
-                .store(in: &cancellables)
-            
-        viewModel.$formattedCardNumber
-                .sink { [weak self] formattedNumber in
-                    self?.cardNumber.text = formattedNumber
-                }
-                .store(in: &cancellables)
-            
-            viewModel.$cardType
-                .sink { [weak self] cardType in
-                    self?.cardType.text = cardType
-                }
-                .store(in: &cancellables)
-            
-            viewModel.$cardLogo
-                .sink { [weak self] logo in
-                    self?.cardLogo.image = logo
-                }
-                .store(in: &cancellables)
-        
-        viewModel.$cardImage
-            .sink { [weak self] image in
-                self?.cardImage.image = image
-            }
-            .store(in: &cancellables)
-        }
     
     private func bindCardNumberTextField() {
         cardNumberTextField.textField.keyboardType = .numberPad
@@ -140,6 +107,19 @@ class CreditCardViewController: UIViewController {
             .sink { [weak self] value in
                 let uppercasedValue = value.uppercased()
                 self?.cardHolderName.text = uppercasedValue
+            }.store(in: &cancellables)
+    }
+    
+    private func bindCVVTextField() {
+        cardCVVTextField.textField.keyboardType = .numberPad
+        cardCVVTextField.textField.textFieldDidChange
+            .sink { [weak self] value in
+                let cleanedValue = value.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+                self?.cardCVVTextField.textField.text = String(cleanedValue.prefix(3))
+                
+                guard cleanedValue.count <= 3 else {
+                    return
+                }
             }.store(in: &cancellables)
     }
     
