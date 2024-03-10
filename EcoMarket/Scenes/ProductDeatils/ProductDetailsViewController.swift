@@ -8,8 +8,12 @@
 import UIKit
 import Combine
 class ProductDetailsViewController: UIViewController {
+    
+    // MARK: - Properties
+    let viewModel: ProductDetailViewModel
+    private var cancellables = Set<AnyCancellable>()
+    
     // MARK: - Outlets
-    //
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var reviewView: ProductReviewView!
     @IBOutlet weak var stapperView: StapperView!
@@ -23,11 +27,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToCartButton: PrimaryButton!
     
-    // MARK: - View Lifecycle
-    //
-    let viewModel: ProductDetailViewModel
-    private var cancellables = Set<AnyCancellable>()
-
+    // MARK: Initializer
     init(viewModel: ProductDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -37,6 +37,7 @@ class ProductDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
@@ -44,8 +45,6 @@ class ProductDetailsViewController: UIViewController {
     }
     
     // MARK: - Private Methods
-    //
-    /// UI Configuration
     private func configureUI() {
         view.backgroundColor = AppColor.backgroundColor
         productImageView.maskCustomProductShape()
@@ -132,6 +131,11 @@ class ProductDetailsViewController: UIViewController {
         addToCartButton.title = L10n.Product.Details.cart
         addToCartButton.setImage(AppImage.cartIcon, for: .normal)
         addToCartButton.tintColor = .white
+    }
+    
+    // MARK: - Buttons Action
+    @IBAction func addToCartTapped(_ sender: PrimaryButton) {
+        viewModel.addProductToCart()
     }
 }
 

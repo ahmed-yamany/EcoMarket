@@ -26,6 +26,8 @@ protocol EMTabBarViewModelInterface: AnyObject {
 class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
     static let shared = EMTabBarViewModel()
     
+    @Published var cart: [Product] = []
+    
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     

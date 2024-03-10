@@ -147,6 +147,9 @@
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                            <connections>
+                                                                <action selector="addToCartTapped:" destination="-1" eventType="touchUpInside" id="Vvs-3l-58G"/>
+                                                            </connections>
                                                         </button>
                                                     </subviews>
                                                 </stackView>

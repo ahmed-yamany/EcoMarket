@@ -44,9 +44,11 @@ class ProductDetailViewModel {
     
     @Published var totalPrice: Double = 1
     
-    init(product: Product, productDetailUseCase: ProductDetailRepositories) {
+    var coordinator: DetailsCoordinatorProtocol
+    init(product: Product, productDetailUseCase: ProductDetailRepositories, coordinator: DetailsCoordinatorProtocol) {
         self.productDetailUseCase = productDetailUseCase
         self.product = product
+        self.coordinator = coordinator
         updateProductDetail()
     }
     
@@ -95,5 +97,14 @@ class ProductDetailViewModel {
     
     private func getTotalPrice() {
         totalPrice = product.price * Double(currentStepperValue)
+    }
+    
+    func addProductToCart() {
+        if EMTabBarViewModel.shared.cart.contains(where: { $0 == product }) {
+            EMTabBarViewModel.shared.cart.removeAll(where: { $0 == product })
+        } else {
+            EMTabBarViewModel.shared.cart.append(product)
+            coordinator.showAlert(item: .init(message: "Added To Cart", buttonTitle: "Ok", image: .success, status: .success))
+        }
     }
 }

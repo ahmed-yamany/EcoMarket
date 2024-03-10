@@ -9,16 +9,16 @@ import UIKit
 
 /// A section layout for displaying products in a cart.
 class CartProductsSection: SectionsLayout {
-    typealias ItemsType = CartModel
+    typealias ItemsType = Product
     
-    var items: [CartModel] = []
+    var items: [ItemsType] = []
     
     /// Initializes the CartProductsSection with the provided items.
         ///
         /// - Parameter items: The array of products to be displayed in the section.
-    init(items: [ItemsType]) {
-        self.items = items
-    }
+//    init(items: [ItemsType]) {
+//        self.items = items
+//    }
     
     /// Provides the layout for the section.
        ///
@@ -80,7 +80,7 @@ class CartProductsSection: SectionsLayout {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(product: CartModel.products[indexPath.row])
+        cell.setup(product: items[indexPath.row])
         cell.layoutIfNeeded()
         collectionView.layoutIfNeeded()
         return cell

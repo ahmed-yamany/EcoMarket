@@ -30,5 +30,4 @@ final class HomeUseCase: HomeUseCaseProtocol {
     func getProducts(for category: String) async throws -> [Product] {
         products.toProducts().filter { $0.category.lowercased() == category.lowercased()}
     }
-    
 }
