@@ -44,8 +44,7 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showDetails(product: Product) {
-        let viewModel = ProductDetailViewModel(product: product, productDetailUseCase: ProductDetailUseCase())
-        let viewController = ProductDetailsViewController(viewModel: viewModel)
-        router.push(viewController)
+        var coordinator = DetailsCoordinator(router: router)
+        coordinator.showDetails(product: product)
     }
 }
