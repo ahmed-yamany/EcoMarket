@@ -45,7 +45,11 @@ class ProductDetailViewModel {
     @Published var totalPrice: Double = 1
     
     var coordinator: DetailsCoordinatorProtocol
-    init(product: Product, productDetailUseCase: ProductDetailRepositories, coordinator: DetailsCoordinatorProtocol) {
+    init(
+        product: Product,
+        productDetailUseCase: ProductDetailRepositories,
+        coordinator: DetailsCoordinatorProtocol
+    ) {
         self.productDetailUseCase = productDetailUseCase
         self.product = product
         self.coordinator = coordinator
@@ -100,11 +104,24 @@ class ProductDetailViewModel {
     }
     
     func addProductToCart() {
-        if EMTabBarViewModel.shared.cart.contains(where: { $0 == product }) {
-            EMTabBarViewModel.shared.cart.removeAll(where: { $0 == product })
-        } else {
-            EMTabBarViewModel.shared.cart.append(product)
-            coordinator.showAlert(item: .init(message: "Added To Cart", buttonTitle: "Ok", image: .success, status: .success))
+        Task {
+            do {
+                try await productDetailUseCase.addToCart(
+                    productId: product.id,
+                    count: currentStepperValue,
+                    selectedColor: selectedColor,
+                    selectedSize: selectedSize
+                )
+                coordinator.showAlert(item: .init(message: "Added To Cart", buttonTitle: "Ok", image: .success, status: .success))
+                
+            } catch {
+                print(error.localizedDescription)
+            }
         }
+//        if EMTabBarViewModel.shared.cart.contains(where: { $0 == product }) {
+//            EMTabBarViewModel.shared.cart.removeAll(where: { $0 == product })
+//        } else {
+//            EMTabBarViewModel.shared.cart.append(product)
+//        }
     }
 }

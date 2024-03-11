@@ -9,23 +9,10 @@ import UIKit
 
 /// A section layout for displaying products in a cart.
 class CartProductsSection: SectionsLayout {
-    typealias ItemsType = Product
+    typealias ItemsType = (Product, CartProduct)
     
     var items: [ItemsType] = []
-    
-    /// Initializes the CartProductsSection with the provided items.
-        ///
-        /// - Parameter items: The array of products to be displayed in the section.
-//    init(items: [ItemsType]) {
-//        self.items = items
-//    }
-    
-    /// Provides the layout for the section.
-       ///
-       /// - Parameters:
-       ///   - collectionView: The collection view displaying the section.
-       ///   - layoutEnvironment: The environment describing the layout of the collection view.
-       /// - Returns: An NSCollectionLayoutSection representing the layout of the section.
+
     func sectionLayout(
         _ collectionView: UICollectionView,
         layoutEnvironment: NSCollectionLayoutEnvironment
@@ -35,7 +22,7 @@ class CartProductsSection: SectionsLayout {
         configurations.backgroundColor = .clear
         configurations.showsSeparators = false
         
-        configurations.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in 
+        configurations.trailingSwipeActionsConfigurationProvider = { [weak self] indexPath in
             self?.trailingSwipeActionConfiguration(collectionView, at: indexPath)
         }
         
@@ -80,7 +67,7 @@ class CartProductsSection: SectionsLayout {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(product: items[indexPath.row])
+        cell.setup(cart: items[indexPath.row])
         cell.layoutIfNeeded()
         collectionView.layoutIfNeeded()
         return cell

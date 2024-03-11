@@ -23,12 +23,20 @@ class DetailsCoordinator: DetailsCoordinatorProtocol {
     func start() {}
     
     func showDetails(product: Product) {
-        let viewModel = ProductDetailViewModel(product: product, productDetailUseCase: ProductDetailUseCase(), coordinator: self)
+        let cartUseCase = EMTabBarViewModel.shared
+        let productDetailUseCase = ProductDetailUseCase(cartUseCase: cartUseCase)
+        let viewModel = ProductDetailViewModel(
+            product: product,
+            productDetailUseCase: productDetailUseCase,
+            coordinator: self
+        )
         let viewController = ProductDetailsViewController(viewModel: viewModel)
         router.push(viewController)
     }
     
     func showAlert(item: AlertItem) {
-        router.showAlert(item: item)
+        DispatchQueue.main.async {
+            self.router.showAlert(item: item)
+        }
     }
 }

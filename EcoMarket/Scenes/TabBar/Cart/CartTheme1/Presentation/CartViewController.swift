@@ -13,11 +13,12 @@ class CartViewController: UICollectionViewController {
     // MARK: - Properties
     var sections: [any SectionsLayout] = []
     private var cancellable: Set<AnyCancellable> = []
-    let coordinator: CartCoordinatorProtocol
     
-    // MARK: Initializer
-    init(coordinator: CartCoordinatorProtocol) {
-        self.coordinator = coordinator
+    // MARK: - Initializer -
+    let viewModel: CartViewModel
+
+    init(viewModel: CartViewModel) {
+        self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
     }
     
@@ -28,6 +29,7 @@ class CartViewController: UICollectionViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.viewDidLoad()
         addCollectionViewSections()
     }
     
@@ -35,10 +37,15 @@ class CartViewController: UICollectionViewController {
         sections.removeAll()
         
         let productSection = CartProductsSection()
-        EMTabBarViewModel.shared.$cart.sink { [weak self] product in
-            productSection.items = product
-            self?.collectionView.reloadData()
-        }.store(in: &cancellable)
+        
+        viewModel.$products.sink { [weak self] products in
+            productSection.items = products
+            DispatchQueue.main.async {
+                self?.collectionView.reloadData()
+            }
+        }
+        .store(in: &cancellable)
+        
         sections = [productSection, CartPromoCodeSection(), CartCheckOutSection()]
         configureCollectionView()
     }

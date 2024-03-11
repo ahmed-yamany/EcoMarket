@@ -74,7 +74,14 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func cartViewController() -> UIViewController {
-        return CartViewController(coordinator: self)
+        let useCase = EMTabBarViewModel.shared
+        let productUseCase = ProductUseCase()
+        let viewModel = CartViewModel(
+            cartUseCase: useCase,
+            coordinator: self,
+            productUseCase: productUseCase
+        )
+        return CartViewController(viewModel: viewModel)
     }
     
     private func notificationViewController() -> UIViewController {

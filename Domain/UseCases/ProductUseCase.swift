@@ -51,4 +51,10 @@ class ProductUseCase: ProductRepositories, ObservableObject {
         
         return sortedProducts
     }
+    
+    func getProducts(by ids: [String]) async throws -> [Product] {
+        products.filter { product in
+            ids.contains { $0.lowercased() == product.id.lowercased() }
+        }
+    }
 }

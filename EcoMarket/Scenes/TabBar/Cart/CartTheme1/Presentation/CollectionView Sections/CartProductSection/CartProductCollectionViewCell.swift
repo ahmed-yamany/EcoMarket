@@ -22,11 +22,14 @@ class CartProductCollectionViewCell: UICollectionViewCell {
     /// Configures the cell with the provided product data.
     ///
     /// - Parameter product: The product model to be displayed.
-    func setup(product: Product) {
+    func setup(cart: (Product, CartProduct)) {
+        let product = cart.0
+        let cartProduct = cart.1
         productName.text = product.name
         brandName.text = product.brandName
         productPrice.text = String(product.price)
         productImage.image = product.image
+        stapperView.value = cartProduct.count
         configureUI()
     }
     

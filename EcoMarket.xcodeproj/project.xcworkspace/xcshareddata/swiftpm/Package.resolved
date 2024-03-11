@@ -1,0 +1,15 @@
+{
+  "originHash" : "bd8e9860d9462525bb328f405d4da007b85e399436df7068f60aacc26ffcdb36",
+  "pins" : [
+    {
+      "identity" : "makeconstraints",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ahmed-yamany/MakeConstraints",
+      "state" : {
+        "branch" : "main",
+        "revision" : "0d4436023c7ee51b13a37e079f95dd1b6c6d8ed0"
+      }
+    }
+  ],
+  "version" : 3
+}

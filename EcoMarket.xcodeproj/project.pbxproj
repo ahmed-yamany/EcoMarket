@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 60;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -110,6 +110,9 @@
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
 		EE33BB652B8FD41700BA49D3 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */; };
 		EE3FDCB62B8A897300142AE2 /* ProductSourceDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = EE3FDCB52B8A897300142AE2 /* ProductSourceDetail.json */; };
+		EE5587952B9F4C78005C2036 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE5587942B9F4C78005C2036 /* MakeConstraints */; };
+		EE55879A2B9F55F1005C2036 /* CartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5587992B9F55F1005C2036 /* CartUseCase.swift */; };
+		EE55879C2B9F560E005C2036 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55879B2B9F560E005C2036 /* CartViewModel.swift */; };
 		EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */; };
 		EE58F5D72B5ECF7F0068B93F /* parentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A52B58667500A9E0C2 /* parentViewController.swift */; };
 		EE58F5D82B5ECF850068B93F /* +JSONDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9DC2B58750A00A9E0C2 /* +JSONDecoder.swift */; };
@@ -156,7 +159,6 @@
 		EE64D79D2B5ABA2B00C5CBD7 /* EMTabBarType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79C2B5ABA2B00C5CBD7 /* EMTabBarType.swift */; };
 		EE64D79F2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE64D79E2B5ABA5400C5CBD7 /* EMTabBarViewModel.swift */; };
 		EE79C6022B9B85A9004AA058 /* Collection+.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79C6012B9B85A9004AA058 /* Collection+.swift */; };
-		EE79C6052B9B8B7C004AA058 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE79C6042B9B8B7C004AA058 /* MakeConstraints */; };
 		EE79C60C2B9B8EF9004AA058 /* HomeUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE79C60B2B9B8EF9004AA058 /* HomeUseCase.swift */; };
 		EE7D33782B7AB0DC00EF5C34 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33772B7AB0DC00EF5C34 /* Coordinator.swift */; };
 		EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */; };
@@ -317,6 +319,8 @@
 		EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Strings+Generated.swift"; path = "Resources/Generated/Strings+Generated.swift"; sourceTree = SOURCE_ROOT; };
 		EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUseCase.swift; sourceTree = "<group>"; };
 		EE3FDCB52B8A897300142AE2 /* ProductSourceDetail.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ProductSourceDetail.json; sourceTree = "<group>"; };
+		EE5587992B9F55F1005C2036 /* CartUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartUseCase.swift; sourceTree = "<group>"; };
+		EE55879B2B9F560E005C2036 /* CartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewModel.swift; sourceTree = "<group>"; };
 		EE58F5E02B5ED0100068B93F /* OnboardingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingTests.swift; sourceTree = "<group>"; };
 		EE58F5E92B5ED0F20068B93F /* OnboardingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EcoMarket.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -402,7 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE79C6052B9B8B7C004AA058 /* MakeConstraints in Frameworks */,
+				EE5587952B9F4C78005C2036 /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,10 +739,8 @@
 		D62F1C7A2B6591EF00FBE349 /* CartTheme1 */ = {
 			isa = PBXGroup;
 			children = (
-				D62BD3C92B6D9426000CF78A /* CartCheckOutSection */,
-				D62BD3C22B6D93D6000CF78A /* CartPromoSection */,
-				D62BD3BB2B6D93B3000CF78A /* CartProductSection */,
-				D62F1C672B653E3000FBE349 /* CartViewController.swift */,
+				EE5587982B9F55DD005C2036 /* Domain */,
+				EE5587962B9F55C3005C2036 /* Presentation */,
 			);
 			path = CartTheme1;
 			sourceTree = "<group>";
@@ -843,13 +845,6 @@
 				D6A0EBA22B6036B600079FF3 /* ProductsCollectionViewCell.xib */,
 			);
 			path = Cell;
-			sourceTree = "<group>";
-		};
-		D6C397CC2B7BDC32008649E1 /* CartFactory */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = CartFactory;
 			sourceTree = "<group>";
 		};
 		D6C397CD2B7BDE1A008649E1 /* HeaderView */ = {
@@ -986,6 +981,7 @@
 				EE32E2BC2B45B2ED00675EAE /* Resources */,
 				EE8925612B5AE1FE0025C166 /* EcoMarketTests */,
 				EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */,
+				EE5587932B9F4C78005C2036 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1185,7 +1181,6 @@
 			children = (
 				D62F1C7A2B6591EF00FBE349 /* CartTheme1 */,
 				D62759FB2B67DA750069CF9C /* CartTheme2 */,
-				D6C397CC2B7BDC32008649E1 /* CartFactory */,
 			);
 			path = Cart;
 			sourceTree = "<group>";
@@ -1237,6 +1232,41 @@
 				EEA8A3832B7D513E000CD3AF /* ProfileViewModel.swift */,
 			);
 			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EE5587932B9F4C78005C2036 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE5587962B9F55C3005C2036 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				EE5587972B9F55CE005C2036 /* CollectionView Sections */,
+				D62F1C672B653E3000FBE349 /* CartViewController.swift */,
+				EE55879B2B9F560E005C2036 /* CartViewModel.swift */,
+			);
+			path = Presentation;
+			sourceTree = "<group>";
+		};
+		EE5587972B9F55CE005C2036 /* CollectionView Sections */ = {
+			isa = PBXGroup;
+			children = (
+				D62BD3C92B6D9426000CF78A /* CartCheckOutSection */,
+				D62BD3C22B6D93D6000CF78A /* CartPromoSection */,
+				D62BD3BB2B6D93B3000CF78A /* CartProductSection */,
+			);
+			path = "CollectionView Sections";
+			sourceTree = "<group>";
+		};
+		EE5587982B9F55DD005C2036 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				EE5587992B9F55F1005C2036 /* CartUseCase.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		EE5CA14C2B5EFACE00630C5D /* UITableView */ = {
@@ -1541,7 +1571,7 @@
 			);
 			name = EcoMarket;
 			packageProductDependencies = (
-				EE79C6042B9B8B7C004AA058 /* MakeConstraints */,
+				EE5587942B9F4C78005C2036 /* MakeConstraints */,
 			);
 			productName = EcoMarket;
 			productReference = EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */;
@@ -1595,7 +1625,7 @@
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			packageReferences = (
-				EE79C6032B9B8B7C004AA058 /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+				EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */,
 			);
 			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
@@ -1753,6 +1783,7 @@
 				EE58F5DF2B5ECFC50068B93F /* AppImage.swift in Sources */,
 				EE5CA1332B5EF9BF00630C5D /* CategoryTableViewCell.swift in Sources */,
 				D6C397D12B7CF894008649E1 /* NotificationViewController.swift in Sources */,
+				EE55879C2B9F560E005C2036 /* CartViewModel.swift in Sources */,
 				D6C397CF2B7BDE2B008649E1 /* Header.swift in Sources */,
 				EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */,
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
@@ -1776,6 +1807,7 @@
 				D6519E6F2B80E3FD0049FEB1 /* TopSection.swift in Sources */,
 				D6519E622B80365C0049FEB1 /* FeaturesCollectionViewCell.swift in Sources */,
 				EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */,
+				EE55879A2B9F55F1005C2036 /* CartUseCase.swift in Sources */,
 				D62F1C3E2B61854500FBE349 /* SizeView.swift in Sources */,
 				EE79C60C2B9B8EF9004AA058 /* HomeUseCase.swift in Sources */,
 				EE58F5E82B5ED0860068B93F /* SuccessViewController.swift in Sources */,
@@ -2153,16 +2185,21 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCLocalSwiftPackageReference section */
-		EE79C6032B9B8B7C004AA058 /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
-			isa = XCLocalSwiftPackageReference;
-			relativePath = Packages/MakeConstraints;
+/* Begin XCRemoteSwiftPackageReference section */
+		EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ahmed-yamany/MakeConstraints";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
 		};
-/* End XCLocalSwiftPackageReference section */
+/* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EE79C6042B9B8B7C004AA058 /* MakeConstraints */ = {
+		EE5587942B9F4C78005C2036 /* MakeConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
+			package = EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */;
 			productName = MakeConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */

@@ -13,8 +13,6 @@ enum AppImage {
         return UIImage(named: "app-logo")
     }
     
-    
-    
     static var searchImage: UIImage? {
         return UIImage(systemName: "magnifyingglass")
     }
@@ -23,8 +21,6 @@ enum AppImage {
         return UIImage(named: "icon/profile-arrow")
     }
     
-    
-
     static var alertSuccessefulShopping: UIImage? {
         return UIImage(named: "icon-alertSuccessefulShopping")
 	}
