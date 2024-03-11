@@ -133,17 +133,20 @@
                                                     <rect key="frame" x="0.0" y="282.66666666666663" width="343" height="62.333333333333314"/>
                                                     <subviews>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eoy-b2-zvb">
-                                                            <rect key="frame" x="0.0" y="0.0" width="50" height="62.333333333333336"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="60" height="62.333333333333336"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="50" id="Zyx-Qi-dN6"/>
+                                                                <constraint firstAttribute="width" constant="60" id="Quj-Mm-KbO"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                                            <connections>
+                                                                <action selector="addToFavoriteTapped:" destination="-1" eventType="touchUpInside" id="ptY-y5-zzC"/>
+                                                            </connections>
                                                         </button>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qyk-hm-ZAe" customClass="PrimaryButton" customModule="EcoMarket" customModuleProvider="target">
                                                             <rect key="frame" x="183" y="0.0" width="160" height="62.333333333333336"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="width" constant="160" id="3CP-04-Wop"/>
+                                                                <constraint firstAttribute="width" constant="160" id="Hrv-EE-mGo"/>
                                                             </constraints>
                                                             <state key="normal" title="Button"/>
                                                             <buttonConfiguration key="configuration" style="plain" title="Button"/>

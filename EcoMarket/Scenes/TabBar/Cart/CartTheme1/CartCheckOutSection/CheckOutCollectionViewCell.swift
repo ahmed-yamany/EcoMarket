@@ -47,7 +47,7 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
         checkOutButton.setTitle("Proceed to Checkout", for: .normal)
         checkOutButton.setTitleColor(AppColor.mainTheme, for: .normal)
         checkOutButton.layer.cornerRadius = 8
-        checkOutButton.setImage(AppImage.arrowImage, for: .normal)
+        checkOutButton.setImage(AppImage.Icon.arrow, for: .normal)
         checkOutButton.backgroundColor = AppColor.primaryButton
         
         // Set the semantic content attribute to force right-to-left layout

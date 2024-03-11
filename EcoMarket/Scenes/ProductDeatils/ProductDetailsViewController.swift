@@ -123,19 +123,25 @@ class ProductDetailsViewController: UIViewController {
     }
     
     private func setupFavoriteButton() {
-        favoriteButton.setImage(AppImage.favIcon, for: .normal)
+        favoriteButton.setImage(AppImage.ProductDetails.favourite, for: .normal)
         favoriteButton.setTitle("", for: .normal)
+        favoriteButton.backgroundColor = AppColor.stapperBackground
+        favoriteButton.layer.cornerRadius = 10
     }
     
     private func setupAddToCartButton() {
         addToCartButton.title = L10n.Product.Details.cart
-        addToCartButton.setImage(AppImage.cartIcon, for: .normal)
+        addToCartButton.setImage(AppImage.ProductDetails.cartIcon, for: .normal)
         addToCartButton.tintColor = .white
     }
     
     // MARK: - Buttons Action
     @IBAction func addToCartTapped(_ sender: PrimaryButton) {
         viewModel.addProductToCart()
+    }
+    
+    @IBAction func addToFavoriteTapped(_ sender: Any) {
+        print("Added")
     }
 }
 

@@ -15,13 +15,14 @@ struct Product: Identifiable, Equatable {
     let discountPercentage: Double
     let image: UIImage?
     let category: String
-    static let mockData = Product(id: "1",
+    static let mockData: [Product] = [ Product(id: "1",
                                   name: "test",
                                   brandName: "brandName",
                                   price: 44,
                                   discountPercentage: 32,
-                                  image: UIImage(named: "cart/image1"),
+                                  image: UIImage(named: "product"),
                                   category: "")
+                                       ]
     
 }
 

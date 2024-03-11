@@ -28,7 +28,7 @@ class ProductReviewView: UIView {
         layer.cornerRadius = 15
         backgroundColor = .black
         
-        starImageView.image = AppImage.ratingIcon
+        starImageView.image = AppImage.Icon.rating
         configureReviewLabel()
         configureReviewCountLabel()
     }

@@ -11,6 +11,6 @@ class AppleButton: SocialMediaButton {
     override func setupButton() {
         super.setupButton()
         title = L10n.Login.apple
-        setImage(AppImage.appleIcon, for: .normal)
+        setImage(AppImage.Auth.appleIcon, for: .normal)
     }
 }
