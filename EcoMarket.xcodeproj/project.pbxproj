@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -110,7 +110,6 @@
 		EE32E2D92B45B7E600675EAE /* Strings+Generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE32E2D82B45B7E600675EAE /* Strings+Generated.swift */; };
 		EE33BB652B8FD41700BA49D3 /* ProfileUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE33BB642B8FD41700BA49D3 /* ProfileUseCase.swift */; };
 		EE3FDCB62B8A897300142AE2 /* ProductSourceDetail.json in Resources */ = {isa = PBXBuildFile; fileRef = EE3FDCB52B8A897300142AE2 /* ProductSourceDetail.json */; };
-		EE5587952B9F4C78005C2036 /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE5587942B9F4C78005C2036 /* MakeConstraints */; };
 		EE55879A2B9F55F1005C2036 /* CartUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5587992B9F55F1005C2036 /* CartUseCase.swift */; };
 		EE55879C2B9F560E005C2036 /* CartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE55879B2B9F560E005C2036 /* CartViewModel.swift */; };
 		EE58F5D62B5ECF5C0068B93F /* +topMostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEA6F9A82B58668500A9E0C2 /* +topMostViewController.swift */; };
@@ -164,6 +163,7 @@
 		EE7D337A2B7AB24B00EF5C34 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D33792B7AB24B00EF5C34 /* AppCoordinator.swift */; };
 		EE7D337D2B7AB4C300EF5C34 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337C2B7AB4C300EF5C34 /* OnboardingCoordinator.swift */; };
 		EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE7D337F2B7AC18E00EF5C34 /* AuthCoordinator.swift */; };
+		EE826D4A2B9F8E550038B26D /* MakeConstraints in Frameworks */ = {isa = PBXBuildFile; productRef = EE826D492B9F8E550038B26D /* MakeConstraints */; };
 		EE8841542B81272200907CD1 /* AlertStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8841532B81272200907CD1 /* AlertStatus.swift */; };
 		EE8841562B81273200907CD1 /* AlertItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8841552B81273200907CD1 /* AlertItem.swift */; };
 		EE8841592B81276100907CD1 /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE8841582B81276100907CD1 /* TypeAliases.swift */; };
@@ -406,7 +406,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE5587952B9F4C78005C2036 /* MakeConstraints in Frameworks */,
+				EE826D4A2B9F8E550038B26D /* MakeConstraints in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1571,7 +1571,7 @@
 			);
 			name = EcoMarket;
 			packageProductDependencies = (
-				EE5587942B9F4C78005C2036 /* MakeConstraints */,
+				EE826D492B9F8E550038B26D /* MakeConstraints */,
 			);
 			productName = EcoMarket;
 			productReference = EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */;
@@ -1625,7 +1625,7 @@
 			);
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			packageReferences = (
-				EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */,
+				EE826D482B9F8E550038B26D /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
 			);
 			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
@@ -2185,21 +2185,16 @@
 		};
 /* End XCConfigurationList section */
 
-/* Begin XCRemoteSwiftPackageReference section */
-		EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ahmed-yamany/MakeConstraints";
-			requirement = {
-				branch = main;
-				kind = branch;
-			};
+/* Begin XCLocalSwiftPackageReference section */
+		EE826D482B9F8E550038B26D /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = Packages/MakeConstraints;
 		};
-/* End XCRemoteSwiftPackageReference section */
+/* End XCLocalSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		EE5587942B9F4C78005C2036 /* MakeConstraints */ = {
+		EE826D492B9F8E550038B26D /* MakeConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = EE5587922B9F4C5C005C2036 /* XCRemoteSwiftPackageReference "MakeConstraints" */;
 			productName = MakeConstraints;
 		};
 /* End XCSwiftPackageProductDependency section */
