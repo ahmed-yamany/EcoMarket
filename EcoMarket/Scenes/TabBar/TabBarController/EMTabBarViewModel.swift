@@ -23,7 +23,6 @@ protocol EMTabBarViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-
 class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CartUseCaseProtocol {
     
     static let shared = EMTabBarViewModel()
@@ -62,7 +61,7 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CartUseCa
     }
     
     func removeFromCart(_ product: CartProduct) async throws {
-        cart.removeAll(where:  {$0 == product })
+        cart.removeAll(where: {$0 == product })
     }
     
     func updateCount(for product: CartProduct, with count: Int) {

@@ -10,6 +10,9 @@ import UIKit
 class CartProductCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
     //
+    @IBOutlet weak var colorLabel: UILabel!
+    @IBOutlet weak var productColor: UIView!
+    @IBOutlet weak var productSize: UILabel!
     @IBOutlet weak var stapperView: StapperView!
     @IBOutlet weak var containerView: UIStackView!
     @IBOutlet weak var productPrice: UILabel!
@@ -18,10 +21,6 @@ class CartProductCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     
     // MARK: - Data Setup Method
-    
-    /// Configures the cell with the provided product data.
-    ///
-    /// - Parameter product: The product model to be displayed.
     func setup(cart: (Product, CartProduct)) {
         let product = cart.0
         let cartProduct = cart.1
@@ -30,16 +29,18 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         productPrice.text = String(product.price)
         productImage.image = product.image
         stapperView.value = cartProduct.count
+        productSize.text = "Size: \(cartProduct.selectedSize.rawValue.uppercased())"
+        productColor.backgroundColor = cartProduct.selectedColor
         configureUI()
     }
     
     // MARK: - UI Configuration
-    
-    /// Configures the initial UI settings for the cell.
     private func configureUI() {
         clipsToBounds = false
         backgroundColor = .clear
         productImage.layer.cornerRadius = 8
+        productColor.layer.cornerRadius = 5
+        colorLabel.text = "Color:"
         configureLabelsUI()
         configureContainerView()
         setupStapperView()
@@ -51,11 +52,15 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         brandName.font = .medium
         productPrice.font = .medium
         productName.font = .regular
+        productSize.font = .regular
+        colorLabel.font = .regular
         
         // Labels Color
         brandName.textColor = AppColor.primaryText
         productPrice.textColor = AppColor.primaryText
         productName.textColor = AppColor.socialButton
+        productSize.textColor = AppColor.socialButton
+        colorLabel.textColor = AppColor.socialButton
     }
     
     /// Configures the appearance of the container view, including shadows and corner radius.
@@ -81,7 +86,6 @@ class CartProductCollectionViewCell: UICollectionViewCell {
 }
 
 // MARK: - StapperDelegate
-//
 extension CartProductCollectionViewCell: StapperViewDelegate {
     func stapperView(_ stapper: StapperView, didSet value: Int) {
         print(value)

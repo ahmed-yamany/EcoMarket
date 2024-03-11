@@ -44,7 +44,7 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showDetails(product: Product) {
-        var coordinator = DetailsCoordinator(router: router)
+        let coordinator = DetailsCoordinator(router: router)
         coordinator.showDetails(product: product)
     }
 }

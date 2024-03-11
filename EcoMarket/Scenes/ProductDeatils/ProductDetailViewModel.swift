@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 class ProductDetailViewModel {
+    
     let productDetailUseCase: ProductDetailRepositories
     private var cancellables: [String: AnyCancellable] = [:]
     
@@ -118,10 +119,5 @@ class ProductDetailViewModel {
                 print(error.localizedDescription)
             }
         }
-//        if EMTabBarViewModel.shared.cart.contains(where: { $0 == product }) {
-//            EMTabBarViewModel.shared.cart.removeAll(where: { $0 == product })
-//        } else {
-//            EMTabBarViewModel.shared.cart.append(product)
-//        }
     }
 }
