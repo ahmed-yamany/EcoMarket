@@ -23,12 +23,12 @@ open class StapperView: UIView {
     
     // MARK: - Properties
     //
-    private (set) var value: Int = 0
+    var value: Int = 0
     var maximumValue: Int = 100
     var minmumValue: Int = 0 {
-        didSet(newValue) {
-            updateValue(newValue)
-            configureCounterLabel()
+        didSet {
+            updateValue(minmumValue)
+           value = minmumValue
         }
     }
     
@@ -90,6 +90,7 @@ open class StapperView: UIView {
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
         button.backgroundColor = .clear
+        button.tintColor = AppColor.primaryText
     }
     
     private func plusButtonTapped() {

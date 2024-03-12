@@ -11,7 +11,7 @@ import Combine
 public final class ProductViewModel {
     
     // MARK: - Published Properties
-    @Published var products: [ProductModel] = []
+    @Published var products: [Product] = []
     @Published var errorMessage: String?
     
     // MARK: - Public Methods
@@ -24,13 +24,13 @@ public final class ProductViewModel {
     // MARK: - Private Methods
     //
     private func getData() {
-        Task { [weak self] in
-            guard let self = self else { return }
-            do {
-                self.products = try await ProductModel.mockData
-            } catch {
-                errorMessage = error.localizedDescription
-            }
-        }
+//        Task { [weak self] in
+//            guard let self = self else { return }
+//            do {
+//                self.products = try await ProductModel.mockData
+//            }catch {
+//                errorMessage = error.localizedDescription
+//            }
+//        }
     }
 }

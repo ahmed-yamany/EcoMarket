@@ -11,7 +11,7 @@ class GoogleButton: SocialMediaButton {
     override func setupButton() {
         super.setupButton()
         title = L10n.Login.google
-        setImage(AppImage.googleIcon, for: .normal)
+        setImage(AppImage.Auth.googleIcon, for: .normal)
         addAction(.init(handler: { [weak self] _ in self?.start()}), for: .touchUpInside)
     }
     

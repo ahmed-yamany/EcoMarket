@@ -22,11 +22,11 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     /// Configures the cell with the provided product data.
     ///
     /// - Parameter product: The product model to be displayed.
-    func setup(product: Cart2Model) {
+    func setup(product: Product) {
         productName.text = product.name
-        brandName.text = product.brand
-        productPrice.text = product.price
-        productImage.image = UIImage(named: product.image)
+        brandName.text = product.brandName
+        productPrice.text = String(product.price)
+        productImage.image = product.image
         configureUI()
     }
     
@@ -34,6 +34,7 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     
     /// Configures the initial UI settings for the cell.
     private func configureUI() {
+        clipsToBounds = false
         productImage.layer.cornerRadius = 12
         configureLabelsUI()
         configureButtonUI()
@@ -56,7 +57,7 @@ class CartTheme2CollectionViewCell: UICollectionViewCell {
     /// Configures the appearance of the delete button.
     private func configureButtonUI() {
         deleteButton.setTitle("", for: .normal)
-        deleteButton.setImage(AppImage.delete, for: .normal)
+        deleteButton.setImage(AppImage.Icon.delete, for: .normal)
     }
     
     private func setupStapperView() {

@@ -28,7 +28,7 @@ class EditProfileCollectionViewCell: UICollectionViewCell {
     // MARK: - UI Configuration
     //
     func setupUI() {
-        profileImage.image = AppImage.profileImage
+        profileImage.image = AppImage.Profile.profileImage
         profileImage.layer.cornerRadius = 10
         configureNameTextField()
         configureAgeTextField()
@@ -63,7 +63,7 @@ class EditProfileCollectionViewCell: UICollectionViewCell {
     /// Configure Edit Button
     private func configureEditButtonUI() {
         editButton.setTitle("", for: .normal)
-        editButton.setImage(AppImage.editButton, for: .normal)
+        editButton.setImage(AppImage.Settings.editButton, for: .normal)
     }
     
     @IBAction func editButtonTapped(_ sender: Any) {

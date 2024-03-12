@@ -24,7 +24,7 @@ class FooterCollectionViewCell: UICollectionViewCell {
     //
     private func configureLogOutButtonUI() {
         logoutButton.setTitle(L10n.Logout.title, for: .normal)
-        logoutButton.setImage(AppImage.logout, for: .normal)
+        logoutButton.setImage(AppImage.Auth.logout, for: .normal)
         logoutButton.backgroundColor = AppColor.primaryButton
         logoutButton.setTitleColor(AppColor.secondaryText, for: .normal)
         logoutButton.layer.cornerRadius = 10

@@ -32,6 +32,10 @@ class EMTabBarViewController: UITabBarController {
         viewControllers = viewModel.viewControllers
         setupEMTapBar()
         bindSelectedTab()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         bindTabBarIsHidden()
     }
     

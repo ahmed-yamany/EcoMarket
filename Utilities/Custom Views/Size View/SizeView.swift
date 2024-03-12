@@ -9,7 +9,7 @@ import UIKit
 import MakeConstraints
 
 public protocol SizeViewDelegate {
-    func sizeView(_ sizeView: CustomSizeView, didSelect size: String)
+    func sizeView(_ sizeView: CustomSizeView, didSelect size: ProductSizes)
 }
 
 @IBDesignable
@@ -23,7 +23,7 @@ open class CustomSizeView: UIView {
     
     // MARK: Private Properties
     //
-    private var sizeLabels: [String] = []
+    private var sizeLabels: [ProductSizes] = []
     private var buttonWidth: CGFloat { frame.height }
     private var buttonHeight: CGFloat { frame.height }
     
@@ -94,7 +94,7 @@ open class CustomSizeView: UIView {
     /// Sets the sizes for the buttons in the view.
     ///
     /// - Parameter sizes: An array of size strings to be displayed as buttons.
-    public func setSizes(_ sizes: [String]) {
+    public func setSizes(_ sizes: [ProductSizes]) {
         collectionView.setLabels(sizes: sizes)
         self.sizeLabels = sizes
         collectionView.reloadData()
@@ -104,7 +104,7 @@ open class CustomSizeView: UIView {
 // MARK: - SizeCollectionViewDelegate
 //
 extension CustomSizeView: SizeCollectionViewDelegate {
-    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String, cell: UICollectionViewCell, at indexPath: Int) {
+    func sizeView(_ sizeView: SizeCollectionView, didSelect size: ProductSizes, cell: UICollectionViewCell, at indexPath: Int) {
         animate(to: cell)
         sizeDelegate?.sizeView(self, didSelect: sizeLabels[indexPath])
     }

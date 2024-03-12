@@ -1,5 +1,5 @@
 //
-//  ProductsCollectionViewCell.swift
+//  TopCollectionViewCell.swift
 //  EcoMarket
 //
 //  Created by Ibrahim Nasser Ibrahim on 23/01/2024.
@@ -18,11 +18,11 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
 
     // MARK: - Cell Configuration
-    func setup(product: ProductModel) {
-        productImage.image = UIImage(named: product.image)
+    func setup(product: Product) {
+        productImage.image = product.image
         productName.text = product.name
-        brandName.text = product.brand
-        productPrice.text = product.price
+        brandName.text = product.brandName
+        productPrice.text = "\(product.price)"
         
         setupUI()
     }
@@ -34,13 +34,19 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         
         // Button UI
         favouriteButton.setTitle("", for: .normal)
-        favouriteButton.setImage(AppImage.favouriteImage, for: .normal)
+//        favouriteButton.setImage(AppImage.Icon.loveButton, for: .normal)
         favouriteButton.tintColor = AppColor.primaryButton
         
         // Labels UI
         brandName.font = .h3
         productName.font = .regular
         productPrice.font = .h3
+        brandName.textColor = AppColor.primaryText
         productName.textColor = AppColor.socialButton
+        productPrice.textColor = AppColor.primaryText
+    }
+    
+    @IBAction func favouriteButtonTapped(_ sender: Any) {
+        print("Added to favourites")
     }
 }

@@ -10,7 +10,7 @@ import UIKit
 // MARK: - SizeCollectionViewDelegate Protocol
 //
 protocol SizeCollectionViewDelegate: AnyObject {
-    func sizeView(_ sizeView: SizeCollectionView, didSelect size: String, cell: UICollectionViewCell, at indexPath: Int)
+    func sizeView(_ sizeView: SizeCollectionView, didSelect size: ProductSizes, cell: UICollectionViewCell, at indexPath: Int)
 }
 
 class SizeCollectionView: UICollectionView {
@@ -18,8 +18,8 @@ class SizeCollectionView: UICollectionView {
     //
     @IBInspectable public var defaultColor: UIColor = .white
     @IBInspectable public var selectedColor: UIColor = .black
-    var sizes: [String] = []
-    var selectedButton: String?
+    var sizes: [ProductSizes] = []
+    var selectedButton: ProductSizes?
     weak var sizeCollectionDelegate: SizeCollectionViewDelegate?
     
     // MARK: - Initialization
@@ -32,7 +32,7 @@ class SizeCollectionView: UICollectionView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func setLabels(sizes: [String]) {
+    func setLabels(sizes: [ProductSizes]) {
         self.sizes = sizes
         configureCollectionView()
         
@@ -96,7 +96,7 @@ extension SizeCollectionView: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             cell.updateUnSelected(color: defaultColor)
         }
-        cell.setupTitle(sizes[indexPath.row])
+        cell.setupTitle(sizes[indexPath.row].rawValue)
         return cell
     }
     
