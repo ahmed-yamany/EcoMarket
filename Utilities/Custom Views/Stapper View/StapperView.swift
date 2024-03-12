@@ -26,9 +26,9 @@ open class StapperView: UIView {
     var value: Int = 0
     var maximumValue: Int = 100
     var minmumValue: Int = 0 {
-        didSet(newValue) {
-            updateValue(newValue)
-           value = newValue
+        didSet {
+            updateValue(minmumValue)
+           value = minmumValue
         }
     }
     

@@ -30,20 +30,14 @@ class CartViewModel {
     func viewDidLoad() {
         cartUseCase.cartPublisher.sink { [weak self] cartProducts in
             guard let self = self else { return }
-            Task {
-                do {
-                    let products: [(Product, CartProduct)] = try await self.productUseCase.getProducts(by: cartProducts) 
-                    DispatchQueue.main.async {
-                        self.products = products
-                    }
-                } catch {
-                    
-                }
-            }
+            
+            let products: [(Product, CartProduct)] =  self.productUseCase.getProducts(by: cartProducts)
+            self.products = products
+            
         }
         .store(in: &cancellabel)
     }
-    
+
     private func bindPublishers() {
         
     }

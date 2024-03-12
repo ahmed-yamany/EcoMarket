@@ -32,6 +32,7 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         productColor.backgroundColor = cartProduct.selectedColor
         configureUI()
         stapperView.minmumValue = cartProduct.count
+        productPrice.text = String(cartProduct.count)
     }
     
     // MARK: - UI Configuration
@@ -78,7 +79,7 @@ class CartProductCollectionViewCell: UICollectionViewCell {
     }
     
     private func setupStapperView() {
-        stapperView.maximumValue = 100
+//        stapperView.maximumValue = 100
         stapperView.backgroundColor = AppColor.stapperBackground
         stapperView.setTintColor(AppColor.primaryButton)
         stapperView.delegate = self
