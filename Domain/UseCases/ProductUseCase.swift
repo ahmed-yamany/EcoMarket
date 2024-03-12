@@ -9,6 +9,7 @@ import Foundation
 import Combine
 
 class ProductUseCase: ProductRepositories, ObservableObject {
+    
     @Published private var repo = ProductSourceRepositories()
     @Published private var products: [Product] = []
 
@@ -52,9 +53,16 @@ class ProductUseCase: ProductRepositories, ObservableObject {
         return sortedProducts
     }
     
-    func getProducts(by ids: [String]) async throws -> [Product] {
-        products.filter { product in
-            ids.contains { $0.lowercased() == product.id.lowercased() }
+    func getProducts(by cartProducts: [CartProduct]) async throws -> [(Product, CartProduct)] {
+        var results: [(Product, CartProduct)] = []
+        for product in products {
+            for cartProduct in cartProducts {
+                if product.id.lowercased() == cartProduct.productId.lowercased() {
+                    results.append((product, cartProduct))
+                }
+            }
         }
+        
+        return results
     }
 }

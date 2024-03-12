@@ -69,7 +69,8 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CartUseCa
     }
 }
 
-struct CartProduct: Hashable {    
+struct CartProduct: Identifiable, Hashable {
+    var id: String { productId }
     let productId: String
     let selectedColor: UIColor
     let selectedSize: ProductSizes

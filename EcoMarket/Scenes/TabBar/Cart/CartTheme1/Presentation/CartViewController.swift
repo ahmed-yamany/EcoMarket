@@ -11,9 +11,12 @@ import Combine
 class CartViewController: UICollectionViewController {
     
     // MARK: - Properties
-    var sections: [any SectionsLayout] = []
+    lazy var sections: [any SectionsLayout] =  [productSection, CartPromoCodeSection(), CartCheckOutSection()]
+
     private var cancellable: Set<AnyCancellable> = []
     
+    let productSection = CartProductsSection()
+
     // MARK: - Initializer -
     let viewModel: CartViewModel
 
@@ -26,27 +29,33 @@ class CartViewController: UICollectionViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        collectionView.reloadData()
+    }
+    
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         addCollectionViewSections()
-    }
-    
-    private func addCollectionViewSections() {
-        sections.removeAll()
         
-        let productSection = CartProductsSection()
-        
-        viewModel.$products.sink { [weak self] products in
-            productSection.items = products
+        viewModel.$products.sink {  products in
+            
             DispatchQueue.main.async {
-                self?.collectionView.reloadData()
+                self.productSection.items = products
+                self.collectionView.reloadData()
             }
         }
         .store(in: &cancellable)
-        
-        sections = [productSection, CartPromoCodeSection(), CartCheckOutSection()]
+    }
+    
+    private func addCollectionViewSections() {
         configureCollectionView()
     }
     

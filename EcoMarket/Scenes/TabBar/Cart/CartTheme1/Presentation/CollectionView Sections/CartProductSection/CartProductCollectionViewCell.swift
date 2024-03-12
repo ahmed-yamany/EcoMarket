@@ -28,10 +28,10 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         brandName.text = product.brandName
         productPrice.text = String(product.price)
         productImage.image = product.image
-        stapperView.value = cartProduct.count
         productSize.text = "Size: \(cartProduct.selectedSize.rawValue.uppercased())"
         productColor.backgroundColor = cartProduct.selectedColor
         configureUI()
+        stapperView.minmumValue = cartProduct.count
     }
     
     // MARK: - UI Configuration

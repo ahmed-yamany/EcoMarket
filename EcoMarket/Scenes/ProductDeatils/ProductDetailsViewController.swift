@@ -165,6 +165,6 @@ extension ProductDetailsViewController: CustomColorViewDelegate {
 //
 extension ProductDetailsViewController: StapperViewDelegate {
     func stapperView(_ stapper: StapperView, didSet value: Int) {
-        print(value)
+        viewModel.currentStepperValue = value
     }
 }
