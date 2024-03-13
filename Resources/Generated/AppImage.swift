@@ -93,6 +93,10 @@ enum AppImage {
         static var scanerIcon: UIImage? {
             return UIImage(folderName: .icon, named: "scaner")
         }
+        
+        static var menu: UIImage? {
+            return UIImage(folderName: .icon, named: "menu")
+        }
     }
     
     enum Alert {

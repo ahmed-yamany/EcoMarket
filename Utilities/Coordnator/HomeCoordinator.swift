@@ -10,6 +10,7 @@ import Foundation
 protocol HomeCoordinatorProtocol: Coordinator {
     func showHome()
     func showDetails(product: Product)
+    func showCategories()
     func showTabBar()
     func hideTabBar()
 }
@@ -46,5 +47,11 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     func showDetails(product: Product) {
         let coordinator = DetailsCoordinator(router: router)
         coordinator.showDetails(product: product)
+    }
+    
+    func showCategories() {
+        let viewModel = Category2ViewModel()
+        let vcc = CategoryViewController2(viewModel: viewModel)
+        router.push(vcc)
     }
 }

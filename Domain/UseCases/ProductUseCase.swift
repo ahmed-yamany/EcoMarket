@@ -62,7 +62,6 @@ class ProductUseCase: ProductRepositories, ObservableObject {
                 }
             }
         }
-        
         return results
     }
 }

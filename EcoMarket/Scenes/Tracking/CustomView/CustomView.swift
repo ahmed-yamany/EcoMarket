@@ -27,7 +27,7 @@ class CustomView: UIView {
     
     func configureUI() {
         widthAnchor.constraint(equalToConstant: 50).isActive = true
-//        circleView.layer.cornerRadius = 7
+        circleView.layer.cornerRadius = 7
         circleView.makeCircular()
     }
     

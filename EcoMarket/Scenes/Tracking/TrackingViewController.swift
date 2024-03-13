@@ -203,7 +203,6 @@ extension TrackingViewController: UICollectionViewDelegate, UICollectionViewData
     }
 }
 
-
 class TrackingView: UIStackView {
     
     private var views: [CustomView] = []
@@ -226,6 +225,7 @@ class TrackingView: UIStackView {
         let view = UIView()
         view.backgroundColor = .red
         view.equalSizeConstraints(14)
+        view.layer.cornerRadius = 7
         view.layoutIfNeeded()
         view.makeCircular()
         

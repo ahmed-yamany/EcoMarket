@@ -22,7 +22,7 @@ public final class Category2ViewModel {
     // MARK: - Private Methods
     //
     private func getData() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
+        DispatchQueue.global().asyncAfter(deadline: .now() + 1) { [weak self] in
             guard let self = self else { return }
             
             DispatchQueue.main.async {

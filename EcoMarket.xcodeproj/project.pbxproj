@@ -93,8 +93,6 @@
 		D6BB64092B88EA370008752F /* TrackingSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB64082B88EA370008752F /* TrackingSection.swift */; };
 		D6BB640F2B8A2E680008752F /* TrackingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BB640E2B8A2E680008752F /* TrackingViewModel.swift */; };
 		D6BB64112B8A2EB40008752F /* Shipping.json in Resources */ = {isa = PBXBuildFile; fileRef = D6BB64102B8A2EB40008752F /* Shipping.json */; };
-		D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */; };
-		D6C397CB2B7BCCFD008649E1 /* SectionsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */; };
 		D6C397CF2B7BDE2B008649E1 /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397CE2B7BDE2B008649E1 /* Header.swift */; };
 		D6C397D12B7CF894008649E1 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D02B7CF894008649E1 /* NotificationViewController.swift */; };
 		D6C397D52B7CF8B4008649E1 /* NotificationCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */; };
@@ -311,8 +309,6 @@
 		D6BB64082B88EA370008752F /* TrackingSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingSection.swift; sourceTree = "<group>"; };
 		D6BB640E2B8A2E680008752F /* TrackingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingViewModel.swift; sourceTree = "<group>"; };
 		D6BB64102B8A2EB40008752F /* Shipping.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Shipping.json; sourceTree = "<group>"; };
-		D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsFactory.swift; sourceTree = "<group>"; };
-		D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsModel.swift; sourceTree = "<group>"; };
 		D6C397CE2B7BDE2B008649E1 /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		D6C397D02B7CF894008649E1 /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		D6C397D32B7CF8B4008649E1 /* NotificationCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -454,7 +450,6 @@
 		214AC06C2B4E974D0094297D /* HomeTheme2 */ = {
 			isa = PBXGroup;
 			children = (
-				EE79C6092B9B8D81004AA058 /* Data */,
 				EE79C6082B9B8D7E004AA058 /* Domain */,
 				EE79C6062B9B8D2C004AA058 /* Presentation */,
 			);
@@ -910,16 +905,6 @@
 				D6BB64102B8A2EB40008752F /* Shipping.json */,
 			);
 			path = TrackingViewModel;
-			sourceTree = "<group>";
-		};
-		D6C397CC2B7BDC32008649E1 /* CartFactory */ = {
-			isa = PBXGroup;
-			children = (
-				D6C397C82B7BCCD1008649E1 /* SectionsFactory.swift */,
-				D62BD3DD2B6D94DB000CF78A /* SectionsLayout.swift */,
-				D6C397CA2B7BCCFD008649E1 /* SectionsModel.swift */,
-			);
-			path = CartFactory;
 			sourceTree = "<group>";
 		};
 		D6C397CD2B7BDE1A008649E1 /* HeaderView */ = {
@@ -1447,13 +1432,6 @@
 				EE79C60B2B9B8EF9004AA058 /* HomeUseCase.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		EE79C6092B9B8D81004AA058 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Data;
 			sourceTree = "<group>";
 		};
 		EE7D33762B7AB0D000EF5C34 /* Coordnator */ = {

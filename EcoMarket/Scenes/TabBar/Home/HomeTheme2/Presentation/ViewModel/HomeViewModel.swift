@@ -72,6 +72,11 @@ class HomeViewModel {
             }
         }
     }
+    
+    func showCategories() {
+        coordinator.showCategories()
+        coordinator.hideTabBar()
+    }
 }
 
 extension HomeViewModel: HomeSectionsDelegate {

@@ -35,7 +35,7 @@ class AppCoordinator: AppCoordinatorProtocol {
     
     func makeWindow(from windowScene: UIWindowScene) {
         let window = UIWindow(windowScene: windowScene)
-        window.rootViewController = TrackingViewController(tracking: Tracking.mockData, viewModel: .init())
+        window.rootViewController = self.router.navigationController
         window.makeKeyAndVisible()
         self.window = window
     } 
