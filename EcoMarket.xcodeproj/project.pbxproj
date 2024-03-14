@@ -145,7 +145,6 @@
 		EE5CA1342B5EF9BF00630C5D /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CA12F2B5EF9BF00630C5D /* CategoryTableViewCell.xib */; };
 		EE5CA1352B5EF9BF00630C5D /* CategoryViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1302B5EF9BF00630C5D /* CategoryViewController1.swift */; };
 		EE5CA1362B5EF9BF00630C5D /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1312B5EF9BF00630C5D /* CategoryViewModel.swift */; };
-		EE5CA1372B5EF9BF00630C5D /* CategoryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1322B5EF9BF00630C5D /* CategoryModel.swift */; };
 		EE5CA13D2B5EF9CC00630C5D /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1382B5EF9CC00630C5D /* CategoryCollectionViewCell.swift */; };
 		EE5CA13E2B5EF9CC00630C5D /* Category2ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE5CA1392B5EF9CC00630C5D /* Category2ViewModel.swift */; };
 		EE5CA13F2B5EF9CC00630C5D /* CategoryViewController2.xib in Resources */ = {isa = PBXBuildFile; fileRef = EE5CA13A2B5EF9CC00630C5D /* CategoryViewController2.xib */; };
@@ -348,7 +347,6 @@
 		EE5CA12F2B5EF9BF00630C5D /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
 		EE5CA1302B5EF9BF00630C5D /* CategoryViewController1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController1.swift; sourceTree = "<group>"; };
 		EE5CA1312B5EF9BF00630C5D /* CategoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		EE5CA1322B5EF9BF00630C5D /* CategoryModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryModel.swift; sourceTree = "<group>"; };
 		EE5CA1382B5EF9CC00630C5D /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		EE5CA1392B5EF9CC00630C5D /* Category2ViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Category2ViewModel.swift; sourceTree = "<group>"; };
 		EE5CA13A2B5EF9CC00630C5D /* CategoryViewController2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController2.xib; sourceTree = "<group>"; };
@@ -484,7 +482,6 @@
 			isa = PBXGroup;
 			children = (
 				EE5CA1502B5F00E400630C5D /* cell */,
-				EE5CA1322B5EF9BF00630C5D /* CategoryModel.swift */,
 				EE5CA1302B5EF9BF00630C5D /* CategoryViewController1.swift */,
 				EE5CA1312B5EF9BF00630C5D /* CategoryViewModel.swift */,
 			);
@@ -1892,7 +1889,6 @@
 				D6519E692B803D880049FEB1 /* CategoriesCollectionViewCell.swift in Sources */,
 				EE7D33802B7AC18F00EF5C34 /* AuthCoordinator.swift in Sources */,
 				D6E9AB542B73EE8100BEA301 /* SectionDecorationView.swift in Sources */,
-				EE5CA1372B5EF9BF00630C5D /* CategoryModel.swift in Sources */,
 				D67DA32E2B9A02830061C22C /* ColorCollectionView.swift in Sources */,
 				D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */,
 				EE58F5E52B5ED05B0068B93F /* SplashViewController.swift in Sources */,

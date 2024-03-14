@@ -31,10 +31,7 @@ class CategoryViewController2: UIViewController {
     
     // MARK: - View Lifecycle
     //
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
-    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         configCollectionView()
@@ -105,7 +102,9 @@ extension CategoryViewController2: UICollectionViewDelegate, UICollectionViewDat
             return UICollectionViewCell()
         }
         
-        cell.setup(category: viewModel.categories[indexPath.row], indexPath: indexPath)
+        let categoryName = viewModel.categories[indexPath.row]
+        let categoryDetail = viewModel.getCategoryDetail(category: categoryName )
+        cell.setup(categoryName: categoryName, categoryDetail: categoryDetail, indexPath: indexPath )
         
         return cell
     }

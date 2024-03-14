@@ -29,10 +29,6 @@ class CategoryViewController1: UITableViewController {
     
     // MARK: - View Lifecycle
     //
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,8 +71,9 @@ class CategoryViewController1: UITableViewController {
             Logger.log("Error: Unable to dequeue CategoryTableViewCell.", category: \.default, level: .fault)
             return UITableViewCell()
         }
-        
-        cell.setup(category: viewModel.categories[indexPath.row])
+        let categoryName = viewModel.categories[indexPath.row]
+        let categoryDetail = viewModel.getCategoryDetail(category: categoryName )
+        cell.setup(categoryName: categoryName, categoryDetail: categoryDetail )
         return cell
     }
     

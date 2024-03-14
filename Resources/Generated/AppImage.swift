@@ -171,6 +171,9 @@ enum AssetsFolderName: String {
     case onboarding = "Onboarding"
     case icon = "icon"
     case alert = "Alert"
+    case category = "category"
+    case category2 = "category2"
+    case category3 = "category3"
 }
 
 extension UIImage {

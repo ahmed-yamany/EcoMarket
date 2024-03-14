@@ -44,13 +44,10 @@ class ProductUseCase: ProductRepositories, ObservableObject {
             .eraseToAnyPublisher()
     }
     
-    func getProducts(category: String) async throws -> [Product] {
-        let filteredProducts = products
+    func getCategoryCount(category: String) -> Int {
+        products
             .filter { $0.category.lowercased() == category.lowercased() }
-        
-        let sortedProducts = filteredProducts.sorted { $0.name < $1.name }
-        
-        return sortedProducts
+            .count
     }
     
     func getProducts(by cartProducts: [CartProduct]) -> [(Product, CartProduct)] {

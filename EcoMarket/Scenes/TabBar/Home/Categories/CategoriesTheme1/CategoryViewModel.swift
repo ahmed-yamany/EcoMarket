@@ -5,29 +5,34 @@
 //  Created by Ibrahim Nasser Ibrahim on 20/01/2024.
 //
 
-import Foundation
+import UIKit
 import Combine
 
 public final class CategoryViewModel {
     
     // MARK: - Published Properties
-    @Published var categories: [CategoryModel] = []
-    
+    @Published var categories: [String] = []
+    var productUseCase: ProductRepositories
+    private var cancellable: Set<AnyCancellable> = []
     // MARK: - Public Methods
     //
-    func viewDidLoad() {
-        getData()
+    init(productUseCase: ProductRepositories) {
+        self.productUseCase = productUseCase
+        getCategories()
     }
     
     // MARK: - Private Methods
     //
-    private func getData() {
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-            
-            DispatchQueue.main.async {
-                self.categories = CategoryModel.mockData1
-            }
+    private func getCategories() {
+        productUseCase.getCategories().sink {[weak self] categories in
+            self?.categories = categories
         }
+        .store(in: &cancellable)
+    }
+    
+    func getCategoryDetail(category: String) -> (UIImage?, Int) {
+        let categoryCount = productUseCase.getCategoryCount(category: category)
+        let image = UIImage(folderName: .category, named: category)
+        return (image, categoryCount)
     }
 }

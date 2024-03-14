@@ -21,10 +21,10 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     /// Configures the cell with data from the provided `CategoryModel`.
-    func setup(category: CategoryModel) {
-        categoryImage.image = UIImage(named: category.image)
-        categoryName.text = category.name
-        productCount.text = category.productNumber
+    func setup(categoryName: String, categoryDetail: (UIImage?, Int)) {
+        categoryImage.image = categoryDetail.0
+        self.categoryName.text = categoryName
+        productCount.text = String(categoryDetail.1)
     }
     
     /// Configures the cell's UI, including background color, corner radius, text colors, and fonts.

@@ -50,7 +50,8 @@ class HomeCoordinator: HomeCoordinatorProtocol {
     }
     
     func showCategories() {
-        let viewModel = Category2ViewModel()
+        let productUseCase = ProductUseCase()
+        let viewModel = Category2ViewModel(productUseCase: productUseCase)
         let vcc = CategoryViewController2(viewModel: viewModel)
         router.push(vcc)
     }
