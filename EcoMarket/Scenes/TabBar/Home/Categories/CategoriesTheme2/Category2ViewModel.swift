@@ -12,11 +12,13 @@ public final class Category2ViewModel {
     
     // MARK: - Published Properties
     @Published var categories: [String] = []
+    let coordinator: HomeCoordinatorProtocol
     var productUseCase: ProductRepositories
     private var cancellable: Set<AnyCancellable> = []
     // MARK: - Init
     //
-    init(productUseCase: ProductRepositories) {
+    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductRepositories) {
+        self.coordinator = coordinator
         self.productUseCase = productUseCase
         getCategories()
     }
@@ -34,5 +36,9 @@ public final class Category2ViewModel {
         let categoryCount = productUseCase.getCategoryCount(category: category)
         let image = UIImage(folderName: .category2, named: category)
         return (image, categoryCount)
+    }
+    
+    func showProductView(category: String) {
+        coordinator.showProductsView(category: category)
     }
 }

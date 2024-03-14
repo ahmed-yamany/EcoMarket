@@ -45,9 +45,13 @@ class ProductUseCase: ProductRepositories, ObservableObject {
     }
     
     func getCategoryCount(category: String) -> Int {
+        getProducts(by: category)
+            .count
+    }
+    
+    func getProducts(by category: String) -> [Product] {
         products
             .filter { $0.category.lowercased() == category.lowercased() }
-            .count
     }
     
     func getProducts(by cartProducts: [CartProduct]) -> [(Product, CartProduct)] {

@@ -13,24 +13,27 @@ public final class ProductViewModel {
     // MARK: - Published Properties
     @Published var products: [Product] = []
     @Published var errorMessage: String?
-    
-    // MARK: - Public Methods
+    let coordinator: HomeCoordinatorProtocol
+    var productUseCase: ProductRepositories
+    let category: String
+    private var cancellable: Set<AnyCancellable> = []
+
+    // MARK: - Init
     //
-    func viewDidLoad() {
-        getData()
-        
+    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductRepositories, category: String) {
+        self.coordinator = coordinator
+        self.productUseCase = productUseCase
+        self.category = category
+        getProducts(by: category)
     }
-    
     // MARK: - Private Methods
     //
-    private func getData() {
-//        Task { [weak self] in
-//            guard let self = self else { return }
-//            do {
-//                self.products = try await ProductModel.mockData
-//            }catch {
-//                errorMessage = error.localizedDescription
-//            }
-//        }
+    private func getProducts(by category: String) {
+
+        products = productUseCase.getProducts(by: category)
+    }
+    
+    func showDetails(product: Product) {
+        coordinator.showDetails(product: product)
     }
 }

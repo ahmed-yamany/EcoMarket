@@ -11,5 +11,6 @@ import Combine
 protocol ProductRepositories {
     func getCategories() -> AnyPublisher<[String], Never>
     func getCategoryCount(category: String) -> Int
+    func getProducts(by category: String) -> [Product]
     func getProducts(by cartProducts: [CartProduct]) -> [(Product, CartProduct)]
 }

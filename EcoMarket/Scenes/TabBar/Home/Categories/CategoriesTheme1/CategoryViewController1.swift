@@ -77,6 +77,11 @@ class CategoryViewController1: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let category = viewModel.categories[indexPath.row]
+        viewModel.showProductView(category: category)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 85
     }

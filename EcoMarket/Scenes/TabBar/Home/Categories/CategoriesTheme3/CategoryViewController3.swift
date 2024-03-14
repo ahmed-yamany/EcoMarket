@@ -107,4 +107,9 @@ extension CategoryViewController3: UICollectionViewDelegate, UICollectionViewDat
         cell.setup(categoryName: categoryName, categoryDetail: categoryDetail)
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let category = viewModel.categories[indexPath.row]
+        viewModel.showProductView(category: category)
+    }
 }
