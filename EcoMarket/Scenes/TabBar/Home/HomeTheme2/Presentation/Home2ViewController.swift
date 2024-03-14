@@ -44,7 +44,11 @@ class Home2ViewController: UIViewController {
         bindViewModel()
         configureUI()
 //        navigationController?.
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: AppImage.Icon.menu, style: .done, target: self, action: #selector(menuButtonTapped))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: AppImage.Icon.menu?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(menuButtonTapped))
         viewModel.reloadData = {[weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
