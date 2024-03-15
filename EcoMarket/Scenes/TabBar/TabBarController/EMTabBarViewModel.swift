@@ -23,7 +23,9 @@ protocol EMTabBarViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
+class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListUseCaseProtocol {
+    
+    
     static let shared = EMTabBarViewModel()
     
     @Published var tabBarIsHidden: Bool = false
@@ -49,6 +51,15 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
                 self.notifications = Notification.mockData
             }
         }
+    }
+    
+    // MARK: - WishListProtocol -
+    @Published var wishlist: [Product]
+    
+    var wishlistPublisher: AnyPublisher<[Product], Never> { $wishlist.eraseToAnyPublisher() }
+    
+    func addToWishList(_ product: Product) async throws {
+        wishlist.append(product)
     }
     
 }
