@@ -15,7 +15,7 @@ class CartViewController: UICollectionViewController {
 
     private var cancellable: Set<AnyCancellable> = []
     
-    let productSection = CartProductsSection()
+    let productSection = CustomProductDetailsSection()
 
     // MARK: - Initializer -
     let viewModel: CartViewModel
@@ -49,6 +49,7 @@ class CartViewController: UICollectionViewController {
             
             DispatchQueue.main.async {
                 self.productSection.items = products
+                self.productSection.headerTitle = "My Cart"
                 self.collectionView.reloadData()
             }
         }

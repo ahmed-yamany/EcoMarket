@@ -13,8 +13,8 @@ class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
     @Published private var repo = ProductSourceDetailRepositories()
     @Published private var productDetail: ProductDetail = .mockData
     
-    let cartUseCase: CartUseCaseProtocol
-    init(cartUseCase: CartUseCaseProtocol) {
+    let cartUseCase: CustomProductUseCaseProtocol
+    init(cartUseCase: CustomProductUseCaseProtocol) {
         self.cartUseCase = cartUseCase
     }
     
@@ -60,12 +60,26 @@ class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
     }
     
     func addToCart(productId: String, count: Int, selectedColor: UIColor, selectedSize: ProductSizes) async throws {
-        let product = CartProduct(
+        let product = CustomProductDetails(
             productId: productId,
             selectedColor: selectedColor,
             selectedSize: selectedSize,
-            count: count
+            count: count,
+            isFavorite: false,
+            inCart: true
         )
-        try await cartUseCase.addToCart(product)
+        try await cartUseCase.saveProduct(product)
+    }
+    
+    func addToWishList(productId: String, count: Int, selectedColor: UIColor, selectedSize: ProductSizes) async throws {
+        let product = CustomProductDetails(
+            productId: productId,
+            selectedColor: selectedColor,
+            selectedSize: selectedSize,
+            count: count,
+            isFavorite: true,
+            inCart: false
+        )
+        try await cartUseCase.saveProduct(product)
     }
 }

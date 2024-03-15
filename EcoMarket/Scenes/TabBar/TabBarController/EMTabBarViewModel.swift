@@ -23,13 +23,10 @@ protocol EMTabBarViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListUseCaseProtocol, CartUseCaseProtocol {
-    
-    
-    static let shared = EMTabBarViewModel()
+class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CustomProductUseCaseProtocol {
     
     static let shared = EMTabBarViewModel()
-
+    
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     
@@ -55,36 +52,19 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListU
         }
     }
     
-    // MARK: - WishListProtocol -
-    @Published var wishlist: [Product]
-    
-    var wishlistPublisher: AnyPublisher<[Product], Never> { $wishlist.eraseToAnyPublisher() }
-    
-    func addToWishList(_ product: Product) async throws {
-        wishlist.append(product)
-    }
-    
     // MARK: - CartProtocol -
-    @Published var cart: [CartProduct] = []
-    var cartPublisher: AnyPublisher<[CartProduct], Never> { $cart.eraseToAnyPublisher() }
+    @Published var savedProduct: [CustomProductDetails] = []
+    var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { $savedProduct.eraseToAnyPublisher() }
     
-    func addToCart(_ product: CartProduct) async throws {
-        cart.append(product)
+    func saveProduct(_ product: CustomProductDetails) async throws {
+        savedProduct.append(product)
     }
     
-    func removeFromCart(_ product: CartProduct) async throws {
-        cart.removeAll(where: {$0 == product })
+    func removeFromSaved(_ product: CustomProductDetails) async throws {
+        savedProduct.removeAll(where: {$0 == product })
     }
     
-    func updateCount(for product: CartProduct, with count: Int) {
+    func updateCount(for product: CustomProductDetails, with count: Int) {
         
     }
-}
-
-struct CartProduct: Identifiable, Hashable {
-    var id: String { productId }
-    let productId: String
-    let selectedColor: UIColor
-    let selectedSize: ProductSizes
-    var count: Int = 0
 }

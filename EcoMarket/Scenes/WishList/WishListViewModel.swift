@@ -1,29 +1,26 @@
 //
-//  CartViewModel.swift
+//  WishListViewModel.swift
 //  EcoMarket
 //
-//  Created by Ahmed Yamany on 11/03/2024.
+//  Created by Ibrahim Nasser Ibrahim on 15/03/2024.
 //
 
 import Foundation
 import Combine
 
-class CartViewModel {
+class WishListViewModel {
     @Published var products: [(Product, CustomProductDetails)] = []
     
     var cancellabel = Set<AnyCancellable>()
     
     let cartUseCase: CustomProductUseCaseProtocol
     let productUseCase: ProductRepositories
-    let coordinator: CartCoordinatorProtocol
     
     init(
         cartUseCase: CustomProductUseCaseProtocol,
-        coordinator: CartCoordinatorProtocol,
         productUseCase: ProductRepositories
     ) {
         self.cartUseCase = cartUseCase
-        self.coordinator = coordinator
         self.productUseCase = productUseCase
     }
     
@@ -33,14 +30,10 @@ class CartViewModel {
             
             let products: [(Product, CustomProductDetails)] =  self.productUseCase
                 .getProducts(by: cartProducts)
-                .filter({ $0.1.inCart })
+                .filter({ $0.1.isFavorite })
             self.products = products
             
         }
         .store(in: &cancellabel)
-    }
-
-    private func bindPublishers() {
-        
     }
 }

@@ -142,7 +142,7 @@ class ProductDetailsViewController: UIViewController {
     }
     
     @IBAction func addToFavoriteTapped(_ sender: Any) {
-        print("Added")
+        viewModel.addToWishList()
     }
 }
 

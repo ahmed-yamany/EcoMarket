@@ -19,4 +19,11 @@ protocol ProductDetailRepositories {
         selectedColor: UIColor,
         selectedSize: ProductSizes
     ) async throws
+    
+    func addToWishList(
+        productId: String,
+        count: Int,
+        selectedColor: UIColor,
+        selectedSize: ProductSizes
+    ) async throws
 }

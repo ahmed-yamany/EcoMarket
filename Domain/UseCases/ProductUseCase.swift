@@ -54,8 +54,8 @@ class ProductUseCase: ProductRepositories, ObservableObject {
             .filter { $0.category.lowercased() == category.lowercased() }
     }
     
-    func getProducts(by cartProducts: [CartProduct]) -> [(Product, CartProduct)] {
-        var results: [(Product, CartProduct)] = []
+    func getProducts(by cartProducts: [CustomProductDetails]) -> [(Product, CustomProductDetails)] {
+        var results: [(Product, CustomProductDetails)] = []
         for cartProduct in cartProducts {
             for product in products {
                 if product.id == cartProduct.productId {

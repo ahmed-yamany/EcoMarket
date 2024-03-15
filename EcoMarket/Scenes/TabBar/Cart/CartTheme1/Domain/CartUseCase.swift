@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-protocol CartUseCaseProtocol {
-    var cart: [CartProduct] { get set}
-    var cartPublisher: AnyPublisher<[CartProduct], Never> { get }
+protocol CustomProductUseCaseProtocol {
+    var savedProduct: [CustomProductDetails] { get set}
+    var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { get }
     
-    func addToCart(_ product: CartProduct) async throws
-    func removeFromCart(_ product: CartProduct) async throws
+    func saveProduct(_ product: CustomProductDetails) async throws
+    func removeFromSaved(_ product: CustomProductDetails) async throws
     
-    func updateCount(for product: CartProduct, with count: Int)
+    func updateCount(for product: CustomProductDetails, with count: Int)
 }

@@ -56,7 +56,10 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func showFavourites() {
-        let viewController = WishListViewController()
+        let useCase = EMTabBarViewModel.shared
+        let productUseCase = ProductUseCase()
+        let viewModel = WishListViewModel(cartUseCase: useCase, productUseCase: productUseCase)
+        let viewController = WishListViewController(viewModel: viewModel)
         router.push(viewController)
     }
     

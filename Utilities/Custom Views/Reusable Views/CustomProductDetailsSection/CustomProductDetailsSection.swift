@@ -8,10 +8,11 @@
 import UIKit
 
 /// A section layout for displaying products in a cart.
-class CartProductsSection: SectionsLayout {
-    typealias ItemsType = (Product, CartProduct)
+class CustomProductDetailsSection: SectionsLayout {
+    typealias ItemsType = (Product, CustomProductDetails)
     
     var items: [ItemsType] = []
+    var headerTitle: String = ""
 
     func sectionLayout(
         _ collectionView: UICollectionView,
@@ -63,7 +64,7 @@ class CartProductsSection: SectionsLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: CartProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: CustomProductDetailsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
@@ -88,12 +89,12 @@ class CartProductsSection: SectionsLayout {
             Logger.log("Failed to get header view", category: \.default, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("My Cart")
+        header.setTitle(headerTitle)
         return header
     }
     
     func registerCell(in collectionView: UICollectionView) {
-        collectionView.registerNib(CartProductCollectionViewCell.self)
+        collectionView.registerNib(CustomProductDetailsCollectionViewCell.self)
     }
     
     private func createHeader() -> NSCollectionLayoutBoundarySupplementaryItem {

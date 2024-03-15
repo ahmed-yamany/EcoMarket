@@ -18,22 +18,26 @@ class ProductDetailViewModel {
             getTotalPrice()
         }
     }
+    
     @Published var productDetail: ProductDetail = .mockData {
         didSet {
             getAvilableSizes()
         }
     }
+    
     @Published var selectedSize: ProductSizes = .l {
         didSet {
             getAvilableColors()
         }
     }
+    
     @Published var availableSizes: [ProductSizes] = [.m, .l, .xl]
     @Published var selectedColor: UIColor = .blue {
         didSet {
             getMaxAvilableProducts()
         }
     }
+    
     @Published var availableColors: [UIColor] = [.blue]
     @Published var maxAvailableProduct: Int = 1 {
         didSet {
@@ -41,6 +45,7 @@ class ProductDetailViewModel {
             getTotalPrice()
         }
     }
+    
     @Published var currentStepperValue: Int = 1
     
     @Published var totalPrice: Double = 1
@@ -113,7 +118,30 @@ class ProductDetailViewModel {
                     selectedColor: selectedColor,
                     selectedSize: selectedSize
                 )
-                coordinator.showAlert(item: .init(message: "Added To Cart", buttonTitle: "Ok", image: .success, status: .success))
+                coordinator.showAlert(item: .init(message: "Added To Cart", 
+                                                  buttonTitle: "Ok",
+                                                  image: .success,
+                                                  status: .success))
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func addToWishList() {
+        Task {
+            do {
+                try await productDetailUseCase.addToWishList(
+                    productId: product.id,
+                    count: currentStepperValue,
+                    selectedColor: selectedColor,
+                    selectedSize: selectedSize
+                )
+                coordinator.showAlert(item: .init(message: "Added To Favorite",
+                                                  buttonTitle: "Ok",
+                                                  image: .success,
+                                                  status: .success))
                 
             } catch {
                 print(error.localizedDescription)
