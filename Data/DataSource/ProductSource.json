@@ -6,7 +6,7 @@
         "price": 4999,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-16",
-        "category": "New Arrivals",
+        "category": "Features",
     },
     {
         "id": "2",
@@ -15,7 +15,7 @@
         "price": 33,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-5",
-        "category": "New Arrivals"
+        "category": "Shoese"
     },
     {
         "id": "3",
@@ -24,7 +24,7 @@
         "price": 1399,
         "discountPercentage": 22,
         "image": "hometheme2/image-14",
-        "category": "New Arrivals"
+        "category": "Jeans"
     },
     {
         "id": "4",
@@ -33,7 +33,7 @@
         "price": 1199,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-6",
-        "category": "New Arrivals"
+        "category": "Shoese"
     },
     {
         "id": "5",
@@ -42,7 +42,7 @@
         "price": 1560,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-9",
-        "category": "Shoese",
+        "category": "Dresses",
     },
     {
         "id": "6",
@@ -51,7 +51,7 @@
         "price": 4290,
         "discountPercentage": 33,
         "image": "hometheme2/zara-4",
-        "category": "Shoese"
+        "category": "Dresses"
     },
     {
         "id": "7",
@@ -60,7 +60,7 @@
         "price": 1199,
         "discountPercentage": 33,
         "image": "hometheme2/image-13",
-        "category": "Jewelry"
+        "category": "Jeans"
     },
     {
         "id": "8",
@@ -69,7 +69,7 @@
         "price": 1499,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-4",
-        "category": "Jewelry"
+        "category": "Shoese"
     },
     {
         "id": "9",
@@ -78,7 +78,7 @@
         "price": 500,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-10",
-        "category": "Electronics",
+        "category": "Features",
     },
     {
         "id": "10",
@@ -87,7 +87,7 @@
         "price": 1199,
         "discountPercentage": 33,
         "image": "hometheme2/image-12",
-        "category": "Electronics"
+        "category": "Jeans"
     },
     {
         "id": "11",
@@ -96,7 +96,7 @@
         "price": 999,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-3",
-        "category": "Clothes"
+        "category": "Shoese"
     },
     {
         "id": "12",
@@ -105,7 +105,7 @@
         "price": 2490,
         "discountPercentage": 33,
         "image": "hometheme2/zara-3",
-        "category": "Clothes",
+        "category": "Dresses",
     },
     {
         "id": "13",
@@ -114,7 +114,7 @@
         "price": 800,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-2",
-        "category": "Bags"
+        "category": "Shoese"
     },
     {
         "id": "14",
@@ -123,7 +123,7 @@
         "price": 2999,
         "discountPercentage": 33,
         "image": "hometheme2/zara-2",
-        "category": "Bags",
+        "category": "Dresses",
     },
     {
         "id": "15",
@@ -132,7 +132,7 @@
         "price": 2399,
         "discountPercentage": 33,
         "image": "hometheme2/zara-1",
-        "category": "Jewelry",
+        "category": "Dresses",
     },
     {
         "id": "16",
@@ -141,7 +141,7 @@
         "price": 1299.00,
         "discountPercentage": 33,
         "image": "hometheme2/image-9",
-        "category": "Jewelry"
+        "category": "Jackets"
     },
     {
         "id": "17",
@@ -150,7 +150,7 @@
         "price": 3299.00,
         "discountPercentage": 33,
         "image": "hometheme2/image-10",
-        "category": "New Arrivals"
+        "category": "Jackets"
     },
     {
         "id": "18",
@@ -159,7 +159,7 @@
         "price": 2299.00,
         "discountPercentage": 33,
         "image": "hometheme2/image-11",
-        "category": "New Arrivals"
+        "category": "Jackets"
     },
     {
         "id": "19",
@@ -168,7 +168,7 @@
         "price": 1260,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-7",
-        "category": "Shoese",
+        "category": "Dresses",
     },
     {
         "id": "20",
@@ -177,7 +177,7 @@
         "price": 1160,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-8",
-        "category": "Shoese",
+        "category": "Dresses",
     },
     {
         "id": "21",
@@ -186,7 +186,7 @@
         "price": 600,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-11",
-        "category": "Clothes",
+        "category": "Features",
     },
     {
         "id": "22",
@@ -195,7 +195,7 @@
         "price": 3690,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-12",
-        "category": "Clothes",
+        "category": "Features",
     },
     {
         "id": "23",
@@ -204,7 +204,7 @@
         "price": 300,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-13",
-        "category": "Clothes",
+        "category": "Features",
     },
     {
         "id": "24",
@@ -213,7 +213,7 @@
         "price": 2100,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-14",
-        "category": "Shoese",
+        "category": "Features",
     },
     {
         "id": "25",
@@ -222,7 +222,7 @@
         "price": 3100,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-15",
-        "category": "Shoese",
+        "category": "Features",
     },
     {
         "id": "26",
@@ -231,7 +231,7 @@
         "price": 4299.00,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-17",
-        "category": "Shoese"
+        "category": "Jackets"
     },
     {
         "id": "27",
@@ -240,7 +240,7 @@
         "price": 5299.00,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-18",
-        "category": "Electronics"
+        "category": "Jackets"
     },
     {
         "id": "28",
@@ -249,7 +249,7 @@
         "price": 6299.00,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-19",
-        "category": "Electronics"
+        "category": "Features"
     },
     {
         "id": "28",
@@ -258,7 +258,7 @@
         "price": 6109.00,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-20",
-        "category": "Electronics"
+        "category": "Features"
     },
     {
         "id": "28",
@@ -267,7 +267,7 @@
         "price": 5299.00,
         "discountPercentage": 33,
         "image": "hometheme2/hmgoepprod-21",
-        "category": "New Arrivals"
+        "category": "Jackets"
     },
     {
         "id": "29",
@@ -276,7 +276,7 @@
         "price": 3400,
         "discountPercentage": 40,
         "image": "hometheme2/hmgoepprod-22",
-        "category": "New Arrivals"
+        "category": "Jeans"
     },
     {
         "id": "30",
@@ -285,7 +285,7 @@
         "price": 1700,
         "discountPercentage": 28,
         "image": "hometheme2/hmgoepprod-23",
-        "category": "New Arrivals"
+        "category": "Jeans"
     },
     {
         "id": "31",
@@ -294,6 +294,6 @@
         "price": 2300,
         "discountPercentage": 22,
         "image": "hometheme2/hmgoepprod-24",
-        "category": "Jewelry"
+        "category": "Jeans"
     }
 ]

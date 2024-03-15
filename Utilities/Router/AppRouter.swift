@@ -14,6 +14,11 @@ public final class AppRouter {
     public required init(navigationController: UINavigationController, alertInterface: AlertInterface & UIViewController) {
         self.navigationController = navigationController
         self.alertInterface = alertInterface
+        navigationController.navigationBar.tintColor = .black
+        navigationController.navigationBar.backIndicatorImage = AppImage.Icon.back?.withRenderingMode(.alwaysOriginal)
+        navigationController
+            .navigationBar
+            .backIndicatorTransitionMaskImage = AppImage.Icon.back?.withRenderingMode(.alwaysOriginal)
     }
 }
 

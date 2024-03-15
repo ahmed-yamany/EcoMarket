@@ -32,7 +32,6 @@ class CartProductCollectionViewCell: UICollectionViewCell {
         productColor.backgroundColor = cartProduct.selectedColor
         configureUI()
         stapperView.minmumValue = cartProduct.count
-        productPrice.text = String(cartProduct.count)
     }
     
     // MARK: - UI Configuration
