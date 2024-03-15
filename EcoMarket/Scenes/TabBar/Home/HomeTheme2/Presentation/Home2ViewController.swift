@@ -43,7 +43,7 @@ class Home2ViewController: UIViewController {
         headerViewHeight = headerStackViewHeightConstraints.constant
         bindViewModel()
         configureUI()
-//        navigationController?.
+        navigationItem.backButtonTitle = ""
         navigationItem.leftBarButtonItem = UIBarButtonItem(
             image: AppImage.Icon.menu?.withRenderingMode(.alwaysOriginal),
             style: .done,

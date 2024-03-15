@@ -35,6 +35,7 @@ class CategoryViewController2: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Categories"
+        navigationItem.backButtonTitle = ""
         configCollectionView()
         subscribedCategories()
     }

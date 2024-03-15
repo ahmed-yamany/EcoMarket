@@ -40,6 +40,7 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configureUI()
         bindUI()
     }

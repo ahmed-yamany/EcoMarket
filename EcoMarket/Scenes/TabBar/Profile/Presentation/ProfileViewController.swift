@@ -26,6 +26,7 @@ class ProfileViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         addCollectionViewSections()
         collectionView.reloadData()
     }

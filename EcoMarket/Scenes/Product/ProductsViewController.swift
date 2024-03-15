@@ -35,6 +35,7 @@ class ProductsViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configureCollectionView()
         subscribedCategories()
     }
