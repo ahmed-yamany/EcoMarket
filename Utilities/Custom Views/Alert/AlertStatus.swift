@@ -5,7 +5,7 @@
 //  Created by Ahmed Yamany on 17/02/2024.
 //
 
-import Foundation
+import UIKit
 
 public enum AlertStatus {
     case success, warning, error
@@ -15,6 +15,17 @@ public enum AlertStatus {
             case .success: return "Success"
             case .warning: return "Warning"
             case .error: return "Error"
+        }
+    }
+    
+    var image: UIImage {
+        switch self {
+            case .success:
+                return AppImage.Alert.addToCart ?? UIImage()
+            case .warning:
+                return UIImage()
+            case .error:
+                return UIImage()
         }
     }
 }

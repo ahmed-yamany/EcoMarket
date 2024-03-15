@@ -7,7 +7,7 @@
 
 import UIKit
 
-struct Product: Identifiable {
+struct Product: Identifiable, Hashable {
     let id: String
     let name: String
     let brandName: String
@@ -15,13 +15,14 @@ struct Product: Identifiable {
     let discountPercentage: Double
     let image: UIImage?
     let category: String
-    static let mockData = Product(id: "1",
-                                  name: "test",
-                                  brandName: "brandName",
-                                  price: 44,
-                                  discountPercentage: 32,
-                                  image: UIImage(named: "cart/image1"),
-                                  category: "")
+    static let mockData: [Product] = [ Product(id: "1",
+                                               name: "test",
+                                               brandName: "brandName",
+                                               price: 44,
+                                               discountPercentage: 32,
+                                               image: UIImage(named: "product"),
+                                               category: "")
+    ]
     
 }
 

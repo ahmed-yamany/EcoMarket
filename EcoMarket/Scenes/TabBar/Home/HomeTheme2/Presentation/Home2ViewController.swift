@@ -43,7 +43,12 @@ class Home2ViewController: UIViewController {
         headerViewHeight = headerStackViewHeightConstraints.constant
         bindViewModel()
         configureUI()
-        
+        navigationItem.backButtonTitle = ""
+        navigationItem.leftBarButtonItem = UIBarButtonItem(
+            image: AppImage.Icon.menu?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(menuButtonTapped))
         viewModel.reloadData = {[weak self] in
             DispatchQueue.main.async {
                 self?.collectionView.reloadData()
@@ -54,6 +59,10 @@ class Home2ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
+    }
+    
+    @objc func menuButtonTapped() {
+        viewModel.showCategories()
     }
     
     // MARK: - Private Methods

@@ -32,14 +32,10 @@ class ProductsViewController: UICollectionViewController {
     
     // MARK: - View Lifecycle
     //
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
-
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configureCollectionView()
         subscribedCategories()
     }
@@ -124,6 +120,11 @@ class ProductsViewController: UICollectionViewController {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = viewModel.products[indexPath.row]
+        viewModel.showDetails(product: product)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
@@ -132,7 +133,7 @@ class ProductsViewController: UICollectionViewController {
             Logger.log("Failed to get header view", category: \.category, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Clothes")
+        header.setTitle(viewModel.category)
         return header
     }
 }

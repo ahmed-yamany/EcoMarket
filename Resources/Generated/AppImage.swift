@@ -12,82 +12,15 @@ enum AppImage {
     static var appLogo: UIImage? {
         return UIImage(named: "app-logo")
     }
-    static var eyeSlash: UIImage? {
-        return UIImage(named: "eye")
-    }
-    
-    static var successImage: UIImage? {
-        return UIImage(named: "icon-success")
-    }
-    
-    static var facebookIcon: UIImage? {
-        return UIImage(named: "icon-facebook")
-    }
-    
-    static var googleIcon: UIImage? {
-        return UIImage(named: "icon-google")
-    }
-    
-    static var appleIcon: UIImage? {
-        return UIImage(named: "icon-apple")
-    }
-    
-    static var verifyImage: UIImage? {
-        return UIImage(named: "verify")
-    }
     
     static var searchImage: UIImage? {
         return UIImage(systemName: "magnifyingglass")
-    }
-    
-    static var checkImage: UIImage? {
-        return UIImage(named: "checkImage")
-    }
-    
-    static var cartIcon: UIImage? {
-        return UIImage(named: "cart")
-    }
-    
-    static var favIcon: UIImage? {
-        return UIImage(named: "favourite")
-    }
-    
-    static var ratingIcon: UIImage? {
-        return UIImage(named: "rating")
-	}
-
-    static var arrowImage: UIImage? {
-        return UIImage(named: "arrow")
-    }
-    
-    static var delete: UIImage? {
-        return UIImage(named: "delete")
     }
     
     static var arrow: UIImage? {
         return UIImage(named: "icon/profile-arrow")
     }
     
-    static var editButton: UIImage? {
-        return UIImage(named: "edit")
-    }
-    
-    static var profileImage: UIImage? {
-        return UIImage(named: "profileImage")
-    }
-    
-    static var logout: UIImage? {
-        return UIImage(named: "logout")
-    }
-    
-    static var dot1: UIImage? {
-        return UIImage(named: "dots")
-    }
-    
-    static var dot2: UIImage? {
-        return UIImage(named: "dots-2")
-	}
-
     static var alertSuccessefulShopping: UIImage? {
         return UIImage(named: "icon-alertSuccessefulShopping")
 	}
@@ -110,6 +43,31 @@ enum AppImage {
         }
     }
     
+    enum Auth {
+        
+        private static var folderName: String {"auth"}
+        
+        static var logout: UIImage? {
+            return UIImage(named: "\(folderName)/logout")
+        }
+        
+        static var successImage: UIImage? {
+            return UIImage(named: "\(folderName)/icon-success")
+        }
+        
+        static var facebookIcon: UIImage? {
+            return UIImage(named: "\(folderName)/icon-facebook")
+        }
+        
+        static var googleIcon: UIImage? {
+            return UIImage(named: "\(folderName)/icon-google")
+        }
+        
+        static var appleIcon: UIImage? {
+            return UIImage(named: "\(folderName)/icon-apple")
+        }
+    }
+    
     enum Icon {
         
         static var productDelete: UIImage? {
@@ -120,6 +78,29 @@ enum AppImage {
             return UIImage(folderName: .icon, named: "love")
         }
         
+        static var delete: UIImage? {
+            return UIImage(folderName: .icon, named: "delete")
+        }
+        
+        static var arrow: UIImage? {
+            return UIImage(folderName: .icon, named: "arrow")
+        }
+        
+        static var rating: UIImage? {
+            return UIImage(folderName: .icon, named: "rating")
+		}
+
+        static var scanerIcon: UIImage? {
+            return UIImage(folderName: .icon, named: "scaner")
+        }
+        
+        static var menu: UIImage? {
+            return UIImage(folderName: .icon, named: "menu")
+        }
+        
+        static var back: UIImage? {
+            return UIImage(folderName: .icon, named: "back")
+		}
         static var scan: UIImage? {
             return UIImage(folderName: .icon, named: "scan")
         }
@@ -151,12 +132,55 @@ enum AppImage {
             UIImage(named: "\(folderName)/arrowbutton")
         }
     }
+    
+    enum ProductDetails {
+        private static var folderName: String {"productDetails"}
+    
+        static var favourite: UIImage? {
+            UIImage(named: "\(folderName)/favourite")
+        }
+        
+        static var favouriteFill: UIImage? {
+            UIImage(named: "\(folderName)/favouritefill")
+        }
+        
+        static var cartIcon: UIImage? {
+            UIImage(named: "\(folderName)/cart")
+        }
+    }
+    
+    enum Settings {
+        private static var folderName: String {"settings"}
+    
+        static var dot1: UIImage? {
+            UIImage(named: "\(folderName)/dots")
+        }
+        
+        static var dot2: UIImage? {
+            UIImage(named: "\(folderName)/dots-2")
+        }
+        
+        static var editButton: UIImage? {
+            UIImage(named: "\(folderName)/edit")
+        }
+    }
+    
+    enum Profile {
+        private static var folderName: String {"profile"}
+        
+        static var profileImage: UIImage? {
+            UIImage(named: "\(folderName)/profileImage")
+        }
+    }
 }
 
 enum AssetsFolderName: String {
     case onboarding = "Onboarding"
     case icon = "icon"
     case alert = "Alert"
+    case category = "category"
+    case category2 = "category2"
+    case category3 = "category3"
 }
 
 extension UIImage {

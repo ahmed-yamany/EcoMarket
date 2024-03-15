@@ -5,30 +5,41 @@
 //  Created by Ibrahim Nasser Ibrahim on 22/01/2024.
 //
 
-import Foundation
+import UIKit
 import Combine
 
 public final class Category3ViewModel {
     
     // MARK: - Published Properties
-    @Published var categories: [CategoryModel] = []
-    
-    // MARK: - Public Methods
+    // MARK: - Published Properties
+    @Published var categories: [String] = []
+    let coordinator: HomeCoordinatorProtocol
+    var productUseCase: ProductRepositories
+    private var cancellable: Set<AnyCancellable> = []
+    // MARK: - Init
     //
-    func viewDidLoad() {
-        getData()
+    init(coordinator: HomeCoordinatorProtocol, productUseCase: ProductRepositories) {
+        self.coordinator = coordinator
+        self.productUseCase = productUseCase
+        getCategories()
     }
     
     // MARK: - Private Methods
     //
-    private func getData() {
-        
-        DispatchQueue.global().asyncAfter(deadline: .now() + 2) { [weak self] in
-            guard let self = self else { return }
-
-            DispatchQueue.main.async {
-                self.categories = CategoryModel.mockData3
-            }
+    private func getCategories() {
+        productUseCase.getCategories().sink {[weak self] categories in
+            self?.categories = categories
         }
+        .store(in: &cancellable)
+    }
+    
+    func getCategoryDetail(category: String) -> (UIImage?, Int) {
+        let categoryCount = productUseCase.getCategoryCount(category: category)
+        let image = UIImage(folderName: .category3, named: category)
+        return (image, categoryCount)
+    }
+    
+    func showProductView(category: String) {
+        coordinator.showProductsView(category: category)
     }
 }

@@ -72,6 +72,11 @@ class HomeViewModel {
             }
         }
     }
+    
+    func showCategories() {
+        coordinator.showCategories()
+        coordinator.hideTabBar()
+    }
 }
 
 extension HomeViewModel: HomeSectionsDelegate {
@@ -85,6 +90,7 @@ extension HomeViewModel: HomeSectionsDelegate {
     }
     
     func topSection(_ section: TopSection, didSelect item: Product) {
-        
+        coordinator.showDetails(product: item)
+        coordinator.hideTabBar()
     }
 }

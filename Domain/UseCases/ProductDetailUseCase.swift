@@ -9,9 +9,15 @@ import Combine
 import UIKit
 
 class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
+    
     @Published private var repo = ProductSourceDetailRepositories()
     @Published private var productDetail: ProductDetail = .mockData
-
+    
+    let cartUseCase: CartUseCaseProtocol
+    init(cartUseCase: CartUseCaseProtocol) {
+        self.cartUseCase = cartUseCase
+    }
+    
     private var cancellables = Set<AnyCancellable>()
 
     func fetchProductDetail(by id: String) {
@@ -51,5 +57,15 @@ class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
                   return sizeAttribute.avaliableInStok[colorIndex]
               }
               .eraseToAnyPublisher()
+    }
+    
+    func addToCart(productId: String, count: Int, selectedColor: UIColor, selectedSize: ProductSizes) async throws {
+        let product = CartProduct(
+            productId: productId,
+            selectedColor: selectedColor,
+            selectedSize: selectedSize,
+            count: count
+        )
+        try await cartUseCase.addToCart(product)
     }
 }

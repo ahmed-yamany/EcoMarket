@@ -10,7 +10,7 @@ import UIKit
 public struct AlertItem {
     let message: String
     let buttonTitle: String
-    let image: UIImage?
+    let image: AlertStatus
     let status: AlertStatus
     var buttonAction: ActionHandler?
 }

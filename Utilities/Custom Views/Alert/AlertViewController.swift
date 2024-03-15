@@ -45,7 +45,7 @@ class AlertViewController: UIViewController, AlertInterface {
     func show(item: AlertItem) {
         titleLabel.text = item.status.title
         messageLabel.text = item.message
-        statusImageView.image = item.image
+        statusImageView.image = item.status.image
         confirmButton.setTitle(item.buttonTitle, for: .normal)
         self.action = item.buttonAction
     }

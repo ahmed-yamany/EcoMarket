@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 class ProductDetailViewModel {
+    
     let productDetailUseCase: ProductDetailRepositories
     private var cancellables: [String: AnyCancellable] = [:]
     
@@ -44,9 +45,15 @@ class ProductDetailViewModel {
     
     @Published var totalPrice: Double = 1
     
-    init(product: Product, productDetailUseCase: ProductDetailRepositories) {
+    var coordinator: DetailsCoordinatorProtocol
+    init(
+        product: Product,
+        productDetailUseCase: ProductDetailRepositories,
+        coordinator: DetailsCoordinatorProtocol
+    ) {
         self.productDetailUseCase = productDetailUseCase
         self.product = product
+        self.coordinator = coordinator
         updateProductDetail()
     }
     
@@ -95,5 +102,22 @@ class ProductDetailViewModel {
     
     private func getTotalPrice() {
         totalPrice = product.price * Double(currentStepperValue)
+    }
+    
+    func addProductToCart() {
+        Task {
+            do {
+                try await productDetailUseCase.addToCart(
+                    productId: product.id,
+                    count: currentStepperValue,
+                    selectedColor: selectedColor,
+                    selectedSize: selectedSize
+                )
+                coordinator.showAlert(item: .init(message: "Added To Cart", buttonTitle: "Ok", image: .success, status: .success))
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
     }
 }

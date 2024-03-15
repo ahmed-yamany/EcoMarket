@@ -21,10 +21,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     //
     /// Configures the cell with data from the given category model.
     /// - Parameter category: The category model to display in the cell.
-    func setup(category: CategoryModel, indexPath: IndexPath) {
-        categoryImage.image = UIImage(named: category.image)
-        categoryName.text = category.name
-        productCount.text = category.productNumber
+    func setup(categoryName: String, categoryDetail: (UIImage?, Int), indexPath: IndexPath) {
+        categoryImage.image = categoryDetail.0
+        self.categoryName.text = categoryName
+        productCount.text = String(categoryDetail.1)
         setupUI()
         setupLabelsStackViewUI(indexPath)
     }

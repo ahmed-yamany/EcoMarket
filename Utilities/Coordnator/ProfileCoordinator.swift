@@ -49,7 +49,10 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func showOrder() {
-        print("show order")
+        let viewModel = TrackingViewModel()
+        let tracking = Tracking.mockData
+        let viewController = TrackingViewController(tracking: tracking, viewModel: viewModel)
+        router.push(viewController)
     }
     
     func showFavourites() {

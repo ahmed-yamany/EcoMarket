@@ -23,11 +23,13 @@ protocol EMTabBarViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListUseCaseProtocol {
+class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListUseCaseProtocol, CartUseCaseProtocol {
     
     
     static let shared = EMTabBarViewModel()
     
+    static let shared = EMTabBarViewModel()
+
     @Published var tabBarIsHidden: Bool = false
     var tabBarIsHiddenPublisher: Published<Bool>.Publisher { $tabBarIsHidden }
     
@@ -62,4 +64,27 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, WishListU
         wishlist.append(product)
     }
     
+    // MARK: - CartProtocol -
+    @Published var cart: [CartProduct] = []
+    var cartPublisher: AnyPublisher<[CartProduct], Never> { $cart.eraseToAnyPublisher() }
+    
+    func addToCart(_ product: CartProduct) async throws {
+        cart.append(product)
+    }
+    
+    func removeFromCart(_ product: CartProduct) async throws {
+        cart.removeAll(where: {$0 == product })
+    }
+    
+    func updateCount(for product: CartProduct, with count: Int) {
+        
+    }
+}
+
+struct CartProduct: Identifiable, Hashable {
+    var id: String { productId }
+    let productId: String
+    let selectedColor: UIColor
+    let selectedSize: ProductSizes
+    var count: Int = 0
 }
