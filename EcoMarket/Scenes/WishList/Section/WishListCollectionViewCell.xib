@@ -59,12 +59,13 @@
                                 <rect key="frame" x="137.33333333333337" y="23" width="238.66666666666663" height="80"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Qu-zB-RPo">
-                                        <rect key="frame" x="158.66666666666666" y="0.0" width="80" height="40"/>
+                                        <rect key="frame" x="128.66666666666666" y="0.0" width="110" height="40"/>
                                     </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-RA-RuG" customClass="PrimaryButton" customModule="EcoMarket" customModuleProvider="target">
-                                        <rect key="frame" x="158.66666666666666" y="40" width="80" height="40"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EpV-RA-RuG">
+                                        <rect key="frame" x="128.66666666666666" y="40" width="110" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="80" id="Qmy-y9-RTY"/>
+                                            <constraint firstAttribute="height" constant="40" id="D2O-Ff-vlt"/>
+                                            <constraint firstAttribute="width" constant="110" id="Qmy-y9-RTY"/>
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
@@ -73,7 +74,7 @@
                             </stackView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="EpV-RA-RuG" firstAttribute="bottom" secondItem="Anc-T8-iZX" secondAttribute="bottom" id="6QI-xa-vpQ"/>
+                            <constraint firstItem="EpV-RA-RuG" firstAttribute="bottom" secondItem="Anc-T8-iZX" secondAttribute="bottom" id="XaE-YY-raY"/>
                         </constraints>
                     </stackView>
                 </subviews>

@@ -53,7 +53,8 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func showFavourites() {
-        print("show favaoritedd")
+        let viewController = WishListViewController()
+        router.push(viewController)
     }
     
     func showShippingAddress() {

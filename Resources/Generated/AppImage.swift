@@ -119,6 +119,10 @@ enum AppImage {
         static var loveButton: UIImage? {
             return UIImage(folderName: .icon, named: "love")
         }
+        
+        static var scan: UIImage? {
+            return UIImage(folderName: .icon, named: "scan")
+        }
     }
     
     enum Alert {

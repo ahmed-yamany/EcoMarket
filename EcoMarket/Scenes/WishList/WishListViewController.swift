@@ -18,6 +18,13 @@ class WishListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
+//        let wishlist = WishListSection()
+//        wishlist.items = Product.mockData
+//        
+//        sections = [wishlist]
+        configureCollectionView()
+        collectionView.reloadData()
         
     }
     
@@ -31,7 +38,7 @@ class WishListViewController: UIViewController {
     
     private func setupButtonsUI() {
         scanButton.setTitle("", for: .normal)
-        scanButton.setImage(AppImage.HomeTheme2.filterButtonIcon, for: .normal)
+        scanButton.setImage(AppImage.Icon.scan, for: .normal)
     }
     
     private func configureCollectionView() {

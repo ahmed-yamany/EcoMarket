@@ -10,7 +10,7 @@ import UIKit
 class WishListCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var containerView: UIStackView!
-    @IBOutlet weak var addToCartButton: PrimaryButton!
+    @IBOutlet weak var addToCartButton: UIButton!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var brandName: UILabel!
@@ -36,6 +36,7 @@ class WishListCollectionViewCell: UICollectionViewCell {
         productImage.layer.cornerRadius = 8
         configureLabelsUI()
         configureContainerView()
+        configureAddToCartButtonUI()
     }
     
     private func configureLabelsUI() {
@@ -64,6 +65,14 @@ class WishListCollectionViewCell: UICollectionViewCell {
     }
     
     private func configureAddToCartButtonUI() {
-        addToCartButton.title = "Add to cart"
+        addToCartButton.setTitle("Add to cart", for: .normal)
+        addToCartButton.setTitleColor(.white, for: .normal)
+        addToCartButton.layer.cornerRadius = 20
+        addToCartButton.tintColor = .emBackground
+        addToCartButton.backgroundColor = .emPrimaryButton
+        if #available(iOS 15.0, *) {
+            addToCartButton.configuration = nil
+            addToCartButton.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .bold)
+        }
     }
 }
