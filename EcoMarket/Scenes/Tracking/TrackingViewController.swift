@@ -56,7 +56,7 @@ class TrackingViewController: UIViewController {
         super.viewDidLoad()
         
         image.image = UIImage(named: tracking.image)
-        shippingID.text = tracking.id
+        shippingID.text = tracking.ID
         titleLabel.text = tracking.title
         subtitleLabel.text = tracking.subtitle
         shippingDate.text = tracking.shippingDate

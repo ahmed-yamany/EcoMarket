@@ -98,7 +98,7 @@ class CustomProductDetailsCollectionViewCell: UICollectionViewCell {
         addToCartButton.backgroundColor = .emPrimaryButton
         if #available(iOS 15.0, *) {
             addToCartButton.configuration = nil
-            addToCartButton.titleLabel?.font = .custom(size: 10, weight: .bold)
+            addToCartButton.titleLabel?.font = .systemFont(ofSize: 16.0, weight: .bold)
         }
     }
 }

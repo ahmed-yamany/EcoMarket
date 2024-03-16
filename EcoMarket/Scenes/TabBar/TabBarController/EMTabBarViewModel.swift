@@ -57,24 +57,11 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CustomPro
     var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { $savedProduct.eraseToAnyPublisher() }
     
     func saveProduct(_ product: CustomProductDetails) async throws {
-        if let index = savedProduct.firstIndex(where: { $0.id == product.id}) {
-            savedProduct[index].isFavorite = true
-            savedProduct[index].inCart = true
-        } else {
-            savedProduct.append(product)
-        }
+        savedProduct.append(product)
     }
     
-    func removeFromSaved(_ product: CustomProductDetails, fromCart: Bool) async throws {
-        if let index = savedProduct.firstIndex(where: { $0.id == product.id}), product.isFavorite && product.inCart {
-            if fromCart {
-                savedProduct[index].inCart = false
-            } else {
-                savedProduct[index].isFavorite = false
-            }
-        } else {
-            savedProduct.removeAll(where: {$0 == product })
-        }
+    func removeFromSaved(_ product: CustomProductDetails) async throws {
+        savedProduct.removeAll(where: {$0 == product })
     }
     
     func updateCount(for product: CustomProductDetails, with count: Int) {

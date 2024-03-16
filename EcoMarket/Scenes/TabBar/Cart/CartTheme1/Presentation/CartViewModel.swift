@@ -43,14 +43,4 @@ class CartViewModel {
     private func bindPublishers() {
         
     }
-    
-    func removeCartViewModel(_ product: CustomProductDetails) {
-        Task {
-            do {
-                try await cartUseCase.removeFromSaved(product, fromCart: true)
-            } catch {
-                print("error in removeCartViewModel from CartViewModel ")
-            }
-        }
-    }
 }

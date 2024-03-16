@@ -9,7 +9,7 @@ import Foundation
 
 struct Tracking: Codable {
     let image: String
-    let id: String
+    let ID: String
     let title: String
     let subtitle: String
     let shippingDate: String
@@ -21,7 +21,7 @@ struct Tracking: Codable {
 extension Tracking {
     static let mockData: Tracking =
         .init(image: "tracking",
-              id: "6556 23341 8090",
+              ID: "6556 23341 8090",
               title: "Ena Express",
               subtitle: "Transit",
               shippingDate: "25 June, 2021",

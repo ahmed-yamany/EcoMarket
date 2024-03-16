@@ -7,17 +7,10 @@
 
 import UIKit
 
-protocol CustomProductDetailsSectionDelegate: AnyObject {
-    func customProductDetailsSection(
-        _ section: CustomProductDetailsSection,
-        willRemove item: (Product, CustomProductDetails),
-        at indexPath: IndexPath
-    )
-}
 /// A section layout for displaying products in a cart.
 class CustomProductDetailsSection: SectionsLayout {
     typealias ItemsType = (Product, CustomProductDetails)
-    weak var delegate: CustomProductDetailsSectionDelegate?
+    
     var items: [ItemsType] = []
     var headerTitle: String = ""
 
@@ -61,7 +54,6 @@ class CustomProductDetailsSection: SectionsLayout {
     
     private func trailingSwipeAction(_ collectionView: UICollectionView, at indexPath: IndexPath) {
         let item = items[indexPath.row]
-        delegate?.customProductDetailsSection(self, willRemove: item, at: indexPath)
         items.removeAll { $0 == item }
         collectionView.deleteItems(at: [indexPath])
     }

@@ -57,8 +57,10 @@ class ProductUseCase: ProductRepositories, ObservableObject {
     func getProducts(by cartProducts: [CustomProductDetails]) -> [(Product, CustomProductDetails)] {
         var results: [(Product, CustomProductDetails)] = []
         for cartProduct in cartProducts {
-            for product in products where product.id == cartProduct.productId {
-                results.append((product, cartProduct))
+            for product in products {
+                if product.id == cartProduct.productId {
+                    results.append((product, cartProduct))
+                }
             }
         }
         return results

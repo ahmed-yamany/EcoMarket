@@ -13,7 +13,7 @@ protocol CustomProductUseCaseProtocol {
     var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { get }
     
     func saveProduct(_ product: CustomProductDetails) async throws
-    func removeFromSaved(_ product: CustomProductDetails, fromCart: Bool) async throws
+    func removeFromSaved(_ product: CustomProductDetails) async throws
     
     func updateCount(for product: CustomProductDetails, with count: Int)
 }

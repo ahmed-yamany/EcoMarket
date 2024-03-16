@@ -36,14 +36,4 @@ class WishListViewModel {
         }
         .store(in: &cancellabel)
     }
-    
-    func removeFromWishList(_ product: CustomProductDetails) {
-        Task {
-            do {
-                try await cartUseCase.removeFromSaved(product, fromCart: false)
-            } catch {
-                print("error in removeFromSaved from WishListViewModel ")
-            }
-        }
-    }
 }

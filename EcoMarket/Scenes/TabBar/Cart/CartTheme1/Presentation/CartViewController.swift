@@ -44,7 +44,7 @@ class CartViewController: UICollectionViewController {
         super.viewDidLoad()
         viewModel.viewDidLoad()
         addCollectionViewSections()
-        productSection.delegate = self
+        
         viewModel.$products.sink {  products in
             
             DispatchQueue.main.async {
@@ -101,15 +101,5 @@ class CartViewController: UICollectionViewController {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-}
-
-extension CartViewController: CustomProductDetailsSectionDelegate {
-    func customProductDetailsSection(
-        _ section: CustomProductDetailsSection,
-        willRemove item: (Product, CustomProductDetails),
-        at indexPath: IndexPath
-    ) {
-        viewModel.removeCartViewModel(item.1)
     }
 }
