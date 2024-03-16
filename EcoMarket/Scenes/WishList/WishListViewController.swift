@@ -47,7 +47,7 @@ class WishListViewController: UIViewController {
         configureUI()
         viewModel.viewDidLoad()
         addCollectionViewSections()
-        
+        wishListSection.delegate = self
         viewModel.$products.sink {  products in
             
             DispatchQueue.main.async {
@@ -117,5 +117,15 @@ extension WishListViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         sections[indexPath.section].collectionView(collectionView, didSelectItemAt: indexPath)
+    }
+}
+
+extension WishListViewController: CustomProductDetailsSectionDelegate {
+    func customProductDetailsSection(
+        _ section: CustomProductDetailsSection,
+        willRemove item: (Product, CustomProductDetails),
+        at indexPath: IndexPath
+    ) {
+        viewModel.removeFromWishList(item.1)
     }
 }
