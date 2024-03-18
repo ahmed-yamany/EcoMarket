@@ -13,6 +13,7 @@ protocol CustomProductDetailsSectionDelegate: AnyObject {
         willRemove item: (Product, CustomProductDetails),
         at indexPath: IndexPath
     )
+    func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails)
 }
 /// A section layout for displaying products in a cart.
 class CustomProductDetailsSection: SectionsLayout {
@@ -76,7 +77,7 @@ class CustomProductDetailsSection: SectionsLayout {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(cart: items[indexPath.row])
+        cell.setup(cart: items[indexPath.row], delegate: self)
         cell.layoutIfNeeded()
         collectionView.layoutIfNeeded()
         return cell
@@ -126,5 +127,11 @@ class CustomProductDetailsSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension CustomProductDetailsSection: CustomProductDetailsCollectionViewCellDelegate {
+    func addToCart(_ cell: CustomProductDetailsCollectionViewCell, product: CustomProductDetails) {
+        self.delegate?.customProductDetails(self, product: product)
     }
 }

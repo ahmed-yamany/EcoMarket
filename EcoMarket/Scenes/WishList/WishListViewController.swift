@@ -121,6 +121,10 @@ extension WishListViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 extension WishListViewController: CustomProductDetailsSectionDelegate {
+    func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails) {
+        viewModel.addToCart(product)
+    }
+    
     func customProductDetailsSection(
         _ section: CustomProductDetailsSection,
         willRemove item: (Product, CustomProductDetails),
