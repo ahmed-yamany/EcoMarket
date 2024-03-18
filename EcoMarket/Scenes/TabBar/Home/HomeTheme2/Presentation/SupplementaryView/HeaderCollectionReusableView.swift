@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol HeaderCollectionReusableViewDelegate: AnyObject {
+    func headerCollectionReusableViewButtonTapped()
+}
+
 class HeaderCollectionReusableView: UICollectionReusableView {
     // MARK: - Static Properties
     static let elementKind = String("header")
@@ -14,6 +18,8 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     // MARK: - IBOutlets
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var titleLabel: UILabel!
+    
+    weak var delegate: HeaderCollectionReusableViewDelegate?
     
     // MARK: - Initialization
     override init(frame: CGRect) {
@@ -60,6 +66,10 @@ class HeaderCollectionReusableView: UICollectionReusableView {
     /// - Parameter buttonTitle: The title to be displayed on the button.
     func setupHeaderButtonTitle(buttonTitle: String) {
         button.setTitle(buttonTitle, for: .normal)
+    }
+    
+    @IBAction func viewAllButtonTapped(_ sender: UIButton) {
+        delegate?.headerCollectionReusableViewButtonTapped()
     }
 }
 

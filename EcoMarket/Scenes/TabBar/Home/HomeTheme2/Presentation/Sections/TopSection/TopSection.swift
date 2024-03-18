@@ -9,6 +9,7 @@ import UIKit
 
 protocol TopSectionDelegate: AnyObject {
     func topSection(_ section: TopSection, didSelect item: Product)
+    func topSectionViewAllButtonTapped(_ section: TopSection)
 }
 
 class TopSection: SectionsLayout {
@@ -30,7 +31,8 @@ class TopSection: SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         
         let interItemSpacing: CGFloat = 15.0
@@ -108,6 +110,7 @@ class TopSection: SectionsLayout {
         }
         header.setupHeaderTitle(title: headerTitle ?? "")
         header.setupHeaderButtonTitle(buttonTitle: "View All")
+        header.delegate = self
         return header
     }
     
@@ -123,5 +126,11 @@ class TopSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension TopSection: HeaderCollectionReusableViewDelegate {
+    func headerCollectionReusableViewButtonTapped() {
+        delegate?.topSectionViewAllButtonTapped(self)
     }
 }

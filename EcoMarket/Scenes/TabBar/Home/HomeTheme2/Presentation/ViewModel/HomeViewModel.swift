@@ -15,6 +15,12 @@ class HomeViewModel {
     lazy var categoriesSection =  CategoriesSection(delegate: self, headerTitle: "Categories")
     lazy var productsSection = TopSection(delegate: self)
     
+    var selectedCategory: String = "" {
+        didSet {
+            getProducts(for: selectedCategory)
+        }
+    }
+    
     var reloadData: (() -> Void)?
         
     let coordinator: HomeCoordinatorProtocol
@@ -39,6 +45,10 @@ class HomeViewModel {
         getCategories()
     }
     
+    func viewDidLoad() {
+        
+    }
+    
     private func getFeatures() {
         Task {
             do {
@@ -55,7 +65,10 @@ class HomeViewModel {
             do {
                 let categories = try await useCase.getCategories()
                 categoriesSection.items = categories
-                getProducts(for: categories[safe: 0] ?? "")
+                let category = categories[safe: 0] ?? ""
+                getProducts(for: category)
+                selectedCategory = category
+                categoriesSection.isSelectedIndex = 0
             } catch {
                 
             }
@@ -86,11 +99,15 @@ extension HomeViewModel: HomeSectionsDelegate {
     }
     
     func categoriesSection(_ section: CategoriesSection, didSelect item: String) {
-        getProducts(for: item)
+        selectedCategory = item
     }
     
     func topSection(_ section: TopSection, didSelect item: Product) {
         coordinator.showDetails(product: item)
         coordinator.hideTabBar()
+    }
+    
+    func topSectionViewAllButtonTapped(_ section: TopSection) {
+        coordinator.viewAllProducts(for: selectedCategory)
     }
 }
