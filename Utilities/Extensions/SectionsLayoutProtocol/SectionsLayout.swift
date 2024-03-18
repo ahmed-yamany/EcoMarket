@@ -18,7 +18,8 @@ protocol SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell

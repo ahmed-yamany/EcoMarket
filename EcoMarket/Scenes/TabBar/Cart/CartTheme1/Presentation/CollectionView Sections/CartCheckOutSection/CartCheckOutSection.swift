@@ -30,7 +30,8 @@ class CartCheckOutSection: SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                               heightDimension: .fractionalHeight(1.0))

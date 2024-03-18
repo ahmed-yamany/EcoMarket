@@ -21,6 +21,8 @@ class CategoriesSection: SectionsLayout {
     var headerTitle: String?
     
     weak var delegate: CategoriesSectionDelegate?
+    private weak var collectionView: UICollectionView?
+    private var sectionIndex: Int?
     
     init(delegate: CategoriesSectionDelegate, headerTitle: String?) {
         self.delegate = delegate
@@ -33,7 +35,8 @@ class CategoriesSection: SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
@@ -51,6 +54,8 @@ class CategoriesSection: SectionsLayout {
         section.contentInsets.bottom = 25
         section.boundarySupplementaryItems = [header]
         section.orthogonalScrollingBehavior = .continuous
+        self.collectionView = collectionView
+        self.sectionIndex = sectionIndex
         return section
     }
     

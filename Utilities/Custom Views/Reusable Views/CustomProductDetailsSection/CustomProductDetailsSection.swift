@@ -24,7 +24,8 @@ class CustomProductDetailsSection: SectionsLayout {
 
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         
         var configurations = UICollectionLayoutListConfiguration(appearance: .plain)

@@ -14,6 +14,7 @@ protocol HomeCoordinatorProtocol: Coordinator {
     func showProductsView(category: String)
     func showTabBar()
     func hideTabBar()
+    func viewAllProducts(for category: String)
 }
 
 class HomeCoordinator: HomeCoordinatorProtocol {
@@ -62,5 +63,16 @@ class HomeCoordinator: HomeCoordinatorProtocol {
         let viewModel = ProductViewModel(coordinator: self, productUseCase: productUseCase, category: category)
         let viewController = ProductsViewController(viewModel: viewModel)
         router.push(viewController)
+    }
+    
+    func viewAllProducts(for category: String) {
+        let productUseCase = ProductUseCase()
+        let viewModel = ProductViewModel(
+            coordinator: self,
+            productUseCase: productUseCase,
+            category: category
+        )
+        let controller = ProductsViewController(viewModel: viewModel)
+        router.push(controller)
     }
 }

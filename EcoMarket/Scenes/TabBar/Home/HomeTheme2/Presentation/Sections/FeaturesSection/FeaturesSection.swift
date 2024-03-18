@@ -12,7 +12,6 @@ protocol FeaturesSectionDelegate: AnyObject {
 }
 
 class FeaturesSection: SectionsLayout {
-    
     typealias ItemsType = Product
     
     var items: [Product] = []
@@ -28,7 +27,8 @@ class FeaturesSection: SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         // Item
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
