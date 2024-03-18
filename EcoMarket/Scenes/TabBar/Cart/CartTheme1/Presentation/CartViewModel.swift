@@ -10,6 +10,7 @@ import Combine
 
 class CartViewModel {
     @Published var products: [(Product, CustomProductDetails)] = []
+    @Published var totalPrice: String = ""
     
     var cancellabel = Set<AnyCancellable>()
     
@@ -35,7 +36,7 @@ class CartViewModel {
                 .getProducts(by: cartProducts)
                 .filter({ $0.1.inCart })
             self.products = products
-            
+            self.totalPrice = String(products.totalPrice())
         }
         .store(in: &cancellabel)
     }
@@ -52,5 +53,11 @@ class CartViewModel {
                 print("error in removeCartViewModel from CartViewModel ")
             }
         }
+    }
+}
+
+extension Array where Element == (Product, CustomProductDetails) {
+    func totalPrice() -> Double {
+        map {$0.0.price}.reduce(0, +)
     }
 }

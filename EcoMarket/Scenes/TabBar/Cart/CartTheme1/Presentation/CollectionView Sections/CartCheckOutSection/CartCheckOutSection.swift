@@ -12,11 +12,15 @@ class CartCheckOutSection: SectionsLayout {
     typealias ItemsType = String
     var items: [String] = [""]
     
+    var totalPrice: String = ""
+    var productsCount: Int = 0
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell: CheckOutCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
+        cell.setup(totalPrice: totalPrice, productsCount: productsCount)
         return cell
     }
     
@@ -68,5 +72,10 @@ class CartCheckOutSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+    
+    func setup(totalPrice: String, productsCount: Int) {
+        self.totalPrice = totalPrice
+        self.productsCount = productsCount
     }
 }

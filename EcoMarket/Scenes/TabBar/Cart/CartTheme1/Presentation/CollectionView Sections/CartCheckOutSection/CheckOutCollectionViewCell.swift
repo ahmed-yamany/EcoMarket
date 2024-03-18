@@ -21,6 +21,11 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
         setupUI()
     }
     
+    func setup(totalPrice: String, productsCount: Int) {
+        totalLabel.text = String(productsCount)
+        productPrice.text = totalPrice
+    }
+    
     // MARK: - UI Configuration
     
     /// Configures the initial UI settings for the cell.

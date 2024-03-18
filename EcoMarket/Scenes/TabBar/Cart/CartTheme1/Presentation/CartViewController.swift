@@ -11,12 +11,13 @@ import Combine
 class CartViewController: UICollectionViewController {
     
     // MARK: - Properties
-    lazy var sections: [any SectionsLayout] =  [productSection, CartPromoCodeSection(), CartCheckOutSection()]
+    lazy var sections: [any SectionsLayout] =  [productSection, CartPromoCodeSection(), cartCheckOutSection]
 
     private var cancellable: Set<AnyCancellable> = []
     
     let productSection = CustomProductDetailsSection()
-
+    let cartCheckOutSection = CartCheckOutSection()
+    
     // MARK: - Initializer -
     let viewModel: CartViewModel
 
@@ -47,10 +48,15 @@ class CartViewController: UICollectionViewController {
         productSection.delegate = self
         viewModel.$products.sink {  products in
             
-            DispatchQueue.main.async {
-                self.productSection.items = products
-                self.productSection.headerTitle = "My Cart"
-                self.collectionView.reloadData()
+            DispatchQueue.main.async { [weak self] in
+                guard let self = self else { return}
+                productSection.items = products
+                productSection.headerTitle = "My Cart"
+                cartCheckOutSection.setup(
+                    totalPrice: viewModel.totalPrice,
+                    productsCount: products.count
+                )
+                collectionView.reloadData()
             }
         }
         .store(in: &cancellable)
