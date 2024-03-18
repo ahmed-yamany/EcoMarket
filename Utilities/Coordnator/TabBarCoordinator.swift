@@ -16,11 +16,7 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showProfile()
 }
 
-protocol CartCoordinatorProtocol: Coordinator {
-    func showCart()
-}
-
-final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtocol {
+final class TabBarCoordinator: TabBarCoordinatorProtocol {
     
     let viewModel: EMTabBarViewModelInterface = EMTabBarViewModel.shared
     let router: Router
@@ -74,14 +70,19 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func cartViewController() -> UIViewController {
-        let useCase = EMTabBarViewModel.shared
-        let productUseCase = ProductUseCase()
-        let viewModel = CartViewModel(
-            cartUseCase: useCase,
-            coordinator: self,
-            productUseCase: productUseCase
+        
+        let navigationController = UINavigationController()
+        let alertInterface = AlertViewController()
+        let router = AppRouter(
+            navigationController: navigationController,
+            alertInterface: alertInterface
         )
-        return CartViewController(viewModel: viewModel)
+        
+        let coordinator = CartCoordinator(router: router)
+      
+        coordinator.start()
+        
+        return navigationController
     }
     
     private func notificationViewController() -> UIViewController {
