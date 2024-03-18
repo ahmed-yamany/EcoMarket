@@ -20,6 +20,7 @@ protocol ProfileCoordinatorProtocol: Coordinator {
     func showCommunity()
     func showTabBar()
     func hideTabeBar()
+    func showAlert(item: AlertItem)
 }
 
 class ProfileCoordinator: ProfileCoordinatorProtocol {
@@ -58,7 +59,13 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     func showFavourites() {
         let useCase = EMTabBarViewModel.shared
         let productUseCase = ProductUseCase()
-        let viewModel = WishListViewModel(cartUseCase: useCase, productUseCase: productUseCase)
+        let productDetailUseCase = ProductDetailUseCase(cartUseCase: useCase)
+        let viewModel = WishListViewModel(
+            cartUseCase: useCase,
+            productUseCase: productUseCase,
+            productDetailUseCase: productDetailUseCase,
+            coordinator: self
+        )
         let viewController = WishListViewController(viewModel: viewModel)
         router.push(viewController)
     }
@@ -95,5 +102,11 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     func hideTabeBar() {
         tabBarCoordinator.hideTabBar()
+    }
+    
+    func showAlert(item: AlertItem) {
+        DispatchQueue.main.async {
+            self.router.showAlert(item: item)
+        }
     }
 }

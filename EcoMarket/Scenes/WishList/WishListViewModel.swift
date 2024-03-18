@@ -15,13 +15,19 @@ class WishListViewModel {
     
     let cartUseCase: CustomProductUseCaseProtocol
     let productUseCase: ProductRepositories
+    let productDetailUseCase: ProductDetailRepositories
+    let coordinator: ProfileCoordinatorProtocol
     
     init(
         cartUseCase: CustomProductUseCaseProtocol,
-        productUseCase: ProductRepositories
+        productUseCase: ProductRepositories,
+        productDetailUseCase: ProductDetailRepositories,
+        coordinator: ProfileCoordinatorProtocol
     ) {
         self.cartUseCase = cartUseCase
         self.productUseCase = productUseCase
+        self.productDetailUseCase = productDetailUseCase
+        self.coordinator = coordinator
     }
     
     func viewDidLoad() {
@@ -43,6 +49,24 @@ class WishListViewModel {
                 try await cartUseCase.removeFromSaved(product, fromCart: false)
             } catch {
                 print("error in removeFromSaved from WishListViewModel ")
+            }
+        }
+    }
+    
+    func addToCart(_ product: CustomProductDetails) {
+        Task {
+            do {
+                try await productDetailUseCase.addToCart(productId: product.id, 
+                                                         count: product.count,
+                                                         selectedColor: product.selectedColor,
+                                                         selectedSize: product.selectedSize)
+                
+                coordinator.showAlert(item: .init(message: "Added To Cart",
+                                                  buttonTitle: "Ok",
+                                                  image: .success,
+                                                  status: .success))
+            } catch {
+                print(error.localizedDescription)
             }
         }
     }

@@ -105,6 +105,10 @@ class CartViewController: UICollectionViewController {
 }
 
 extension CartViewController: CustomProductDetailsSectionDelegate {
+    func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails) {
+        
+    }
+    
     func customProductDetailsSection(
         _ section: CustomProductDetailsSection,
         willRemove item: (Product, CustomProductDetails),
