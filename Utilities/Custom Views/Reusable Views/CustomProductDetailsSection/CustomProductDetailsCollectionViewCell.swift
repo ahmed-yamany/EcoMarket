@@ -7,8 +7,9 @@
 
 import UIKit
 
-protocol CustomProductDetailsCollectionViewCellDelegate: AnyObject {
+protocol CustomProductDetailsViewCellDelegate: AnyObject {
     func addToCart(_ cell: CustomProductDetailsCollectionViewCell, product: CustomProductDetails)
+    func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int)
 }
 
 class CustomProductDetailsCollectionViewCell: UICollectionViewCell {
@@ -25,11 +26,11 @@ class CustomProductDetailsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var productImage: UIImageView!
     @IBOutlet weak var addToCartButton: UIButton!
     
-    weak var delegate: CustomProductDetailsCollectionViewCellDelegate?
+    weak var delegate: CustomProductDetailsViewCellDelegate?
     var cartProduct: CustomProductDetails?
     
     // MARK: - Data Setup Method
-    func setup(cart: (Product, CustomProductDetails), delegate: CustomProductDetailsCollectionViewCellDelegate?) {
+    func setup(cart: (Product, CustomProductDetails), delegate: CustomProductDetailsViewCellDelegate?) {
         let product = cart.0
         let cartProduct = cart.1
         self.cartProduct = cartProduct
@@ -124,6 +125,6 @@ class CustomProductDetailsCollectionViewCell: UICollectionViewCell {
 // MARK: - StapperDelegate
 extension CustomProductDetailsCollectionViewCell: StapperViewDelegate {
     func stapperView(_ stapper: StapperView, didSet value: Int) {
-        print(value)
+        delegate?.updateCount(self, for: cartProduct, with: value)
     }
 }

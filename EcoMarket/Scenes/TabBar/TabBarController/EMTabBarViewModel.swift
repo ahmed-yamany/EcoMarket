@@ -57,7 +57,7 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CustomPro
     var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { $savedProduct.eraseToAnyPublisher() }
     
     func saveProduct(_ product: CustomProductDetails) async throws {
-        if let index = savedProduct.firstIndex(where: { $0.id == product.id}) {
+        if let index = savedProduct.firstIndex(where: { $0 == product}) {
             savedProduct[index].isFavorite = true
             savedProduct[index].inCart = true
         } else {
@@ -77,7 +77,11 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CustomPro
         }
     }
     
-    func updateCount(for product: CustomProductDetails, with count: Int) {
-        
+    func updateCount(for product: CustomProductDetails?, with count: Int) {
+        guard let index = savedProduct.firstIndex(where: {$0 == product}) else {
+            Logger.log("error on update count ", category: \.default, level: .error)
+            return
+        }
+        savedProduct[index].count = count
     }
 }

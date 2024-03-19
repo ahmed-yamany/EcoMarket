@@ -129,6 +129,10 @@ class CartViewController: UICollectionViewController {
 }
 
 extension CartViewController: CustomProductDetailsSectionDelegate {
+    func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int) {
+        viewModel.updateCount(for: product, with: count)
+    }
+    
     func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails) {
         
     }

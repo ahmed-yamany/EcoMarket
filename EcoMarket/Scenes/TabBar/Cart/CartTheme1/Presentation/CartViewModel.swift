@@ -54,6 +54,10 @@ class CartViewModel {
             }
         }
     }
+    
+    func updateCount(for product: CustomProductDetails?, with count: Int) {
+        cartUseCase.updateCount(for: product, with: count)
+    }
 }
 
 extension Array where Element == (Product, CustomProductDetails) {

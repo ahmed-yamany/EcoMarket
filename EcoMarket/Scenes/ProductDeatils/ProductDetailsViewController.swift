@@ -60,6 +60,7 @@ class ProductDetailsViewController: UIViewController {
         setupFavoriteButton()
         setupAddToCartButton()
         setupPriceLabelUI()
+        addingRightBarButtonItem()
     }
     
     private func bindUI() {
@@ -88,6 +89,13 @@ class ProductDetailsViewController: UIViewController {
             self?.stapperView.minmumValue = 1
             
         }.store(in: &cancellables)
+    }
+    private func addingRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: AppImage.Icon.cart?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(rightButtonAction))
     }
     private func setupStapperView() {
         stapperView.maximumValue = 100
@@ -149,6 +157,11 @@ class ProductDetailsViewController: UIViewController {
     
     @IBAction func addToFavoriteTapped(_ sender: Any) {
         viewModel.addToWishList()
+    }
+    
+    @objc func rightButtonAction() {
+        // Handle the action here
+        print("Right bar button item tapped")
     }
 }
 

@@ -14,6 +14,7 @@ protocol CustomProductDetailsSectionDelegate: AnyObject {
         at indexPath: IndexPath
     )
     func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails)
+    func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int)
 }
 /// A section layout for displaying products in a cart.
 class CustomProductDetailsSection: SectionsLayout {
@@ -131,7 +132,11 @@ class CustomProductDetailsSection: SectionsLayout {
     }
 }
 
-extension CustomProductDetailsSection: CustomProductDetailsCollectionViewCellDelegate {
+extension CustomProductDetailsSection: CustomProductDetailsViewCellDelegate {
+    func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int) {
+        delegate?.updateCount(cell, for: product, with: count)
+    }
+    
     func addToCart(_ cell: CustomProductDetailsCollectionViewCell, product: CustomProductDetails) {
         self.delegate?.customProductDetails(self, product: product)
     }

@@ -15,5 +15,5 @@ protocol CustomProductUseCaseProtocol {
     func saveProduct(_ product: CustomProductDetails) async throws
     func removeFromSaved(_ product: CustomProductDetails, fromCart: Bool) async throws
     
-    func updateCount(for product: CustomProductDetails, with count: Int)
+    func updateCount(for product: CustomProductDetails?, with count: Int)
 }

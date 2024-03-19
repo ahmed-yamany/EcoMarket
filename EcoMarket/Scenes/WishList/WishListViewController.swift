@@ -125,6 +125,10 @@ extension WishListViewController: UICollectionViewDelegate, UICollectionViewData
 }
 
 extension WishListViewController: CustomProductDetailsSectionDelegate {
+    func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int) {
+        
+    }
+    
     func customProductDetails(_ section: CustomProductDetailsSection, product: CustomProductDetails) {
         viewModel.addToCart(product)
     }
