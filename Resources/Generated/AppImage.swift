@@ -101,8 +101,13 @@ enum AppImage {
         static var back: UIImage? {
             return UIImage(folderName: .icon, named: "back")
 		}
+        
         static var scan: UIImage? {
             return UIImage(folderName: .icon, named: "scan")
+        }
+        
+        static var cart: UIImage? {
+            return UIImage(folderName: .icon, named: "cart")
         }
     }
     
