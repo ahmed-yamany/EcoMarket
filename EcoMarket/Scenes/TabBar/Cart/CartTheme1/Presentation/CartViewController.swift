@@ -12,7 +12,7 @@ class CartViewController: UICollectionViewController {
     
     // MARK: - Properties
     lazy var sections: [any SectionsLayout] =  [productSection, CartPromoCodeSection(), cartCheckOutSection]
-
+    
     private var cancellable: Set<AnyCancellable> = []
     
     let productSection = CustomProductDetailsSection()
@@ -20,7 +20,7 @@ class CartViewController: UICollectionViewController {
     
     // MARK: - Initializer -
     let viewModel: CartViewModel
-
+    
     init(viewModel: CartViewModel) {
         self.viewModel = viewModel
         super.init(collectionViewLayout: .init())
@@ -46,6 +46,25 @@ class CartViewController: UICollectionViewController {
         viewModel.viewDidLoad()
         addCollectionViewSections()
         productSection.delegate = self
+        bindViewModel()
+        addingRightBarButtonItem()
+    }
+    
+    @objc func rightButtonAction() {
+        // Handle the action here
+        print("Right bar button item tapped")
+    }
+    
+    private func addingRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            image: AppImage.Icon.cart?.withRenderingMode(.alwaysOriginal),
+            style: .done,
+            target: self,
+            action: #selector(rightButtonAction))
+    }
+    
+    // MARK: - Private Methods
+    private func bindViewModel() {
         viewModel.$products.sink {  products in
             
             DispatchQueue.main.async { [weak self] in
@@ -67,8 +86,6 @@ class CartViewController: UICollectionViewController {
     }
     
     // MARK: - UI Configuration
-    
-    /// Configures the collection view with necessary settings and registers cell classes.
     private func configureCollectionView() {
         sections.forEach { section in
             section.registerCell(in: self.collectionView)
@@ -79,9 +96,6 @@ class CartViewController: UICollectionViewController {
     }
     
     // MARK: - Compositional Layout
-    //
-    /// Creates a compositional layout for the collection view.
-    /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
             self.sections[sectionIndex].sectionLayout(
@@ -105,7 +119,7 @@ class CartViewController: UICollectionViewController {
         sections[indexPath.section].collectionView(collectionView, cellForItemAt: indexPath)
     }
     
-    override func collectionView(_ collectionView: UICollectionView, 
+    override func collectionView(_ collectionView: UICollectionView,
                                  viewForSupplementaryElementOfKind kind: String,
                                  at indexPath: IndexPath) -> UICollectionReusableView {
         sections[indexPath.section].collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)

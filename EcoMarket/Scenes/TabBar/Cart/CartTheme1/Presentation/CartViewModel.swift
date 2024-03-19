@@ -58,6 +58,6 @@ class CartViewModel {
 
 extension Array where Element == (Product, CustomProductDetails) {
     func totalPrice() -> Double {
-        map {$0.0.price}.reduce(0, +)
+        map {$0.0.price * Double($0.1.count)}.reduce(0, +)
     }
 }

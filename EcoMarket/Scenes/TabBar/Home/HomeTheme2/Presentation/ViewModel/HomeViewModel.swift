@@ -42,11 +42,10 @@ class HomeViewModel {
     func viewWillAppear() {
         coordinator.showTabBar()
         getFeatures()
-        getCategories()
     }
     
     func viewDidLoad() {
-        
+        getCategories()
     }
     
     private func getFeatures() {

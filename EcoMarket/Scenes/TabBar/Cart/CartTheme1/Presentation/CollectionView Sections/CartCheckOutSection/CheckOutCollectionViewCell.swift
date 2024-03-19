@@ -22,8 +22,8 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
     }
     
     func setup(totalPrice: String, productsCount: Int) {
-        totalLabel.text = String(productsCount)
-        productPrice.text = totalPrice
+        totalLabel.text = "Total (\(productsCount) items):"
+        productPrice.text = "$\(totalPrice)"
     }
     
     // MARK: - UI Configuration
@@ -38,12 +38,10 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
     private func configureLabelsUI() {
         // Total Label UI
         totalLabel.font = .medium
-        totalLabel.text = "Total (3 items):"
         totalLabel.textColor = AppColor.socialButton
         
         // Price Label UI
         productPrice.font = .h2
-        productPrice.text = "$500"
         productPrice.textColor = AppColor.primaryText
     }
     
