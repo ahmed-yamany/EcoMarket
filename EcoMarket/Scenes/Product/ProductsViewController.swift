@@ -59,7 +59,7 @@ class ProductsViewController: UICollectionViewController {
     // MARK: - Configuration
     private func configureCollectionView() {
         
-        collectionView.registerNib(ProductsCollectionViewCell.self)
+        collectionView.registerNib(ProductCollectionViewCell.self)
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
@@ -112,7 +112,7 @@ class ProductsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ProductsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: ProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.category, level: .fault)
             return UICollectionViewCell()
         }

@@ -7,11 +7,9 @@
 
 import UIKit
 
-class ProductsCollectionViewCell: UICollectionViewCell {
+class ProductCollectionViewCell: UICollectionViewCell {
 
     // MARK: - Outlets
-    //
-    @IBOutlet weak var favouriteButton: UIButton!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var productName: UILabel!
     @IBOutlet weak var brandName: UILabel!
@@ -31,12 +29,7 @@ class ProductsCollectionViewCell: UICollectionViewCell {
     private func setupUI() {
         // ImageUI
         productImage.layer.cornerRadius = 15
-        
-        // Button UI
-        favouriteButton.setTitle("", for: .normal)
-        favouriteButton.setImage(AppImage.Icon.loveButton, for: .normal)
-        favouriteButton.tintColor = AppColor.primaryButton
-        
+    
         // Labels UI
         brandName.font = .h3
         productName.font = .regular
@@ -44,9 +37,5 @@ class ProductsCollectionViewCell: UICollectionViewCell {
         brandName.textColor = AppColor.primaryText
         productName.textColor = AppColor.socialButton
         productPrice.textColor = AppColor.primaryText
-    }
-    
-    @IBAction func favouriteButtonTapped(_ sender: Any) {
-        print("Added to favourites")
     }
 }
