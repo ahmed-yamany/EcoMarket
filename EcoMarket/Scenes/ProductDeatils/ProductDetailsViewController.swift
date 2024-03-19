@@ -26,6 +26,7 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var colorView: CustomColorView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToCartButton: PrimaryButton!
+    @IBOutlet weak var productPrice: UILabel!
     
     // MARK: Initializer
     init(viewModel: ProductDetailViewModel) {
@@ -58,6 +59,7 @@ class ProductDetailsViewController: UIViewController {
         setupStapperView()
         setupFavoriteButton()
         setupAddToCartButton()
+        setupPriceLabelUI()
     }
     
     private func bindUI() {
@@ -65,6 +67,7 @@ class ProductDetailsViewController: UIViewController {
             self?.productNameLabel.text = product.name
             self?.productBrandLabel.text = product.brandName
             self?.productImageView.image = product.image
+            self?.productPrice.text = "$\(product.price)"
         }.store(in: &cancellables)
         viewModel.$productDetail.sink { [weak self] productDetail in
             self?.reviewView.setReview(count: "\(productDetail.review)Review", review: productDetail.rating)
@@ -92,7 +95,10 @@ class ProductDetailsViewController: UIViewController {
         stapperView.setTintColor(AppColor.primaryButton)
         stapperView.delegate = self
     }
-    
+    private func setupPriceLabelUI() {
+        productPrice.textColor = AppColor.primaryText
+        productPrice.font = .h2
+    }
     private func setupProductNameLabel() {
         productNameLabel.font = .h2
         productNameLabel.textColor = AppColor.primaryText
@@ -147,7 +153,6 @@ class ProductDetailsViewController: UIViewController {
 }
 
 // MARK: - SizeViewDelegate
-//
 extension ProductDetailsViewController: SizeViewDelegate {
     func sizeView(_ sizeView: CustomSizeView, didSelect size: ProductSizes) {
         viewModel.selectedSize = size
@@ -155,7 +160,6 @@ extension ProductDetailsViewController: SizeViewDelegate {
 }
 
 // MARK: - ColorViewDelegate
-//
 extension ProductDetailsViewController: CustomColorViewDelegate {
     func colorView(_ colorView: CustomColorView, didSelect color: UIColor) {
         viewModel.selectedColor = color
@@ -163,7 +167,6 @@ extension ProductDetailsViewController: CustomColorViewDelegate {
 }
 
 // MARK: - StapperDelegate
-//
 extension ProductDetailsViewController: StapperViewDelegate {
     func stapperView(_ stapper: StapperView, didSet value: Int) {
         viewModel.currentStepperValue = value
