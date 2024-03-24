@@ -26,4 +26,5 @@ protocol ProductDetailRepositories {
         selectedColor: UIColor,
         selectedSize: ProductSizes
     ) async throws
+    var cartCount: AnyPublisher<Int, Never> { get set }
 }

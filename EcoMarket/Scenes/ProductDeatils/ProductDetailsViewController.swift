@@ -12,7 +12,8 @@ class ProductDetailsViewController: UIViewController {
     // MARK: - Properties
     let viewModel: ProductDetailViewModel
     private var cancellables = Set<AnyCancellable>()
-    
+    var customCart = CustomCartView()
+
     // MARK: - Outlets
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var reviewView: ProductReviewView!
@@ -91,11 +92,10 @@ class ProductDetailsViewController: UIViewController {
         }.store(in: &cancellables)
     }
     private func addingRightBarButtonItem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: AppImage.Icon.cart?.withRenderingMode(.alwaysOriginal),
-            style: .done,
-            target: self,
-            action: #selector(rightButtonAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customCart)
+        viewModel.$cartCount.sink { [weak self] count in
+            self?.customCart.setCount(count)
+        }.store(in: &cancellables)
     }
     private func setupStapperView() {
         stapperView.maximumValue = 100

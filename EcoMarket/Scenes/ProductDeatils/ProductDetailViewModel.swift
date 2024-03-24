@@ -49,7 +49,8 @@ class ProductDetailViewModel {
     @Published var currentStepperValue: Int = 1
     
     @Published var totalPrice: Double = 1
-    
+    @Published var cartCount = 0
+
     var coordinator: DetailsCoordinatorProtocol
     init(
         product: Product,
@@ -60,6 +61,7 @@ class ProductDetailViewModel {
         self.product = product
         self.coordinator = coordinator
         updateProductDetail()
+        updateCartCount()
     }
     
     func updateProductDetail () {
@@ -147,5 +149,11 @@ class ProductDetailViewModel {
                 print(error.localizedDescription)
             }
         }
+    }
+    
+    func updateCartCount() {
+        self.cancellables["updateCartCount"]?.cancel()
+        let cancellable = AnyCancellable( productDetailUseCase.cartCount.assign(to: \.cartCount, on: self))
+        self.cancellables["updateCartCount"] = cancellable
     }
 }

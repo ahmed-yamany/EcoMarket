@@ -17,7 +17,7 @@ class CartViewController: UICollectionViewController {
     
     let productSection = CustomProductDetailsSection()
     let cartCheckOutSection = CartCheckOutSection()
-    
+    var customCart = CustomCartView()
     // MARK: - Initializer -
     let viewModel: CartViewModel
     
@@ -56,7 +56,7 @@ class CartViewController: UICollectionViewController {
     }
     
     private func addingRightBarButtonItem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: CustomCartView())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customCart)
     }
     
     // MARK: - Private Methods
@@ -73,6 +73,11 @@ class CartViewController: UICollectionViewController {
                 )
                 collectionView.reloadData()
             }
+        }
+        .store(in: &cancellable)
+        
+        viewModel.$cartCount.sink { [weak self] count in
+            self?.customCart.setCount(count)
         }
         .store(in: &cancellable)
     }

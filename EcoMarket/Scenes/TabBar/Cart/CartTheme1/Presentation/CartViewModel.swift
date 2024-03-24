@@ -11,7 +11,7 @@ import Combine
 class CartViewModel {
     @Published var products: [(Product, CustomProductDetails)] = []
     @Published var totalPrice: String = ""
-    
+    @Published var cartCount = 0
     var cancellabel = Set<AnyCancellable>()
     
     let cartUseCase: CustomProductUseCaseProtocol
@@ -37,6 +37,7 @@ class CartViewModel {
                 .filter({ $0.1.inCart })
             self.products = products
             self.totalPrice = String(products.totalPrice())
+            self.cartCount = cartProducts.count
         }
         .store(in: &cancellabel)
     }

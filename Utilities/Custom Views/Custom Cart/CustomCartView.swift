@@ -10,7 +10,6 @@ import UIKit
 class CustomCartView: UIView {
     
     @IBOutlet weak var countLabel: UILabel!
-    @IBOutlet weak var labelRoundedView: UIView!
     @IBOutlet weak var cartIcon: UIImageView!
     @IBOutlet weak var cartRoundedView: UIView!
     
@@ -29,25 +28,26 @@ class CustomCartView: UIView {
     func configureUI() {
         configureViewsUI()
         configureCountLabelUI()
-        countLabel.text = "100"
     }
     
     private func configureViewsUI() {
+        self.layer.masksToBounds = false
+        self.equalSizeConstraints(30)
         cartRoundedView.backgroundColor = .white
         cartRoundedView.layer.cornerRadius = 15
         cartRoundedView.layer.shadowColor = UIColor.black.cgColor
         cartRoundedView.layer.shadowOpacity = 0.5
         cartRoundedView.layer.shadowOffset = .zero
         cartRoundedView.layer.shadowRadius = 10
-        labelRoundedView.backgroundColor = .black
-        labelRoundedView.layer.cornerRadius = 8
-        
         cartIcon.image = AppImage.Icon.cart
     }
     
     private func configureCountLabelUI() {
         countLabel.textColor = .emBackground
-        countLabel.font = .regular
+        countLabel.font = .custom(size: 7, weight: .semibold)
+        countLabel.backgroundColor = .black
+        countLabel.clipsToBounds = true
+        countLabel.layer.cornerRadius = 10
     }
     
     /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.
@@ -59,5 +59,15 @@ class CustomCartView: UIView {
             view.frame = bounds
         }
         // swiftlint:enable all
+    }
+    func setCount(_ count: Int) {
+        DispatchQueue.main.async {
+            if count == 0 {
+                self.countLabel.isHidden = true
+            } else {
+                self.countLabel.isHidden = false
+                self.countLabel.text = "\(count)"
+            }
+        }
     }
 }

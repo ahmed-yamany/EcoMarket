@@ -12,7 +12,7 @@ class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
     
     @Published private var repo = ProductSourceDetailRepositories()
     @Published private var productDetail: ProductDetail = .mockData
-    
+    lazy var cartCount: AnyPublisher<Int, Never> = cartUseCase.savedProductPublisher.map{$0.count}.eraseToAnyPublisher()
     let cartUseCase: CustomProductUseCaseProtocol
     init(cartUseCase: CustomProductUseCaseProtocol) {
         self.cartUseCase = cartUseCase
