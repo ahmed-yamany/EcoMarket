@@ -56,11 +56,7 @@ class CartViewController: UICollectionViewController {
     }
     
     private func addingRightBarButtonItem() {
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
-            image: AppImage.Icon.cart?.withRenderingMode(.alwaysOriginal),
-            style: .done,
-            target: self,
-            action: #selector(rightButtonAction))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: CustomCartView())
     }
     
     // MARK: - Private Methods

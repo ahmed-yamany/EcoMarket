@@ -36,7 +36,6 @@ class HomeViewModel {
             categoriesSection,
             productsSection
         ]
-        productsSection.headerTitle = "Top Dressed"
     }
     
     func viewWillAppear() {
@@ -78,6 +77,7 @@ class HomeViewModel {
         Task {
             do {
                 productsSection.items = try await useCase.getProducts(for: category)
+                productsSection.headerTitle = category
                 reloadData?()
             } catch {
                 

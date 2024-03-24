@@ -79,6 +79,8 @@
 		D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */; };
 		D66084FF2B82BEA50071B562 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FE2B82BEA50071B562 /* HomeModel.swift */; };
 		D66085032B8375BB0071B562 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66085022B8375BB0071B562 /* HomeCoordinator.swift */; };
+		D660E6D82BAE21F800C897FC /* CustomCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6D72BAE21F800C897FC /* CustomCartView.swift */; };
+		D660E6DA2BAE220100C897FC /* CustomCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E6D92BAE220100C897FC /* CustomCartView.xib */; };
 		D67B4A052B7D17380023E451 /* +makeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B4A042B7D17380023E451 /* +makeRounded.swift */; };
 		D67DA32C2B9A008E0061C22C /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */; };
 		D67DA32E2B9A02830061C22C /* ColorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */; };
@@ -295,6 +297,8 @@
 		D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D66084FE2B82BEA50071B562 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D66085022B8375BB0071B562 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		D660E6D72BAE21F800C897FC /* CustomCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCartView.swift; sourceTree = "<group>"; };
+		D660E6D92BAE220100C897FC /* CustomCartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCartView.xib; sourceTree = "<group>"; };
 		D67B4A042B7D17380023E451 /* +makeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+makeRounded.swift"; sourceTree = "<group>"; };
 		D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionView.swift; sourceTree = "<group>"; };
@@ -828,6 +832,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D660E6D62BAE21DF00C897FC /* Custom Cart */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6D72BAE21F800C897FC /* CustomCartView.swift */,
+				D660E6D92BAE220100C897FC /* CustomCartView.xib */,
+			);
+			path = "Custom Cart";
+			sourceTree = "<group>";
+		};
 		D67B4A032B7D17240023E451 /* UIImageView */ = {
 			isa = PBXGroup;
 			children = (
@@ -1155,6 +1168,7 @@
 		EE32E2D52B45B6E100675EAE /* Custom Views */ = {
 			isa = PBXGroup;
 			children = (
+				D660E6D62BAE21DF00C897FC /* Custom Cart */,
 				A1D73D892B6E4A9A00B251EB /* Alert */,
 				EEA8A37E2B7D4A7E000CD3AF /* Reusable Views */,
 				D6C397CD2B7BDE1A008649E1 /* HeaderView */,
@@ -1726,6 +1740,7 @@
 				EEF069B32B5ED20D0063EE80 /* Poppins-Medium.ttf in Resources */,
 				EE5CA1582B5F04FD00630C5D /* SearchView.xib in Resources */,
 				A1CB8C792B528A4C00316DD4 /* OnboardingData.json in Resources */,
+				D660E6DA2BAE220100C897FC /* CustomCartView.xib in Resources */,
 				D6BB64112B8A2EB40008752F /* Shipping.json in Resources */,
 				D6E9AB5C2B73F99400BEA301 /* EditProfileCollectionViewCell.xib in Resources */,
 				D62F1C202B616EFA00FBE349 /* ProductDetailsViewController.xib in Resources */,
@@ -1828,6 +1843,7 @@
 				D62BD3EF2B6FEC0B000CF78A /* ProfileModel.swift in Sources */,
 				D62BD3D42B6D944C000CF78A /* CustomProductDetailsCollectionViewCell.swift in Sources */,
 				EE64D7972B5AB94900C5CBD7 /* EMTabBarViewController.swift in Sources */,
+				D660E6D82BAE21F800C897FC /* CustomCartView.swift in Sources */,
 				D62BD40C2B73AEE9000CF78A /* ProfileCollectionViewCell.swift in Sources */,
 				EE58F5DA2B5ECF9D0068B93F /* EcoMarketButton.swift in Sources */,
 				5C45B09C2B8B59E500BE62F4 /* ProductDetailUseCase.swift in Sources */,
