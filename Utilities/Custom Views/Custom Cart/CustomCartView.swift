@@ -36,9 +36,9 @@ class CustomCartView: UIView {
         cartRoundedView.backgroundColor = .white
         cartRoundedView.layer.cornerRadius = 15
         cartRoundedView.layer.shadowColor = UIColor.black.cgColor
-        cartRoundedView.layer.shadowOpacity = 0.5
+        cartRoundedView.layer.shadowOpacity = 0.3
         cartRoundedView.layer.shadowOffset = .zero
-        cartRoundedView.layer.shadowRadius = 10
+        cartRoundedView.layer.shadowRadius = 5
         cartIcon.image = AppImage.Icon.cart
     }
     
