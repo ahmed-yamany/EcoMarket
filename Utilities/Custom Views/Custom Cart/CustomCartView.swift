@@ -12,6 +12,7 @@ class CustomCartView: UIView {
     @IBOutlet weak var countLabel: UILabel!
     @IBOutlet weak var cartIcon: UIImageView!
     @IBOutlet weak var cartRoundedView: UIView!
+    @IBOutlet weak var cartCountLabelWidthConstraints: NSLayoutConstraint!
     
     // MARK: Init
     override init(frame: CGRect) {
@@ -19,6 +20,7 @@ class CustomCartView: UIView {
         loadNib()
         configureUI()
     }
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         loadNib()
@@ -47,7 +49,6 @@ class CustomCartView: UIView {
         countLabel.font = .custom(size: 7, weight: .semibold)
         countLabel.backgroundColor = .black
         countLabel.clipsToBounds = true
-        countLabel.layer.cornerRadius = 10
     }
     
     /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.
@@ -60,6 +61,7 @@ class CustomCartView: UIView {
         }
         // swiftlint:enable all
     }
+    
     func setCount(_ count: Int) {
         DispatchQueue.main.async {
             if count == 0 {
@@ -67,6 +69,7 @@ class CustomCartView: UIView {
             } else {
                 self.countLabel.isHidden = false
                 self.countLabel.text = "\(count)"
+                self.countLabel.layer.cornerRadius = self.cartCountLabelWidthConstraints.constant / 2
             }
         }
     }
