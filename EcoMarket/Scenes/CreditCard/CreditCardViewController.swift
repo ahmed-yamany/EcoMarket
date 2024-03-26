@@ -37,6 +37,7 @@ class CreditCardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         bindCardNumberTextField()
         bindCardHolderTextField()
         bindCVVTextField()
@@ -120,11 +121,11 @@ class CreditCardViewController: UIViewController {
     }
     
     @IBAction func addCardButtonTapped(_ sender: Any) {
-        
+        viewModel.didTapAddCard()
     }
     
     @IBAction func cancelButtonTapped(_ sender: Any) {
-        
+        viewModel.didTapCancel()
     }
 }
 

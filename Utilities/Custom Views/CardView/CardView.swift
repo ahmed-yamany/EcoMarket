@@ -97,7 +97,7 @@ class CardView: UIView {
     }
     
     func setCardHolderName(value: String) {
-        cardHolderName.text = value
+        cardHolderName.text = value.uppercased()
     } 
     
     func setValidDate(value: String) {

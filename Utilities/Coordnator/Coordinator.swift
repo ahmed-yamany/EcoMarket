@@ -12,3 +12,9 @@ protocol Coordinator {
     
     func start()
 }
+
+extension Coordinator {
+    func dismiss() {
+        router.dismiss(animated: true)
+    }
+}

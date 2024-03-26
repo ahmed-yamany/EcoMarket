@@ -75,7 +75,9 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func showCard() {
-        print("show art")
+        let viewModel = CreditCardViewModel(coordinator: self)
+        let viewController = CreditCardViewController(viewModel: viewModel)
+        router.push(viewController)
     }
     
     func showSettings() {
