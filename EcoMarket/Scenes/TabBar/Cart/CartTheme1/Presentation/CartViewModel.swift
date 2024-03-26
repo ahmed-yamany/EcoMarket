@@ -37,7 +37,7 @@ class CartViewModel {
                 .filter({ $0.1.inCart })
             self.products = products
             self.totalPrice = String(products.totalPrice())
-            self.cartCount = cartProducts.count
+            self.cartCount = cartProducts.filter {$0.inCart}.count
         }
         .store(in: &cancellabel)
     }

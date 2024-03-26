@@ -110,10 +110,13 @@ class CreditCardViewController: UIViewController {
     private func configureButtonsUI() {
         addCardButton.title = L10n.Credit.AddButton.label
         addCardButton.widthConstraints(160)
-        cancelButton.configuration = nil
-        cancelButton.setTitle(L10n.Credit.CancelButton.label, for: .normal)
-        cancelButton.setTitleColor(AppColor.cardTextFieldPlaceholder, for: .normal)
-        cancelButton.titleLabel?.font = .medium
+        if #available(iOS 15.0, *) {
+            cancelButton.configuration = nil
+            cancelButton.setTitle(L10n.Credit.CancelButton.label, for: .normal)
+            cancelButton.setTitleColor(AppColor.cardTextFieldPlaceholder, for: .normal)
+            cancelButton.titleLabel?.font = .medium
+        }
+        
     }
     
     @IBAction func addCardButtonTapped(_ sender: Any) {

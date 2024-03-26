@@ -153,7 +153,8 @@ class ProductDetailViewModel {
     
     func updateCartCount() {
         self.cancellables["updateCartCount"]?.cancel()
-        let cancellable = AnyCancellable( productDetailUseCase.cartCount.assign(to: \.cartCount, on: self))
+        let cancellable = AnyCancellable( 
+            productDetailUseCase.cartCount.assign(to: \.cartCount, on: self))
         self.cancellables["updateCartCount"] = cancellable
     }
 }
