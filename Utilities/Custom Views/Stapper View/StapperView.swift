@@ -27,7 +27,7 @@ open class StapperView: UIView {
     var maximumValue: Int = 100
     var minmumValue: Int = 0 {
         didSet {
-            updateValue(minmumValue)
+            updateLabel(minmumValue)
            value = minmumValue
         }
     }
@@ -108,8 +108,12 @@ open class StapperView: UIView {
     }
     
     private func updateValue(_ value: Int) {
-        counterLabel.text = String(value)
+        updateLabel(value)
         delegate?.stapperView(self, didSet: value)
+    }
+    
+    private func updateLabel(_ value: Int) {
+        counterLabel.text = String(value)
     }
     
     /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.
