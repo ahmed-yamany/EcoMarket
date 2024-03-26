@@ -23,7 +23,8 @@ protocol EMTabBarViewModelInterface: AnyObject {
     func viewDidLoad()
 }
 
-class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
+class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface, CustomProductUseCaseProtocol {
+    
     static let shared = EMTabBarViewModel()
     
     @Published var tabBarIsHidden: Bool = false
@@ -51,4 +52,36 @@ class EMTabBarViewModel: ObservableObject, EMTabBarViewModelInterface {
         }
     }
     
+    // MARK: - CartProtocol -
+    @Published var savedProduct: [CustomProductDetails] = []
+    var savedProductPublisher: AnyPublisher<[CustomProductDetails], Never> { $savedProduct.eraseToAnyPublisher() }
+    
+    func saveProduct(_ product: CustomProductDetails) async throws {
+        if let index = savedProduct.firstIndex(where: { $0 == product}) {
+            savedProduct[index].isFavorite = true
+            savedProduct[index].inCart = true
+        } else {
+            savedProduct.append(product)
+        }
+    }
+    
+    func removeFromSaved(_ product: CustomProductDetails, fromCart: Bool) async throws {
+        if let index = savedProduct.firstIndex(where: { $0.id == product.id}), product.isFavorite && product.inCart {
+            if fromCart {
+                savedProduct[index].inCart = false
+            } else {
+                savedProduct[index].isFavorite = false
+            }
+        } else {
+            savedProduct.removeAll(where: {$0 == product })
+        }
+    }
+    
+    func updateCount(for product: CustomProductDetails?, with count: Int) {
+        guard let index = savedProduct.firstIndex(where: {$0 == product}) else {
+            Logger.log("error on update count ", category: \.default, level: .error)
+            return
+        }
+        savedProduct[index].count = count
+    }
 }

@@ -13,4 +13,18 @@ protocol ProductDetailRepositories {
     func getAvilableSizes() -> AnyPublisher<[ProductSizes], Never>
     func getAvilableColors (forSize selectedSize: ProductSizes) -> AnyPublisher<[UIColor], Never>
     func getMaxAvilableProducts(size: ProductSizes, color: UIColor) -> AnyPublisher<Int, Never>
+    func addToCart(
+        productId: String,
+        count: Int,
+        selectedColor: UIColor,
+        selectedSize: ProductSizes
+    ) async throws
+    
+    func addToWishList(
+        productId: String,
+        count: Int,
+        selectedColor: UIColor,
+        selectedSize: ProductSizes
+    ) async throws
+    var cartCount: AnyPublisher<Int, Never> { get set }
 }

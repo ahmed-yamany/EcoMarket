@@ -16,11 +16,7 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showProfile()
 }
 
-protocol CartCoordinatorProtocol: Coordinator {
-    func showCart()
-}
-
-final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtocol {
+final class TabBarCoordinator: TabBarCoordinatorProtocol {
     
     let viewModel: EMTabBarViewModelInterface = EMTabBarViewModel.shared
     let router: Router
@@ -41,7 +37,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     func showTabBar() {
-        self.viewModel.tabBarIsHidden = false   
+        self.viewModel.tabBarIsHidden = false
     }
     
     func hideTabBar() {
@@ -68,13 +64,25 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
         let navigationController = UINavigationController()
         let alertInterface = AlertViewController()
         let router = AppRouter(navigationController: navigationController, alertInterface: alertInterface)
-        let coordinator = HomeCoordinator(router: router)
+        let coordinator = HomeCoordinator(router: router, tabBarCoordinator: self)
         coordinator.start()
         return navigationController
     }
     
     private func cartViewController() -> UIViewController {
-        return CartViewController(coordinator: self)
+        
+        let navigationController = UINavigationController()
+        let alertInterface = AlertViewController()
+        let router = AppRouter(
+            navigationController: navigationController,
+            alertInterface: alertInterface
+        )
+        
+        let coordinator = CartCoordinator(router: router)
+      
+        coordinator.start()
+        
+        return navigationController
     }
     
     private func notificationViewController() -> UIViewController {
@@ -84,12 +92,11 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol, CartCoordinatorProtoco
     }
     
     private func profileViewController() -> UIViewController {
-        let coordinator = ProfileCoordinator(router: router)
+        let navigationController = UINavigationController()
+        let alertInterface = AlertViewController()
+        let router = AppRouter(navigationController: navigationController, alertInterface: alertInterface)
+        let coordinator = ProfileCoordinator(router: router, tabBarCoordinator: self)
         coordinator.start()
-        
-        let sectionLayoutFactory = ProfileSectionLayoutFactory(coordinator: coordinator)
-        let useCase = ProfileUseCase(sectionLayoutFactory: sectionLayoutFactory)
-        let viewModel = ProfileViewModel(coordinator: coordinator, useCase: useCase)
-        return ProfileViewController(viewModel: viewModel)
+        return navigationController
     }
 }

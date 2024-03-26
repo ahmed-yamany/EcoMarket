@@ -9,9 +9,9 @@ import UIKit
 
 class Cart2ProductsSection: SectionsLayout {
     
-    typealias ItemsType = Cart2Model
+    typealias ItemsType = Product
     
-    var items: [Cart2Model] = []
+    var items: [Product] = []
     
     func numberOfItems() -> Int {
         return items.count
@@ -19,7 +19,8 @@ class Cart2ProductsSection: SectionsLayout {
     
     func sectionLayout(
         _ collectionView: UICollectionView,
-        layoutEnvironment: NSCollectionLayoutEnvironment
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
     ) -> NSCollectionLayoutSection {
         let padding: CGFloat = 25.0
         let height: CGFloat = 144
@@ -60,7 +61,7 @@ class Cart2ProductsSection: SectionsLayout {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
-        cell.setup(product: Cart2Model.products[indexPath.row])
+        cell.setup(product: items[indexPath.row])
         return cell
     }
     

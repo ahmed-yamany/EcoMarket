@@ -11,12 +11,12 @@
     {
       "sizes": "m",
       "avaliableInStok": [15, 25, 35],
-      "colors": ["Black", "White", "Yellow"]
+      "colors": ["Yellow", "Green", "Black"]
     },
     {
       "sizes": "l",
       "avaliableInStok": [15, 25, 35, 4, 2],
-      "colors": ["Black", "White", "Yellow", "Blue", "Green"]
+      "colors": ["Red", "Black", "Yellow", "Blue", "Green"]
     }
   ],
   "description": "Engineered to crush any movement-based workout, these On sneakers enhance the label's original Cloud sneaker with cutting edge technologies for a pair."

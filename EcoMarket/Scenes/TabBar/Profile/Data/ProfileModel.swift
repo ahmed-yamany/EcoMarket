@@ -49,7 +49,7 @@ enum ProfileAction: String, Codable {
 
 extension UserModel {
     static let user = [
-        UserModel(image: "profile/user", name: "Fscreation", email: "Fscreation441@gmail.com", action: {
+        UserModel(image: "profile/profileImage", name: "Fscreation", email: "Fscreation441@gmail.com", action: {
         print("Profile")
     })
     ]

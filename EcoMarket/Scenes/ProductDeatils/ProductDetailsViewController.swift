@@ -8,8 +8,13 @@
 import UIKit
 import Combine
 class ProductDetailsViewController: UIViewController {
+    
+    // MARK: - Properties
+    let viewModel: ProductDetailViewModel
+    private var cancellables = Set<AnyCancellable>()
+    var customCart = CustomCartView()
+
     // MARK: - Outlets
-    //
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var reviewView: ProductReviewView!
     @IBOutlet weak var stapperView: StapperView!
@@ -19,15 +24,12 @@ class ProductDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionSubTitleLabel: UILabel!
     @IBOutlet weak var sizeViewTitleLabel: UILabel!
     @IBOutlet weak var sizeView: CustomSizeView!
-    @IBOutlet weak var colorView: ColorView!
+    @IBOutlet weak var colorView: CustomColorView!
     @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var addToCartButton: PrimaryButton!
+    @IBOutlet weak var productPrice: UILabel!
     
-    // MARK: - View Lifecycle
-    //
-    let viewModel: ProductDetailViewModel
-    private var cancellables = Set<AnyCancellable>()
-
+    // MARK: Initializer
     init(viewModel: ProductDetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -37,15 +39,15 @@ class ProductDetailsViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configureUI()
         bindUI()
     }
     
     // MARK: - Private Methods
-    //
-    /// UI Configuration
     private func configureUI() {
         view.backgroundColor = AppColor.backgroundColor
         productImageView.maskCustomProductShape()
@@ -58,6 +60,8 @@ class ProductDetailsViewController: UIViewController {
         setupStapperView()
         setupFavoriteButton()
         setupAddToCartButton()
+        setupPriceLabelUI()
+        addingRightBarButtonItem()
     }
     
     private func bindUI() {
@@ -65,6 +69,7 @@ class ProductDetailsViewController: UIViewController {
             self?.productNameLabel.text = product.name
             self?.productBrandLabel.text = product.brandName
             self?.productImageView.image = product.image
+            self?.productPrice.text = "$\(product.price)"
         }.store(in: &cancellables)
         viewModel.$productDetail.sink { [weak self] productDetail in
             self?.reviewView.setReview(count: "\(productDetail.review)Review", review: productDetail.rating)
@@ -77,7 +82,6 @@ class ProductDetailsViewController: UIViewController {
         }
         .store(in: &cancellables)
         viewModel.$availableColors.sink { [weak self] colors in
-            print(colors)
             self?.colorView.setColors(colors)
         }
         .store(in: &cancellables)
@@ -87,13 +91,22 @@ class ProductDetailsViewController: UIViewController {
             
         }.store(in: &cancellables)
     }
+    private func addingRightBarButtonItem() {
+        navigationItem.rightBarButtonItem = UIBarButtonItem(customView: customCart)
+        viewModel.$cartCount.sink { [weak self] count in
+            self?.customCart.setCount(count)
+        }.store(in: &cancellables)
+    }
     private func setupStapperView() {
         stapperView.maximumValue = 100
         stapperView.backgroundColor = AppColor.secondaryBackground
         stapperView.setTintColor(AppColor.primaryButton)
         stapperView.delegate = self
     }
-    
+    private func setupPriceLabelUI() {
+        productPrice.textColor = AppColor.primaryText
+        productPrice.font = .h2
+    }
     private func setupProductNameLabel() {
         productNameLabel.font = .h2
         productNameLabel.textColor = AppColor.primaryText
@@ -121,23 +134,38 @@ class ProductDetailsViewController: UIViewController {
     }
     
     private func setupColorView() {
-        colorView.delegate = self
+        colorView.colorDelegate = self
     }
     
     private func setupFavoriteButton() {
-        favoriteButton.setImage(AppImage.favIcon, for: .normal)
+        favoriteButton.setImage(AppImage.ProductDetails.favourite, for: .normal)
         favoriteButton.setTitle("", for: .normal)
+        favoriteButton.backgroundColor = AppColor.stapperBackground
+        favoriteButton.layer.cornerRadius = 10
     }
     
     private func setupAddToCartButton() {
         addToCartButton.title = L10n.Product.Details.cart
-        addToCartButton.setImage(AppImage.cartIcon, for: .normal)
+        addToCartButton.setImage(AppImage.ProductDetails.cartIcon, for: .normal)
         addToCartButton.tintColor = .white
+    }
+    
+    // MARK: - Buttons Action
+    @IBAction func addToCartTapped(_ sender: PrimaryButton) {
+        viewModel.addProductToCart()
+    }
+    
+    @IBAction func addToFavoriteTapped(_ sender: Any) {
+        viewModel.addToWishList()
+    }
+    
+    @objc func rightButtonAction() {
+        // Handle the action here
+        print("Right bar button item tapped")
     }
 }
 
 // MARK: - SizeViewDelegate
-//
 extension ProductDetailsViewController: SizeViewDelegate {
     func sizeView(_ sizeView: CustomSizeView, didSelect size: ProductSizes) {
         viewModel.selectedSize = size
@@ -145,17 +173,15 @@ extension ProductDetailsViewController: SizeViewDelegate {
 }
 
 // MARK: - ColorViewDelegate
-//
-extension ProductDetailsViewController: ColorViewDelegate {
-    func colorView(_ sizeView: ColorView, didSelect color: UIColor?) {
-        viewModel.selectedColor = color ?? .blue
+extension ProductDetailsViewController: CustomColorViewDelegate {
+    func colorView(_ colorView: CustomColorView, didSelect color: UIColor) {
+        viewModel.selectedColor = color
     }
 }
 
 // MARK: - StapperDelegate
-//
 extension ProductDetailsViewController: StapperViewDelegate {
     func stapperView(_ stapper: StapperView, didSet value: Int) {
-        print(value)
+        viewModel.currentStepperValue = value
     }
 }

@@ -9,6 +9,7 @@ import UIKit
 import Combine
 
 class ProductDetailViewModel {
+    
     let productDetailUseCase: ProductDetailRepositories
     private var cancellables: [String: AnyCancellable] = [:]
     
@@ -17,22 +18,26 @@ class ProductDetailViewModel {
             getTotalPrice()
         }
     }
+    
     @Published var productDetail: ProductDetail = .mockData {
         didSet {
             getAvilableSizes()
         }
     }
+    
     @Published var selectedSize: ProductSizes = .l {
         didSet {
             getAvilableColors()
         }
     }
+    
     @Published var availableSizes: [ProductSizes] = [.m, .l, .xl]
     @Published var selectedColor: UIColor = .blue {
         didSet {
             getMaxAvilableProducts()
         }
     }
+    
     @Published var availableColors: [UIColor] = [.blue]
     @Published var maxAvailableProduct: Int = 1 {
         didSet {
@@ -40,14 +45,23 @@ class ProductDetailViewModel {
             getTotalPrice()
         }
     }
+    
     @Published var currentStepperValue: Int = 1
     
     @Published var totalPrice: Double = 1
-    
-    init(product: Product, productDetailUseCase: ProductDetailRepositories) {
+    @Published var cartCount = 0
+
+    var coordinator: DetailsCoordinatorProtocol
+    init(
+        product: Product,
+        productDetailUseCase: ProductDetailRepositories,
+        coordinator: DetailsCoordinatorProtocol
+    ) {
         self.productDetailUseCase = productDetailUseCase
         self.product = product
+        self.coordinator = coordinator
         updateProductDetail()
+        updateCartCount()
     }
     
     func updateProductDetail () {
@@ -95,5 +109,51 @@ class ProductDetailViewModel {
     
     private func getTotalPrice() {
         totalPrice = product.price * Double(currentStepperValue)
+    }
+    
+    func addProductToCart() {
+        Task {
+            do {
+                try await productDetailUseCase.addToCart(
+                    productId: product.id,
+                    count: currentStepperValue,
+                    selectedColor: selectedColor,
+                    selectedSize: selectedSize
+                )
+                coordinator.showAlert(item: .init(message: "Added To Cart", 
+                                                  buttonTitle: "Ok",
+                                                  image: .success,
+                                                  status: .success))
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func addToWishList() {
+        Task {
+            do {
+                try await productDetailUseCase.addToWishList(
+                    productId: product.id,
+                    count: currentStepperValue,
+                    selectedColor: selectedColor,
+                    selectedSize: selectedSize
+                )
+                coordinator.showAlert(item: .init(message: "Added To Favorite",
+                                                  buttonTitle: "Ok",
+                                                  image: .success,
+                                                  status: .success))
+                
+            } catch {
+                print(error.localizedDescription)
+            }
+        }
+    }
+    
+    func updateCartCount() {
+        self.cancellables["updateCartCount"]?.cancel()
+        let cancellable = AnyCancellable( productDetailUseCase.cartCount.assign(to: \.cartCount, on: self))
+        self.cancellables["updateCartCount"] = cancellable
     }
 }

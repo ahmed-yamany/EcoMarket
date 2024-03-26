@@ -86,7 +86,7 @@ class GenderCustomView: UIView {
             button.layer.borderWidth = 1
             button.layer.borderColor = AppColor.profileColor.cgColor
             button.setTitleColor(AppColor.profileColor, for: .normal)
-            button.setImage(AppImage.dot2, for: .normal)
+            button.setImage(AppImage.Settings.dot2, for: .normal)
             button.backgroundColor = AppColor.backgroundColor
         }
     }
@@ -95,7 +95,7 @@ class GenderCustomView: UIView {
     private func selectedButtonUI(button: UIButton) {
         UIView.animate(withDuration: 0.2) {
             button.setTitleColor(AppColor.secondaryText, for: .normal)
-            button.setImage(AppImage.dot1, for: .normal)
+            button.setImage(AppImage.Settings.dot1, for: .normal)
             button.backgroundColor = AppColor.primaryButton
         }
     }

@@ -10,5 +10,7 @@ import Combine
 
 protocol ProductRepositories {
     func getCategories() -> AnyPublisher<[String], Never>
-    func getProducts(category: String) async throws -> [Product] 
+    func getCategoryCount(category: String) -> Int
+    func getProducts(by category: String) -> [Product]
+    func getProducts(by cartProducts: [CustomProductDetails]) -> [(Product, CustomProductDetails)]
 }

@@ -23,4 +23,8 @@ class ProfileViewModel {
     func getSectionLayouts() async throws -> [any SectionsLayout] {
         try await useCase.getSectionLayouts()
     }
+    
+    func viewWillAppear() {
+        coordinator.showTabBar()
+    }
 }

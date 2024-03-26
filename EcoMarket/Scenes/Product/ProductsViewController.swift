@@ -32,14 +32,10 @@ class ProductsViewController: UICollectionViewController {
     
     // MARK: - View Lifecycle
     //
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        viewModel.viewDidLoad()
-
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
         configureCollectionView()
         subscribedCategories()
     }
@@ -63,7 +59,7 @@ class ProductsViewController: UICollectionViewController {
     // MARK: - Configuration
     private func configureCollectionView() {
         
-        collectionView.registerNib(ProductsCollectionViewCell.self)
+        collectionView.registerNib(ProductCollectionViewCell.self)
         collectionView.register(Header.self,
                                 forSupplementaryViewOfKind: Header.elementKind,
                                 withReuseIdentifier: Header.identifier)
@@ -116,12 +112,17 @@ class ProductsViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: ProductsCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+        guard let cell: ProductCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
             Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.category, level: .fault)
             return UICollectionViewCell()
         }
         cell.setup(product: viewModel.products[indexPath.row])
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let product = viewModel.products[indexPath.row]
+        viewModel.showDetails(product: product)
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String,
@@ -132,7 +133,7 @@ class ProductsViewController: UICollectionViewController {
             Logger.log("Failed to get header view", category: \.category, level: .fault)
             return UICollectionReusableView()
         }
-        header.setTitle("Clothes")
+        header.setTitle(viewModel.category)
         return header
     }
 }

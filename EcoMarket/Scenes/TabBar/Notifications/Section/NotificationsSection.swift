@@ -19,8 +19,11 @@ class NotificationsSection: SectionsLayout {
         return items.count
     }
     
-    func sectionLayout(_ collectionView: UICollectionView,
-                       layoutEnvironment: NSCollectionLayoutEnvironment) -> NSCollectionLayoutSection {
+    func sectionLayout(
+        _ collectionView: UICollectionView,
+        layoutEnvironment: NSCollectionLayoutEnvironment,
+        sectionIndex: Int
+    ) -> NSCollectionLayoutSection {
         var configurations = UICollectionLayoutListConfiguration(appearance: .plain)
         configurations.backgroundColor = .clear
         configurations.showsSeparators = true

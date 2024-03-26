@@ -8,6 +8,7 @@
 import UIKit
 
 protocol ProfileCoordinatorProtocol: Coordinator {
+    func showProfile()
     func showPersonalDetails()
     func showOrder()
     func showFavourites()
@@ -17,28 +18,56 @@ protocol ProfileCoordinatorProtocol: Coordinator {
     func showFAQ()
     func showPrivacyPolicy()
     func showCommunity()
+    func showTabBar()
+    func hideTabeBar()
+    func showAlert(item: AlertItem)
 }
 
 class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     var router: Router
+    let tabBarCoordinator: TabBarCoordinatorProtocol
     
-    init(router: Router) {
+    init(router: Router, tabBarCoordinator: TabBarCoordinatorProtocol) {
         self.router = router
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
-    func start() {}
+    func start() {
+        showProfile()
+    }
+    
+    func showProfile() {
+        let factory = ProfileSectionLayoutFactory(coordinator: self)
+        let useCase = ProfileUseCase(sectionLayoutFactory: factory)
+        let viewModel = ProfileViewModel(coordinator: self, useCase: useCase)
+        let viewController = ProfileViewController(viewModel: viewModel)
+        router.push(viewController)
+    }
     
     func showPersonalDetails() {
         print("show personal detail")
     }
     
     func showOrder() {
-        print("show order")
+        let viewModel = TrackingViewModel()
+        let tracking = Tracking.mockData
+        let viewController = TrackingViewController(tracking: tracking, viewModel: viewModel)
+        router.push(viewController)
     }
     
     func showFavourites() {
-        print("show favaoritedd")
+        let useCase = EMTabBarViewModel.shared
+        let productUseCase = ProductUseCase()
+        let productDetailUseCase = ProductDetailUseCase(cartUseCase: useCase)
+        let viewModel = WishListViewModel(
+            cartUseCase: useCase,
+            productUseCase: productUseCase,
+            productDetailUseCase: productDetailUseCase,
+            coordinator: self
+        )
+        let viewController = WishListViewController(viewModel: viewModel)
+        router.push(viewController)
     }
     
     func showShippingAddress() {
@@ -65,5 +94,19 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     
     func showCommunity() {
         print("Community")
+    }
+    
+    func showTabBar() {
+        tabBarCoordinator.showTabBar()
+    }
+    
+    func hideTabeBar() {
+        tabBarCoordinator.hideTabBar()
+    }
+    
+    func showAlert(item: AlertItem) {
+        DispatchQueue.main.async {
+            self.router.showAlert(item: item)
+        }
     }
 }

@@ -24,7 +24,7 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let productsSection = Cart2ProductsSection()
-        productsSection.items = Cart2Model.products
+        productsSection.items = Product.mockData
         
         sections = [productsSection, CartCheckOutSection()]
         configureCollectionView()
@@ -49,7 +49,11 @@ class CartTheme2CollectionViewController: UICollectionViewController {
     /// - Returns: A UICollectionViewCompositionalLayout object.
     private func createCompositionalLayout() -> UICollectionViewCompositionalLayout {
         return UICollectionViewCompositionalLayout { (sectionIndex, layoutEnvironment) in
-            self.sections[sectionIndex].sectionLayout(self.collectionView, layoutEnvironment: layoutEnvironment)
+            self.sections[sectionIndex].sectionLayout(
+                self.collectionView,
+                layoutEnvironment: layoutEnvironment,
+                sectionIndex: sectionIndex
+            )
         }
     }
     

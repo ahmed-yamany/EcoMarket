@@ -9,16 +9,17 @@ import Foundation
 import Combine
 
 class ProductUseCase: ProductRepositories, ObservableObject {
+    
     @Published private var repo = ProductSourceRepositories()
     @Published private var products: [Product] = []
-
+    
     private var cancellables = Set<AnyCancellable>()
-
+    
     init() {
         setupObserving()
         updateProducts()
     }
-
+    
     private func setupObserving() {
         $products
             .sink { [weak self] _ in
@@ -26,7 +27,7 @@ class ProductUseCase: ProductRepositories, ObservableObject {
             }
             .store(in: &cancellables)
     }
-
+    
     private func updateProducts() {
         repo.getProductsSource()
             .map { $0.toProducts() }
@@ -36,19 +37,30 @@ class ProductUseCase: ProductRepositories, ObservableObject {
     
     func getCategories() -> AnyPublisher<[String], Never> {
         return $products
-             .map { products in
-                 Array(Set(products.map { $0.category.capitalized }))
-                     .sorted()
-             }
-             .eraseToAnyPublisher()
+            .map { products in
+                Array(Set(products.map { $0.category.capitalized }))
+                    .sorted()
+            }
+            .eraseToAnyPublisher()
     }
     
-    func getProducts(category: String) async throws -> [Product] {
-        let filteredProducts = products
+    func getCategoryCount(category: String) -> Int {
+        getProducts(by: category)
+            .count
+    }
+    
+    func getProducts(by category: String) -> [Product] {
+        products
             .filter { $0.category.lowercased() == category.lowercased() }
-        
-        let sortedProducts = filteredProducts.sorted { $0.name < $1.name }
-        
-        return sortedProducts
+    }
+    
+    func getProducts(by cartProducts: [CustomProductDetails]) -> [(Product, CustomProductDetails)] {
+        var results: [(Product, CustomProductDetails)] = []
+        for cartProduct in cartProducts {
+            for product in products where product.id == cartProduct.productId {
+                results.append((product, cartProduct))
+            }
+        }
+        return results
     }
 }

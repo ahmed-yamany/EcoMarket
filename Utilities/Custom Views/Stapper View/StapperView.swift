@@ -23,12 +23,12 @@ open class StapperView: UIView {
     
     // MARK: - Properties
     //
-    private (set) var value: Int = 0
+    var value: Int = 0
     var maximumValue: Int = 100
     var minmumValue: Int = 0 {
-        didSet(newValue) {
-            updateValue(newValue)
-           value = newValue
+        didSet {
+            updateLabel(minmumValue)
+           value = minmumValue
         }
     }
     
@@ -90,6 +90,7 @@ open class StapperView: UIView {
         button.setTitleColor(.black, for: .normal)
         button.layer.cornerRadius = 15
         button.backgroundColor = .clear
+        button.tintColor = AppColor.primaryText
     }
     
     private func plusButtonTapped() {
@@ -107,8 +108,12 @@ open class StapperView: UIView {
     }
     
     private func updateValue(_ value: Int) {
-        counterLabel.text = String(value)
+        updateLabel(value)
         delegate?.stapperView(self, didSet: value)
+    }
+    
+    private func updateLabel(_ value: Int) {
+        counterLabel.text = String(value)
     }
     
     /// Loads the view from a nib file and adds it as a subview to the OnboardingTextField view.

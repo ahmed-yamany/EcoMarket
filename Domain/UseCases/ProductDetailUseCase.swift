@@ -9,9 +9,15 @@ import Combine
 import UIKit
 
 class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
+    
     @Published private var repo = ProductSourceDetailRepositories()
     @Published private var productDetail: ProductDetail = .mockData
-
+    lazy var cartCount: AnyPublisher<Int, Never> = cartUseCase.savedProductPublisher.map {$0.count}.eraseToAnyPublisher()
+    let cartUseCase: CustomProductUseCaseProtocol
+    init(cartUseCase: CustomProductUseCaseProtocol) {
+        self.cartUseCase = cartUseCase
+    }
+    
     private var cancellables = Set<AnyCancellable>()
 
     func fetchProductDetail(by id: String) {
@@ -51,5 +57,29 @@ class ProductDetailUseCase: ProductDetailRepositories, ObservableObject {
                   return sizeAttribute.avaliableInStok[colorIndex]
               }
               .eraseToAnyPublisher()
+    }
+    
+    func addToCart(productId: String, count: Int, selectedColor: UIColor, selectedSize: ProductSizes) async throws {
+        let product = CustomProductDetails(
+            productId: productId,
+            selectedColor: selectedColor,
+            selectedSize: selectedSize,
+            count: count,
+            isFavorite: false,
+            inCart: true
+        )
+        try await cartUseCase.saveProduct(product)
+    }
+    
+    func addToWishList(productId: String, count: Int, selectedColor: UIColor, selectedSize: ProductSizes) async throws {
+        let product = CustomProductDetails(
+            productId: productId,
+            selectedColor: selectedColor,
+            selectedSize: selectedSize,
+            count: count,
+            isFavorite: true,
+            inCart: false
+        )
+        try await cartUseCase.saveProduct(product)
     }
 }
