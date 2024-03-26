@@ -26,6 +26,8 @@ internal enum L10n {
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
   internal enum Credit {
+    /// You Successfully Added Your Card
+    internal static let success = L10n.tr("Localizable", "credit.success", fallback: "You Successfully Added Your Card")
     internal enum AddButton {
       /// Add Card
       internal static let label = L10n.tr("Localizable", "credit.addButton.label", fallback: "Add Card")

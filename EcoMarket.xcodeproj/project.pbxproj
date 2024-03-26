@@ -65,6 +65,7 @@
 		D62F1C5B2B64034A00FBE349 /* StapperView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62F1C5A2B64034A00FBE349 /* StapperView.xib */; };
 		D62F1C612B64292300FBE349 /* SizeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C602B64292300FBE349 /* SizeCollectionView.swift */; };
 		D62F1C692B653E3000FBE349 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62F1C672B653E3000FBE349 /* CartViewController.swift */; };
+		D64D4D702BB38B440045D75D /* TrackingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64D4D6F2BB38B440045D75D /* TrackingView.swift */; };
 		D6519E5A2B7E6F310049FEB1 /* Home2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */; };
 		D6519E5B2B7E6F310049FEB1 /* Home2ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */; };
 		D6519E5F2B80363D0049FEB1 /* FeaturesSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6519E5E2B80363D0049FEB1 /* FeaturesSection.swift */; };
@@ -81,14 +82,14 @@
 		D66084FC2B82BE1E0071B562 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */; };
 		D66084FF2B82BEA50071B562 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66084FE2B82BEA50071B562 /* HomeModel.swift */; };
 		D66085032B8375BB0071B562 /* HomeCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D66085022B8375BB0071B562 /* HomeCoordinator.swift */; };
+		D660E6D82BAE21F800C897FC /* CustomCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6D72BAE21F800C897FC /* CustomCartView.swift */; };
+		D660E6DA2BAE220100C897FC /* CustomCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E6D92BAE220100C897FC /* CustomCartView.xib */; };
 		D67511712B8B749E007AAD92 /* CreditCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675116F2B8B749E007AAD92 /* CreditCardViewController.swift */; };
 		D67511722B8B749E007AAD92 /* CreditCardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67511702B8B749E007AAD92 /* CreditCardViewController.xib */; };
 		D67511752B8B7636007AAD92 /* CardTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67511742B8B7636007AAD92 /* CardTextField.swift */; };
 		D67511772B8B763C007AAD92 /* CardTextField.xib in Resources */ = {isa = PBXBuildFile; fileRef = D67511762B8B763C007AAD92 /* CardTextField.xib */; };
 		D675117A2B8B8C8D007AAD92 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */; };
 		D675117C2B8B8CC5007AAD92 /* CreditCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D675117B2B8B8CC5007AAD92 /* CreditCardViewModel.swift */; };
-		D660E6D82BAE21F800C897FC /* CustomCartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D660E6D72BAE21F800C897FC /* CustomCartView.swift */; };
-		D660E6DA2BAE220100C897FC /* CustomCartView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D660E6D92BAE220100C897FC /* CustomCartView.xib */; };
 		D67B4A052B7D17380023E451 /* +makeRounded.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67B4A042B7D17380023E451 /* +makeRounded.swift */; };
 		D67DA32C2B9A008E0061C22C /* ColorCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */; };
 		D67DA32E2B9A02830061C22C /* ColorCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */; };
@@ -291,6 +292,7 @@
 		D62F1C5A2B64034A00FBE349 /* StapperView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StapperView.xib; sourceTree = "<group>"; };
 		D62F1C602B64292300FBE349 /* SizeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeCollectionView.swift; sourceTree = "<group>"; };
 		D62F1C672B653E3000FBE349 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		D64D4D6F2BB38B440045D75D /* TrackingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackingView.swift; sourceTree = "<group>"; };
 		D6519E582B7E6F310049FEB1 /* Home2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home2ViewController.swift; sourceTree = "<group>"; };
 		D6519E592B7E6F310049FEB1 /* Home2ViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Home2ViewController.xib; sourceTree = "<group>"; };
 		D6519E5E2B80363D0049FEB1 /* FeaturesSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturesSection.swift; sourceTree = "<group>"; };
@@ -307,14 +309,14 @@
 		D66084FB2B82BE1E0071B562 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D66084FE2B82BEA50071B562 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		D66085022B8375BB0071B562 /* HomeCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCoordinator.swift; sourceTree = "<group>"; };
+		D660E6D72BAE21F800C897FC /* CustomCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCartView.swift; sourceTree = "<group>"; };
+		D660E6D92BAE220100C897FC /* CustomCartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCartView.xib; sourceTree = "<group>"; };
 		D675116F2B8B749E007AAD92 /* CreditCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewController.swift; sourceTree = "<group>"; };
 		D67511702B8B749E007AAD92 /* CreditCardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CreditCardViewController.xib; sourceTree = "<group>"; };
 		D67511742B8B7636007AAD92 /* CardTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardTextField.swift; sourceTree = "<group>"; };
 		D67511762B8B763C007AAD92 /* CardTextField.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardTextField.xib; sourceTree = "<group>"; };
 		D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		D675117B2B8B8CC5007AAD92 /* CreditCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardViewModel.swift; sourceTree = "<group>"; };
-		D660E6D72BAE21F800C897FC /* CustomCartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCartView.swift; sourceTree = "<group>"; };
-		D660E6D92BAE220100C897FC /* CustomCartView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCartView.xib; sourceTree = "<group>"; };
 		D67B4A042B7D17380023E451 /* +makeRounded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+makeRounded.swift"; sourceTree = "<group>"; };
 		D67DA32B2B9A008E0061C22C /* ColorCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionViewCell.swift; sourceTree = "<group>"; };
 		D67DA32D2B9A02830061C22C /* ColorCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollectionView.swift; sourceTree = "<group>"; };
@@ -857,6 +859,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		D660E6D62BAE21DF00C897FC /* Custom Cart */ = {
+			isa = PBXGroup;
+			children = (
+				D660E6D72BAE21F800C897FC /* CustomCartView.swift */,
+				D660E6D92BAE220100C897FC /* CustomCartView.xib */,
+			);
+			path = "Custom Cart";
+			sourceTree = "<group>";
+		};
 		D675116E2B8B7484007AAD92 /* CreditCard */ = {
 			isa = PBXGroup;
 			children = (
@@ -883,15 +894,6 @@
 				D67511792B8B8C8D007AAD92 /* UITextField+Extension.swift */,
 			);
 			path = UITextField;
-			sourceTree = "<group>";
-		};
-		D660E6D62BAE21DF00C897FC /* Custom Cart */ = {
-			isa = PBXGroup;
-			children = (
-				D660E6D72BAE21F800C897FC /* CustomCartView.swift */,
-				D660E6D92BAE220100C897FC /* CustomCartView.xib */,
-			);
-			path = "Custom Cart";
 			sourceTree = "<group>";
 		};
 		D67B4A032B7D17240023E451 /* UIImageView */ = {
@@ -955,6 +957,7 @@
 				D6BB64022B88E9330008752F /* TrackingSection */,
 				D6BB63F72B8747240008752F /* TrackingViewController.swift */,
 				D6BB63F82B8747240008752F /* TrackingViewController.xib */,
+				D64D4D6F2BB38B440045D75D /* TrackingView.swift */,
 			);
 			path = Tracking;
 			sourceTree = "<group>";
@@ -1931,7 +1934,6 @@
 				EE5D818F2B641B3E00222466 /* drawOnboardingShape.swift in Sources */,
 				EE8841542B81272200907CD1 /* AlertStatus.swift in Sources */,
 				A1D73D902B6E4ADF00B251EB /* AlertViewController.swift in Sources */,
-				D6519E842B8106290049FEB1 /* HomeFactory.swift in Sources */,
 				D675117C2B8B8CC5007AAD92 /* CreditCardViewModel.swift in Sources */,
 				EE08DB0A2B68596700A358D9 /* +hexString.swift in Sources */,
 				5C8368DB2BA39DC800E2A417 /* ProductsViewController.swift in Sources */,
@@ -1947,7 +1949,6 @@
 				EE58F5EA2B5ED0F20068B93F /* OnboardingModel.swift in Sources */,
 				5C45B0932B8B573E00BE62F4 /* ProductSourceDetailRepositories.swift in Sources */,
 				5C500DB82BB2560700407C53 /* CardView.swift in Sources */,
-				D6C397C92B7BCCD1008649E1 /* SectionsFactory.swift in Sources */,
 				EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */,
 				D6A0EBA82B60386200079FF3 /* ProductViewModel.swift in Sources */,
 				EEA62F542B66D99F00771D99 /* maskCustomProductShape.swift in Sources */,
@@ -2008,6 +2009,7 @@
 				5C45B0A02B8B5A4800BE62F4 /* ProductDetailRepositories.swift in Sources */,
 				D6B1165C2BA4D5AC00017605 /* WishListViewModel.swift in Sources */,
 				D6E9AB5E2B744D8100BEA301 /* SettingsViewController.swift in Sources */,
+				D64D4D702BB38B440045D75D /* TrackingView.swift in Sources */,
 				D62BD3E02B6E7364000CF78A /* Cart2ProductsSection.swift in Sources */,
 				5C45B0A22B8B5A7100BE62F4 /* Product.swift in Sources */,
 				EE58F5E32B5ED0440068B93F /* OnboardingViewModel.swift in Sources */,
@@ -2237,7 +2239,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -2271,7 +2273,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

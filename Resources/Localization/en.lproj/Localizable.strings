@@ -67,3 +67,4 @@ with our them & conduction.";
 "credit.details.cardNumber" = "CARD NUMBER";
 "credit.details.cardHolder" = "CARD HOLDER NAME";
 "credit.details.valid" = "VALID THRU";
+"credit.success" = "You Successfully Added Your Card";
