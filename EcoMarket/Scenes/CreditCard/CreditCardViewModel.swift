@@ -110,4 +110,19 @@ class CreditCardViewModel {
     private func detectCardHolder(_ value: String) -> String {
         return value.uppercased()
     }
+    
+    func isValidExpirationDate(_ date: String) -> Bool {
+        let components = date.components(separatedBy: "/")
+        guard components.count == 2 else { return false }
+        guard let month = Int(components[0]), let year = Int(components[1]) else { return false }
+        // Check if month is within range 1-12 and year is in the future
+        let currentYear = Calendar.current.component(.year, from: Date()) % 100
+        return (1...12).contains(month) && year >= currentYear
+    }
+    
+    func isValidTextField(value: String, _ byPrefix: Int) -> String {
+        
+        let cleanedValue = value.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
+        return String(cleanedValue.prefix(byPrefix))
+    }
 }
