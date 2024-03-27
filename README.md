@@ -56,7 +56,7 @@
     | Ahmed Yamany | iOS Developer | [ahmed-yamany](http://www.github.com/ahmed-yamany) | [ahmed-yamany](https://www.linkedin.com/in/ahmed-yamany/) |
     | Ahmed Abo Elsood | iOS Developer | [ahmedmohamedaboelsood](https://github.com/ahmedmohamedaboelsood) | [ahmedaboelsood](https://www.linkedin.com/in/ahmedaboelsood/)  |
     | Mohamed Khaled | iOS Developer | [Mo7amedkHAlED](https://github.com/Mo7amedkHAlED) | [mo7amedk7aled](https://www.linkedin.com/in/mo7amedk7aled/) |
-    | Ibrahim Nasser | iOS Developer | [thenasserr](https://github.com/thenasserr) | [ibrahim-nasser](https://www.linkedin.com/in/ibrahim-nasser-8868a7154/) |
+    | Ibrahim Nasser | iOS Developer | [thenasserr](https://github.com/thenasserr) | [ibrahim-nasser](https://www.linkedin.com/in/thenasserr/) |
     | Youssef Eldeeb | iOS Developer | [Youssef0Eldeeb](https://github.com/Youssef0Eldeeb) | [youssef-eldeeb](https://www.linkedin.com/in/youssef-eldeeb/) |
     | Hassan Sayyed | iOS Developer | [hassanSayed0](https://github.com/hassanSayed0) | [hassan-sayed](https://www.linkedin.com/in/hassan-sayed-7644b41b5/) |
     |  |  |  |  |
