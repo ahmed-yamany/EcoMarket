@@ -21,15 +21,16 @@ class AddressCollectionViewCell: UICollectionViewCell {
     }
 
     func setup(address: Address) {
-        nameLabel.text = address.name
-        addressLabel.text = address.address
-        phoneLabel.text = address.number
+        nameLabel.text = "Name: \(address.name)"
+        addressLabel.text = "Address: \(address.address)"
+        phoneLabel.text = "Phone: \(address.number)"
     }
     
     private func configureUI() {
         clipsToBounds = false
         locationIcon.image = AppImage.Icon.location
         configureContainerView()
+        configureLabelsUI()
     }
     
     /// Configures the appearance of the container view, including shadows and corner radius.
@@ -44,5 +45,16 @@ class AddressCollectionViewCell: UICollectionViewCell {
         containerView.layer.shadowOpacity = 0.2
         containerView.layer.shadowRadius = 5
         containerView.layer.cornerRadius = 20
+    }
+    
+    private func configureLabelsUI() {
+        nameLabel.textColor = .emPrimaryText
+        nameLabel.font = .h3
+        
+        addressLabel.textColor = .emSocialButton
+        addressLabel.font = .medium
+        
+        phoneLabel.textColor = .emPrimaryText
+        phoneLabel.font = .medium
     }
 }

@@ -27,10 +27,16 @@ class ShippingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        paymentButton.title = "Payment"
+        configureUI()
         configCollectionView()
         bindViewMode()
         setupNavigationBar()
+    }
+    
+    private func configureUI() {
+        title = L10n.Shipping.title
+        paymentButton.title = L10n.Shipping.PaymentButton.title
+        navigationItem.backButtonTitle = ""
     }
     
     func bindViewMode() {
@@ -39,8 +45,6 @@ class ShippingViewController: UIViewController {
                 self?.collectionView.reloadData()
             }
             .store(in: &cancellable)
-        
-        viewModel.getData()
     }
     
     func setupNavigationBar() {
@@ -49,7 +53,7 @@ class ShippingViewController: UIViewController {
     }
     
     @objc func didTapPlus() {
-
+        viewModel.goToAddAddress()
     }
     
     // MARK: - Configuration
@@ -83,6 +87,10 @@ class ShippingViewController: UIViewController {
         // Create and return a compositional layout with the defined section.
         return UICollectionViewCompositionalLayout(section: section)
     }
+    
+    @IBAction func paymentButtonPressed(_ sender: Any) {
+        viewModel.didTapPayment()
+    }
 }
 
 // MARK: - UICollectionViewDelegate, UICollectionViewDataSource
@@ -108,4 +116,3 @@ extension ShippingViewController: UICollectionViewDelegate, UICollectionViewData
         
     }
 }
-
