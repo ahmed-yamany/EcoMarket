@@ -10,9 +10,9 @@ import Combine
 
 class CreditCardViewModel {
     
-    var coordinator: ProfileCoordinatorProtocol
+    var coordinator: CreditCardCoordinatorProtocol
     
-    init(coordinator: ProfileCoordinatorProtocol) {
+    init(coordinator: CreditCardCoordinatorProtocol) {
         self.coordinator = coordinator
     }
     

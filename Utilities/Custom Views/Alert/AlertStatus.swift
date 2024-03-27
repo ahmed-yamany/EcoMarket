@@ -23,9 +23,9 @@ public enum AlertStatus {
             case .success:
                 return AppImage.Alert.addToCart ?? UIImage()
             case .warning:
-                return UIImage()
+                return AppImage.Alert.warning ?? UIImage()
             case .error:
-                return UIImage()
+                return AppImage.Alert.error ?? UIImage()
         }
     }
 }

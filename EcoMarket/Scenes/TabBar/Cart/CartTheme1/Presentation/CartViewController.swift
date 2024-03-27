@@ -33,6 +33,7 @@ class CartViewController: UICollectionViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         collectionView.reloadData()
+        viewModel.viewWillAppear()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,16 +44,18 @@ class CartViewController: UICollectionViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureUI()
         viewModel.viewDidLoad()
         addCollectionViewSections()
         productSection.delegate = self
+        cartCheckOutSection.delegate = self
         bindViewModel()
-        addingRightBarButtonItem()
     }
     
-    @objc func rightButtonAction() {
-        // Handle the action here
-        print("Right bar button item tapped")
+    private func configureUI() {
+        title = L10n.Cart.title
+        navigationItem.backButtonTitle = ""
+        addingRightBarButtonItem()
     }
     
     private func addingRightBarButtonItem() {
@@ -66,7 +69,6 @@ class CartViewController: UICollectionViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
                 productSection.items = products
-                productSection.headerTitle = "My Cart"
                 cartCheckOutSection.setup(
                     totalPrice: viewModel.totalPrice,
                     productsCount: products.count
@@ -129,7 +131,11 @@ class CartViewController: UICollectionViewController {
     }
 }
 
-extension CartViewController: CustomProductDetailsSectionDelegate {
+extension CartViewController: CustomProductDetailsSectionDelegate, CartCheckOutSectionDelegate {
+    func didTapCheckout(_ section: CartCheckOutSection) {
+        viewModel.didTapCheckout()
+    }
+    
     func updateCount(_ cell: CustomProductDetailsCollectionViewCell, for product: CustomProductDetails?, with count: Int) {
         viewModel.updateCount(for: product, with: count)
     }

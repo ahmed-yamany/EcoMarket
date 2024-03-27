@@ -8,13 +8,20 @@
 import Foundation
 
 protocol CartCoordinatorProtocol: Coordinator {
+    func showShipping()
+    func showTabBar()
+    func hideTabBar()
+    func showAlert(item: AlertItem)
 }
 
 final class CartCoordinator: CartCoordinatorProtocol {
+    
     var router: any Router
+    var tabBarCoordinator: TabBarCoordinatorProtocol
 
-    init(router: any Router) {
+    init(router: any Router, tabBarCoordinator: TabBarCoordinatorProtocol) {
         self.router = router
+        self.tabBarCoordinator = tabBarCoordinator
     }
     
     func start() {
@@ -29,4 +36,22 @@ final class CartCoordinator: CartCoordinatorProtocol {
         router.push(controller)
     }
 
+    func showShipping() {
+        let coordinator = ShippingCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
+        coordinator.start()
+    }
+    
+    func showTabBar() {
+        tabBarCoordinator.showTabBar()
+    }
+    
+    func hideTabBar() {
+        tabBarCoordinator.hideTabBar()
+    }
+    
+    func showAlert(item: AlertItem) {
+        DispatchQueue.main.async {
+            self.router.showAlert(item: item)
+        }
+    }
 }

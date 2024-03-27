@@ -78,7 +78,7 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
             alertInterface: alertInterface
         )
         
-        let coordinator = CartCoordinator(router: router)
+        let coordinator = CartCoordinator(router: router, tabBarCoordinator: self)
       
         coordinator.start()
         

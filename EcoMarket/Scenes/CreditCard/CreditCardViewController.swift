@@ -38,6 +38,7 @@ class CreditCardViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.backButtonTitle = ""
+        view.backgroundColor = .emBackground
         bindCardNumberTextField()
         bindCardHolderTextField()
         bindCVVTextField()

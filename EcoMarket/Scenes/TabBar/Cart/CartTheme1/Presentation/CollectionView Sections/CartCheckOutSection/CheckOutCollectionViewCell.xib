@@ -44,6 +44,9 @@
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="49.333333333333336"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                        <connections>
+                                            <action selector="checkOutButtonTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ZhA-Px-8ba"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>

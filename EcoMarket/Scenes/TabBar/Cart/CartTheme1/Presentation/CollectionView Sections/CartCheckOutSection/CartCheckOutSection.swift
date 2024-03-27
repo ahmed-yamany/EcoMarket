@@ -7,22 +7,19 @@
 
 import UIKit
 
+protocol CartCheckOutSectionDelegate: AnyObject {
+    func didTapCheckout(_ section: CartCheckOutSection)
+}
+
 class CartCheckOutSection: SectionsLayout {
     
     typealias ItemsType = String
     var items: [String] = [""]
     
+    weak var delegate: CartCheckOutSectionDelegate?
+    
     var totalPrice: String = ""
     var productsCount: Int = 0
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell: CheckOutCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
-            Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
-            return UICollectionViewCell()
-        }
-        cell.setup(totalPrice: totalPrice, productsCount: productsCount)
-        return cell
-    }
     
     func numberOfItems() -> Int {
         items.count
@@ -52,7 +49,18 @@ class CartCheckOutSection: SectionsLayout {
         let section = NSCollectionLayoutSection(group: group)
         return section
     }
-    func collectionView(_ collectionView: UICollectionView, 
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell: CheckOutCollectionViewCell = collectionView.dequeue(indexPath: indexPath) else {
+            Logger.log("Can't dequeue ProductsCollectionViewCell", category: \.default, level: .fault)
+            return UICollectionViewCell()
+        }
+        cell.setup(totalPrice: totalPrice, productsCount: productsCount)
+        cell.delegate = self
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
                         viewForSupplementaryElementOfKind kind: String,
                         at indexPath: IndexPath) -> UICollectionReusableView {
         UICollectionReusableView()
@@ -77,5 +85,11 @@ class CartCheckOutSection: SectionsLayout {
     func setup(totalPrice: String, productsCount: Int) {
         self.totalPrice = totalPrice
         self.productsCount = productsCount
+    }
+}
+
+extension CartCheckOutSection: CheckOutCollectionViewCellDelegate {
+    func didTapCheckout() {
+        delegate?.didTapCheckout(self)
     }
 }

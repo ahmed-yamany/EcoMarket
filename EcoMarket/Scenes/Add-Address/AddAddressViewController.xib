@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AddAddressViewController" customModule="EcoMarket" customModuleProvider="target">
+            <connections>
+                <outlet property="addButton" destination="r1H-sd-Tsk" id="0NW-Vl-yEB"/>
+                <outlet property="addressTextField" destination="qao-PV-t8A" id="3ga-ro-6F2"/>
+                <outlet property="nameTextField" destination="6SC-l6-slV" id="JAL-zT-IrP"/>
+                <outlet property="numberTextField" destination="qHH-yl-VYL" id="fFi-Ky-73t"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ik7-ex-802">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8kI-hV-VwT">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="502.33333333333331"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="AsD-Md-djT">
+                                    <rect key="frame" x="20" y="19.999999999999972" width="353" height="482.33333333333326"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6SC-l6-slV" customClass="CardTextField" customModule="EcoMarket" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="353" height="128"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qHH-yl-VYL" customClass="CardTextField" customModule="EcoMarket" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="148" width="353" height="128"/>
+                                        </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qao-PV-t8A" customClass="CardTextField" customModule="EcoMarket" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="296" width="353" height="128"/>
+                                        </view>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r1H-sd-Tsk" customClass="PrimaryButton" customModule="EcoMarket" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="444" width="353" height="38.333333333333314"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                            <connections>
+                                                <action selector="addButtonTapped:" destination="-1" eventType="touchUpInside" id="SxD-m7-D0H"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="AsD-Md-djT" firstAttribute="top" secondItem="8kI-hV-VwT" secondAttribute="top" constant="20" id="1QI-7z-amX"/>
+                                <constraint firstItem="AsD-Md-djT" firstAttribute="leading" secondItem="8kI-hV-VwT" secondAttribute="leading" constant="20" id="QEa-Z7-c9A"/>
+                                <constraint firstAttribute="trailing" secondItem="AsD-Md-djT" secondAttribute="trailing" constant="20" id="kVx-gh-A5l"/>
+                                <constraint firstAttribute="bottom" secondItem="AsD-Md-djT" secondAttribute="bottom" id="xkj-4Z-9cB"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="eVe-ol-yaC" firstAttribute="leading" secondItem="8kI-hV-VwT" secondAttribute="leading" id="N6E-zp-KBy"/>
+                        <constraint firstItem="8kI-hV-VwT" firstAttribute="trailing" secondItem="eVe-ol-yaC" secondAttribute="trailing" id="SIC-Pd-eKK"/>
+                        <constraint firstItem="8kI-hV-VwT" firstAttribute="top" secondItem="eVe-ol-yaC" secondAttribute="top" id="fEk-Hm-O2z"/>
+                        <constraint firstItem="8kI-hV-VwT" firstAttribute="bottom" secondItem="eVe-ol-yaC" secondAttribute="bottom" id="p47-3R-72d"/>
+                    </constraints>
+                    <viewLayoutGuide key="contentLayoutGuide" id="eVe-ol-yaC"/>
+                    <viewLayoutGuide key="frameLayoutGuide" id="vwl-hs-Qv1"/>
+                </scrollView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ik7-ex-802" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="1h0-PX-GVg"/>
+                <constraint firstItem="ik7-ex-802" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="CYC-tK-9Rr"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ik7-ex-802" secondAttribute="bottom" id="Geq-B8-2Wj"/>
+                <constraint firstItem="8kI-hV-VwT" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="ShX-bt-BmY"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ik7-ex-802" secondAttribute="trailing" id="a2f-Kx-pfW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

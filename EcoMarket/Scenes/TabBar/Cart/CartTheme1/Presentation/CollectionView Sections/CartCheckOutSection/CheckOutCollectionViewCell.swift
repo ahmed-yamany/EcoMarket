@@ -7,15 +7,19 @@
 
 import UIKit
 
+protocol CheckOutCollectionViewCellDelegate: AnyObject {
+    func didTapCheckout()
+}
+
 class CheckOutCollectionViewCell: UICollectionViewCell {
     // MARK: - Outlets
-    //
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var productPrice: UILabel!
     @IBOutlet weak var checkOutButton: PrimaryButton!
     
+    weak var delegate: CheckOutCollectionViewCellDelegate?
+    
     // MARK: - Lifecycle Methods
-    //
     override func awakeFromNib() {
         super.awakeFromNib()
         setupUI()
@@ -62,5 +66,10 @@ class CheckOutCollectionViewCell: UICollectionViewCell {
             checkOutButton.titleLabel?.font = .h3
             checkOutButton.tintColor = AppColor.mainTheme
         }
+    }
+    
+    
+    @IBAction func checkOutButtonTapped(_ sender: Any) {
+        delegate?.didTapCheckout()
     }
 }
