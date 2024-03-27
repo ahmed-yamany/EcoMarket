@@ -68,3 +68,5 @@ with our them & conduction.";
 "credit.details.cardHolder" = "CARD HOLDER NAME";
 "credit.details.valid" = "VALID THRU";
 "credit.success" = "You Successfully Added Your Card";
+//
+"cart.empty" = "Your cart is empty!";

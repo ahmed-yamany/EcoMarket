@@ -25,6 +25,10 @@ internal enum L10n {
     ///   Created by Ahmed Yamany on 03/01/2024.
     internal static let name = L10n.tr("Localizable", "app.name", fallback: "EcoMarket")
   }
+  internal enum Cart {
+    /// Your cart is empty!
+    internal static let empty = L10n.tr("Localizable", "cart.empty", fallback: "Your cart is empty!")
+  }
   internal enum Credit {
     /// You Successfully Added Your Card
     internal static let success = L10n.tr("Localizable", "credit.success", fallback: "You Successfully Added Your Card")

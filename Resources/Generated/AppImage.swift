@@ -109,12 +109,24 @@ enum AppImage {
         static var cart: UIImage? {
             return UIImage(folderName: .icon, named: "cart")
         }
+        
+        static var location: UIImage? {
+            return UIImage(folderName: .icon, named: "location")
+        }
     }
     
     enum Alert {
         
         static var addToCart: UIImage? {
             return UIImage(folderName: .alert, named: "add-to-cart")
+        }
+        
+        static var warning: UIImage? {
+            return UIImage(folderName: .alert, named: "warning")
+        }
+        
+        static var error: UIImage? {
+            return UIImage(folderName: .alert, named: "error")
         }
     }
     
