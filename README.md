@@ -1,5 +1,8 @@
 # EcoMarket 🎉
 
+
+<img src="https://github.com/ahmed-yamany/EcoMarket/assets/58072774/f8c39051-385a-4b07-ad7a-8b7cda3d275e" width="400">
+
 ## Table of Content 🧱
 
 ### Introduction
@@ -31,6 +34,8 @@
     1. M**obile app**:  Native iOS app
     2. **Back end :** Softagi
     3. **Design:** [Figma Link](https://www.figma.com/file/pnH7xjoW29PYJjfJF5dkJW/FS---ecommerce-mobile-app-UI-kit?type=design&node-id=193-2&mode=design&t=j6i6GUxsmYLJFUk0-0)
+    4. **video on:** [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7178824026956460032/)
+
 5. **Used technologies 🏗️**
     - **Swift - UIKit**
     - **Design Patterns:** Abstract Factory - Proxy - Adapter - Coordinator with Router
@@ -56,3 +61,5 @@
     | Hassan Sayyed | iOS Developer | [hassanSayed0](https://github.com/hassanSayed0) | [hassan-sayed](https://www.linkedin.com/in/hassan-sayed-7644b41b5/) |
     |  |  |  |  |
     |  |  |  |  |
+
+   
