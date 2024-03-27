@@ -15,13 +15,10 @@ class LaunchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         initUI()
-        
     }
+    
     private func initUI() {
-//        backgroundImage.image = UIImage.splash01
-//        logoImage.image = UIImage.logoVector
         backgroundImage.contentMode = .scaleAspectFill
         logoImage.contentMode = .scaleAspectFill
     }
-
 }
