@@ -34,7 +34,7 @@
     1. M**obile app**:  Native iOS app
     2. **Back end :** Softagi
     3. **Design:** [Figma Link](https://www.figma.com/file/pnH7xjoW29PYJjfJF5dkJW/FS---ecommerce-mobile-app-UI-kit?type=design&node-id=193-2&mode=design&t=j6i6GUxsmYLJFUk0-0)
-    4. **video on:** [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7178824026956460032/)
+    4. **video on:** [LinkedIn](https://www.linkedin.com/feed/update/urn:li:activity:7178846968108965888/)
 
 5. **Used technologies 🏗️**
     - **Swift - UIKit**
