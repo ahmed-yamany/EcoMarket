@@ -81,6 +81,10 @@ class CardView: UIView {
             cardImage.image = AppImage.CreditCard.credit4
             cardLogo.image = AppImage.CreditCard.paypalLogo
             cardType.text = "PAYPAl"
+        } else if cleanedValue.hasPrefix("1") || cleanedValue.hasPrefix("2") {
+            cardImage.image = AppImage.CreditCard.credit1
+            cardLogo.image = AppImage.CreditCard.americanLogo
+            cardType.text = "AMERICAN EXPRESS"
         }
     }
     
