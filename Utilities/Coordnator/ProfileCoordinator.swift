@@ -76,9 +76,8 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     }
     
     func showCard() {
-        let viewModel = CreditCardViewModel(coordinator: self)
-        let viewController = CreditCardViewController(viewModel: viewModel)
-        router.push(viewController)
+        let coordinator = CreditCardCoordinator(router: router, tabBarCoordinator: tabBarCoordinator)
+        coordinator.start()
     }
     
     func showSettings() {

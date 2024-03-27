@@ -70,3 +70,12 @@ with our them & conduction.";
 "credit.success" = "You Successfully Added Your Card";
 //
 "cart.empty" = "Your cart is empty!";
+"cart.title" = "My Cart";
+//
+"address.title" = "Add Address";
+"address.addButton.title" = "Add";
+"address.alerMessage" = "You must fill all fields";
+//
+"shipping.title" ="Shipping";
+"shipping.alerMessage" = "You must add an address";
+"shipping.paymentButton.title" = "Proceed To Payment";

@@ -15,6 +15,9 @@ public final class AppRouter {
         self.navigationController = navigationController
         self.alertInterface = alertInterface
         navigationController.navigationBar.tintColor = .black
+        navigationController
+            .navigationBar
+            .titleTextAttributes = [.font: UIFont.h2, NSAttributedString.Key.foregroundColor: UIColor.black]
         navigationController.navigationBar.backIndicatorImage = AppImage.Icon.back?.withRenderingMode(.alwaysOriginal)
         navigationController
             .navigationBar

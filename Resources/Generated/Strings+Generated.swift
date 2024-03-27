@@ -18,6 +18,16 @@ internal enum L10n {
   internal static let password = L10n.tr("Localizable", "password", fallback: "Password")
   /// Sign Up
   internal static let signup = L10n.tr("Localizable", "signup", fallback: "Sign Up")
+  internal enum Address {
+    /// You must fill all fields
+    internal static let alerMessage = L10n.tr("Localizable", "address.alerMessage", fallback: "You must fill all fields")
+    /// Add Address
+    internal static let title = L10n.tr("Localizable", "address.title", fallback: "Add Address")
+    internal enum AddButton {
+      /// Add
+      internal static let title = L10n.tr("Localizable", "address.addButton.title", fallback: "Add")
+    }
+  }
   internal enum App {
     /// Localizable.strings
     ///   EcoMarket
@@ -28,6 +38,8 @@ internal enum L10n {
   internal enum Cart {
     /// Your cart is empty!
     internal static let empty = L10n.tr("Localizable", "cart.empty", fallback: "Your cart is empty!")
+    /// My Cart
+    internal static let title = L10n.tr("Localizable", "cart.title", fallback: "My Cart")
   }
   internal enum Credit {
     /// You Successfully Added Your Card
@@ -130,6 +142,16 @@ internal enum L10n {
   internal enum Search {
     /// Search....
     internal static let placeholder = L10n.tr("Localizable", "search.placeholder", fallback: "Search....")
+  }
+  internal enum Shipping {
+    /// You must add an address
+    internal static let alerMessage = L10n.tr("Localizable", "shipping.alerMessage", fallback: "You must add an address")
+    /// Shipping
+    internal static let title = L10n.tr("Localizable", "shipping.title", fallback: "Shipping")
+    internal enum PaymentButton {
+      /// Proceed To Payment
+      internal static let title = L10n.tr("Localizable", "shipping.paymentButton.title", fallback: "Proceed To Payment")
+    }
   }
   internal enum Signup {
     /// Confirm Password

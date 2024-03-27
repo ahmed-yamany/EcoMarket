@@ -44,12 +44,17 @@ class CartViewController: UICollectionViewController {
     // MARK: - View Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.backButtonTitle = ""
+        configureUI()
         viewModel.viewDidLoad()
         addCollectionViewSections()
         productSection.delegate = self
         cartCheckOutSection.delegate = self
         bindViewModel()
+    }
+    
+    private func configureUI() {
+        title = L10n.Cart.title
+        navigationItem.backButtonTitle = ""
         addingRightBarButtonItem()
     }
     
@@ -64,7 +69,6 @@ class CartViewController: UICollectionViewController {
             DispatchQueue.main.async { [weak self] in
                 guard let self = self else { return}
                 productSection.items = products
-                productSection.headerTitle = "My Cart"
                 cartCheckOutSection.setup(
                     totalPrice: viewModel.totalPrice,
                     productsCount: products.count
