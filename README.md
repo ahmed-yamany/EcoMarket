@@ -32,17 +32,17 @@
     2. **Back end :** Softagi
     3. **Design:** [Figma Link](https://www.figma.com/file/pnH7xjoW29PYJjfJF5dkJW/FS---ecommerce-mobile-app-UI-kit?type=design&node-id=193-2&mode=design&t=j6i6GUxsmYLJFUk0-0)
 5. **Used technologies 🏗️**
-    - **Swift - UIKit** - **Unit Test**
-    - **Design Patterns:** Delegate - Router
-    - **Architecture Patterns:** MVVM
-    - **Frameworks:** URLSession - CoreAnimation
-    - **3rd-Party:**
-    - **Combine**
+    - **Swift - UIKit**
+    - **Design Patterns:** Abstract Factory - Proxy - Adapter - Coordinator with Router
+    - **Architecture Patterns:** Clean Architecture and MVVM with Coordinator
+    - **Frameworks:**  CoreAnimation - Combine
+    - **3rd-Party:** [MakeConstraints](https://github.com/ahmed-yamany/MakeConstraints)
     - **Modern Concurrency**
+    - **Custom Shapes**
     - **Dependency Manager:** Swift Package Manager
+    - **Logger**
 6. **Utilities ⚗️**
     - Xcode
-    - Postman
 7. **Stakeholders 🧑‍💻**
     
     
@@ -53,6 +53,6 @@
     | Mohamed Khaled | iOS Developer | [Mo7amedkHAlED](https://github.com/Mo7amedkHAlED) | [mo7amedk7aled](https://www.linkedin.com/in/mo7amedk7aled/) |
     | Ibrahim Nasser | iOS Developer | [thenasserr](https://github.com/thenasserr) | [ibrahim-nasser](https://www.linkedin.com/in/ibrahim-nasser-8868a7154/) |
     | Youssef Eldeeb | iOS Developer | [Youssef0Eldeeb](https://github.com/Youssef0Eldeeb) | [youssef-eldeeb](https://www.linkedin.com/in/youssef-eldeeb/) |
-    | Osama Elshora | iOS Developer | [OsamaElshora](https://github.com/OsamaElshora) | [osama-elshora](https://www.linkedin.com/in/osama-elshora-065138231/) |
+    | Hassan Sayyed | iOS Developer | [hassanSayed0](https://github.com/hassanSayed0) | [hassan-sayed](https://www.linkedin.com/in/hassan-sayed-7644b41b5/) |
     |  |  |  |  |
     |  |  |  |  |
