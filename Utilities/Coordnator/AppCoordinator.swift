@@ -16,7 +16,7 @@ protocol AppCoordinatorProtocol: Coordinator {
 
 class AppCoordinator: AppCoordinatorProtocol {
     var window: UIWindow?
-    var isLogin = true
+    var isLogin = false
     
     static let shared = AppCoordinator()
     
