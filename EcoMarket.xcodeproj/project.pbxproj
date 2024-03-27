@@ -32,6 +32,8 @@
 		A1D73D902B6E4ADF00B251EB /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1D73D8E2B6E4ADF00B251EB /* AlertViewController.swift */; };
 		A1D73D912B6E4ADF00B251EB /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1D73D8F2B6E4ADF00B251EB /* AlertViewController.xib */; };
 		D62759FF2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */; };
+		D62798912BB457F600B7A021 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = D62798902BB457F600B7A021 /* Lottie */; };
+		D62798942BB4582600B7A021 /* EcoMarket.json in Resources */ = {isa = PBXBuildFile; fileRef = D62798932BB4582600B7A021 /* EcoMarket.json */; };
 		D62BD3C62B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3C32B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift */; };
 		D62BD3C72B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D62BD3C42B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib */; };
 		D62BD3C82B6D93DD000CF78A /* CartPromoCodeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D62BD3C52B6D93DD000CF78A /* CartPromoCodeSection.swift */; };
@@ -260,6 +262,7 @@
 		A1D73D8E2B6E4ADF00B251EB /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		A1D73D8F2B6E4ADF00B251EB /* AlertViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
 		D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTheme2CollectionViewController.swift; sourceTree = "<group>"; };
+		D62798932BB4582600B7A021 /* EcoMarket.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = EcoMarket.json; sourceTree = "<group>"; };
 		D62BD3C32B6D93DD000CF78A /* PromoCodeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PromoCodeCollectionViewCell.swift; sourceTree = "<group>"; };
 		D62BD3C42B6D93DD000CF78A /* PromoCodeCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PromoCodeCollectionViewCell.xib; sourceTree = "<group>"; };
 		D62BD3C52B6D93DD000CF78A /* CartPromoCodeSection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartPromoCodeSection.swift; sourceTree = "<group>"; };
@@ -459,6 +462,7 @@
 			files = (
 				5C2E2C732BAA319400300B76 /* MakeConstraints in Frameworks */,
 				5C2E2C762BAA322200300B76 /* MakeConstraints in Frameworks */,
+				D62798912BB457F600B7A021 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -693,6 +697,14 @@
 				D62759FE2B67DC7A0069CF9C /* CartTheme2CollectionViewController.swift */,
 			);
 			path = CartTheme2;
+			sourceTree = "<group>";
+		};
+		D62798922BB4581C00B7A021 /* LottieAnimations-JSON */ = {
+			isa = PBXGroup;
+			children = (
+				D62798932BB4582600B7A021 /* EcoMarket.json */,
+			);
+			path = "LottieAnimations-JSON";
 			sourceTree = "<group>";
 		};
 		D62BD3BB2B6D93B3000CF78A /* CustomProductDetailsSection */ = {
@@ -1204,6 +1216,7 @@
 		EE32E2D32B45B6C800675EAE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D62798922BB4581C00B7A021 /* LottieAnimations-JSON */,
 				EE7D33762B7AB0D000EF5C34 /* Coordnator */,
 				EE95CEBC2B4E9D3B00BC5524 /* Router */,
 				EE95CEC52B4E9E0E00BC5524 /* Logger */,
@@ -1729,6 +1742,7 @@
 			packageProductDependencies = (
 				5C2E2C722BAA319400300B76 /* MakeConstraints */,
 				5C2E2C752BAA322200300B76 /* MakeConstraints */,
+				D62798902BB457F600B7A021 /* Lottie */,
 			);
 			productName = EcoMarket;
 			productReference = EE5CA12D2B5EF8E900630C5D /* EcoMarket.app */;
@@ -1783,6 +1797,7 @@
 			mainGroup = EE32E27F2B45B1D100675EAE;
 			packageReferences = (
 				5C2E2C742BAA322200300B76 /* XCLocalSwiftPackageReference "Packages/MakeConstraints" */,
+				D627988F2BB457F600B7A021 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = EE32E27F2B45B1D100675EAE;
 			projectDirPath = "";
@@ -1855,6 +1870,7 @@
 				D6C397D62B7CF8B4008649E1 /* NotificationCollectionViewCell.xib in Resources */,
 				D6519E632B80365C0049FEB1 /* FeaturesCollectionViewCell.xib in Resources */,
 				D67511722B8B749E007AAD92 /* CreditCardViewController.xib in Resources */,
+				D62798942BB4582600B7A021 /* EcoMarket.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2382,6 +2398,17 @@
 		};
 /* End XCLocalSwiftPackageReference section */
 
+/* Begin XCRemoteSwiftPackageReference section */
+		D627988F2BB457F600B7A021 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		5C2E2C722BAA319400300B76 /* MakeConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
@@ -2390,6 +2417,11 @@
 		5C2E2C752BAA322200300B76 /* MakeConstraints */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = MakeConstraints;
+		};
+		D62798902BB457F600B7A021 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = D627988F2BB457F600B7A021 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol FooterSectionDelegate: AnyObject {
+    func footerSection(_ section: FooterSection)
+}
+
 class FooterSection: SectionsLayout {
     typealias ItemsType = String
     var items: [String] =  [""]
+    
+    weak var delegate: FooterSectionDelegate?
     
     func numberOfItems() -> Int {
         items.count
@@ -43,6 +49,7 @@ class FooterSection: SectionsLayout {
             Logger.log("Can't dequeue UserCollectionViewCell", category: \.default, level: .fault)
             return UICollectionViewCell()
         }
+        cell.delegate = self
         return cell
     }
     
@@ -68,5 +75,11 @@ class FooterSection: SectionsLayout {
     
     func registerDecorationView(layout: UICollectionViewLayout) {
         
+    }
+}
+
+extension FooterSection: FooterCollectionViewCellDelegate {
+    func didTapLogOut() {
+        delegate?.footerSection(self)
     }
 }

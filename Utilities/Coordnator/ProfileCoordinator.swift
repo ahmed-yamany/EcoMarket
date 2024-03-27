@@ -21,6 +21,7 @@ protocol ProfileCoordinatorProtocol: Coordinator {
     func showTabBar()
     func hideTabeBar()
     func showAlert(item: AlertItem)
+    func showSplash()
 }
 
 class ProfileCoordinator: ProfileCoordinatorProtocol {
@@ -110,5 +111,10 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
         DispatchQueue.main.async {
             self.router.showAlert(item: item)
         }
+    }
+    
+    func showSplash() {
+        let coordinator = AuthCoordinator(router: router)
+        coordinator.showSplash()
     }
 }

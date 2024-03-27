@@ -7,21 +7,23 @@
 
 import UIKit
 
+protocol FooterCollectionViewCellDelegate: AnyObject {
+    func didTapLogOut()
+}
+
 class FooterCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Outlets
-    //
     @IBOutlet weak var logoutButton: UIButton!
     
+    weak var delegate: FooterCollectionViewCellDelegate?
     // MARK: - Lifecycle
-    //
     override func awakeFromNib() {
         super.awakeFromNib()
         configureLogOutButtonUI()
     }
     
     // MARK: - UI Configuration
-    //
     private func configureLogOutButtonUI() {
         logoutButton.setTitle(L10n.Logout.title, for: .normal)
         logoutButton.setImage(AppImage.Auth.logout, for: .normal)
@@ -37,8 +39,7 @@ class FooterCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Actions
-    //
-    @IBAction func logoutPressed(_ sender: Any) {
-        print("Logged Out")
+    @IBAction func logoutPressed(_ sender: UIButton) {
+        self.delegate?.didTapLogOut()
     }
 }

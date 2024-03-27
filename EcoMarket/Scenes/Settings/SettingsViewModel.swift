@@ -22,4 +22,8 @@ class SettingsViewModel {
             sectionLayoutFactory.makeSection(from: profileSection)
         }
     }
+    
+    func didTapLogOut() {
+        coordinator.showSplash()
+    }
 }
