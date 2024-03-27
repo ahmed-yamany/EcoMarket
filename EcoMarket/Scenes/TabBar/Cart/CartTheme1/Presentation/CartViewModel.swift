@@ -59,6 +59,19 @@ class CartViewModel {
     func updateCount(for product: CustomProductDetails?, with count: Int) {
         cartUseCase.updateCount(for: product, with: count)
     }
+    
+    func viewWillAppear() {
+        coordinator.showTabBar()
+    }
+    
+    func didTapCheckout() {
+        if products.isEmpty {
+            coordinator.showAlert(item: AlertItem(message: L10n.Cart.empty, buttonTitle: "OK", image: .error, status: .error))
+        } else {
+            coordinator.showShipping()
+            coordinator.hideTabBar()
+        }
+    }
 }
 
 extension Array where Element == (Product, CustomProductDetails) {
