@@ -24,6 +24,6 @@ class SettingsViewModel {
     }
     
     func didTapLogOut() {
-        coordinator.showSplash()
+        coordinator.logout()
     }
 }

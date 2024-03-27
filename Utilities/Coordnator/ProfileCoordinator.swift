@@ -22,6 +22,7 @@ protocol ProfileCoordinatorProtocol: Coordinator {
     func hideTabeBar()
     func showAlert(item: AlertItem)
     func showSplash()
+    func logout()
 }
 
 class ProfileCoordinator: ProfileCoordinatorProtocol {
@@ -115,5 +116,9 @@ class ProfileCoordinator: ProfileCoordinatorProtocol {
     func showSplash() {
         let coordinator = AuthCoordinator(router: router)
         coordinator.showSplash()
+    }
+    
+    func logout() {
+        tabBarCoordinator.logout()
     }
 }

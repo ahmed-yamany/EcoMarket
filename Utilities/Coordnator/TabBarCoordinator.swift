@@ -14,6 +14,7 @@ protocol TabBarCoordinatorProtocol: Coordinator {
     func showCart()
     func showNotifications()
     func showProfile()
+    func logout()
 }
 
 final class TabBarCoordinator: TabBarCoordinatorProtocol {
@@ -98,5 +99,9 @@ final class TabBarCoordinator: TabBarCoordinatorProtocol {
         let coordinator = ProfileCoordinator(router: router, tabBarCoordinator: self)
         coordinator.start()
         return navigationController
+    }
+    
+    func logout() {
+        AppCoordinator.shared.showAuth()
     }
 }
