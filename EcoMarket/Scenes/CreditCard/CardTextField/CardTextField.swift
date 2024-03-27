@@ -12,9 +12,9 @@ protocol CardTextFieldDelegate: AnyObject {
     func cardTextField(_ textField: CardTextField, textDidChange: String?)
 }
 
-class CardTextField: UIView {
+class CardTextField: UIView, UITextFieldDelegate {
+    
     // MARK: Init
-    //
     @IBOutlet weak var textField: UITextField!
     
     var placeholder: String? {
@@ -41,6 +41,8 @@ class CardTextField: UIView {
     }
     
     private func configureUI() {
+        textField.delegate = self
+        addDoneButtonToKeyboard()
         heightConstraints(60)
         layer.cornerRadius = 20
         layer.borderWidth = 1
@@ -54,6 +56,23 @@ class CardTextField: UIView {
     @objc private func textFieldDidChange(_ textField: UITextField) {
         delegate?.cardTextField(self, textDidChange: textField.text)
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+    func addDoneButtonToKeyboard() {
+        let toolbar = UIToolbar()
+        toolbar.sizeToFit()
+        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneButtonTapped))
+        toolbar.setItems([doneButton], animated: false)
+        textField.inputAccessoryView = toolbar
+    }
+    
+    @objc func doneButtonTapped() {
+        textField.resignFirstResponder()
+    }
 }
 
 private extension CardTextField {
@@ -61,7 +80,7 @@ private extension CardTextField {
     private func loadNib() {
         // swiftlint:disable all
         if let loadedViews = Bundle.main.loadNibNamed(String(describing: Self.self), owner: self, options: nil),
-            let view = loadedViews.first as? UIView {
+           let view = loadedViews.first as? UIView {
             addSubview(view)
             view.frame = bounds
         }
