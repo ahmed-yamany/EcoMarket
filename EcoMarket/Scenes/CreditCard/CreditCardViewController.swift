@@ -50,7 +50,6 @@ class CreditCardViewController: UIViewController {
         cardNumberTextField.textField.keyboardType = .numberPad
         cardNumberTextField.textField.textFieldDidChange
             .sink { [weak self] value in
-                // Remove any non-digit characters
                 let validValue = self?.viewModel.isValidTextField(value: value, 16)
                 self?.cardNumberTextField.textField.text = validValue
                 self?.cardView.setCardNumberTextField(cleanedValue: validValue ?? "")
@@ -76,7 +75,9 @@ class CreditCardViewController: UIViewController {
         cardExpDateTextField.textField.keyboardType = .numberPad
         cardExpDateTextField.textField.textFieldDidChange
             .sink { [weak self] value in
-                self?.cardView.setValidDate(value: value)
+                let validValue = self?.viewModel.formatExpirationDate(value)
+                self?.cardExpDateTextField.textField.text = validValue
+                self?.cardView.setValidDate(value: validValue ?? "")
             }.store(in: &cancellables)
     }
     

@@ -16,13 +16,10 @@ class CreditCardViewModel {
         self.coordinator = coordinator
     }
     
-    func isValidExpirationDate(_ date: String) -> Bool {
-        let components = date.components(separatedBy: "/")
-        guard components.count == 2 else { return false }
-        guard let month = Int(components[0]), let year = Int(components[1]) else { return false }
-        // Check if month is within range 1-12 and year is in the future
-        let currentYear = Calendar.current.component(.year, from: Date()) % 100
-        return (1...12).contains(month) && year >= currentYear
+    func formatExpirationDate(_ input: String) -> String {
+        var input = isValidTextField(value: input, 4)
+        input.replace(by: "/", after: 2)
+        return input
     }
     
     func isValidTextField(value: String, _ byPrefix: Int) -> String {

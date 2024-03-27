@@ -61,21 +61,9 @@ class CardView: UIView {
     }
     
     func setCardNumberTextField(cleanedValue: String) {
+        var formattedValue = cleanedValue
         
-        // Insert space every 4 characters
-        var formattedValue = ""
-        var index = cleanedValue.startIndex
-        while index < cleanedValue.endIndex {
-            let nextIndex = cleanedValue.index(index,
-                                               offsetBy: min(4, cleanedValue.distance(from: index,
-                                                                                      to: cleanedValue.endIndex)))
-            formattedValue += cleanedValue[index..<nextIndex]
-            if nextIndex != cleanedValue.endIndex {
-                formattedValue += " "
-            }
-            index = nextIndex
-        }
-        
+        formattedValue.replace(by: " ", after: 4)
         cardNumber.text = formattedValue
         
         if cleanedValue.isEmpty {
