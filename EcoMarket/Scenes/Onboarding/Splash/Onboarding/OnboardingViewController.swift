@@ -38,8 +38,8 @@ class OnboardingViewController: UIViewController {
     // MARK: - Setup UI
     //
     private func setupUI() {
+        navigationItem.backButtonTitle = ""
         view.backgroundColor = AppColor.backgroundColor
-        
         setupCollectionView()
         setupPageControl()
         setupNextButton()

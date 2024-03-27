@@ -6,20 +6,15 @@
 //
 
 import UIKit
+import Lottie
 
 class SplashViewController: UIViewController {
+    
     // MARK: - IBOutlets
-    //
-    @IBOutlet weak var backgroundImage: UIImageView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var signupButton: UIButton!
-    @IBOutlet weak var logoImage: UIImageView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.backButtonTitle = ""
-        setup()
-    }
+    @IBOutlet weak var ecoMarketView: LottieAnimationView!
     
     let coordinator: AuthCoordinatorProtocol
     init(coordinator: AuthCoordinatorProtocol) {
@@ -31,28 +26,31 @@ class SplashViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.backButtonTitle = ""
+        setup()
+        ecoLottieAnimation()
+    }
+    
+    private func ecoLottieAnimation() {
+        ecoMarketView.animation = .named("EcoMarket")
+        ecoMarketView.loopMode = .loop
+        ecoMarketView.play()
+    }
+    
     // MARK: - Setup UI
-    //
     private func setup() {
-        setupBackgroundImage()
-        setupLogoImage()
+        navigationItem.backButtonTitle = ""
         setupLoginButton()
         setupSignupButton()
-    }
-    
-    private func setupBackgroundImage() {
-        backgroundImage.image = AppImage.Onboarding.splash1
-        backgroundImage.contentMode = .scaleAspectFill
-    }
-    
-    private func setupLogoImage() {
-        logoImage.image = AppImage.Onboarding.logo
-        logoImage.contentMode = .scaleAspectFill
     }
     
     private func setupLoginButton() {
         loginButton.backgroundColor = .white
         loginButton.tintColor = .black
+        loginButton.layer.borderWidth = 2
+        loginButton.layer.borderColor = UIColor.black.cgColor
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
         loginButton.clipsToBounds = true
         loginButton.setTitle(L10n.login, for: .normal)
@@ -61,10 +59,9 @@ class SplashViewController: UIViewController {
     
     private func setupSignupButton() {
         signupButton.tintColor = .white
+        signupButton.backgroundColor = .black
         signupButton.layer.cornerRadius = signupButton.frame.height / 2
         signupButton.clipsToBounds = true
-        signupButton.layer.borderWidth = 2
-        signupButton.layer.borderColor = UIColor.white.cgColor
         signupButton.setTitle(L10n.signup, for: .normal)
         signupButton.addAction(.init(handler: { [weak self] _ in self?.signupButtonTapped() }), for: .touchUpInside)
     }
